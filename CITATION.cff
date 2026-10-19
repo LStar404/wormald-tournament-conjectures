@@ -5,8 +5,8 @@ title: "Wormald tournament conjectures: Hessians and random blow-ups"
 authors:
   - family-names: "Liu"
     given-names: "Xingchen"
-version: "0.2.2"
-date-released: "2026-10-19"
+version: "0.2.3"
+date-released: "2026-10-20"
 url: "https://github.com/LStar404/wormald-tournament-conjectures"
 abstract: "AI-assisted proof drafts and exact finite checks addressing Wormald's Conjectures 1, 2, and 6. Independent mathematical review pending."
 

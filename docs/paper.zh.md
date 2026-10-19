@@ -2,7 +2,7 @@
 
 刘星辰
 
-2026年10月19日。公开研究稿，版本0.2.2。
+2026年10月19日。公开研究稿，版本0.2.3。
 
 # 摘要
 
@@ -59,6 +59,16 @@ $$
 记$[d]=\{1,\ldots,d\}$。$M[U]$是行列都取自$U$的主子矩阵，约定$\det M[\varnothing]=1$。$u^\perp$是与实向量$u$正交的子空间，$\det_{u^\perp}$表示限制到该不变子空间后、在正交单位基中计算的行列式。
 
 图上的$C(G),H(G)$分别是圈数、路径数；单独出现的$C=S/d$是矩阵，粗体$\mathbf H$是Hessian矩阵，花体$\mathcal H$是它的行列式。不同节中的局部符号按该节重新给出的定义解释。
+
+以下补充运算和求导约定，避免把不同用途的下标混在一起。记实向量$v=(v_1,\ldots,v_r)^T$的欧氏范数为$\|v\|_2=(\sum_{j=1}^r v_j^2)^{1/2}$；不带下标的向量范数$\|s\|$也指此范数。记$\operatorname{tr}M=\sum_jM_{jj}$，$\operatorname{diag}(a_1,\ldots,a_r)$的对角元为所列标量、非对角元为0。$M\succ0$表示$M$实对称且对每个非零实向量$v$都有$v^TMv>0$。矩阵元素也可用小写字母表示，例如$s_{ij}=S_{ij}$。
+
+对标量函数$F(t_1,\ldots,t_d)$，下标$F_j,F_{jk}$分别表示$\partial F/\partial t_j$和$\partial^2F/(\partial t_j\partial t_k)$；对矩阵或行、列向量逐元求导。若原变量是$y$，则写$K_{y_j}$以区分。$\nabla^2F$表示由$F_{jk}$组成的矩阵；一元函数的撇号表示对其自变量求导。$y'=(y_1,\ldots,y_{d-1})$、$t'=(t_1,\ldots,t_{d-1})$；这里的撇号删去最后坐标，不是求导。第$j$类顶点指第$j$个基图顶点所对应的$m$个吹胀顶点。
+
+记$\lfloor a\rfloor$为不超过$a$的最大整数，$\lceil a\rceil$为不小于$a$的最小整数；$\#U=|U|$为有限集合的元素数，$\mathbf1_{\mathcal E}$为条件$\mathcal E$成立时等于1、否则等于0的标量指示函数。它不同于不带条件下标的全一向量$\mathbf1$。约定$0!=1$，$n!=1\cdot2\cdots n$；$\binom nk=n!/(k!(n-k)!)$，$k>n$时为0。
+
+渐近式$R(x)=O(x^k)$在本稿展开中表示：存在常数$M,\eta>0$，当$0<|x|<\eta$时$|R(x)|\le M|x|^k$。$O(d^{-k})$以$d\to\infty$解释；其他参数固定。若出现$O_d$，隐含常数允许依赖固定的$d$。这里用有限和或一致收敛的幂级数运算来控制余项，不把数值拟合当作此定义的证明。
+
+对方阵$D$，$\operatorname{adj}D$是余子式矩阵的转置：$(\operatorname{adj}D)_{ij}=(-1)^{i+j}\det D^{(j|i)}$，其中$D^{(j|i)}$删去第$j$行、第$i$列。按行列式展开，$D\operatorname{adj}D=(\det D)I$，所以$\det D\ne0$时可除以它得到文中的逆矩阵公式。
 
 # 第一部分：精确Hessian与模型常数
 
@@ -206,7 +216,7 @@ $$
 
 ## 3. 对数变量、分块矩阵与Schur消元
 
-令$y_j=ze^{t_j}$，则
+本部分指标满足$1\le j,k\le d$；第6节消去最后坐标后再缩为$1\le j,k\le d-1$。取$t=(t_1,\ldots,t_d)\in\mathbb C^d$为原点附近的变量，$y=(y_1,\ldots,y_d)$，而角变量$\theta=(\theta_1,\ldots,\theta_{d-1})\in\mathbb R^{d-1}$。令$y_j=ze^{t_j}$，则
 
 $$
 \mathscr B(t)=B(ze^{t_1},\ldots,ze^{t_d})
@@ -230,6 +240,12 @@ $$
 $$
 a=u^T\mathscr Bu,\quad b=u^T\mathscr BV,\quad
 c=V^T\mathscr Bu,\quad D=V^T\mathscr BV.
+$$
+
+这里$a$为标量，$b$为$1\times(d-1)$行向量，$c$为$(d-1)\times1$列向量，$D$为$(d-1)$阶方阵。后文的一阶导数还使用左常数向量关系，它由反对称性逐项得到
+
+$$
+u^TP=u^T(P_0+C)=u^Tuu^T+u^TC=u^T+0=u^T.
 $$
 
 因为$\det(O)^2=1$，这次基变换不改变行列式。在$t=0$时，
@@ -278,6 +294,18 @@ $$
 \mathscr B_j=-PF_j,\qquad
 \mathscr B_{jk}=-\delta_{jk}PF_j.
 $$
+
+为了明确逆矩阵导数的存在与含义，对$DR=I$先后求导：
+
+$$
+D_jR+DR_j=0,\qquad R_j=-RD_jR,
+$$
+
+$$
+R_{jk}=RD_kRD_jR-RD_{jk}R+RD_jRD_kR.
+$$
+
+这些式子在$\det D\ne0$的邻域成立；下文九项中的$R_j,R_{jk}$均指这些导数。
 
 由$u^TP=u^T$及$e_j^Tu=1/\sqrt d$，
 
@@ -416,6 +444,15 @@ $$
 K(y)=K_0(y_1,\ldots,y_{d-1})
 +y_dK_1(y_1,\ldots,y_{d-1}).
 $$
+
+这里的两个系数可以不借助隐含约定而直接定义为
+
+$$
+K_0(y')=K(y',0),\qquad
+K_1(y')=K(y',1)-K(y',0)=K_{y_d}(y',y_d).
+$$
+
+最后一个偏导不依赖$y_d$，因为上述表达式关于$y_d$是一次式。
 
 由第4节的偏导计算，
 
@@ -724,6 +761,16 @@ $$
 
 ## 10. 闭式的实函数形式与严格单调性
 
+本节及Taylor计算所用函数约定为（$\sec$只在余弦非零处使用）
+
+$$
+\cosh y=\frac{e^y+e^{-y}}2,\quad
+\sinh y=\frac{e^y-e^{-y}}2,\quad
+\tanh y=\frac{\sinh y}{\cosh y},\quad
+\operatorname{sech}y=\frac1{\cosh y},\quad
+\sec y=\frac1{\cos y}.
+$$
+
 令$x=1/d$，在$0<x\le1/3$上定义
 
 $$
@@ -862,7 +909,7 @@ $$
 $$
 
 $d_1<d_2$给$1/d_1>1/d_2$，所以
-$\mathfrak r_{d_1}<\mathfrak r_{d_2}$。在$x\downarrow0$时，
+$\mathfrak r_{d_1}<\mathfrak r_{d_2}$。记$L:=\cosh1/\cos1$。在$x\downarrow0$时，
 
 $$
 \alpha(x)\to1,\qquad \beta(x)\to1,\qquad p(x)\to0,
@@ -1076,7 +1123,7 @@ $$
 \end{cases}
 $$
 
-本节$x\in\mathbb R^d$，$S_1,\ldots,S_p$均为$d$阶实反对称矩阵，非对角元为$\pm1$。向量$x^*$表示将$x$的各坐标绝对值按降序排列。对于这些同阶竞赛符号矩阵的任意乘积，所引定理给出
+本节$p$为任意正整数，$x\in\mathbb R^d$，$S_1,\ldots,S_p$均为$d$阶实反对称矩阵，非对角元为$\pm1$。向量$x^*$表示将$x$的各坐标绝对值按降序排列。对于这些同阶竞赛符号矩阵的任意乘积，所引定理给出
 
 $$
 (S_1\cdots S_p x)^*\prec_w K_d^p x^*.
@@ -1141,7 +1188,7 @@ $$
 
 ## 4. 比较矩阵与传递矩阵的每个矩相同
 
-令$T_d$的上三角元为1、下三角元为$-1$。令$R_0$为反序置换矩阵，$D_0=\operatorname{diag}(1,-1,\ldots)$。从$K_d$的定义逐项代入，
+令$T_d$的上三角元为1、下三角元为$-1$、对角元为0。令$R_0$为反序置换矩阵，$D_0=\operatorname{diag}(1,-1,\ldots)$。从$K_d$的定义逐项代入，
 
 $$
 (D_0K_dR_0)_{ij}
@@ -1152,6 +1199,17 @@ $$
 (-1)^j,&i>j.
 \end{cases}
 $$
+
+反序矩阵及交替对角矩阵具体满足$R_0e_j=e_{d+1-j}$、$(D_0)_{jj}=(-1)^{j-1}$。$K_d$的每个元素只依赖$i+j$，故$(K_d)_{ij}=(K_d)_{ji}$，即$K_d^T=K_d$。
+
+把奇指标升序、偶指标降序所得序列记为
+
+$$
+(\ell_1,\ldots,\ell_d)=(1,3,\ldots,d,d-1,d-3,\ldots,2),
+\qquad \Lambda e_j=e_{\ell_j}.
+$$
+
+这些指标各出现一次，所以$\Lambda^T\Lambda=\Lambda\Lambda^T=I$，而$\ell_1=1$。
 
 按“奇指标升序、偶指标降序”同时排列行列。两个奇指标中，较早者$i<j$，上式为$(-1)^{i-1}=1$；两个偶指标中，较早者$i>j$，上式为$(-1)^j=1$。奇指标排在每个偶指标之前：若原指标$i<j$，上式为$(-1)^{i-1}=1$；若$i>j$，上式为$(-1)^j=1$。所以该顺序下所有上三角元都为1。令$\Lambda$实现这个排列，则
 
@@ -1274,7 +1332,7 @@ $$
 \quad\text{等号当且仅当 }S=Q^TT_dQ.
 $$
 
-这里的带符号置换矩阵$Q$每行、每列恰有一个$\pm1$，满足$Q^TQ=I$；它是本节局部记号，与第一部分的对称矩阵$Q$不同。写$Q=D_eP$，其中$P$为普通置换矩阵，$D_e=\operatorname{diag}(e_1,\ldots,e_d)$，本段的$e_i=\pm1$是标量符号。于是
+这里的带符号置换矩阵$Q$每行、每列恰有一个$\pm1$，满足$Q^TQ=I$；它是本节局部记号，与第一部分的对称矩阵$Q$不同。写$Q=D_eP$，其中$P$为普通置换矩阵，$D_e=\operatorname{diag}(e_1,\ldots,e_d)$，本段的$e_i=\pm1$是标量符号，记$e=(e_1,\ldots,e_d)^T$；这些标量不是标准基向量。于是
 
 $$
 S=P^TD_eT_dD_eP,\qquad PSP^T=D_eT_dD_e.
@@ -1349,7 +1407,7 @@ a_i=\frac{2b_i}{d},\qquad
 s_i=2d_i-(d-1).
 $$
 
-每条边恰贡献一个出度，因此
+记$s=(s_1,\ldots,s_d)^T$，所以$\|s\|^2=\sum_{i=1}^d s_i^2$。每条边恰贡献一个出度，因此
 
 $$
 \sum_i d_i=\binom d2,\qquad
@@ -1426,6 +1484,15 @@ $$
 s_j=s_{j-1}-\delta_j,\qquad w'_j=w_j+\delta_j.
 $$
 
+递推的每一步满足
+
+$$
+s_j=\max(0,s_{j-1}-(1-w_j))
+=\max\left(0,s_0-\sum_{h=1}^j(1-w_h)\right).
+$$
+
+第一等式由减去两数的最小值得到；第二等式从$j=1$开始逐步代入。
+
 递推得到$s_L=\max(0,s_0-\sum_j(1-w_j))=0$，所以$0\le w'_j\le1$且$\sum_jw'_j=R$。永久式各系数非负，这种逐元增加不使其减少。
 
 固定其他行，将永久式写作$\sum_jw_jc_j$，其中$c_j$是删去当前行和第$j$列后的永久式，故$c_j\ge0$。若两个元素$w_a,w_b$严格介于0与1，重标这两个坐标使$c_a\ge c_b$，取
@@ -1465,6 +1532,14 @@ $$
 
 $$
 R_i\ge m/2-1/2\ge m/4,\qquad R_i\le N.
+$$
+
+舍入误差来自目标定义，而不是额外假设：
+
+$$
+0\le R_i-r_i<1,\qquad
+\varepsilon_i=R_i-mb_i=(R_i-r_i)-\frac12
+\in[-1/2,1/2).
 $$
 
 使用整数$R\ge1$的带余项Stirling界
@@ -1524,7 +1599,7 @@ $$
 \le e^{8d/3}(2\pi)^{2d}N^{2d+1}\kappa^N.
 $$
 
-若内部是正则块，每个样本的实际旧行和就是$mb_i-1/2$，为正整数。直接对该样本邻接矩阵应用Brégman及上面逐项估计，得到
+若内部是正则块，每个样本的实际旧行和就是$mb_i-1/2$，为正整数。若该样本为$G$、邻接矩阵为$A_G$，则每个圈是永久式和中的一个非负单循环项，故$C(G)\le\operatorname{per}A_G$。直接对$A_G$应用Brégman及上面逐项估计，再对所有样本取平均，得到
 
 $$
 \frac{\mathbb EC_{\mathcal R}}{\nu_N}
@@ -1539,6 +1614,17 @@ $$
 \frac{8d/3+2d\log(2\pi)+(2d+1)\log N}{N}
 \longrightarrow\log\kappa<0,
 $$
+
+为写清最后一步，对$N\ge1$有
+
+$$
+0\le\frac{\log N}{N}
+=\frac1N\int_1^N\frac{dt}{t}
+\le\frac1N\int_1^N\frac{dt}{\sqrt t}
+=\frac{2(\sqrt N-1)}N\longrightarrow0.
+$$
+
+记上界为$B_N$，取$c=-\tfrac12\log\kappa>0$。由$\log B_N/N\to\log\kappa=-2c$，存在阈值使其后$\log B_N/N<-c$，于是$0\le B_N<e^{-cN}\to0$。路径界的多项式次数虽然不同，但同样可将其对数除以$N$，按上面的积分界逐项令常数项及$\log(N+1)/N$趋于0。
 
 故两个归一化圈期望都趋于0。
 
@@ -1555,6 +1641,22 @@ $$
 \frac{\mathbb EH}{\mu_N}
 =\frac{\mathbb EC_{\rm aug}}{\nu_{N+1}}.
 $$
+
+这里$G_{\rm aug}$为加入$v$后的随机竞赛图，$C_{\rm aug}:=C(G_{\rm aug})$；条件期望先固定$G$，只对新增边平均。对独立内部块模型令$W_{\rm aug}$为增广邻接矩阵的逐元期望；对正则内部块模型，固定一个实际增广样本并记其邻接矩阵为$A_{\rm aug}$。将第8节的行补齐与整数化操作分别作用于这两种输入，所得$(N+1)$阶0、1辅助矩阵统一记为$V_{\rm aug}$。它不是随机竞赛图的邻接矩阵。
+
+$$
+\mathbb EC_{{\rm aug},\mathcal T}
+=C(W_{\rm aug})\le\operatorname{per}W_{\rm aug}
+\le\operatorname{per}V_{\rm aug},
+$$
+
+$$
+C(G_{\rm aug})\le\operatorname{per}A_{\rm aug}
+\le\operatorname{per}V_{\rm aug}
+\qquad(\mathcal R\text{ 的每个样本}).
+$$
+
+第一个等号只对独立内部块模型使用。第二行对每个样本逐个成立，不要求正则块内部边独立。
 
 对于$\mathcal T$的增广期望矩阵，旧行和为$mb_i$；对于$\mathcal R$的每个实际增广样本，旧行和不超过$mb_i+1/2$。统一选择
 
@@ -1654,7 +1756,7 @@ $$
 
 ## A.1 传递符号矩阵的行列式多项式
 
-令$T_n$上三角为1、下三角为$-1$，记$F_n(t)=\det(I+tT_n)$。下面直接用行变换证明第一部分第9节的闭式，不把偶阶主子式的值作为未说明的输入。
+令$T_n$上三角为1、下三角为$-1$、对角为0，记$F_n(t)=\det(I+tT_n)$。下面直接用行变换证明第一部分第9节的闭式，不把偶阶主子式的值作为未说明的输入。
 
 当$n=1$时，$F_1(t)=1=((1+t)+(1-t))/2$，闭式成立。以下$n\ge2$。对前$n-1$行同时作$R_i\leftarrow R_i-R_{i+1}$。该行变换由一个对角为1的上三角矩阵实施，行列式不变。所得矩阵的前$n-1$行只有
 
@@ -1704,10 +1806,16 @@ $$
 \end{aligned}
 $$
 
-所以
+把括号乘回$(1+t)^{n-1}$，并代入$r=(1-t)/(1+t)$：
 
 $$
-F_n(t)=\frac{(1+t)^n+(1-t)^n}{2}.
+\begin{aligned}
+F_n(t)
+&=\frac{(1+t)^n}{2}
++\frac{(1+t)^{n-1}(1-t)}2
+\left(\frac{1-t}{1+t}\right)^{n-1}\\
+&=\frac{(1+t)^n}{2}+\frac{(1-t)^n}{2}.
+\end{aligned}
 $$
 
 两端都是多项式，已在除两个点以外的所有$t$相等，故在$t=-1,0$也相等。代入$t=1/d$与$t=i/d$，得到圆环模型的行列式比值。
@@ -1782,13 +1890,13 @@ $$
 
 ## A.3 四阶行列式及四次矩等号的完整展开
 
-令
+令$a,b,c,g,e,f$为六个局部实标量，其中$g$不是图或矩阵阶数，设
 
 $$
 M=\begin{pmatrix}
 0&a&b&c\\
--a&0&d&e\\
--b&-d&0&f\\
+-a&0&g&e\\
+-b&-g&0&f\\
 -c&-e&-f&0
 \end{pmatrix}.
 $$
@@ -1798,17 +1906,17 @@ $$
 $$
 \begin{aligned}
 M_{12}
-&=\det\begin{pmatrix}-a&d&e\\-b&0&f\\-c&-f&0\end{pmatrix}\\
-&=(-a)(0-f(-f))-d((-b)0-f(-c))+e((-b)(-f)-0(-c))\\
-&=-af^2-cdf+bef,\\
+&=\det\begin{pmatrix}-a&g&e\\-b&0&f\\-c&-f&0\end{pmatrix}\\
+&=(-a)(0-f(-f))-g((-b)0-f(-c))+e((-b)(-f)-0(-c))\\
+&=-af^2-cgf+bef,\\
 M_{13}
-&=\det\begin{pmatrix}-a&0&e\\-b&-d&f\\-c&-e&0\end{pmatrix}\\
-&=(-a)((-d)0-f(-e))-0+e((-b)(-e)-(-d)(-c))\\
-&=-aef+be^2-cde,\\
+&=\det\begin{pmatrix}-a&0&e\\-b&-g&f\\-c&-e&0\end{pmatrix}\\
+&=(-a)((-g)0-f(-e))-0+e((-b)(-e)-(-g)(-c))\\
+&=-aef+be^2-cge,\\
 M_{14}
-&=\det\begin{pmatrix}-a&0&d\\-b&-d&0\\-c&-e&-f\end{pmatrix}\\
-&=(-a)((-d)(-f)-0(-e))-0+d((-b)(-e)-(-d)(-c))\\
-&=-adf+bde-cd^2.
+&=\det\begin{pmatrix}-a&0&g\\-b&-g&0\\-c&-e&-f\end{pmatrix}\\
+&=(-a)((-g)(-f)-0(-e))-0+g((-b)(-e)-(-g)(-c))\\
+&=-agf+bge-cg^2.
 \end{aligned}
 $$
 
@@ -1818,15 +1926,15 @@ $$
 \begin{aligned}
 \det M
 &=-aM_{12}+bM_{13}-cM_{14}\\
-&=(a^2f^2+acdf-abef)
-+(-abef+b^2e^2-bcde)
-+(acdf-bcde+c^2d^2)\\
-&=a^2f^2+b^2e^2+c^2d^2-2abef+2acdf-2bcde\\
-&=(af-be+cd)^2.
+&=(a^2f^2+acgf-abef)
++(-abef+b^2e^2-bcge)
++(acgf-bcge+c^2g^2)\\
+&=a^2f^2+b^2e^2+c^2g^2-2abef+2acgf-2bcge\\
+&=(af-be+cg)^2.
 \end{aligned}
 $$
 
-六个变量均为$\pm1$时，$af-be+cd$是三个$\pm1$之和，其值为$\pm1$或$\pm3$，故行列式为1或9。设$D_4(S)$为四顶点主子式等于9的个数。由行列式的列多线性展开，在每列选择单位列或$tS$的列，得到
+六个变量均为$\pm1$时，$af-be+cg$是三个$\pm1$之和，其值为$\pm1$或$\pm3$，故行列式为1或9。设$D_4(S)$为四顶点主子式等于9的个数。由行列式的列多线性展开，在每列选择单位列或$tS$的列，得到
 
 $$
 \det(I+tS)=\sum_{U\subseteq[d]}t^{|U|}\det S[U].
@@ -1842,6 +1950,15 @@ $$
 e_2=\binom d2,\qquad
 e_4=(\binom d4-D_4)+9D_4=\binom d4+8D_4.
 $$
+
+下列展开只在$t=0$附近使用。取$|t|\,\|S\|_{\rm op}<1/2$，则每个特征值$\mu$都满足$|t\mu|<1/2$，并用在1处为0的对数级数定义$\log(1+t\mu)$。有限个特征值求和与幂级数交换合法，且
+
+$$
+\det(I+tS)=\prod_\mu(1+t\mu),\qquad
+\operatorname{tr}S^k=\sum_\mu\mu^k.
+$$
+
+这里特征值按重数计入；实反对称标准形保证可在复数域对角化，零特征值也包括在内。
 
 每个特征值的对数级数给
 
@@ -1866,13 +1983,13 @@ $$
 =2\binom d2^2-4\binom d4-32D_4(S).
 $$
 
-传递矩阵任取四个升序顶点都有$a=b=c=d=e=f=1$，其行列式为$(1-1+1)^2=1$，所以$D_4(T_d)=0$。相减给
+传递矩阵任取四个升序顶点都有$a=b=c=g=e=f=1$，其行列式为$(1-1+1)^2=1$，所以$D_4(T_d)=0$。相减给
 
 $$
 \operatorname{tr}T_d^4-\operatorname{tr}S^4=32D_4(S).
 $$
 
-若四次矩取等，则$D_4(S)=0$。取对角符号$e_1=1,e_j=s_{1j}$（$j>1$），切换后$s'_{1j}=e_1s_{1j}e_j=s_{1j}^2=1$。任意主子式在切换下乘以$(\det D_e[U])^2=1$，故$D_4$不变。任取$i<j<k$且都不为1，
+若四次矩取等，则$D_4(S)=0$。取局部标量符号$\epsilon_1=1,\epsilon_j=s_{1j}$（$j>1$），定义$D_\epsilon=\operatorname{diag}(\epsilon_1,\ldots,\epsilon_d)$和$S'=D_\epsilon S D_\epsilon$；以下这一段把这些标量简记为$e_j=\epsilon_j$，把$D_\epsilon$简记为$D_e$。切换后$s'_{1j}=e_1s_{1j}e_j=s_{1j}^2=1$。任意主子式在切换下乘以$(\det D_e[U])^2=1$，故$D_4$不变。任取$i<j<k$且都不为1，
 
 $$
 \det S'[\{1,i,j,k\}]
@@ -1939,13 +2056,26 @@ $$
 
 ## A.6 有限多个基图如何给同一个阈值
 
+本节$T$表示一个基图普通同构类，选其中任一代表来构造随机吹胀；同构下期望相同已在第二部分第11节证明。若模型为$\mathcal M\in\{\mathcal T,\mathcal R\}$，固定所比较的一种计数，定义
+
+$$
+f_T(m)=
+\begin{cases}
+\mathbb EC_{\mathcal M}(T,m)/\nu_{dm},&\text{圈},\\
+\mathbb EH_{\mathcal M}(T,m)/\mu_{dm},&\text{路径},
+\end{cases}
+\qquad f_*(m)=f_{\mathrm{Car}_d}(m).
+$$
+
+记$\ell_T=\lim_{m\to\infty}f_T(m)$及$\ell_*=\lim_{m\to\infty}f_*(m)$；在$\mathcal R$模型中这两个极限都只沿奇$m$。
+
 固定一个模型和一种计数，其圆环极限为$\ell_*>0$，其他普通同构类的极限为$\ell_T<\ell_*$。由于$d\ge3$，传递基图非正则而圆环正则，因此非圆环同构类集合非空。有限性及同构不变性见第二部分第11节；各非圆环类的极限严格较小，因此有限个正差值有正的最小值：
 
 $$
 \delta=\min_{T\not\cong\mathrm{Car}_d}(\ell_*-\ell_T)>0.
 $$
 
-非正则类的极限是0；正则非圆环类由严格谱间隙处理。对每个类取$M_T$，使$m\ge M_T$时归一化计数$f_T(m)$满足
+非正则类的极限是0；正则非圆环类由严格谱间隙处理。对每个类取$M_T$，使$m\ge M_T$时归一化期望$f_T(m)$满足
 
 $$
 |f_T(m)-\ell_T|<\delta/3.

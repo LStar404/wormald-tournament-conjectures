@@ -1,0 +1,363 @@
+{
+  "review_status": "completed",
+  "version": "0.2.3",
+  "review_type": "AI-assisted definitions, omitted cases and calculation self-review; independent mathematical review pending",
+  "change_groups": [
+    {
+      "id": "global-operations-and-derivative-conventions",
+      "targets": [
+        "zh",
+        "en"
+      ]
+    },
+    {
+      "id": "local-parameter-domains",
+      "targets": [
+        "zh",
+        "en"
+      ]
+    },
+    {
+      "id": "left-stationary-vector-and-block-dimensions",
+      "targets": [
+        "zh",
+        "en"
+      ]
+    },
+    {
+      "id": "inverse-derivatives-not-implicit",
+      "targets": [
+        "zh",
+        "en"
+      ]
+    },
+    {
+      "id": "coefficients-in-affine-determinant",
+      "targets": [
+        "zh",
+        "en"
+      ]
+    },
+    {
+      "id": "hyperbolic-and-reciprocal-functions",
+      "targets": [
+        "zh",
+        "en"
+      ]
+    },
+    {
+      "id": "limit-constant-defined-at-first-use",
+      "targets": [
+        "zh",
+        "en"
+      ]
+    },
+    {
+      "id": "product-length-is-positive-integer",
+      "targets": [
+        "zh",
+        "en"
+      ]
+    },
+    {
+      "id": "sign-vector-defined",
+      "targets": [
+        "zh",
+        "en"
+      ]
+    },
+    {
+      "id": "score-vector-defined",
+      "targets": [
+        "zh",
+        "en"
+      ]
+    },
+    {
+      "id": "rounding-error-interval-derived",
+      "targets": [
+        "zh",
+        "en"
+      ]
+    },
+    {
+      "id": "fill-recurrence-at-every-stage",
+      "targets": [
+        "zh",
+        "en"
+      ]
+    },
+    {
+      "id": "sample-cycle-versus-permanent",
+      "targets": [
+        "zh",
+        "en"
+      ]
+    },
+    {
+      "id": "augmented-objects-and-bounds",
+      "targets": [
+        "zh",
+        "en"
+      ]
+    },
+    {
+      "id": "four-by-four-scalars-do-not-overwrite-order",
+      "targets": [
+        "zh",
+        "en"
+      ]
+    },
+    {
+      "id": "switched-matrix-defined",
+      "targets": [
+        "zh",
+        "en"
+      ]
+    },
+    {
+      "id": "determinant-polynomial-final-multiplication",
+      "targets": [
+        "zh",
+        "en"
+      ]
+    },
+    {
+      "id": "explicit-comparison-permutations",
+      "targets": [
+        "zh",
+        "en"
+      ]
+    },
+    {
+      "id": "trace-log-neighborhood",
+      "targets": [
+        "zh",
+        "en"
+      ]
+    },
+    {
+      "id": "threshold-expectation-functions-defined",
+      "targets": [
+        "zh",
+        "en"
+      ]
+    },
+    {
+      "id": "transitive-matrix-diagonals",
+      "targets": [
+        "zh",
+        "en"
+      ]
+    },
+    {
+      "id": "explicit-polynomial-exponential-limit",
+      "targets": [
+        "zh",
+        "en"
+      ]
+    },
+    {
+      "id": "guide-basic-notation",
+      "targets": [
+        "guide"
+      ]
+    },
+    {
+      "id": "guide-affine-coefficients",
+      "targets": [
+        "guide"
+      ]
+    },
+    {
+      "id": "guide-inverse-on-zero-sum-space",
+      "targets": [
+        "guide"
+      ]
+    },
+    {
+      "id": "guide-both-surviving-terms",
+      "targets": [
+        "guide"
+      ]
+    },
+    {
+      "id": "guide-origin-in-chain-rule-for-K",
+      "targets": [
+        "guide"
+      ]
+    },
+    {
+      "id": "guide-reciprocal-functions",
+      "targets": [
+        "guide"
+      ]
+    },
+    {
+      "id": "guide-noncarousel-wording",
+      "targets": [
+        "guide"
+      ]
+    },
+    {
+      "id": "guide-weighted-cycle-definition",
+      "targets": [
+        "guide"
+      ]
+    },
+    {
+      "id": "guide-row-rounding-expanded",
+      "targets": [
+        "guide"
+      ]
+    },
+    {
+      "id": "guide-stirling-and-augmented-bounds-expanded",
+      "targets": [
+        "guide"
+      ]
+    },
+    {
+      "id": "guide-missing-fourth-moment-appendix",
+      "targets": [
+        "guide"
+      ]
+    },
+    {
+      "id": "guide-determinant-final-multiplication",
+      "targets": [
+        "guide"
+      ]
+    },
+    {
+      "id": "guide-finite-thresholds-defined",
+      "targets": [
+        "guide"
+      ]
+    },
+    {
+      "id": "guide-explicit-main-paper-crossreferences",
+      "targets": [
+        "guide"
+      ]
+    },
+    {
+      "id": "guide-operator-norm-and-row-notation",
+      "targets": [
+        "guide"
+      ]
+    },
+    {
+      "id": "guide-two-dimensional-form-derived",
+      "targets": [
+        "guide"
+      ]
+    },
+    {
+      "id": "guide-taylor-remainders-not-just-a-name",
+      "targets": [
+        "guide"
+      ]
+    },
+    {
+      "id": "guide-gradient-and-matrix-domains",
+      "targets": [
+        "guide"
+      ]
+    }
+  ],
+  "topic_locations": [
+    {
+      "location": "术语与记号约定",
+      "issue": "未显式给出或容易混用的符号",
+      "correction": "补偏导下标、删末坐标的撇号、向量长度、迹、对角矩阵、上取整、指示函数、伴随矩阵及误差记号。"
+    },
+    {
+      "location": "第一部分第3—5节",
+      "issue": "维数、左常数向量和系数",
+      "correction": "给每个分块矩阵维数；算出u^TP；由DR=I列逆矩阵一、二阶导数；显式定义K0、K1。"
+    },
+    {
+      "location": "第一部分第10—11节",
+      "issue": "函数与极限常数",
+      "correction": "在首次使用前定义双曲函数、sec、sech及L。"
+    },
+    {
+      "location": "第二部分第3—5节",
+      "issue": "乘积与变换对象",
+      "correction": "限定p为正整数；给反序矩阵、交替对角及排列矩阵逐列定义；明确符号向量e。"
+    },
+    {
+      "location": "第二部分第7—9节",
+      "issue": "向量、舍入与极限",
+      "correction": "定义s向量；写出每一步补齐递推及舍入误差区间；逐样本圈/永久式关系；用积分控制logN/N。"
+    },
+    {
+      "location": "第二部分第10节",
+      "issue": "增广随机对象与辅助矩阵",
+      "correction": "定义G_aug、C_aug、W_aug、A_aug、V_aug；分别列独立模型的期望界与正则模型的逐样本界。"
+    },
+    {
+      "location": "附录A.1",
+      "issue": "行列式收尾乘法",
+      "correction": "补传递矩阵的零对角约定，将括号乘回后两项分别化简。"
+    },
+    {
+      "location": "附录A.3",
+      "issue": "局部变量和切换矩阵",
+      "correction": "将四阶演算中的局部标量d改为g，避免和图阶数混用；显式定义S'=D_e S D_e。"
+    },
+    {
+      "location": "附录A.3",
+      "issue": "迹对数展开的范围",
+      "correction": "指定原点附近的收敛区间、对数分支、含重数特征值及有限和交换。"
+    },
+    {
+      "location": "中文讲解第5、8节",
+      "issue": "系数与限制逆矩阵",
+      "correction": "定义K0、K1；写出限制逆嵌入的每个等式与第二个保留乘积；对K的链式法则标出原点求值。"
+    },
+    {
+      "location": "中文讲解B.2",
+      "issue": "不能预设二维分块知识",
+      "correction": "从C^TC=-C^2出发，以单位球面最大值和一元求导构造正交二维平面，再证明正交补不变。"
+    },
+    {
+      "location": "中文讲解B.4",
+      "issue": "Taylor余项",
+      "correction": "列出三阶导数与积分余项界，解释为何为六阶误差。"
+    },
+    {
+      "location": "中文讲解A.3",
+      "issue": "缺失的附录",
+      "correction": "补完整四阶行列式、迹关系及四次矩等号推演，消除指向不存在附录的引用。"
+    },
+    {
+      "location": "中文讲解A.4—A.5",
+      "issue": "文字替代计算与未定常数",
+      "correction": "用逐坐标补齐、两坐标质量移动、终止计数、Stirling上下界和全部增点归一化算式替换简写；给明确常数。"
+    },
+    {
+      "location": "中文讲解A.6及全篇引用",
+      "issue": "阈值与跨文件位置",
+      "correction": "定义f_T、同构类及其期望；说明有限非空集合；把主文节号明确标为主文引用。"
+    }
+  ],
+  "paper_alignment": {
+    "mathematical_spans_each": 973,
+    "prose_blocks_each": 349,
+    "headings_each": 41
+  },
+  "mathematical_programs_rerun": 4,
+  "pdf_pages": {
+    "proof": 35,
+    "proof-en": 38,
+    "guide": 28
+  },
+  "source_bytes_sha256": {
+    "elementary-guide.zh.md": "e0ecbd1d8f648c9ba321ffd6b2fef929aa3869e10273a696ed3f9860bd82b4b4",
+    "paper.en.md": "436153e8e2128b1f0fe436d3a3ebe4a8d121d7c273288cceae5b034300caa751",
+    "paper.zh.md": "b3d0c4cdd881c77d4d94a43eed192d754dbaa9ec71a7d7a04e1c627fb7f6e680"
+  },
+  "main_conclusions_or_coefficients_changed": false
+}

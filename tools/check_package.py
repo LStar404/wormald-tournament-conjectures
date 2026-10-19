@@ -5,6 +5,18 @@ import hashlib,json,re
 
 ROOT=Path(__file__).resolve().parents[1]
 manifest=json.loads((ROOT/"MANIFEST.json").read_text(encoding="utf-8"))
+alignment=json.loads((ROOT/"verification/qa/translation_alignment.json").read_text(encoding="utf-8"))
+assert alignment["result"]=="passed"
+for lang in ("zh","en"):
+    normalized=(ROOT/f"docs/paper.{lang}.md").read_text(encoding="utf-8").encode("utf-8")
+    assert hashlib.sha256(normalized).hexdigest()==alignment["sha256"][lang],("Stale translation review",lang)
+definition_review=ROOT/"verification/qa/definitions_calculation_review.json"
+if definition_review.exists():
+    current=json.loads(definition_review.read_text(encoding="utf-8"))
+    assert current["version"]==manifest["version"],"Stale definition/calculation review version"
+    assert current["review_status"]=="completed"
+    for name,expected in current["source_bytes_sha256"].items():
+        assert hashlib.sha256((ROOT/"docs"/name).read_bytes()).hexdigest()==expected,("Stale definition/calculation review",name)
 for row in manifest["files"]:
     path=ROOT/row["path"]
     data=path.read_bytes()

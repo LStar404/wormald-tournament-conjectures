@@ -9,7 +9,9 @@ zm=re.findall(pattern,zh,re.S)
 em=re.findall(pattern,en,re.S)
 labels={"全部二维块":"all two-dimensional blocks",
         r"\rm 奇":r"\rm odd",
-        "等号当且仅当 ":"with equality if and only if "}
+        "等号当且仅当 ":"with equality if and only if ",
+        r"\mathcal R\text{ 的每个样本}":r"\text{each sample of }\mathcal R",
+        r"\text{圈}":r"\text{cycles}",r"\text{路径}":r"\text{paths}"}
 converted=[]
 for value in zm:
     for a,b in labels.items():

@@ -17,6 +17,20 @@ $$
 
 在独立内部块模型$\mathcal T$中，每一块的每一条边独立公平定向；在正则内部块模型$\mathcal R$中，每块在全部有标号正则竞赛图中均匀选取，各块之间独立，块内各条边不要求独立，块阶数必须为奇数。
 
+下文$H(G)$表示图$G$的Hamilton路径数；$\mathbb EX$表示随机量$X$的平均值，$\mathbb P(\mathcal E)$表示事件$\mathcal E$的概率。有限模型中的条件期望$\mathbb E[X\mid G]$先固定$G$，只对尚未固定的随机边取平均，再对$G$平均可恢复$\mathbb EX$。
+
+写$[d]=\{1,\ldots,d\}$，$y'=(y_1,\ldots,y_{d-1})$和$t'=(t_1,\ldots,t_{d-1})$表示删去最后一个坐标；这里的撇号不是求导。函数下标$F_j,F_{jk}$表示对第$j$个变量求一次偏导、对第$j,k$个变量求两次偏导。写出$K_{y_j}$时则明确按$y_j$求导。矩阵的导数逐元计算。$\operatorname{diag}(a_1,\ldots,a_r)$是所列元素组成的对角矩阵。
+
+实向量的长度为$\|v\|_2=(\sum_jv_j^2)^{1/2}$；$\|M\|_F=(\sum_{j,k}M_{jk}^2)^{1/2}$是矩阵所有元素平方和的平方根；$\operatorname{tr}M=\sum_jM_{jj}$是矩阵的迹。$u^\perp$为满足$u^Tv=0$的向量$v$组成的空间。$M\succ0$表示$M$实对称且$v^TMv>0$对每个非零实$v$成立。$s_{ij}$也表示$S$的第$i,j$元。
+
+符号$\lceil r\rceil$把实数向上取到最近整数，$\lfloor r\rfloor$把它向下取到最近整数；$\#U=|U|$表示集合元素数。有限求和的空和为0、空乘积为1，$0!=1$；$n!=1\cdot2\cdots n$，$\binom nk=n!/(k!(n-k)!)$，$k>n$时为0。置换就是顶点集合到自身的双射，$\mathfrak S_N$为所有这样的置换。
+
+另有$\|M\|_{\rm op}=\sup_{v\ne0}\|Mv\|_2/\|v\|_2$，表示矩阵把向量长度放大的最大比例。行记号$W_{\ell,\cdot}=(W_{\ell1},\ldots,W_{\ell L})$表示第$\ell$行；$\sup$表示上确界，即所有这些比例的最小上界。
+
+误差记号$R(x)=O(x^k)$的意思是：当$x$足够接近0时，存在一个与$x$无关的常数$M$，使$|R(x)|\le M|x|^k$。因此若$R_1=O(x^a)$、$R_2=O(x^b)$，则$|R_1R_2|\le M_1M_2|x|^{a+b}$，即$R_1R_2=O(x^{a+b})$；加法与除以非零$x$也按此不等式计算。$O(d^{-k})$指$d$趋于无穷，$O_d$允许常数依赖固定的$d$。
+
+一阶导数列向量记为$\nabla f=(\partial f/\partial x_1,\ldots,\partial f/\partial x_r)^T$。除非模型已作具体指定，$W$表示任意$N$阶非负矩阵，即$W_{ij}\ge0$。分块式中的$a$为标量、$b$为$1\times(d-1)$行、$c$为$(d-1)\times1$列、$D$为$(d-1)$阶矩阵；这些局部块记号随$t$变化。对数变量$t_j$允许取原点附近的复数，角变量$\theta_j$为原点附近的实数。
+
 ## 1. 必须先分清两个大小
 
 先取一个$d$顶点的基图。把每个基图顶点替换成$m$个顶点，得到
@@ -119,6 +133,13 @@ $$
 
 $$
 K(y)=K_0(y')+y_dK_1(y').
+$$
+
+这里$y'=(y_1,\ldots,y_{d-1})$，两个系数具体为
+
+$$
+K_0(y')=K(y',0),\qquad
+K_1(y')=K(y',1)-K(y',0).
 $$
 
 只要$K_1$不为零，
@@ -288,11 +309,19 @@ c_k(0)=V^T(-Pe_ke_k^T)u
 =-\frac1{\sqrt d}V^TCe_k.
 $$
 
-令$U=(I-C)^{-1}$。$C$保持零和空间，故
+令$U=(I-C)^{-1}$。$C$保持零和空间，故$(I-C)V=VD(0)$。把这条等式左乘$U$再右乘$R(0)$：
 
 $$
-VR(0)V^TC=UC.
+V=UVD(0),\qquad VR(0)=UV.
 $$
+
+由于$VV^T=\Pi$及$\Pi C=C$，接着有
+
+$$
+UC=U\Pi C=UVV^TC=VR(0)V^TC.
+$$
+
+这样，限制空间上的逆与完整空间中的逆之间的连接也已逐项列出。
 
 于是
 
@@ -302,7 +331,15 @@ b_j(0)R(0)c_k(0)
 =\frac1d(UC)_{jk}.
 $$
 
-再交换$j,k$，得到
+第二个保留下来的乘积也明确写为
+
+$$
+b_k(0)R(0)c_j(0)
+=\frac1d e_k^TVR(0)V^TCe_j
+=\frac1d(UC)_{kj}.
+$$
+
+把这两项从$a_{jk}$中减去，得到
 
 $$
 \psi_j(0)=-1/d,
@@ -371,8 +408,9 @@ $$
 另一方面，$y_j=ze^{t_j}$给
 
 $$
-\partial_{t_j}K=zK_{y_j},
-\qquad K_{y_j}=-\frac{q}{dz}=-\frac q2\ne0.
+\partial_{t_j}K(ze^{t_1},\ldots,ze^{t_d})\big|_{t=0}
+=zK_{y_j}(z\mathbf1),
+\qquad K_{y_j}(z\mathbf1)=-\frac{q}{dz}=-\frac q2\ne0.
 $$
 
 因此第5节的有理函数$h=-K_0/K_1$确实在关键点附近有定义。
@@ -632,7 +670,7 @@ $$
 \tanh y=\frac{\sinh y}{\cosh y}.
 $$
 
-后面的$\operatorname{artanh}x=\tfrac12\log((1+x)/(1-x))$在$|x|<1$时为实数；$\arctan$是反正切函数。这些定义足以配合基本求导公式阅读B.4的展开。
+后面的$\operatorname{artanh}x=\tfrac12\log((1+x)/(1-x))$在$|x|<1$时为实数；$\arctan$是反正切函数。另外，$\sec y=1/\cos y$（余弦非零时）、$\operatorname{sech}y=1/\cosh y$。这些定义足以配合基本求导公式阅读B.4的展开。
 
 对圆环基图，
 
@@ -721,7 +759,7 @@ $$
 \rho_d(S)\le\rho_d(\mathrm{Car}_d),
 $$
 
-且正则图中只有普通同构于圆环的图取等号。非参考正则图还有严格的常数间隙；非正则图的归一化期望趋于0。
+且正则图中只有普通同构于圆环的图取等号。不普通同构于圆环的正则图还有严格的常数间隙；非正则图的归一化期望趋于0。
 
 固定$d$时只有有限多个基图，所以可以对它们各自“块足够大”的阈值取最大值。这样就得到：对充分大的$m$，随机块模型的圈期望和路径期望都由圆环基图唯一最大。
 
@@ -768,11 +806,48 @@ $$
 =\sum_{\pi\in\mathfrak S_N}\prod_{i=1}^N W_{i,\pi(i)}.
 $$
 
-Hamilton圈只占其中一部分置换，所有项非负，所以$C(W)\le\operatorname{per}W$。永久式还包含二圈；随机竞赛图不允许同一对顶点的两个方向同时存在，所以不能把$\mathbb E\operatorname{per}A$错误地等同于$\operatorname{per}(\mathbb EA)$。
+记$\mathcal C_N\subseteq\mathfrak S_N$为恰有一个长度$N$循环的置换。加权圈数具体为
+
+$$
+C(W)=\sum_{\pi\in\mathcal C_N}\prod_{i=1}^N W_{i,\pi(i)}.
+$$
+
+该置换表示已识别循环起点，不再额外除以$N$。Hamilton圈只占其中一部分置换，所有项非负，所以$C(W)\le\operatorname{per}W$。永久式还包含二圈；随机竞赛图不允许同一对顶点的两个方向同时存在，所以不能把$\mathbb E\operatorname{per}A$错误地等同于$\operatorname{per}(\mathbb EA)$。
 
 ## B.2 不靠猜测得到Hessian中的谱隙
 
-实反对称矩阵可在正交基中分成若干个二维块
+这里先证明为什么存在所用的二维分块，避免把它留作读者额外掌握的结论。设$C^T=-C$，则$B=C^TC=-C^2$为实对称矩阵，对实向量$x$有$x^TBx=\|Cx\|_2^2\ge0$。
+
+若$C\ne0$，存在某个标准基向量$e_j$满足$\|Ce_j\|_2^2>0$。在单位球面上使连续函数$x^TBx$达到最大，取最大点$v$并记$\mu=v^TBv$。单位球面在有限维空间中闭且有界，所以最大点存在，并有$\mu\ge\|Ce_j\|_2^2>0$。
+
+对任意$x\perp v$，曲线$(v+tx)/\|v+tx\|_2$仍在单位球面上；最大点处的一元导数必须为0。因此
+
+$$
+0=\left.\frac{d}{dt}
+\frac{(v+tx)^TB(v+tx)}{1+t^2\|x\|_2^2}\right|_{t=0}
+=2x^TBv.
+$$
+
+这表示$Bv$没有垂直于$v$的分量，故$Bv=\mu v$。令$\lambda=\sqrt\mu>0$、$w=-Cv/\lambda$。逐项计算：
+
+$$
+v^Tw=-v^TCv/\lambda=0,\qquad
+w^Tw=\frac{v^TC^TCv}{\lambda^2}=\frac{\mu}{\lambda^2}=1,
+$$
+
+$$
+Cv=-\lambda w,\qquad
+Cw=-C^2v/\lambda=Bv/\lambda=\lambda v.
+$$
+
+所以$v,w$为正交单位向量，且这两个向量张成的平面在$C$作用下不变。在有序基$(v,w)$上，$Cv$的坐标为$(0,-\lambda)^T$、$Cw$的坐标为$(\lambda,0)^T$，故矩阵恰为下面的$J_\lambda$。若$x$垂直于$v,w$，则
+
+$$
+v^TCx=-(Cv)^Tx=\lambda w^Tx=0,\qquad
+w^TCx=-(Cw)^Tx=-\lambda v^Tx=0.
+$$
+
+因而剩余正交补空间也不变。对这个更小的空间重复上述步骤，每次去掉两个维数；若剩余矩阵为0便停止，有限步后得到若干二维块与零块。这证明实反对称矩阵可在正交基中分成若干个二维块
 
 $$
 J_\lambda=\begin{pmatrix}0&\lambda\\-\lambda&0\end{pmatrix}
@@ -908,8 +983,33 @@ $$
 p(x)=-\frac{x^5}{3}+O(x^9).
 $$
 
-令$b=\tanh1$、$h=\tan1$、$\delta_\beta=\beta-1$、
-$\delta_\alpha=\alpha-1$。普通二阶Taylor公式给
+令$b=\tanh1$、$h=\tan1$、$\delta_\beta=\beta-1$、$\delta_\alpha=\alpha-1$。设$F(y)=\log\cosh y$、$G(y)=-\log\cos y$，先求三次导数：
+
+$$
+F'(y)=\tanh y,\quad F''(y)=1-\tanh^2y,\quad
+F'''(y)=-2\tanh y\,\operatorname{sech}^2y,
+$$
+
+$$
+G'(y)=\tan y,\quad G''(y)=1+\tan^2y,\quad
+G'''(y)=2\tan y\,\sec^2y.
+$$
+
+对本题$0<x\le1/3$，$\alpha$位于$[0,1]$，而$\beta$是实数。故$|F'''|\le2$，在$\alpha$与1之间有$|G'''|\le2\tan1\,\sec^21$。积分余项的绝对值分别满足
+
+$$
+|R_F|\le\frac{2}{2}\int_0^{|\delta_\beta|}
+(|\delta_\beta|-t)^2dt
+=\frac{|\delta_\beta|^3}{3},
+$$
+
+$$
+|R_G|\le\frac{2\tan1\,\sec^21}{2}
+\int_0^{|\delta_\alpha|}(|\delta_\alpha|-t)^2dt
+=\frac{\tan1\,\sec^21}{3}|\delta_\alpha|^3.
+$$
+
+由此前幂级数，两个$\delta$均为$O(x^2)$，所以上述余项均为$O(x^6)$。在点1处代入已列的一、二阶导数，得到
 
 $$
 \log\cosh(1+\delta_\beta)-\log\cosh1
@@ -969,9 +1069,9 @@ $$
 
 ## A.1 传递符号矩阵的行列式多项式
 
-令$T_n$上三角为1、下三角为$-1$，记$F_n(t)=\det(I+tT_n)$。下面直接用行变换证明第一部分第9节的闭式，不把偶阶主子式的值作为未说明的输入。
+令$T_n$上三角为1、下三角为$-1$、对角为0，记$F_n(t)=\det(I+tT_n)$。下面直接用行变换证明主文第一部分第9节的闭式，不把偶阶主子式的值作为未说明的输入。
 
-当$n=1$时，$F_1(t)=1=((1+t)+(1-t))/2$。以下$n\ge2$。对前$n-1$行同时作$R_i\leftarrow R_i-R_{i+1}$。该行变换由一个对角为1的上三角矩阵实施，行列式不变。所得矩阵的前$n-1$行只有
+当$n=1$时，$F_1(t)=1=((1+t)+(1-t))/2$，闭式成立。以下$n\ge2$。对前$n-1$行同时作$R_i\leftarrow R_i-R_{i+1}$。该行变换由一个对角为1的上三角矩阵实施，行列式不变。所得矩阵的前$n-1$行只有
 
 $$
 M_{ii}=1+t,\qquad M_{i,i+1}=t-1
@@ -1019,14 +1119,29 @@ $$
 \end{aligned}
 $$
 
-所以
+把括号乘回$(1+t)^{n-1}$，并代入$r=(1-t)/(1+t)$：
 
 $$
-F_n(t)=\frac{(1+t)^n+(1-t)^n}{2}.
+\begin{aligned}
+F_n(t)
+&=\frac{(1+t)^n}{2}
++\frac{(1+t)^{n-1}(1-t)}2
+\left(\frac{1-t}{1+t}\right)^{n-1}\\
+&=\frac{(1+t)^n}{2}+\frac{(1-t)^n}{2}.
+\end{aligned}
 $$
 
 两端都是多项式，已在除两个点以外的所有$t$相等，故在$t=-1,0$也相等。代入$t=1/d$与$t=i/d$，得到圆环模型的行列式比值。
 
+为补明主文第一部分第9节关于每个主子式的陈述，取非空$U$，记$k=|U|$。按原顶点升序排列后，$T_d[U]$就是$T_k$。行列式多项式$F_k(t)=\det(I+tT_k)$的最高次系数为$\det T_k$；记$[t^k]$为提取这一系数的符号，因此
+
+$$
+\det T_d[U]=\det T_k=[t^k]F_k(t)
+=\frac{1+(-1)^k}{2}
+=\begin{cases}1,&k\ \text{even},\\0,&k\ \text{odd}.\end{cases}
+$$
+
+空集的主子式由约定等于1。这就从已证闭式推出了每一个主子式的取值。
 
 ## A.2 交替切换与圆环的普通同构
 
@@ -1060,7 +1175,7 @@ $$
 
 该差在$\{q+1,\ldots,2q\}$，方向相反；切换矩阵此时为$-1$。反对称性处理$i>j$，对角均为0，所以这是逐条边的普通同构。
 
-第二部分还用到传递矩阵的幂有相同对角元。令$Ze_j=e_{j+1}$（$j<d$）、$Ze_d=-e_1$。当$i,j<d$时，
+主文第二部分还用到传递矩阵的幂有相同对角元。令$Ze_j=e_{j+1}$（$j<d$）、$Ze_d=-e_1$。当$i,j<d$时，
 
 $$
 (Z^TT_dZ)_{ij}=(T_d)_{i+1,j+1}=(T_d)_{ij}.
@@ -1087,106 +1202,399 @@ $$
 取对角元便得到相邻对角相等，绕回时的两个负号抵消。
 
 
-## A.4 逐行整数化为什么合法
+## A.3 四阶主子式与四次矩等号
 
-第二部分第8节先补齐行和，再逐行使永久式不减。补齐是可行的：若一行当前和为$r$，目标为$R=\lceil r\rceil\le L$，则该行剩余容量为
-
-$$
-\sum_{j=1}^L(1-w_j)=L-r\ge R-r.
-$$
-
-保持其他行不动，永久式对当前行是
+本节$S$可为任意$d$阶竞赛符号矩阵，反对称且非对角元为$\pm1$；不要求正则。它帮助解释第16节所说的矩比较等号分类。令$a,b,c,g,e,f$为六个局部实标量，其中$g$不是图或矩阵阶数，设
 
 $$
-\operatorname{per}W=\sum_{j=1}^L w_jc_j,\qquad c_j\ge0.
+M=\begin{pmatrix}
+0&a&b&c\\
+-a&0&g&e\\
+-b&-g&0&f\\
+-c&-e&-f&0
+\end{pmatrix}.
 $$
 
-若一行有至少两个严格介于0和1的元素$w_a,w_b$，在保持$w_a+w_b$不变时，向系数较大的坐标移动质量，直到至少一元变为0或1；线性目标不减，非整数元素数下降。重复后至多剩一个非整数元素；但总和$R$为整数，最后一个也必须为整数。所以每一行都能替换成0、1行，且永久式不减。按行完成此过程即可使用Brégman界。
-
-
-## A.5 路径增点后全部对数项的计算
-
-先固定一个$N$顶点竞赛图，并加一个新顶点$v$，与旧顶点的边独立公平定向。每条旧Hamilton路径$x_1\to\cdots\to x_N$对应唯一的候选圈
+记$M_{1j}$为删去第1行、第$j$列后的三阶行列式（不含代数余子式符号）。沿第一行展开，分别计算：
 
 $$
-v\to x_1\to\cdots\to x_N\to v.
+\begin{aligned}
+M_{12}
+&=\det\begin{pmatrix}-a&g&e\\-b&0&f\\-c&-f&0\end{pmatrix}\\
+&=(-a)(0-f(-f))-g((-b)0-f(-c))+e((-b)(-f)-0(-c))\\
+&=-af^2-cgf+bef,\\
+M_{13}
+&=\det\begin{pmatrix}-a&0&e\\-b&-g&f\\-c&-e&0\end{pmatrix}\\
+&=(-a)((-g)0-f(-e))-0+e((-b)(-e)-(-g)(-c))\\
+&=-aef+be^2-cge,\\
+M_{14}
+&=\det\begin{pmatrix}-a&0&g\\-b&-g&0\\-c&-e&-f\end{pmatrix}\\
+&=(-a)((-g)(-f)-0(-e))-0+g((-b)(-e)-(-g)(-c))\\
+&=-agf+bge-cg^2.
+\end{aligned}
 $$
 
-需要的两条新边相互独立，概率为$1/4$。删除$v$又把每个增广Hamilton圈唯一还原成旧路径，因此
+将每个三阶行列式按其第一行再展开，三项分别来自第一行的三个元素；上式中第一行的0贡献为0。再乘四阶展开的系数：
 
 $$
-\mathbb E[C_{\rm aug}\mid G]=H(G)/4.
+\begin{aligned}
+\det M
+&=-aM_{12}+bM_{13}-cM_{14}\\
+&=(a^2f^2+acgf-abef)
++(-abef+b^2e^2-bcge)
++(acgf-bcge+c^2g^2)\\
+&=a^2f^2+b^2e^2+c^2g^2-2abef+2acgf-2bcge\\
+&=(af-be+cg)^2.
+\end{aligned}
 $$
 
-再对$G$平均，并用
+六个变量均为$\pm1$时，$af-be+cg$是三个$\pm1$之和，其值为$\pm1$或$\pm3$，故行列式为1或9。设$D_4(S)$为四顶点主子式等于9的个数。由行列式的列多线性展开，在每列选择单位列或$tS$的列，得到
 
 $$
-4\nu_{N+1}=\frac{4N!}{2^{N+1}}
-=\frac{N!}{2^{N-1}}=\mu_N,
+\det(I+tS)=\sum_{U\subseteq[d]}t^{|U|}\det S[U].
 $$
 
-便有完全相同的归一化期望：
+奇阶反对称矩阵$B$满足$\det B=\det B^T=\det(-B)=-\det B$，所以其行列式为0。二阶主子式均为1，四阶中有$D_4$个9，其余为1。因此
 
 $$
-\frac{\mathbb EH(G)}{\mu_N}
+\det(I+tS)=1+e_2t^2+e_4t^4+O(t^6),
+$$
+
+$$
+e_2=\binom d2,\qquad
+e_4=(\binom d4-D_4)+9D_4=\binom d4+8D_4.
+$$
+
+下列展开只在$t=0$附近使用。取$|t|\,\|S\|_{\rm op}<1/2$，则每个特征值$\mu$都满足$|t\mu|<1/2$，并用在1处为0的对数级数定义$\log(1+t\mu)$。有限个特征值求和与幂级数交换合法，且
+
+$$
+\det(I+tS)=\prod_\mu(1+t\mu),\qquad
+\operatorname{tr}S^k=\sum_\mu\mu^k.
+$$
+
+这里特征值按重数计入；实反对称标准形保证可在复数域对角化，零特征值也包括在内。
+
+每个特征值的对数级数给
+
+$$
+\log\det(I+tS)
+=\sum_{k\ge1}\frac{(-1)^{k+1}t^k}{k}\operatorname{tr}S^k
+=-\frac{t^2}{2}\operatorname{tr}S^2
+-\frac{t^4}{4}\operatorname{tr}S^4+O(t^6).
+$$
+
+奇次迹为0，因为$\operatorname{tr}S^{2j+1}=\operatorname{tr}(S^{2j+1})^T=-\operatorname{tr}S^{2j+1}$。另一方面，将$z=e_2t^2+e_4t^4+O(t^6)$代入$\log(1+z)=z-z^2/2+O(z^3)$，其中$z^2=e_2^2t^4+O(t^6)$、$z^3=O(t^6)$，得到
+
+$$
+\log\det(I+tS)=e_2t^2+(e_4-e_2^2/2)t^4+O(t^6).
+$$
+
+四次系数相等，逐步移项：
+
+$$
+-\operatorname{tr}S^4/4=e_4-e_2^2/2,\qquad
+\operatorname{tr}S^4=2e_2^2-4e_4
+=2\binom d2^2-4\binom d4-32D_4(S).
+$$
+
+传递矩阵任取四个升序顶点都有$a=b=c=g=e=f=1$，其行列式为$(1-1+1)^2=1$，所以$D_4(T_d)=0$。相减给
+
+$$
+\operatorname{tr}T_d^4-\operatorname{tr}S^4=32D_4(S).
+$$
+
+若四次矩取等，则$D_4(S)=0$。取局部标量符号$\epsilon_1=1,\epsilon_j=s_{1j}$（$j>1$），定义$D_\epsilon=\operatorname{diag}(\epsilon_1,\ldots,\epsilon_d)$和$S'=D_\epsilon S D_\epsilon$；以下这一段把这些标量简记为$e_j=\epsilon_j$，把$D_\epsilon$简记为$D_e$。切换后$s'_{1j}=e_1s_{1j}e_j=s_{1j}^2=1$。任意主子式在切换下乘以$(\det D_e[U])^2=1$，故$D_4$不变。任取$i<j<k$且都不为1，
+
+$$
+\det S'[\{1,i,j,k\}]
+=(s'_{jk}-s'_{ik}+s'_{ij})^2.
+$$
+
+若这三点形成有向三圈，则$s'_{ij}=s'_{jk}=-s'_{ik}$，括号为$3s'_{ij}$，平方为9，矛盾。因此剩余顶点无有向三圈。如果$i\to j$、$j\to k$而$i\not\to k$，则$k\to i$，会形成三圈；所以方向关系是严格全序，可按该全序排列。第一顶点指向所有剩余点，整个切换图于是为传递图。反过来带符号置换相似保持迹，故四次矩取等。$d=3$时切换后剩下两点，按其唯一边方向排列即可。
+
+
+## A.4 逐行补齐与整数化的全部计算
+
+本节的$W$在独立内部块模型中是邻接矩阵的逐元期望：对角为0，同块异点之间为$1/2$，不同块之间为基图所定的0或1。记基图出度为$d_i$、$b_i=d_i+1/2$。本节应用于$m\ge2$；$\mathcal R$还要求奇$m$，故实际从$m\ge3$开始。这足以处理块阶数趋于无穷的结论。第$i$类的每一行在$W$中的和为
+
+$$
+r_i=md_i+\frac{m-1}{2}=mb_i-\frac12,\qquad
+R_i=\lceil r_i\rceil.
+$$
+
+先讨论任意$L$元行$w$，其中$0\le w_j\le1$，当前行和记为$r=\sum_{j=1}^Lw_j$，目标整数行和$R$满足$r\le R\le L$。需要补入$s_0=R-r$，可用容量为$\sum_j(1-w_j)=L-r\ge s_0$。从$j=1$开始依次取
+
+$$
+\delta_j=\min(1-w_j,s_{j-1}),\qquad
+s_j=s_{j-1}-\delta_j,\qquad w'_j=w_j+\delta_j.
+$$
+
+递推的每一步满足
+
+$$
+s_j=\max(0,s_{j-1}-(1-w_j))
+=\max\left(0,s_0-\sum_{h=1}^j(1-w_h)\right).
+$$
+
+第一等式由减去两数的最小值得到；第二等式从$j=1$开始逐步代入。
+
+递推得到$s_L=\max(0,s_0-\sum_j(1-w_j))=0$，所以$0\le w'_j\le1$且$\sum_jw'_j=R$。永久式各系数非负，这种逐元增加不使其减少。
+
+固定其他行，将永久式写作$\sum_jw_jc_j$，其中$c_j$是删去当前行和第$j$列后的永久式，故$c_j\ge0$。若两个元素$w_a,w_b$严格介于0与1，重标这两个坐标使$c_a\ge c_b$，取
+
+$$
+\eta=\min(1-w_a,w_b)>0,\qquad
+w_a'=w_a+\eta,\qquad w_b'=w_b-\eta.
+$$
+
+行和保持不变，且
+
+$$
+\sum_jw_j'c_j-\sum_jw_jc_j=\eta(c_a-c_b)\ge0.
+$$
+
+至少一个坐标变成0或1，非整数坐标数减少。至多$L-1$次后至多剩一个非整数坐标；若其余坐标均为整数且总和$R$为整数，最后一个坐标也是整数。对各行执行此过程，得到0、1矩阵$V$，每个第$i$类行有$R_i$个1，而且$\operatorname{per}W\le\operatorname{per}V$。
+
+这里的$V$是用于上界的辅助矩阵；所需条件是各元为0或1及指定行和，允许其对角为1。下面所引定理适用于这种一般0、1矩阵。
+
+现在引用[Brégman不等式（Alon论文Lemma 2.1）](https://www.tau.ac.il/~nogaa/PDFS/hamilton.pdf)：0、1矩阵的行和为$q_1,\ldots,q_L>0$时，
+
+$$
+\operatorname{per}V\le\prod_{\ell=1}^L(q_\ell!)^{1/q_\ell}.
+$$
+
+由于$r_i\ge(m-1)/2>0$，整数上界$R_i$至少为1，满足所引用Brégman界的正行和假设。本题每类恰有$m$行，因此
+
+$$
+\operatorname{per}W\le\prod_{i=1}^d(R_i!)^{m/R_i}.
+$$
+
+使用的是原0、1定理；加权情形的适用性已由上面的具体行操作证明。
+
+上面已列出逐坐标补齐量$\delta_j$、剩余量$s_j$、两坐标移动量$\eta$及永久式改变量。这里记录终止性所需的两个整数。
+
+$$
+q(w)=\#\{j:0<w_j<1\},\qquad
+q(W)=\sum_{\ell=1}^L q(W_{\ell,\cdot}).
+$$
+
+每次两坐标移动不改变整数行和，使至少一个非整数坐标变成整数，且不改变其他整数坐标，所以$q(w)$至少减少1。最初$q(w)\le L$，不可能无限下降。若停止时$q(w)=1$，唯一非整数坐标为
+
+$$
+w_a=R-\sum_{j\ne a}w_j\in\mathbb Z,
+$$
+
+与其非整数性矛盾。因此停止时$q(w)=0$。逐行处理不会修改其他行；每行最多$L-1$次两坐标移动后已经整数化，总移动次数至多$L(L-1)$。每次永久式改变量均为上面算出的$\eta(c_a-c_b)\ge0$。
+
+## A.5 圈与路径的归一化逐项计算
+
+令$d_i$为基图第$i$个顶点的出度，$b_i=d_i+1/2$，$a_i=2b_i/d$，$\kappa=(\prod_{i=1}^d a_i)^{1/d}$，$N=dm$。A.4得到整数行和$R_i=\lceil mb_i-1/2\rceil$及对应的永久式上界。本节先把这个圈上界的余项常数写明，再计算增点路径上界；不再用尚未指定的常数或多项式代替计算。
+
+如果待估计的永久式等于0，被它控制的非负圈计数也等于0，所需上界已经成立，不对0取对数。本节以下的全部永久式对数计算只在相应永久式为正时进行；正的上界最后也覆盖零值情形。以下$m\ge2$，$N=dm$。写$R_i=mb_i+\varepsilon_i$，则$|\varepsilon_i|\le1/2$，并有
+
+$$
+R_i\ge m/2-1/2\ge m/4,\qquad R_i\le N.
+$$
+
+舍入误差来自目标定义，而不是额外假设：
+
+$$
+0\le R_i-r_i<1,\qquad
+\varepsilon_i=R_i-mb_i=(R_i-r_i)-\frac12
+\in[-1/2,1/2).
+$$
+
+使用整数$R\ge1$的带余项Stirling界
+
+$$
+\log(R!)=R\log R-R+\frac12\log(2\pi R)
++\frac{\theta_R}{12R},\qquad 0<\theta_R<1.
+$$
+
+因此
+
+$$
+\begin{aligned}
+m\sum_{i=1}^d\frac{\log(R_i!)}{R_i}
+&\le m\sum_i\log R_i-N
++m\sum_i\frac{\log(2\pi R_i)}{2R_i}
++m\sum_i\frac1{12R_i^2}\\
+&\le m\sum_i\log R_i-N
++2d\log(2\pi N)+\frac{4d}{3m}.
+\end{aligned}
+$$
+
+最后两项分别使用$m/(2R_i)\le2$和$m/(12R_i^2)\le4/(3m)$。Stirling下界也给
+
+$$
+\log(N!/2^N)\ge N\log(N/2)-N.
+$$
+
+相减后，
+
+$$
+\log\frac{\operatorname{per}W}{N!/2^N}
+\le m\sum_i\log\frac{2R_i}{N}
++2d\log(2\pi N)+\frac{4d}{3m}.
+$$
+
+令$y_i=\varepsilon_i/(mb_i)$。由于$b_i\ge1/2$，$|y_i|\le1/m\le1/2$，且
+
+$$
+\frac{2R_i}{N}=a_i(1+y_i),\qquad
+|\log(1+y_i)|
+=\left|\int_0^{y_i}\frac{dt}{1+t}\right|
+\le\frac{|y_i|}{1-|y_i|}\le\frac2m.
+$$
+
+所以
+
+$$
+m\sum_i\log\frac{2R_i}{N}
+\le m\sum_i\log a_i+2d=N\log\kappa+2d.
+$$
+
+再使用$4d/(3m)\le2d/3$以及$N!/2^N=N\nu_N$，得到明确上界
+
+$$
+\frac{\mathbb EC_{\mathcal T}}{\nu_N}
+\le e^{8d/3}(2\pi)^{2d}N^{2d+1}\kappa^N.
+$$
+
+若内部是正则块，每个样本的实际旧行和就是$mb_i-1/2$，为正整数。若该样本为$G$、邻接矩阵为$A_G$，则每个圈是永久式和中的一个非负单循环项，故$C(G)\le\operatorname{per}A_G$。直接对$A_G$应用Brégman及上面逐项估计，再对所有样本取平均，得到
+
+$$
+\frac{\mathbb EC_{\mathcal R}}{\nu_N}
+\le e^{8d/3}(2\pi)^{2d}N^{2d+1}\kappa^N.
+$$
+
+正则模型仅取合法奇$m$。非正则基图有$\kappa<1$；将右端取对数并除以$N$，
+
+$$
+\frac{\log(e^{8d/3}(2\pi)^{2d}N^{2d+1}\kappa^N)}{N}
+=\log\kappa+
+\frac{8d/3+2d\log(2\pi)+(2d+1)\log N}{N}
+\longrightarrow\log\kappa<0,
+$$
+
+为写清最后一步，对$N\ge1$有
+
+$$
+0\le\frac{\log N}{N}
+=\frac1N\int_1^N\frac{dt}{t}
+\le\frac1N\int_1^N\frac{dt}{\sqrt t}
+=\frac{2(\sqrt N-1)}N\longrightarrow0.
+$$
+
+记上界为$B_N$，取$c=-\tfrac12\log\kappa>0$。由$\log B_N/N\to\log\kappa=-2c$，存在阈值使其后$\log B_N/N<-c$，于是$0\le B_N<e^{-cN}\to0$。路径界的多项式次数虽然不同，但同样可将其对数除以$N$，按上面的积分界逐项令常数项及$\log(N+1)/N$趋于0。
+
+故两个归一化圈期望都趋于0。
+
+固定旧竞赛图$G$，加入新顶点$v$，与旧顶点的边独立公平定向。每条路径$x_1\to\cdots\to x_N$对应唯一候选圈$v\to x_1\to\cdots\to x_N\to v$，两条新增边的联合概率为$(1/2)^2=1/4$。删除$v$是逆操作。因此
+
+$$
+\mathbb E[C_{\rm aug}\mid G]=H(G)/4,\qquad
+4\nu_{N+1}=\frac{4N!}{2^{N+1}}=\frac{N!}{2^{N-1}}=\mu_N,
+$$
+
+$$
+\frac{\mathbb EH}{\mu_N}
 =\frac{\mathbb EC_{\rm aug}}{\nu_{N+1}}.
 $$
 
-写$b_i=d_i+1/2$，$a_i=2b_i/d$。旧行整数上界统一写作$R_i'=mb_i+O(1)$。独立内部模型的新行整数上界为$R_0=\lceil N/2\rceil$；正则内部块的逐样本证明可把新行补至$R_0=N$。两种情况下$R_0$都与$N$同阶。
+这里$G_{\rm aug}$为加入$v$后的随机竞赛图，$C_{\rm aug}:=C(G_{\rm aug})$；条件期望先固定$G$，只对新增边平均。对独立内部块模型令$W_{\rm aug}$为增广邻接矩阵的逐元期望；对正则内部块模型，固定一个实际增广样本并记其邻接矩阵为$A_{\rm aug}$。将A.4的行补齐与整数化操作分别作用于这两种输入，所得$(N+1)$阶0、1辅助矩阵统一记为$V_{\rm aug}$。它不是随机竞赛图的邻接矩阵。
 
-若增广永久式为0，受其控制的圈计数也为0，上界已经成立；后续只对正的永久式取对数。Brégman与Stirling给
+$$
+\mathbb EC_{{\rm aug},\mathcal T}
+=C(W_{\rm aug})\le\operatorname{per}W_{\rm aug}
+\le\operatorname{per}V_{\rm aug},
+$$
+
+$$
+C(G_{\rm aug})\le\operatorname{per}A_{\rm aug}
+\le\operatorname{per}V_{\rm aug}
+\qquad(\mathcal R\text{ 的每个样本}).
+$$
+
+第一个等号只对独立内部块模型使用。第二行对每个样本逐个成立，不要求正则块内部边独立。
+
+对于$\mathcal T$的增广期望矩阵，旧行和为$mb_i$；对于$\mathcal R$的每个实际增广样本，旧行和不超过$mb_i+1/2$。统一选择
+
+$$
+R_i'=\lceil mb_i+1/2\rceil=mb_i+\varepsilon_i',
+\qquad \frac12\le\varepsilon_i'<\frac32.
+$$
+
+新行补到$R_0=N$。因为$b_i\le d-1/2$且$m\ge2$，$mb_i+1/2\le N-1/2$，所以$R_i'\le N$；同时$R_i'\ge m/2$。这些补齐目标都不超过增广矩阵的列数$N+1$，A.4的行操作适用。Brégman给出
+
+$$
+\log\operatorname{per}V_{\rm aug}
+\le m\sum_i\frac{\log(R_i'!)}{R_i'}
++\frac{\log(N!)}N.
+$$
+
+沿用$R_i'\ge m/4$、$R_i'\le N+1$计算旧行余项，并单列新行，
 
 $$
 \begin{aligned}
 \log\operatorname{per}V_{\rm aug}
-&\le m\sum_{i=1}^d\frac{\log(R_i'!)}{R_i'}
-+\frac{\log(R_0!)}{R_0}\\
-&=m\sum_{i=1}^d\log R_i'-N+\log R_0-1
-+O_d(\log N).
+&\le m\sum_i\log R_i'-N+\log N-1\\
+&\quad+2d\log(2\pi(N+1))+\frac{4d}{3m}
++\frac{\log(2\pi N)}{2N}+\frac1{12N^2}\\
+&\le m\sum_i\log R_i'-N+\log N-1\\
+&\quad+(2d+1)\log(2\pi(N+1))+\frac{4d}{3m}+\frac1{12}.
 \end{aligned}
 $$
 
-减去$\log((N+1)!/2^{N+1})$，得到
+减去$\log((N+1)!/2^{N+1})\ge(N+1)\log((N+1)/2)-(N+1)$。主项逐项重组为
 
 $$
 \begin{aligned}
-\log\frac{\operatorname{per}V_{\rm aug}}
-{(N+1)!/2^{N+1}}
-&\le m\sum_i\log\frac{2R_i'}N
-+N\log\frac N{N+1}\\
-&\quad+\log\frac{2R_0}{N+1}+O_d(\log N).
+&m\sum_i\log R_i'+\log N-(N+1)\log((N+1)/2)\\
+&=m\sum_i\log(2R_i'/N)
++N\log(N/(N+1))+\log(2N/(N+1)).
 \end{aligned}
 $$
 
-逐项估计：
+第二项不大于0，第三项不大于$\log2$。而$\log(1+y)\le y$对于$y\ge0$由积分$\int_0^y(1+t)^{-1}dt\le y$得出，故
 
 $$
-\frac{2R_i'}N=a_i+O_d(m^{-1}),
+\begin{aligned}
+m\sum_i\log(2R_i'/N)
+&=N\log\kappa+
+m\sum_i\log(1+\varepsilon_i'/(mb_i))\\
+&\le N\log\kappa+\sum_i\frac{\varepsilon_i'}{b_i}
+\le N\log\kappa+3d.
+\end{aligned}
+$$
+
+于是，使用$4d/(3m)\le2d/3$，
+
+$$
+\begin{aligned}
+\log\frac{\operatorname{per}V_{\rm aug}}{(N+1)!/2^{N+1}}
+&\le N\log\kappa+\frac{11d}{3}+\frac1{12}+\log2\\
+&\quad +(2d+1)\log(2\pi(N+1)).
+\end{aligned}
+$$
+
+取指数，再将$(N+1)!/2^{N+1}=(N+1)\nu_{N+1}$代入，两个模型分别满足
+
+$$
+\frac{\mathbb EH_{\mathcal T}}{\mu_N}
+\le 2e^{11d/3+1/12}(2\pi)^{2d+1}(N+1)^{2d+2}\kappa^N,
 $$
 
 $$
-m\sum_i\log\frac{2R_i'}N
-=m\sum_i\log a_i+O_d(1)=N\log\kappa+O_d(1),
+\frac{\mathbb EH_{\mathcal R}}{\mu_N}
+\le 2e^{11d/3+1/12}(2\pi)^{2d+1}(N+1)^{2d+2}\kappa^N.
 $$
 
-$$
-N\log\frac N{N+1}=-1+O(N^{-1}),\qquad
-\log\frac{2R_0}{N+1}=O(1).
-$$
-
-因此主项仍为$N\log\kappa$。从$(N+1)!/2^{N+1}$换成$\nu_{N+1}$只多一个$N+1$因子，计入多项式即可：
-
-$$
-\frac{\mathbb EH}{\mu_N}
-\le C_d(N+1)^{c_d}\kappa^N.
-$$
-
-这补全了“只改变多项式因子”的每个归一化步骤。
-
+第二个界逐样本约束增广圈数，然后取期望；没有假定正则块内部的边独立。固定非正则基图时，右端对数除以$N$趋于$\log\kappa<0$，所以两者趋于0。若采用三角分解正则内部模型，在定义成立的阶数上每个旧顶点内部出度仍是$(m-1)/2$，旧行和仍是$mb_i-1/2$，增点后上界仍是$mb_i+1/2$；上述两个行和界逐样本成立，因此也得到所列$\mathcal R$上界。
 
 ## A.6 有限多个基图如何给同一个阈值
 
-固定一个模型和一种计数，其圆环极限为$\ell_*>0$，其他普通同构类的极限为$\ell_T<\ell_*$。因为基图有限，
+固定一个模型和一种计数，$T$表示一个基图普通同构类。令$f_T(m)$为该类随机吹胀模型的归一化期望，圈除以$\nu_N$、路径除以$\mu_N$；其极限记$\ell_T$。圆环对应$f_*(m)$和$\ell_*>0$，其余类满足$\ell_T<\ell_*$。有标号基图仅有$2^{\binom d2}$个，所以普通同构类也有限。圆环正则而传递基图不正则，故非圆环类集合非空。普通同构$\pi$给出样本双射$(i,a)\mapsto(\pi(i),a)$，保持各样本概率及圈、路径数，因此同类中归一化期望相同。于是
 
 $$
 \delta=\min_{T\not\cong\mathrm{Car}_d}(\ell_*-\ell_T)>0.
@@ -1211,7 +1619,7 @@ $$
 
 ## A.7 单调性中三角不等式的微积分证明
 
-第一部分使用$\tan y\ge y+y^3/3$（$0\le y<\pi/2$）。令$f(y)=\tan y-y$，则
+主文第一部分使用$\tan y\ge y+y^3/3$（$0\le y<\pi/2$）。令$f(y)=\tan y-y$，则
 
 $$
 f'(y)=\tan^2y\ge0,\qquad f(0)=0,

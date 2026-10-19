@@ -1,16 +1,19 @@
 {
   "result": "passed",
-  "mathematical_spans_each": 837,
-  "prose_blocks_each": 324,
+  "mathematical_spans_each": 973,
+  "prose_blocks_each": 349,
   "headings_each": 41,
   "translated_mathematical_labels": {
     "全部二维块": "all two-dimensional blocks",
     "\\rm 奇": "\\rm odd",
-    "等号当且仅当 ": "with equality if and only if "
+    "等号当且仅当 ": "with equality if and only if ",
+    "\\mathcal R\\text{ 的每个样本}": "\\text{each sample of }\\mathcal R",
+    "\\text{圈}": "\\text{cycles}",
+    "\\text{路径}": "\\text{paths}"
   },
   "sha256": {
-    "zh": "2ea8a5cbe3d7cb948eeb966f54f842f12c8e062aee624c907af2a189f05f39f3",
-    "en": "652c867de1b7402228abd78f905dd41388b1360b14c62eb79dcbfe2d7947dc97"
+    "zh": "12dd1126171278a732de4ee74352eaec874ab95b079bbbe423622cec52d7908a",
+    "en": "ef7d23329c749e7cde0d2deaacdcc78a0c98719359a462adca5b19d65a112004"
   },
   "scope": "Formula sequence and structural alignment; not independent mathematical or linguistic certification."
 }

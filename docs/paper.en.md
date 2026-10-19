@@ -2,7 +2,7 @@
 
 Xingchen Liu
 
-19 October 2026. Public research manuscript, version 0.2.2.
+19 October 2026. Public research manuscript, version 0.2.3.
 
 # Abstract
 
@@ -58,6 +58,16 @@ $$
 Write $[d]=\{1,\ldots,d\}$. The principal submatrix $M[U]$ uses the rows and columns in $U$, with convention $\det M[\varnothing]=1$. The space $u^\perp$ is orthogonal to the real vector $u$. The notation $\det_{u^\perp}$ means the determinant of the restriction to this invariant subspace, computed in an orthonormal basis.
 
 On a graph, $C(G),H(G)$ count cycles and paths. In contrast, the standalone $C=S/d$ is a matrix, bold $\mathbf H$ is the Hessian matrix, and $\mathcal H$ is its determinant. Local symbols in different sections are interpreted according to the definitions given in those sections.
+
+We also fix the conventions for operations and differentiation. For a real vector $v=(v_1,\ldots,v_r)^T$, its Euclidean norm is $\|v\|_2=(\sum_{j=1}^r v_j^2)^{1/2}$; an unsubscripted vector norm $\|s\|$ has this meaning too. Write $\operatorname{tr}M=\sum_jM_{jj}$. The matrix $\operatorname{diag}(a_1,\ldots,a_r)$ has the listed scalars on the diagonal and zero elsewhere. The notation $M\succ0$ means that $M$ is real symmetric and, for every nonzero real vector $v$, we have $v^TMv>0$. Lowercase letters may denote entries, for example $s_{ij}=S_{ij}$.
+
+For a scalar function $F(t_1,\ldots,t_d)$, subscripts $F_j,F_{jk}$ denote $\partial F/\partial t_j$ and $\partial^2F/(\partial t_j\partial t_k)$; matrix, row and column derivatives are taken entry by entry. When differentiating in the original variables $y$, we write $K_{y_j}$. The matrix $\nabla^2F$ consists of the entries $F_{jk}$. A prime on a function of one variable denotes differentiation in its argument. The notations $y'=(y_1,\ldots,y_{d-1})$ and $t'=(t_1,\ldots,t_{d-1})$ delete the last coordinate; those primes do not denote derivatives. A vertex of type $j$ belongs to the block replacing base vertex $j$, which contains $m$ vertices.
+
+Write $\lfloor a\rfloor$ for the largest integer at most $a$ and $\lceil a\rceil$ for the smallest integer at least $a$. For a finite set, $\#U=|U|$ is its cardinality. The scalar indicator $\mathbf1_{\mathcal E}$ is 1 when condition $\mathcal E$ holds and 0 otherwise; it differs from the all-one vector $\mathbf1$ without a condition subscript. Set $0!=1$ and $n!=1\cdot2\cdots n$; also $\binom nk=n!/(k!(n-k)!)$, with value 0 for $k>n$.
+
+In the expansions here, $R(x)=O(x^k)$ means that constants $M,\eta>0$ exist such that, whenever $0<|x|<\eta$, we have $|R(x)|\le M|x|^k$. The notation $O(d^{-k})$ concerns $d\to\infty$, with other parameters fixed. A subscript in $O_d$ permits dependence on the fixed parameter $d$. Finite sums or uniformly convergent power series control the remainders below; a numerical fit is not a proof of this definition.
+
+For a square matrix $D$, the adjugate $\operatorname{adj}D$ is the transpose of the cofactor matrix: $(\operatorname{adj}D)_{ij}=(-1)^{i+j}\det D^{(j|i)}$, where $D^{(j|i)}$ deletes row $j$ and column $i$. Determinant expansion gives $D\operatorname{adj}D=(\det D)I$. When $\det D\ne0$, division by this determinant gives the inverse formula used below.
 
 # Part I: The exact Hessian and the model constants
 
@@ -205,7 +215,7 @@ $$
 
 ## 3. Logarithmic variables, block matrices and Schur elimination
 
-Set $y_j=ze^{t_j}$. Then
+In this part $1\le j,k\le d$ until Section 6 eliminates the last coordinate and restricts them to $1\le j,k\le d-1$. Take $t=(t_1,\ldots,t_d)\in\mathbb C^d$ near the origin and write $y=(y_1,\ldots,y_d)$. The angular variables are $\theta=(\theta_1,\ldots,\theta_{d-1})\in\mathbb R^{d-1}$. Set $y_j=ze^{t_j}$. Then
 
 $$
 \mathscr B(t)=B(ze^{t_1},\ldots,ze^{t_d})
@@ -229,6 +239,12 @@ $$
 $$
 a=u^T\mathscr Bu,\quad b=u^T\mathscr BV,\quad
 c=V^T\mathscr Bu,\quad D=V^T\mathscr BV.
+$$
+
+Here $a$ is a scalar, $b$ is a row of size $1\times(d-1)$, $c$ is a column of size $(d-1)\times1$, and $D$ is square of order $(d-1)$. The derivatives below also use the left constant-vector relation, which follows from skew symmetry as
+
+$$
+u^TP=u^T(P_0+C)=u^Tuu^T+u^TC=u^T+0=u^T.
 $$
 
 Since $\det(O)^2=1$, this basis change preserves the determinant. At $t=0$,
@@ -277,6 +293,18 @@ $$
 \mathscr B_j=-PF_j,\qquad
 \mathscr B_{jk}=-\delta_{jk}PF_j.
 $$
+
+To make the inverse derivatives explicit, differentiate $DR=I$ once and then again:
+
+$$
+D_jR+DR_j=0,\qquad R_j=-RD_jR,
+$$
+
+$$
+R_{jk}=RD_kRD_jR-RD_{jk}R+RD_jRD_kR.
+$$
+
+These identities hold in the neighborhood where $\det D\ne0$. The symbols $R_j,R_{jk}$ in the nine terms below denote these derivatives.
 
 Using $u^TP=u^T$ and $e_j^Tu=1/\sqrt d$,
 
@@ -415,6 +443,15 @@ $$
 K(y)=K_0(y_1,\ldots,y_{d-1})
 +y_dK_1(y_1,\ldots,y_{d-1}).
 $$
+
+The two coefficients have the explicit definitions
+
+$$
+K_0(y')=K(y',0),\qquad
+K_1(y')=K(y',1)-K(y',0)=K_{y_d}(y',y_d).
+$$
+
+The last partial derivative does not depend on $y_d$, because the displayed expression is affine in $y_d$.
 
 The derivative calculation in Section 4 gives
 
@@ -720,6 +757,16 @@ $$
 
 ## 10. Real-function form and strict monotonicity
 
+The functions used here and in the Taylor calculation are defined by the following formulas; $\sec$ is used only where the cosine is nonzero.
+
+$$
+\cosh y=\frac{e^y+e^{-y}}2,\quad
+\sinh y=\frac{e^y-e^{-y}}2,\quad
+\tanh y=\frac{\sinh y}{\cosh y},\quad
+\operatorname{sech}y=\frac1{\cosh y},\quad
+\sec y=\frac1{\cos y}.
+$$
+
 Set $x=1/d$ and define on $0<x\le1/3$
 
 $$
@@ -856,7 +903,7 @@ $$
 \end{aligned}
 $$
 
-The inequality $d_1<d_2$ implies $1/d_1>1/d_2$, hence $\mathfrak r_{d_1}<\mathfrak r_{d_2}$. As $x\downarrow0$,
+The inequality $d_1<d_2$ implies $1/d_1>1/d_2$, hence $\mathfrak r_{d_1}<\mathfrak r_{d_2}$. Define $L:=\cosh1/\cos1$. As $x\downarrow0$,
 
 $$
 \alpha(x)\to1,\qquad \beta(x)\to1,\qquad p(x)\to0,
@@ -1067,7 +1114,7 @@ $$
 \end{cases}
 $$
 
-Here $x\in\mathbb R^d$ and $S_1,\ldots,S_p$ are real skew-symmetric matrices of order $d$ with off-diagonal entries in $\pm1$. The vector $x^*$ lists the absolute values of the coordinates of $x$ in decreasing order. For any product of these tournament sign matrices of the same order, the cited theorem gives
+Here $p$ is any positive integer, $x\in\mathbb R^d$, and $S_1,\ldots,S_p$ are real skew-symmetric matrices of order $d$ with off-diagonal entries in $\pm1$. The vector $x^*$ lists the absolute values of the coordinates of $x$ in decreasing order. For any product of these tournament sign matrices of the same order, the cited theorem gives
 
 $$
 (S_1\cdots S_p x)^*\prec_w K_d^p x^*.
@@ -1132,7 +1179,7 @@ Equality also forces $(S^pe_j)^*=K_d^pe_1$.
 
 ## 4. Every moment of the comparison matrix matches the transitive matrix
 
-Let $T_d$ have upper-triangular entries 1 and lower-triangular entries $-1$. Let $R_0$ be the reversal permutation matrix and $D_0=\operatorname{diag}(1,-1,\ldots)$. Substituting the definition of $K_d$ entry by entry gives
+Let $T_d$ have upper-triangular entries 1, lower-triangular entries $-1$ and diagonal entries 0. Let $R_0$ be the reversal permutation matrix and $D_0=\operatorname{diag}(1,-1,\ldots)$. Substituting the definition of $K_d$ entry by entry gives
 
 $$
 (D_0K_dR_0)_{ij}
@@ -1143,6 +1190,17 @@ $$
 (-1)^j,&i>j.
 \end{cases}
 $$
+
+More explicitly, $R_0e_j=e_{d+1-j}$ and $(D_0)_{jj}=(-1)^{j-1}$. Every entry of $K_d$ depends only on $i+j$, so $(K_d)_{ij}=(K_d)_{ji}$ and $K_d^T=K_d$.
+
+Write the sequence of increasing odd indices followed by decreasing even indices as
+
+$$
+(\ell_1,\ldots,\ell_d)=(1,3,\ldots,d,d-1,d-3,\ldots,2),
+\qquad \Lambda e_j=e_{\ell_j}.
+$$
+
+Each index occurs once. Hence $\Lambda^T\Lambda=\Lambda\Lambda^T=I$, and $\ell_1=1$.
 
 Order both rows and columns by increasing odd indices followed by decreasing even indices. For two odd indices, the earlier one satisfies $i<j$, giving $(-1)^{i-1}=1$. For two even indices, the earlier one satisfies $i>j$, giving $(-1)^j=1$. Every odd index precedes every even index: if their original indices satisfy $i<j$, the entry is $(-1)^{i-1}=1$; if $i>j$, it is $(-1)^j=1$. All upper-triangular entries in this order are therefore 1. Let $\Lambda$ perform this permutation. Then
 
@@ -1265,7 +1323,7 @@ $$
 \quad\text{with equality if and only if }S=Q^TT_dQ.
 $$
 
-The signed permutation matrix $Q$ here has exactly one entry $\pm1$ in each row and column and satisfies $Q^TQ=I$. This is a local symbol, different from the symmetric $Q$ in Part I. Write $Q=D_eP$, where $P$ is an ordinary permutation matrix and $D_e=\operatorname{diag}(e_1,\ldots,e_d)$; in this paragraph $e_i=\pm1$ are scalar signs. Then
+The signed permutation matrix $Q$ here has exactly one entry $\pm1$ in each row and column and satisfies $Q^TQ=I$. This is a local symbol, different from the symmetric $Q$ in Part I. Write $Q=D_eP$, where $P$ is an ordinary permutation matrix and $D_e=\operatorname{diag}(e_1,\ldots,e_d)$; in this paragraph $e_i=\pm1$ are scalar signs. Put $e=(e_1,\ldots,e_d)^T$; these scalars are not standard basis vectors. Then
 
 $$
 S=P^TD_eT_dD_eP,\qquad PSP^T=D_eT_dD_e.
@@ -1340,7 +1398,7 @@ a_i=\frac{2b_i}{d},\qquad
 s_i=2d_i-(d-1).
 $$
 
-Each edge contributes exactly one outdegree. Therefore
+Put $s=(s_1,\ldots,s_d)^T$, so that $\|s\|^2=\sum_{i=1}^d s_i^2$. Each edge contributes exactly one outdegree. Therefore
 
 $$
 \sum_i d_i=\binom d2,\qquad
@@ -1417,6 +1475,15 @@ $$
 s_j=s_{j-1}-\delta_j,\qquad w'_j=w_j+\delta_j.
 $$
 
+At each step the remaining mass satisfies
+
+$$
+s_j=\max(0,s_{j-1}-(1-w_j))
+=\max\left(0,s_0-\sum_{h=1}^j(1-w_h)\right).
+$$
+
+The first equality subtracts the smaller of two quantities; the second follows by substitution starting at $j=1$.
+
 The recursion gives $s_L=\max(0,s_0-\sum_j(1-w_j))=0$, so $0\le w'_j\le1$ and $\sum_jw'_j=R$. Every coefficient of the permanent is nonnegative, so these entrywise increases cannot decrease it.
 
 Fix the other rows and write the permanent as $\sum_jw_jc_j$, where $c_j$ is the permanent obtained by deleting the current row and column $j$; thus $c_j\ge0$. If entries $w_a,w_b$ both lie strictly between 0 and 1, label them so that $c_a\ge c_b$ and take
@@ -1456,6 +1523,14 @@ If the permanent being estimated is zero, the nonnegative cycle count it bounds 
 
 $$
 R_i\ge m/2-1/2\ge m/4,\qquad R_i\le N.
+$$
+
+The rounding error follows from the target definition:
+
+$$
+0\le R_i-r_i<1,\qquad
+\varepsilon_i=R_i-mb_i=(R_i-r_i)-\frac12
+\in[-1/2,1/2).
 $$
 
 Use the remainder form of Stirling's bound for integers $R\ge1$:
@@ -1515,7 +1590,7 @@ $$
 \le e^{8d/3}(2\pi)^{2d}N^{2d+1}\kappa^N.
 $$
 
-With regular internal blocks, the actual old row sum in each sample is the positive integer $mb_i-1/2$. Apply Brégman directly to that sample's adjacency matrix and use the preceding termwise estimates to obtain
+With regular internal blocks, the actual old row sum in each sample is the positive integer $mb_i-1/2$. For a sample $G$ with adjacency matrix $A_G$, each cycle is a nonnegative single-cycle term in the permanent, so $C(G)\le\operatorname{per}A_G$. Apply Brégman directly to $A_G$, use the preceding estimates, and average over the samples to obtain
 
 $$
 \frac{\mathbb EC_{\mathcal R}}{\nu_N}
@@ -1530,6 +1605,17 @@ $$
 \frac{8d/3+2d\log(2\pi)+(2d+1)\log N}{N}
 \longrightarrow\log\kappa<0,
 $$
+
+For completeness, for $N\ge1$,
+
+$$
+0\le\frac{\log N}{N}
+=\frac1N\int_1^N\frac{dt}{t}
+\le\frac1N\int_1^N\frac{dt}{\sqrt t}
+=\frac{2(\sqrt N-1)}N\longrightarrow0.
+$$
+
+Denote the upper bound by $B_N$ and set $c=-\tfrac12\log\kappa>0$. Since $\log B_N/N\to\log\kappa=-2c$, beyond a threshold we have $\log B_N/N<-c$, and therefore $0\le B_N<e^{-cN}\to0$. The polynomial degree in the path bound differs, but division of its logarithm by $N$ again makes the constant terms and $\log(N+1)/N$ vanish by the displayed integral estimate.
 
 Both normalized cycle expectations therefore tend to zero.
 
@@ -1546,6 +1632,22 @@ $$
 \frac{\mathbb EH}{\mu_N}
 =\frac{\mathbb EC_{\rm aug}}{\nu_{N+1}}.
 $$
+
+Here $G_{\rm aug}$ is the random tournament after adding $v$, and $C_{\rm aug}:=C(G_{\rm aug})$. Conditional expectation first fixes $G$ and averages over the added edges. For independent internal blocks let $W_{\rm aug}$ be the entrywise expected augmented adjacency matrix. For regular internal blocks fix an actual augmented sample and denote its adjacency matrix by $A_{\rm aug}$. Apply the row filling and integrality operations of Section 8 to either input. Denote the resulting zero-one auxiliary matrix of order $(N+1)$ by $V_{\rm aug}$; it need not be a tournament adjacency matrix.
+
+$$
+\mathbb EC_{{\rm aug},\mathcal T}
+=C(W_{\rm aug})\le\operatorname{per}W_{\rm aug}
+\le\operatorname{per}V_{\rm aug},
+$$
+
+$$
+C(G_{\rm aug})\le\operatorname{per}A_{\rm aug}
+\le\operatorname{per}V_{\rm aug}
+\qquad(\text{each sample of }\mathcal R).
+$$
+
+The first equality is used only for independent internal blocks. The second line holds separately for each sample and does not require independent edges inside a regular block.
 
 For the augmented expectation matrix of $\mathcal T$, the old row sum is $mb_i$. For each actual augmented sample of $\mathcal R$, the old row sum is at most $mb_i+1/2$. Use the common choice
 
@@ -1645,7 +1747,7 @@ These results identify our spectral ratio exactly with the original random-model
 
 ## A.1 The determinant polynomial of the transitive sign matrix
 
-Let $T_n$ have upper-triangular entries 1 and lower-triangular entries $-1$, and write $F_n(t)=\det(I+tT_n)$. We prove the closed form of Part I, Section 9 directly by row operations, without treating even principal determinants as an unexplained input.
+Let $T_n$ have upper-triangular entries 1, lower-triangular entries $-1$ and diagonal entries 0, and write $F_n(t)=\det(I+tT_n)$. We prove the closed form of Part I, Section 9 directly by row operations, without treating even principal determinants as an unexplained input.
 
 For $n=1$, $F_1(t)=1=((1+t)+(1-t))/2$, proving the formula in that case. Now assume $n\ge2$. For the first $n-1$ rows simultaneously perform $R_i\leftarrow R_i-R_{i+1}$. The operation is implemented by an upper-triangular matrix with diagonal 1, so the determinant is preserved. In the resulting matrix the only potentially nonzero entries in the first $n-1$ rows are
 
@@ -1695,10 +1797,16 @@ $$
 \end{aligned}
 $$
 
-Therefore
+Multiply the bracket by $(1+t)^{n-1}$ and substitute $r=(1-t)/(1+t)$:
 
 $$
-F_n(t)=\frac{(1+t)^n+(1-t)^n}{2}.
+\begin{aligned}
+F_n(t)
+&=\frac{(1+t)^n}{2}
++\frac{(1+t)^{n-1}(1-t)}2
+\left(\frac{1-t}{1+t}\right)^{n-1}\\
+&=\frac{(1+t)^n}{2}+\frac{(1-t)^n}{2}.
+\end{aligned}
 $$
 
 Both sides are polynomials and agree for every $t$ except two values. They therefore also agree at $t=-1,0$. Substitute $t=1/d$ and $t=i/d$ to obtain the determinant ratio for the carousel model.
@@ -1773,13 +1881,13 @@ Taking diagonal entries makes adjacent diagonal entries equal, with the two wrap
 
 ## A.3 Complete expansions for the fourth-order determinant and fourth-moment equality
 
-Let
+Let $a,b,c,g,e,f$ be six local real scalars, with $g$ distinct from the matrix order. Set
 
 $$
 M=\begin{pmatrix}
 0&a&b&c\\
--a&0&d&e\\
--b&-d&0&f\\
+-a&0&g&e\\
+-b&-g&0&f\\
 -c&-e&-f&0
 \end{pmatrix}.
 $$
@@ -1789,17 +1897,17 @@ Write $M_{1j}$ for the order-three determinant obtained by deleting row 1 and co
 $$
 \begin{aligned}
 M_{12}
-&=\det\begin{pmatrix}-a&d&e\\-b&0&f\\-c&-f&0\end{pmatrix}\\
-&=(-a)(0-f(-f))-d((-b)0-f(-c))+e((-b)(-f)-0(-c))\\
-&=-af^2-cdf+bef,\\
+&=\det\begin{pmatrix}-a&g&e\\-b&0&f\\-c&-f&0\end{pmatrix}\\
+&=(-a)(0-f(-f))-g((-b)0-f(-c))+e((-b)(-f)-0(-c))\\
+&=-af^2-cgf+bef,\\
 M_{13}
-&=\det\begin{pmatrix}-a&0&e\\-b&-d&f\\-c&-e&0\end{pmatrix}\\
-&=(-a)((-d)0-f(-e))-0+e((-b)(-e)-(-d)(-c))\\
-&=-aef+be^2-cde,\\
+&=\det\begin{pmatrix}-a&0&e\\-b&-g&f\\-c&-e&0\end{pmatrix}\\
+&=(-a)((-g)0-f(-e))-0+e((-b)(-e)-(-g)(-c))\\
+&=-aef+be^2-cge,\\
 M_{14}
-&=\det\begin{pmatrix}-a&0&d\\-b&-d&0\\-c&-e&-f\end{pmatrix}\\
-&=(-a)((-d)(-f)-0(-e))-0+d((-b)(-e)-(-d)(-c))\\
-&=-adf+bde-cd^2.
+&=\det\begin{pmatrix}-a&0&g\\-b&-g&0\\-c&-e&-f\end{pmatrix}\\
+&=(-a)((-g)(-f)-0(-e))-0+g((-b)(-e)-(-g)(-c))\\
+&=-agf+bge-cg^2.
 \end{aligned}
 $$
 
@@ -1809,15 +1917,15 @@ $$
 \begin{aligned}
 \det M
 &=-aM_{12}+bM_{13}-cM_{14}\\
-&=(a^2f^2+acdf-abef)
-+(-abef+b^2e^2-bcde)
-+(acdf-bcde+c^2d^2)\\
-&=a^2f^2+b^2e^2+c^2d^2-2abef+2acdf-2bcde\\
-&=(af-be+cd)^2.
+&=(a^2f^2+acgf-abef)
++(-abef+b^2e^2-bcge)
++(acgf-bcge+c^2g^2)\\
+&=a^2f^2+b^2e^2+c^2g^2-2abef+2acgf-2bcge\\
+&=(af-be+cg)^2.
 \end{aligned}
 $$
 
-When all six variables are $\pm1$, the expression $af-be+cd$ is a sum of three numbers in $\pm1$, taking values $\pm1$ or $\pm3$. Thus the determinant is 1 or 9. Let $D_4(S)$ count four-vertex principal determinants equal to 9. Expand by column multilinearity, choosing in each column either the identity column or the corresponding column of $tS$:
+When all six variables are $\pm1$, the expression $af-be+cg$ is a sum of three numbers in $\pm1$, taking values $\pm1$ or $\pm3$. Thus the determinant is 1 or 9. Let $D_4(S)$ count four-vertex principal determinants equal to 9. Expand by column multilinearity, choosing in each column either the identity column or the corresponding column of $tS$:
 
 $$
 \det(I+tS)=\sum_{U\subseteq[d]}t^{|U|}\det S[U].
@@ -1833,6 +1941,15 @@ $$
 e_2=\binom d2,\qquad
 e_4=(\binom d4-D_4)+9D_4=\binom d4+8D_4.
 $$
+
+Use the following expansion only near $t=0$. Choose $|t|\,\|S\|_{\rm op}<1/2$. Every eigenvalue $\mu$ then satisfies $|t\mu|<1/2$. Define $\log(1+t\mu)$ by the logarithmic series with value 0 at 1. Interchanging the power series with a finite eigenvalue sum is valid, and
+
+$$
+\det(I+tS)=\prod_\mu(1+t\mu),\qquad
+\operatorname{tr}S^k=\sum_\mu\mu^k.
+$$
+
+Eigenvalues are counted with multiplicity. The real skew-symmetric canonical form gives diagonalizability over the complex numbers; zero eigenvalues are included.
 
 The logarithmic series for each eigenvalue gives
 
@@ -1857,13 +1974,13 @@ $$
 =2\binom d2^2-4\binom d4-32D_4(S).
 $$
 
-In the transitive matrix, any four vertices in increasing order have $a=b=c=d=e=f=1$, giving determinant $(1-1+1)^2=1$. Thus $D_4(T_d)=0$. Subtracting yields
+In the transitive matrix, any four vertices in increasing order have $a=b=c=g=e=f=1$, giving determinant $(1-1+1)^2=1$. Thus $D_4(T_d)=0$. Subtracting yields
 
 $$
 \operatorname{tr}T_d^4-\operatorname{tr}S^4=32D_4(S).
 $$
 
-If the fourth moments agree, $D_4(S)=0$. Choose diagonal signs $e_1=1,e_j=s_{1j}$ for $j>1$. After switching, $s'_{1j}=e_1s_{1j}e_j=s_{1j}^2=1$. Each principal determinant is multiplied by $(\det D_e[U])^2=1$, so $D_4$ is unchanged. Choose any $i<j<k$ all different from 1:
+If the fourth moments agree, $D_4(S)=0$. Choose local scalar signs $\epsilon_1=1,\epsilon_j=s_{1j}$ for $j>1$, and define $D_\epsilon=\operatorname{diag}(\epsilon_1,\ldots,\epsilon_d)$ and $S'=D_\epsilon S D_\epsilon$. In this paragraph abbreviate these scalars by $e_j=\epsilon_j$ and $D_\epsilon$ by $D_e$. After switching, $s'_{1j}=e_1s_{1j}e_j=s_{1j}^2=1$. Each principal determinant is multiplied by $(\det D_e[U])^2=1$, so $D_4$ is unchanged. Choose any $i<j<k$ all different from 1:
 
 $$
 \det S'[\{1,i,j,k\}]
@@ -1930,13 +2047,26 @@ One factor comes from the change in order and the other from the added-vertex pr
 
 ## A.6 A common threshold for finitely many bases
 
+Here $T$ denotes an ordinary isomorphism class of base tournaments; choose any representative to form the random blow-up. Part II, Section 11 proved that the expectation is independent of that choice. For a model $\mathcal M\in\{\mathcal T,\mathcal R\}$ and a fixed choice of count, define
+
+$$
+f_T(m)=
+\begin{cases}
+\mathbb EC_{\mathcal M}(T,m)/\nu_{dm},&\text{cycles},\\
+\mathbb EH_{\mathcal M}(T,m)/\mu_{dm},&\text{paths},
+\end{cases}
+\qquad f_*(m)=f_{\mathrm{Car}_d}(m).
+$$
+
+Write $\ell_T=\lim_{m\to\infty}f_T(m)$ and $\ell_*=\lim_{m\to\infty}f_*(m)$. In model $\mathcal R$, both limits are restricted to odd $m$.
+
 Fix one model and one count. Let the carousel limit be $\ell_*>0$ and let every other ordinary isomorphism class have limit $\ell_T<\ell_*$. Since $d\ge3$, the transitive base is nonregular whereas the carousel is regular, so the set of noncarousel isomorphism classes is nonempty. Finiteness and isomorphism invariance here are supplied by Part II, Section 11. Each noncarousel limit is strictly smaller, so the finite set of positive differences has a positive minimum:
 
 $$
 \delta=\min_{T\not\cong\mathrm{Car}_d}(\ell_*-\ell_T)>0.
 $$
 
-Nonregular classes have limit zero; regular noncarousel classes are handled by the strict spectral gap. For each class choose $M_T$ so that whenever $m\ge M_T$ its normalized count $f_T(m)$ satisfies
+Nonregular classes have limit zero; regular noncarousel classes are handled by the strict spectral gap. For each class choose $M_T$ so that whenever $m\ge M_T$ its normalized expectation $f_T(m)$ satisfies
 
 $$
 |f_T(m)-\ell_T|<\delta/3.
