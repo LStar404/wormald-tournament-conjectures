@@ -2,7 +2,7 @@
 
 Xingchen Liu
 
-19 October 2026. Public research manuscript, version 0.2.0.
+19 October 2026. Public research manuscript, version 0.2.1.
 
 # Abstract
 
@@ -1399,7 +1399,7 @@ This uses the original zero–one theorem; the concrete row operations above pro
 
 ## 9. Normalization with explicit constants
 
-Assume $m\ge2$ and $N=dm$. Write $R_i=mb_i+\varepsilon_i$. Then $|\varepsilon_i|\le1/2$ and
+If the permanent being estimated is zero, the nonnegative cycle count it bounds is also zero, and the desired bound already holds; we do not take the logarithm of zero. All logarithmic permanent calculations below and in Section 10 are made only when the corresponding permanent is positive. The resulting positive upper bounds also cover the zero case. Assume $m\ge2$ and $N=dm$. Write $R_i=mb_i+\varepsilon_i$. Then $|\varepsilon_i|\le1/2$ and
 
 $$
 R_i\ge m/2-1/2\ge m/4,\qquad R_i\le N.

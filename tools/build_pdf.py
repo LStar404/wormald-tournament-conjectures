@@ -54,7 +54,7 @@ for key,name,title,short,subtitle in specs:
                 "contents":"Contents" if english else "目录",
                 "author":"Xingchen Liu" if english else "刘星辰",
                 "runningdate":"Research manuscript - 2026-10-19" if english else "公开研究稿 - 2026-10-19",
-                "date":"19 October 2026 - Version 0.2.0" if english else "2026年10月19日 - 版本0.2.0",
+                "date":"19 October 2026 - Version 0.2.1" if english else "2026年10月19日 - 版本0.2.1",
                 "subject":"Wormald conjectures 1, 2, 6: detailed derivations and review" if english else "Wormald猜想1、2、6：逐式推导与复核"}.items():
         cmd.extend(["-V",k+"="+v])
     subprocess.run(cmd,check=True)

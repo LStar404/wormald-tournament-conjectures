@@ -28,6 +28,10 @@ review=json.loads((ROOT/"verification/qa/pdf_review.json").read_text(encoding="u
 for key in ("proof","proof-en","guide"):
     assert review[key]["visual_review"]=="passed"
     assert review[key]["visually_reviewed_pages"]==list(range(1,review[key]["pages"]+1))
+    assert review[key]["rendered_pages"]==review[key]["pages"]
+    pdf_data=(ROOT/review[key]["pdf"]).read_bytes()
+    assert len(pdf_data)==review[key]["bytes"],("Stale PDF review size",key)
+    assert hashlib.sha256(pdf_data).hexdigest()==review[key]["sha256"],("Stale PDF review hash",key)
 print(json.dumps({"result":"passed","files":len(manifest["files"]),"local_links":links,
                   "pdf_pages":{key:review[key]["pages"] for key in ("proof","proof-en","guide")}}))
 
