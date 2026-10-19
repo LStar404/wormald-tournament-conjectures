@@ -16,11 +16,17 @@ for value in zm:
         value=value.replace(a,b)
     converted.append(value)
 assert converted==em,"Mathematical spans differ or occur in a different order"
+def block_types(text):
+    masked=re.sub(pattern,"@@M@@",text,flags=re.S)
+    blocks=re.split(r"\n\s*\n",masked.strip())
+    return ["math" if block=="@@M@@" else "prose" for block in blocks]
+assert block_types(zh)==block_types(en),"Prose/display block structure differs"
 assert len(re.findall(r"(?m)^#{1,2} ",zh))==len(re.findall(r"(?m)^#{1,2} ",en))
 assert not re.search(r"[\u4e00-\u9fff]|@@M|\[P\d{3}\]",en)
 assert not re.search(r"显然|同理",zh)
 assert not re.search(r"\b(obviously|clearly|similarly|analogously)\b",en,re.I)
 result={"result":"passed","mathematical_spans_each":len(zm),
+        "prose_blocks_each":block_types(zh).count("prose"),
         "headings_each":len(re.findall(r"(?m)^#{1,2} ",zh)),
         "translated_mathematical_labels":labels,
         "sha256":{k:hashlib.sha256(v.encode()).hexdigest() for k,v in {"zh":zh,"en":en}.items()},

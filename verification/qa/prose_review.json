@@ -1,0 +1,144 @@
+{
+  "review_status": "completed",
+  "version": "0.2.2",
+  "review_type": "AI-assisted prose and proof-transition self-review; independent mathematical review pending",
+  "change_groups": [
+    "01-definitions-before-use",
+    "02-hessian-evaluation-point",
+    "03-normalized-frequency",
+    "04-inverse-restriction-bridge",
+    "05-logarithm-nonvanishing-neighborhood",
+    "06-chain-rule-is-local",
+    "07-why-symmetric",
+    "08-expectation-shorthand",
+    "09-forward-references-in-closed-form",
+    "10-two-carousel-constants",
+    "11-complex-log-on-entire-interval",
+    "12-lower-bound-not-upper",
+    "13-spectral-ratio-versus-model-limit",
+    "14-frequencies-and-general-matrix-domain",
+    "15-equality-cross-reference",
+    "16-signed-similarity-is-not-isomorphism",
+    "17-weighted-cycle-definition",
+    "18-row-domain-before-bregman",
+    "19-current-row-sum-is-defined",
+    "20-finite-labelled-set-and-exact-isomorphism-invariance",
+    "21-isomorphism-invariance-proof",
+    "22-determinant-base-case",
+    "23-principal-minors-from-leading-coefficients",
+    "24-positive-minimum-is-over-a-nonempty-set",
+    "25-tutorial-self-contained-terminology",
+    "26-no-unpublished-context-required",
+    "27-real-taylor-versus-complex-angular-function",
+    "28-complex-hessian-not-a-real-minimum-claim",
+    "29-tutorial-g-defined-and-evaluation-restricted",
+    "30-tutorial-zero-eigenvalues",
+    "31-tutorial-rationality-bridge",
+    "32-tutorial-hyperbolic-functions-defined",
+    "33-tutorial-determinant-base-case",
+    "34-graph-argument-in-spectral-notation",
+    "35-positive-row-sums-for-bregman",
+    "36-tutorial-normalized-frequency-bound-reference",
+    "37-tutorial-transpose-explains-equal-determinants",
+    "38-tutorial-basis-change-reference",
+    "39-tutorial-probability-input-attributed",
+    "40-real-input-of-product-comparison",
+    "41-auxiliary-matrix-hypotheses",
+    "42-tutorial-q-positivity",
+    "43-consistent-log-branch-in-angular-identity",
+    "44-local-complex-log-defined-by-series",
+    "45-adjacency-entries-in-tutorial",
+    "46-tutorial-positivity-reference",
+    "47-tutorial-parameter-domain"
+  ],
+  "bilingual_paper_groups": 29,
+  "chinese_guide_groups": 18,
+  "topic_locations": [
+    {
+      "location": "术语与记号约定",
+      "topic": "论文新增前置约定",
+      "correction": "补竞赛图、计数方式、圆环、普通同构、标准基、范数、主子式及空集约定；区分图计数和矩阵记号。"
+    },
+    {
+      "location": "第一部分第1、5、6节",
+      "topic": "求值点及对数分支",
+      "correction": "Hessian明确在角变量原点求值；说明非零邻域以及原角函数和隐函数使用一致对数分支。"
+    },
+    {
+      "location": "第一部分第2、4、7节",
+      "topic": "线性代数连接",
+      "correction": "说明频率属于归一化矩阵；写出限制空间逆矩阵嵌入等式，并解释实对称性。"
+    },
+    {
+      "location": "第一部分第8节",
+      "topic": "期望记号与假设",
+      "correction": "写明正则基图、各模型的期望记号、块独立性及有标号均匀分布。"
+    },
+    {
+      "location": "第一部分第9节及附录A.1",
+      "topic": "前向引用及单个主子式",
+      "correction": "明确传递矩阵定义、闭式的证明位置；补一阶基例与最高次系数如何给每一个主子式。"
+    },
+    {
+      "location": "第一部分第10节",
+      "topic": "适用区间及方向词",
+      "correction": "复对数分支覆盖整个单调性区间；把误写的“上界区间”改成代入下界。"
+    },
+    {
+      "location": "第二部分第2、3、5节",
+      "topic": "对象范围与频率尺度",
+      "correction": "区分任意符号矩阵的代数比值与只对正则基图引用的模型极限；写全实向量输入及归一化尺度。"
+    },
+    {
+      "location": "第二部分第5节",
+      "topic": "等号节号及两种同构概念",
+      "correction": "平方和等号条件准确指向本部分第3节；展开带符号置换的分解、普通重编号及局部符号。"
+    },
+    {
+      "location": "第二部分第7、8节",
+      "topic": "加权对象与Brégman假设",
+      "correction": "定义加权圈数与永久式，说明不再除以起点数；定义当前行和，提前限定块阶并验证正行和及辅助矩阵条件。"
+    },
+    {
+      "location": "第二部分第11节及附录A.6",
+      "topic": "有限性与同构下期望相同",
+      "correction": "给出有标号基图数，写出块顶点双射和概率保持；说明最小严格间隙取自非空有限集合。"
+    },
+    {
+      "location": "中文讲解第1—4、14节前后",
+      "topic": "读者所需定义",
+      "correction": "补参数范围、矩阵元素、模型分布、双曲函数；去掉对其他未提供研究稿的依赖。"
+    },
+    {
+      "location": "中文讲解第4、9节",
+      "topic": "局部导数与实复区别",
+      "correction": "定义隐函数的对数变量；强调导数为−1只在原点成立，解释复角函数不能直接套实极小值直觉。"
+    },
+    {
+      "location": "中文讲解第7、8、10—12节",
+      "topic": "正性、有理性与引用",
+      "correction": "补q正性的二维块计算；纠正正性引用位置；补零特征值、转置关系和奇阶主子式消失的有理性推导。"
+    },
+    {
+      "location": "中文讲解第2、9、11节及附录",
+      "topic": "概率输入和阅读连接",
+      "correction": "明确外部计数定理的作用；用幂级数解释局部复对数；补基变换证明位置和一阶行列式基例。"
+    }
+  ],
+  "paper_alignment": {
+    "mathematical_spans_each": 837,
+    "prose_blocks_each": 324,
+    "headings_each": 41
+  },
+  "mathematical_programs_rerun": 4,
+  "pdf_pages": {
+    "proof": 33,
+    "proof-en": 35,
+    "guide": 21
+  },
+  "source_sha256": {
+    "elementary-guide.zh.md": "82a92207b2def269456282f4b05e567007f26bafbe539ddd9af0652facdff6ba",
+    "paper.en.md": "82fad3e0e1e9965b23c936b3d9bb623bef63bef1071dd07fdf491fd35c080c00",
+    "paper.zh.md": "c970fc93c4d7ce4ea7b1850b3a13d06c371622c2f905a9f85ba21999616910d7"
+  }
+}

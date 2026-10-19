@@ -14,18 +14,20 @@ N. C. Wormald's [*Tournaments with many Hamilton cycles*](https://arxiv.org/html
 The conjectures are Wormald's. This research draft is authored by **Xingchen Liu**.
 
 **Read the paper:** [English paper PDF](output/pdf/wormald-conjectures-proof.en.pdf)
-(34 pages) · [Chinese paper PDF](output/pdf/wormald-conjectures-proof.zh.pdf)
-(32 pages) · [Chinese elementary guide PDF](output/pdf/wormald-conjectures-guide.zh.pdf)
-(20 pages)  
+(35 pages) · [Chinese paper PDF](output/pdf/wormald-conjectures-proof.zh.pdf)
+(33 pages) · [Chinese elementary guide PDF](output/pdf/wormald-conjectures-guide.zh.pdf)
+(21 pages)  
 **Editable sources:** [English paper](docs/paper.en.md) · [Chinese paper](docs/paper.zh.md) ·
 [Elementary guide](docs/elementary-guide.zh.md)  
-Current repository revision: **0.2.1**, 19 October 2026.
+Current repository revision: **0.2.2**, 19 October 2026.
 The complete paper is available in Chinese and English. The elementary guide is Chinese only.
-Version 0.2.1 expands the product rules, chain rules, matrix calculations, equality cases,
-Taylor remainders and permanent estimates. All 726 mathematical spans match across the two papers;
-308 prose blocks were translated without omitting a section or calculation.
-The latest review states the zero-permanent case before logarithms and expands the guide's
-eighth-order cancellation. Independent exact formal-series, row-rounding and odd-moment checks pass.
+Version 0.2.2 expands the product rules, chain rules, matrix calculations, equality cases,
+Taylor remainders and permanent estimates. All 837 mathematical spans match across the two papers;
+324 prose blocks were translated without omitting a section or calculation.
+Version 0.2.2 completes 47 groups of prose and proof-transition revisions: definitions before use,
+evaluation points, precise theorem hypotheses, section references, restricted inverses, individual
+principal determinants, and equality of expectations under base isomorphism. The Chinese guide
+also explains local complex logarithms and rationality. See [the detailed review record](AUDIT.md).
 
 ### Main results
 
@@ -123,8 +125,7 @@ the written proofs and the explicitly cited external theorems.
 
 The PDFs are generated from Markdown through Pandoc and Tectonic or XeLaTeX.
 Build instructions are in [the PDF builder](tools/build_pdf.py).
-All 86 PDF pages were rendered. Changed pages were visually inspected; unchanged pages
-match the previously inspected renderings. The Chinese guide now also expands eighth-order cancellation. [the layout record](verification/qa/pdf_review.json)
+All 89 final PDF pages were rendered and visually inspected. [the layout record](verification/qa/pdf_review.json)
 records that review separately from mathematical verification.
 
 ### Repository contents
@@ -144,7 +145,7 @@ records that review separately from mathematical verification.
 For this research draft, cite:
 
 > Liu, Xingchen. *Wormald tournament conjectures: Hessians and random blow-ups*.
-> Research draft, version 0.2.1, 2026.
+> Research draft, version 0.2.2, 2026.
 > https://github.com/LStar404/wormald-tournament-conjectures.
 
 Machine-readable citation metadata is in [CITATION.cff](CITATION.cff).
@@ -171,16 +172,17 @@ is related work; its authorship and formal-verification records belong to that p
 [*Tournaments with many Hamilton cycles*](https://arxiv.org/html/2610.16245v1)
 中猜想 **1、2、6**。原猜想归属于Wormald，**本研究稿由刘星辰独立署名**。
 
-**阅读论文：**[中文论文PDF](output/pdf/wormald-conjectures-proof.zh.pdf)（32页）·
-[英文论文PDF](output/pdf/wormald-conjectures-proof.en.pdf)（34页）·
-[大一基础讲解PDF](output/pdf/wormald-conjectures-guide.zh.pdf)（20页）  
+**阅读论文：**[中文论文PDF](output/pdf/wormald-conjectures-proof.zh.pdf)（33页）·
+[英文论文PDF](output/pdf/wormald-conjectures-proof.en.pdf)（35页）·
+[大一基础讲解PDF](output/pdf/wormald-conjectures-guide.zh.pdf)（21页）  
 **可编辑稿：**[中文论文Markdown](docs/paper.zh.md) · [英文论文Markdown](docs/paper.en.md) ·
 [基础讲解Markdown](docs/elementary-guide.zh.md)  
-当前仓库修订版本：**0.2.1**，2026年10月19日。
+当前仓库修订版本：**0.2.2**，2026年10月19日。
 论文提供完整中文和英文版本，教学讲解仅提供中文。
-0.2.1逐项展开乘积求导、链式法则、矩阵运算、等号条件、Taylor余项及永久式估计，
-正文不以“显然”“同理”替代计算；英文完整对应308个文字段落和726处数学表达式。
-本次复查补明永久式为零时不取对数，并展开讲解中八次项的抵消；新增精确形式幂级数、逐行整数化及奇次矩核查均通过。
+0.2.2逐项展开乘积求导、链式法则、矩阵运算、等号条件、Taylor余项及永久式估计，
+正文不以“显然”“同理”替代计算；英文完整对应324个文字段落和837处数学表达式。
+本轮完成47组文字和论证衔接修订，补齐先用后定义的符号、导数求值点、定理适用条件、节号指向、限制空间上的逆矩阵、每个主子式的取值及同构下期望相等的理由。
+中文讲解另补局部复对数、有理性等解释；具体位置与修改见[复核记录](AUDIT.md)。
 
 ### 主要结果
 
@@ -268,7 +270,7 @@ $$
 
 PDF由Markdown主稿经Pandoc和Tectonic或XeLaTeX生成，
 可复现方法见[PDF构建程序](tools/build_pdf.py)。
-中英论文及中文讲解共86页已全部渲染；变动页逐页检查，其余页与此前已检查的渲染结果一致；[版面记录](verification/qa/pdf_review.json)
+中英论文及中文讲解共89页已全部渲染并逐页检查；[版面记录](verification/qa/pdf_review.json)
 将排版审查与数学核验分别记录。
 
 ### 仓库结构
@@ -288,7 +290,7 @@ PDF由Markdown主稿经Pandoc和Tectonic或XeLaTeX生成，
 引用本研究稿时，请使用：
 
 > Liu, Xingchen. *Wormald tournament conjectures: Hessians and random blow-ups*.
-> Research draft, version 0.2.1, 2026.
+> Research draft, version 0.2.2, 2026.
 > https://github.com/LStar404/wormald-tournament-conjectures.
 
 机器可读引用信息见[CITATION.cff](CITATION.cff)。

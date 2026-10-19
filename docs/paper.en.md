@@ -2,7 +2,7 @@
 
 Xingchen Liu
 
-19 October 2026. Public research manuscript, version 0.2.1.
+19 October 2026. Public research manuscript, version 0.2.2.
 
 # Abstract
 
@@ -32,6 +32,33 @@ Part III supplies the calculations expanded during the prepublication review: th
 
 Every limit $m\to\infty$ in this manuscript fixes $d$ first. The subsequent discussion of model constants as $d\to\infty$ does not interchange limits and does not give a uniform second-order error in the final order $N$.
 
+# Terminology and notation
+
+A tournament orients every pair of distinct vertices in exactly one direction. Its adjacency entry in position $i,j$ is 1 exactly when $i\to j$, and the diagonal is zero. In a regular tournament each vertex has outdegree and indegree $(d-1)/2$.
+
+Hamiltonian paths are counted as directed vertex orderings. Hamiltonian cycles are identified up to cyclic starting point: rotating the starting point does not produce another cycle, and reversal is not an additional identification of directed orderings. An ordinary isomorphism is a vertex bijection preserving all edge directions. Every uniqueness assertion in this manuscript uses this notion.
+
+For odd order, the carousel tournament $\mathrm{Car}_d$ is defined by
+
+$$
+V(\mathrm{Car}_d)=\mathbb Z/d\mathbb Z,\qquad
+i\to j\ \Longleftrightarrow\
+(j-i)\bmod d\in\{1,\ldots,(d-1)/2\}.
+$$
+
+Write $I_r$ for the identity matrix of order $r$, $J_r$ for the all-one matrix of order $r$, $\mathbf1_r$ for the all-one column vector, and $e_j$ for the $j$th standard basis column vector. The symbol $\delta_{jk}$ is 1 when $j=k$ and 0 otherwise. Matrix subscripts may be omitted when multiplication determines their dimensions. Superscript $T$ denotes transpose, and the imaginary unit satisfies $i^2=-1$. On positive real numbers, $\log$ is the natural logarithm; in complex neighborhoods we use the analytic branches specified below.
+
+For a real matrix $M$, the two norms are
+
+$$
+\|M\|_F^2=\sum_{j,k}M_{jk}^2,\qquad
+\|M\|_{\rm op}=\sup_{v\ne0}\frac{\|Mv\|_2}{\|v\|_2}.
+$$
+
+Write $[d]=\{1,\ldots,d\}$. The principal submatrix $M[U]$ uses the rows and columns in $U$, with convention $\det M[\varnothing]=1$. The space $u^\perp$ is orthogonal to the real vector $u$. The notation $\det_{u^\perp}$ means the determinant of the restriction to this invariant subspace, computed in an orthonormal basis.
+
+On a graph, $C(G),H(G)$ count cycles and paths. In contrast, the standalone $C=S/d$ is a matrix, bold $\mathbf H$ is the Hessian matrix, and $\mathcal H$ is its determinant. Local symbols in different sections are interpreted according to the definitions given in those sections.
+
 # Part I: The exact Hessian and the model constants
 
 ## 1. Objects, main formulas and scope
@@ -56,7 +83,7 @@ $$
 \widetilde f(\theta)=\log h(ze^{i\theta_1},\ldots,ze^{i\theta_{d-1}})
 $$
 
-Denote this Hessian matrix by $\mathbf H$ and its determinant by $\mathcal H$. We prove
+Evaluate the Hessian at $\theta=0$. Denote its matrix by $\mathbf H$ and its determinant by $\mathcal H$. Sections 4–6 verify the conditions needed to define $h$ and the logarithm branch, so this definition does not assume an existence statement still to be proved. We prove
 
 $$
 \boxed{
@@ -102,7 +129,7 @@ $$
 \qquad \|C\|_F^2=\frac{d-1}{d}.
 $$
 
-The real orthogonal canonical form of a skew-symmetric matrix consists of zero blocks and two-dimensional blocks
+Apply a real orthogonal basis change to the normalized skew-symmetric matrix $C$. Its canonical form consists of zero blocks and two-dimensional blocks
 
 $$
 J_\lambda=\begin{pmatrix}0&\lambda\\-\lambda&0\end{pmatrix}
@@ -293,7 +320,17 @@ c_k(0)=-V^TPe_ke_k^Tu
 =-\frac1{\sqrt d}V^TCe_k,
 $$
 
-Here $V^TP=V^TC$ follows from $V^Tu=0$. Set $U=(I-C)^{-1}$. Since $C$ preserves $u^\perp$,
+Here $V^TP=V^TC$ follows from $V^Tu=0$. Set $U=(I-C)^{-1}$. The matrix $C$ preserves $u^\perp$, and $D(0)=V^T(I-C)V$ gives the identities below. Multiply the first on the left by $U$ and on the right by $R(0)$ to obtain the second; the next line uses $\Pi C=C$:
+
+$$
+(I-C)V=VD(0),\qquad UV=VR(0),
+$$
+
+$$
+UC=U\Pi C=UVV^TC=VR(0)V^TC.
+$$
+
+Consequently,
 
 $$
 VR(0)V^TC=UC.
@@ -405,7 +442,7 @@ g(t')=\log\!\left[
 \frac{h(ze^{t_1},\ldots,ze^{t_{d-1}})}z\right].
 $$
 
-At the origin the logarithm's argument is 1. Choose the analytic logarithm branch with value 0. Then
+At the origin the logarithm's argument is 1. Continuity of $h$, together with $h(z,\ldots,z)=z>0$, lets us shrink the neighborhood so that $|h(ze^{t'})/z-1|<1/2$, where $ze^{t'}$ means coordinatewise exponentiation. This disk excludes 0. Choose its analytic logarithm branch with value 0 at 1. Then
 
 $$
 g(0)=\log1=0,\qquad
@@ -416,7 +453,7 @@ We differentiate only this composition of an explicit rational function and an a
 
 ## 6. The complete chain rule and the angular sign
 
-For $j\le d-1$, take one derivative:
+Here $j,k\in\{1,\ldots,d-1\}$. The chain rule holds first in the surface neighborhood. The derivative values calculated in Section 4 are substituted only at $t'=0,\ t_d=g(0)=0$. In particular, $g_j(0)=-1$ is not an identity throughout that neighborhood. For $j\le d-1$, take one derivative:
 
 $$
 0=\psi_j+\psi_dg_j,\qquad
@@ -448,7 +485,7 @@ g_{jk}(0)
 \end{aligned}
 $$
 
-The original angular function satisfies
+Choose the same local branch for the original $\log h$; when $h=z$, take the real value $\log z$. By the definition of $g$ in Section 5, the original angular function satisfies
 
 $$
 \widetilde f(\theta)=\log z+g(i\theta_1,\ldots,i\theta_{d-1}).
@@ -519,7 +556,7 @@ $$
 Qu=(I+C^2)(I-C^2)^{-1}u=u.
 $$
 
-The matrix $Q$ is symmetric, so $u^TQV=(Qu)^TV=u^TV=0$. Hence
+In the real orthogonal basis of Section 2, every block of $Q$ is a real scalar multiple of the identity. Thus $Q$ is real symmetric, and $u^TQV=(Qu)^TV=u^TV=0$. Hence
 
 $$
 (u,V)^TQ(u,V)=
@@ -591,7 +628,7 @@ The number $\det(I+C)$ is rational as well. We have already shown that numerator
 
 ## 8. External counting theorems and the four limits
 
-This section explicitly invokes Wormald's Theorems 1, 4 and 5; it does not claim to reprove their random counting arguments. Fix base order $d$, internal block order $m$ and total order $N=dm$. Define
+This section explicitly invokes Wormald's Theorems 1, 4 and 5; it does not claim to reprove their random counting arguments. Fix a regular base of order $d$, internal block order $m$ and total order $N=dm$. Subscripts $\mathcal T,\mathcal R$ specify the random model; for example, $\mathbb EC_{\mathcal T}$ is the expected cycle count of a random graph drawn from $\mathcal T(T^*,m)$. The path notation has the corresponding meaning. Blocks are independent and uniform over all admissible labeled internal tournaments. Define
 
 $$
 \nu_N=\frac{(N-1)!}{2^N},\qquad
@@ -660,13 +697,13 @@ All four limits fix $d$. The last two take only admissible odd $m$ and do not in
 
 ## 9. A complete closed form for the carousel base
 
-An odd-order carousel sign matrix is similar to the transitive sign matrix $T_d$ by a signed permutation. The even-order principal determinants of $T_d$ are 1 and the odd-order principal determinants are 0. Hence
+Let $T_d$ have entries 1 above the diagonal, $-1$ below it and 0 on it. Appendix A.2 gives the signed permutation similarity between a carousel sign matrix and $T_d$. Appendix A.1 proves the determinant closed form and then uses its highest-degree coefficient to show that every even principal determinant is 1 and every odd principal determinant is 0. Hence
 
 $$
 \det(I+tT_d)=\frac{(1+t)^d+(1-t)^d}{2}.
 $$
 
-Consequently,
+When a graph name is used as the argument of $\rho_d$ below, it denotes that graph's sign matrix. Ordinary relabeling preserves the determinants, so the value does not depend on vertex labels. Consequently,
 
 $$
 \boxed{
@@ -678,7 +715,7 @@ $$
 This directly recovers $2,44/19,3032/1231,\ldots$ in the original table, without calculating a multivariate Hessian separately for each example. The constant for regular internal blocks is
 
 $$
-\mathfrak r_d=e^{1/d}\rho_d(\mathrm{Car}_d).
+\mathfrak r_d=e^{1/d}r_d,\qquad r_d:=\rho_d(\mathrm{Car}_d).
 $$
 
 ## 10. Real-function form and strict monotonicity
@@ -705,7 +742,7 @@ $$
 =2(1-x^2)^{1/(2x)}\cosh\beta(x).
 $$
 
-On the complex logarithm branch near the origin,
+For $0\le x\le1/3$, both $1\pm ix$ have real part 1, so their entire curves lie in the right half-plane. Choose on that half-plane the analytic logarithm agreeing with the real logarithm on the positive axis. Then
 
 $$
 \log(1\pm ix)=\frac12\log(1+x^2)\pm i\arctan x,
@@ -789,7 +826,7 @@ $$
 =1-\frac{x^2}{3}\ge\frac{26}{27}.
 $$
 
-Appendix A.7 proves $\tan y\ge y+y^3/3$ by elementary calculus. Substituting the interval bound gives
+Appendix A.7 proves $\tan y\ge y+y^3/3$ by elementary calculus. Since $y+y^3/3$ is strictly increasing on nonnegative real numbers, substitute the lower bound $\alpha(x)\ge26/27$ to obtain
 
 $$
 \tan\alpha(x)
@@ -1016,7 +1053,7 @@ $$
 \rho_d(S)=\frac{\det(I+S/d)}{\det(I+iS/d)}.
 $$
 
-Comparing regular bases is thus a finite matrix problem. This formula cannot be applied directly to nonregular bases; their exponential loss is proved separately in Sections 7–10.
+Comparing regular bases is thus a finite matrix problem. Distinguish the algebraic definition from the probabilistic conclusion: the determinant ratio below can be defined for nonregular sign matrices, but this section invokes the equality between that ratio and a model expectation limit only for regular bases. The expectation for a nonregular base cannot use that limit formula; Sections 7–10 prove separately that its normalized expectation tends to zero.
 
 ## 3. Product comparison, integration and all equality conditions
 
@@ -1030,7 +1067,7 @@ $$
 \end{cases}
 $$
 
-The vector $x^*$ lists the absolute values of the coordinates of $x$ in decreasing order. For any product of tournament sign matrices of the same order, the cited theorem gives
+Here $x\in\mathbb R^d$ and $S_1,\ldots,S_p$ are real skew-symmetric matrices of order $d$ with off-diagonal entries in $\pm1$. The vector $x^*$ lists the absolute values of the coordinates of $x$ in decreasing order. For any product of these tournament sign matrices of the same order, the cited theorem gives
 
 $$
 (S_1\cdots S_p x)^*\prec_w K_d^p x^*.
@@ -1165,7 +1202,7 @@ This includes every odd $p$. We have not replaced a theorem solely about traces 
 
 ## 5. The spectral-ratio bound and the full equality argument
 
-The nonzero eigenvalues of any tournament sign matrix occur in pairs $\pm i\lambda_j$, with $\lambda_j>0$. The Frobenius estimate from Part I gives $x_j=\lambda_j^2/d^2<1/2$ for each pair. Each two-dimensional block contributes $1+x_j$ and $1-x_j$ to the respective determinants. Therefore
+Here $S$ is any tournament sign matrix of order $d$, with no regularity assumption. In this section $\lambda_j$ denotes a frequency of the unnormalized matrix $S$; to compare with the frequencies of $C=S/d$ in Part I, multiply those frequencies by $d$. Nonzero eigenvalues occur in pairs $\pm i\lambda_j$, with $\lambda_j>0$. The Frobenius estimate in Part I uses only skew symmetry and off-diagonal entries in $\pm1$, not regularity, so each $x_j=\lambda_j^2/d^2<1/2$. Zero eigenvalues contribute 1 to the following determinants, while a nonzero two-dimensional block contributes $1+x_j$ and $1-x_j$, respectively. Therefore
 
 $$
 \det(I+S/d)=\prod_j(1+x_j),\qquad
@@ -1199,7 +1236,7 @@ $$
 \end{aligned}
 $$
 
-Define $r_d=\rho_d(T_d)$. Every deficit is nonnegative. If their sum vanishes, the term $r=1$ vanishes, giving $\|S^3\|_F^2=\|T_d^3\|_F^2$. This deficit is a sum of $d$ nonnegative column deficits, so each column attains equality. The equality criterion for squared norms and Fang–Huang's suffix equality then give, in sequence,
+Define $r_d=\rho_d(T_d)$. Every deficit is nonnegative. If their sum vanishes, the term $r=1$ vanishes, giving $\|S^3\|_F^2=\|T_d^3\|_F^2$. This deficit is a sum of $d$ nonnegative column deficits, so each column attains equality. The squared-norm equality criterion in Section 3 of this part and Fang–Huang's suffix equality give, in sequence,
 
 $$
 (S^3e_j)^*=K_d^3e_1,\qquad
@@ -1228,7 +1265,13 @@ $$
 \quad\text{with equality if and only if }S=Q^TT_dQ.
 $$
 
-If $S$ is regular, ordinary relabeling puts it in the form $S=D_eT_dD_e$, with $e_i=\pm1$. By $S\mathbf1=0$ and $D_e^2=I$,
+The signed permutation matrix $Q$ here has exactly one entry $\pm1$ in each row and column and satisfies $Q^TQ=I$. This is a local symbol, different from the symmetric $Q$ in Part I. Write $Q=D_eP$, where $P$ is an ordinary permutation matrix and $D_e=\operatorname{diag}(e_1,\ldots,e_d)$; in this paragraph $e_i=\pm1$ are scalar signs. Then
+
+$$
+S=P^TD_eT_dD_eP,\qquad PSP^T=D_eT_dD_e.
+$$
+
+Only $P$ is absorbed into ordinary relabeling; continue to denote the relabeled matrix by $S$. Diagonal sign switching itself is not an ordinary isomorphism. If $S$ is regular, then after this relabeling $S\mathbf1=0$ still holds. Using $D_e^2=I$,
 
 $$
 D_eT_de=0,\qquad T_de=0.
@@ -1342,7 +1385,15 @@ $$
 \kappa^N\le\exp[-N\|s\|^2/(8d^3)]\le e^{-N/d^3}.
 $$
 
-In model $\mathcal T$, let $W$ be the entrywise expectation of the adjacency matrix. A fixed directed Hamiltonian cycle uses $N$ distinct unordered vertex pairs, and its random internal edges are independent. Its occurrence probability is therefore the product of the corresponding entries of $W$. Sum over cycles identified up to cyclic starting point:
+In model $\mathcal T$, let $W$ be the entrywise expectation of the adjacency matrix. For any nonnegative matrix of order $N$, let $\operatorname{Sym}(N)$ be all vertex permutations and let $\mathcal C_N$ consist of permutations with a single cycle of length $N$. Define the weighted permanent and weighted Hamiltonian cycle count by:
+
+$$
+\operatorname{per}W=\sum_{\sigma\in\operatorname{Sym}(N)}
+\prod_{v=1}^N W_{v,\sigma(v)},\qquad
+C(W)=\sum_{\sigma\in\mathcal C_N}\prod_{v=1}^N W_{v,\sigma(v)}.
+$$
+
+A single-cycle permutation already identifies cyclic starting points, so no additional division by the number of vertices is made. A fixed directed Hamiltonian cycle uses $N$ distinct unordered vertex pairs, and its random internal edges are independent. Its occurrence probability is therefore the product of the corresponding entries of $W$. Sum over cycles identified up to cyclic starting point:
 
 $$
 \mathbb EC_{\mathcal T}=C(W)\le\operatorname{per}W.
@@ -1352,14 +1403,14 @@ The permanent contains all permutations. Each Hamiltonian cycle corresponds to o
 
 ## 8. Filling weighted rows, making them integral and applying Brégman
 
-Every row of type $i$ in $W$ has sum
+We apply this section for $m\ge2$. Model $\mathcal R$ also requires odd $m$, so there $m\ge3$. This covers all sufficiently large block orders. Every row of type $i$ in $W$ has sum
 
 $$
 r_i=md_i+\frac{m-1}{2}=mb_i-\frac12,\qquad
 R_i=\lceil r_i\rceil.
 $$
 
-First consider any row of length $L$, denoted $w$, with target integer row sum $r\le R\le L$. The amount to add is $s_0=R-r$, and the available capacity is $\sum_j(1-w_j)=L-r\ge s_0$. Starting at $j=1$, choose successively
+For a row of length $L$, denoted $w$, assume $0\le w_j\le1$. Its current sum is $r=\sum_{j=1}^Lw_j$, and its target integer sum $R$ satisfies $r\le R\le L$. The amount to add is $s_0=R-r$, and the available capacity is $\sum_j(1-w_j)=L-r\ge s_0$. Starting at $j=1$, choose successively
 
 $$
 \delta_j=\min(1-w_j,s_{j-1}),\qquad
@@ -1383,13 +1434,15 @@ $$
 
 At least one coordinate becomes 0 or 1, reducing the number of nonintegral coordinates. After at most $L-1$ steps there is at most one nonintegral coordinate. Since all other coordinates and the row sum $R$ are integers, the remaining coordinate must also be integral. Perform this operation on every row to obtain a zero–one matrix $V$. Each row of type $i$ has $R_i$ ones, and $\operatorname{per}W\le\operatorname{per}V$.
 
+Here $V$ is an auxiliary matrix for the upper bound. Its required properties are zero–one entries and the specified row sums; diagonal entries may be 1. The theorem below applies to such general zero–one matrices.
+
 Now invoke [Brégman's inequality, as stated in Lemma 2.1 of Alon's paper](https://www.tau.ac.il/~nogaa/PDFS/hamilton.pdf): for a zero–one matrix with row sums $q_1,\ldots,q_L>0$,
 
 $$
 \operatorname{per}V\le\prod_{\ell=1}^L(q_\ell!)^{1/q_\ell}.
 $$
 
-There are exactly $m$ rows of each type here, giving
+Since $r_i\ge(m-1)/2>0$, the integer upper bound $R_i$ is at least 1. This verifies the positive-row-sum hypothesis of the cited Brégman bound. There are exactly $m$ rows of each type here, giving
 
 $$
 \operatorname{per}W\le\prod_{i=1}^d(R_i!)^{m/R_i}.
@@ -1570,9 +1623,17 @@ For the second bound, constrain the augmented cycle count in each sample and the
 
 ## 11. From limiting constants to the exact expected extremum for large blocks
 
-For fixed $d$ there are finitely many labeled bases. Among regular bases, the carousel has limiting constant $r_d$, or $e^{1/d}r_d$, and all other regular bases have the positive gap from Section 6. The normalized expectations for nonregular bases tend to zero.
+For fixed $d$, each vertex pair has two possible directions, so there are $2^{\binom d2}$ labeled bases and at most that many ordinary isomorphism classes. Among regular bases, the carousel has limiting constant $r_d$, or $e^{1/d}r_d$, and all other regular bases have the positive gap from Section 6. The normalized expectations for nonregular bases tend to zero.
 
 For each other base choose sufficiently large $m$ so that its actual normalized expectation is strictly smaller than the carousel's. Take the maximum of the finitely many thresholds to obtain $M_d$ from Section 1 and the unique ordinary isomorphism class. This uses fixed $d$ and does not assert uniformity as $d$ grows.
+
+It remains to explain why every ordinarily isomorphic copy of the carousel attains the same maximum. Given an ordinary base isomorphism $\pi$, write a blow-up vertex as $(i,a)$. Then
+
+$$
+(i,a)\longmapsto(\pi(i),a)
+$$
+
+is a bijection between samples of the two blow-up models. The base isomorphism preserves directions between blocks; internal blocks are merely reordered, preserving their independent identical sampling probabilities. Every path and cycle corresponds uniquely under this bijection, so their expectations agree. Combined with the strict inequality for nonisomorphic bases, this identifies the entire ordinary carousel isomorphism class as the equality class.
 
 ## 12. Results obtained and remaining questions
 
@@ -1586,7 +1647,7 @@ These results identify our spectral ratio exactly with the original random-model
 
 Let $T_n$ have upper-triangular entries 1 and lower-triangular entries $-1$, and write $F_n(t)=\det(I+tT_n)$. We prove the closed form of Part I, Section 9 directly by row operations, without treating even principal determinants as an unexplained input.
 
-For the first $n-1$ rows simultaneously perform $R_i\leftarrow R_i-R_{i+1}$. The operation is implemented by an upper-triangular matrix with diagonal 1, so the determinant is preserved. In the resulting matrix the only potentially nonzero entries in the first $n-1$ rows are
+For $n=1$, $F_1(t)=1=((1+t)+(1-t))/2$, proving the formula in that case. Now assume $n\ge2$. For the first $n-1$ rows simultaneously perform $R_i\leftarrow R_i-R_{i+1}$. The operation is implemented by an upper-triangular matrix with diagonal 1, so the determinant is preserved. In the resulting matrix the only potentially nonzero entries in the first $n-1$ rows are
 
 $$
 M_{ii}=1+t,\qquad M_{i,i+1}=t-1
@@ -1641,6 +1702,16 @@ F_n(t)=\frac{(1+t)^n+(1-t)^n}{2}.
 $$
 
 Both sides are polynomials and agree for every $t$ except two values. They therefore also agree at $t=-1,0$. Substitute $t=1/d$ and $t=i/d$ to obtain the determinant ratio for the carousel model.
+
+To justify the assertion about each principal determinant in Part I, Section 9, take nonempty $U$ and put $k=|U|$. In increasing original vertex order, $T_d[U]$ is exactly $T_k$. The highest-degree coefficient of $F_k(t)=\det(I+tT_k)$ is $\det T_k$; write $[t^k]$ for extraction of this coefficient. Thus
+
+$$
+\det T_d[U]=\det T_k=[t^k]F_k(t)
+=\frac{1+(-1)^k}{2}
+=\begin{cases}1,&k\ \text{even},\\0,&k\ \text{odd}.\end{cases}
+$$
+
+The empty principal determinant is 1 by convention. Thus the proved closed form determines every individual principal determinant.
 
 ## A.2 Alternating switching and ordinary carousel isomorphism
 
@@ -1859,7 +1930,7 @@ One factor comes from the change in order and the other from the added-vertex pr
 
 ## A.6 A common threshold for finitely many bases
 
-Fix one model and one count. Let the carousel limit be $\ell_*>0$ and let every other ordinary isomorphism class have limit $\ell_T<\ell_*$. Finiteness of the base set gives
+Fix one model and one count. Let the carousel limit be $\ell_*>0$ and let every other ordinary isomorphism class have limit $\ell_T<\ell_*$. Since $d\ge3$, the transitive base is nonregular whereas the carousel is regular, so the set of noncarousel isomorphism classes is nonempty. Finiteness and isomorphism invariance here are supplied by Part II, Section 11. Each noncarousel limit is strictly smaller, so the finite set of positive differences has a positive minimum:
 
 $$
 \delta=\min_{T\not\cong\mathrm{Car}_d}(\ell_*-\ell_T)>0.

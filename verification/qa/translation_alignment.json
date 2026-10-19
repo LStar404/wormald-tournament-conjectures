@@ -1,15 +1,16 @@
 {
   "result": "passed",
-  "mathematical_spans_each": 726,
-  "headings_each": 40,
+  "mathematical_spans_each": 837,
+  "prose_blocks_each": 324,
+  "headings_each": 41,
   "translated_mathematical_labels": {
     "全部二维块": "all two-dimensional blocks",
     "\\rm 奇": "\\rm odd",
     "等号当且仅当 ": "with equality if and only if "
   },
   "sha256": {
-    "zh": "8f6611fbbdc0fee6a8356e8790ceef08453ca0d8e52820be4621046e9b0e214b",
-    "en": "928380de1035ca9032a865ed52edceab922c4c66dcfc65c6278712a13585deab"
+    "zh": "2ea8a5cbe3d7cb948eeb966f54f842f12c8e062aee624c907af2a189f05f39f3",
+    "en": "652c867de1b7402228abd78f905dd41388b1360b14c62eb79dcbfe2d7947dc97"
   },
   "scope": "Formula sequence and structural alignment; not independent mathematical or linguistic certification."
 }
