@@ -1,0 +1,32 @@
+{
+  "result": "passed",
+  "exhaustive_regular_spectral_checks": [
+    {
+      "d": 3,
+      "regular_cases": 2,
+      "equalities": 2,
+      "strict_cases": 0,
+      "min_positive_sixth_gap": null
+    },
+    {
+      "d": 5,
+      "regular_cases": 24,
+      "equalities": 24,
+      "strict_cases": 0,
+      "min_positive_sixth_gap": null
+    },
+    {
+      "d": 7,
+      "regular_cases": 2640,
+      "equalities": 720,
+      "strict_cases": 1920,
+      "min_positive_sixth_gap": 8064
+    }
+  ],
+  "exact_nonregular_kappa_checks": 1006,
+  "exact_random_blowup_realizations": 576,
+  "exact_expected_path_cycle_identities": 9,
+  "exact_weighted_bregman_bounds": 9,
+  "exact_regular_block_degree_cases": 64,
+  "scope": "Finite exact spectral, arithmetic, expected-value and degree checks. No finite sample certifies asymptotic convergence, a uniform block-size threshold or novelty."
+}

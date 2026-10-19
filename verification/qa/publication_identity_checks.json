@@ -1,0 +1,9 @@
+{
+  "result": "passed",
+  "rational_determinant_cases": 120,
+  "comparison_matrix_and_signed_shift_orders": 24,
+  "explicit_carousel_isomorphism_orders": 12,
+  "four_vertex_determinant_cases": 64,
+  "trace4_and_equality_cases": 1259,
+  "scope": "Exact finite identities only; not an asymptotic or peer-review certification."
+}
