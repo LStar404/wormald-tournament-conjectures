@@ -1,6 +1,9 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.1",
   "date": "2026-10-19",
+  "authors": [
+    "Xingchen Liu"
+  ],
   "repository": "https://github.com/LStar404/wormald-tournament-conjectures",
   "review_status": "AI-assisted proof draft; independent mathematical review pending",
   "scope": "Wormald v1 Conjectures 1, 2, 6; fixed-base random blow-up models",
@@ -13,45 +16,45 @@
     },
     {
       "path": "AUDIT.md",
-      "bytes": 3612,
-      "sha256": "cbafa4485374597741d1908f8e6bf182abcbe133e083bfaa43a289245e0dba98",
-      "git_blob_sha1": "3f8907cab35e9ae16bbf3c0b1a707e8d4998589d"
+      "bytes": 3920,
+      "sha256": "0c1d5105198f0f1c561e288b55755f0b2c5b9e71cc6faa4060c67cf918f85076",
+      "git_blob_sha1": "a1f168d501d065844564ad7cb6c4f849944dcdd3"
     },
     {
       "path": "CITATION.cff",
-      "bytes": 569,
-      "sha256": "3c0900a9c5ce16b6adda6ea577fc7b69912f3934ed5a96f83d73592f444637a8",
-      "git_blob_sha1": "8cb37199a9b295118369f3f336a1c19bc7f45bc8"
+      "bytes": 521,
+      "sha256": "95a4d7a1ecc4eecb3b96f4d4eb322ba87e66a8fbaaa9a86912d10190269fdad7",
+      "git_blob_sha1": "de1af53b4e0a301b3b8e67301f09ee845ae46b78"
     },
     {
       "path": "docs/elementary-guide.zh.md",
-      "bytes": 27576,
-      "sha256": "21cf4029ae90b41929e9583f0a391c45c0cd328bcf6c43f253f8471aa5c4a5ce",
-      "git_blob_sha1": "cb0eab49a96301a336f906b06b2bc31f42b78a22"
+      "bytes": 27564,
+      "sha256": "707884f66ead96c6c452e5f20d0fc3fa4d384d7d3166e72be4c0614865738ccd",
+      "git_blob_sha1": "9c1bbf9e6aa9e057b39da5690b579668e2c701ac"
     },
     {
       "path": "docs/paper.zh.md",
-      "bytes": 34894,
-      "sha256": "abd206dd36ee360bc9ab2c66877b4e70096e71bbebb82918336dc31c6d6e7221",
-      "git_blob_sha1": "79e7d1cf2f4fcd5bcb0276cae9974df9fba34846"
+      "bytes": 34886,
+      "sha256": "c319218fe059b7964d7dddca8514a4a52fc73140560545604354f3767cebd7ee",
+      "git_blob_sha1": "d3f8fcc268fdf31583abbcaa027230c26d31ac13"
     },
     {
       "path": "output/pdf/wormald-conjectures-guide.zh.pdf",
-      "bytes": 225738,
-      "sha256": "c7fa36f6148a6f6bb325dd74d90e8a5add18551277d223da1fa48e4c8e873231",
-      "git_blob_sha1": "0596d525f6a35794c8f70836a5107ec91be3cfab"
+      "bytes": 225412,
+      "sha256": "879287dde729272679a801f3f5ae6f812cf362dce367d6c298695279e22174b7",
+      "git_blob_sha1": "13d98a08ec21cce4a0ef36d40af772e580f75744"
     },
     {
       "path": "output/pdf/wormald-conjectures-proof.zh.pdf",
-      "bytes": 252619,
-      "sha256": "69d5d4488ff0cb9d7c89cb666e58fd99f2e353b4d9c7a903883bd2acb6bf7a44",
-      "git_blob_sha1": "0389820bf327d9fdac87b926197e04fd72ca657f"
+      "bytes": 252144,
+      "sha256": "a2bb668c36457e5ee8178c67982b6c0cf6f00f63aa19b31a3dd9ac4cd7fdcf75",
+      "git_blob_sha1": "fb5faf7246591167b0fec2790526adb8ecb140e7"
     },
     {
       "path": "README.md",
-      "bytes": 3508,
-      "sha256": "be9c999357ff515db9892da051d17c685f16b90ee6171a9af4e4cb92ba0cca08",
-      "git_blob_sha1": "f243334cbc949b18783094283e8cf4fa4b4c8fe5"
+      "bytes": 12736,
+      "sha256": "5c5f95b0581b822110f1859c998de38d79320104dd1a4326b2bb22acb9ebb961",
+      "git_blob_sha1": "5594493b59fe4f12accef28d89a9aa5d84c1e946"
     },
     {
       "path": "tools/build_pdf.py",
@@ -61,15 +64,15 @@
     },
     {
       "path": "tools/check_package.py",
-      "bytes": 1698,
-      "sha256": "b29461b574113b723fbbaf1e5cb0ae00cc65e2622cd56e46ec0f15fb96afbf96",
-      "git_blob_sha1": "ba2875a7890b029231027037d3344422e1e89460"
+      "bytes": 1709,
+      "sha256": "4184ba6ebb51da99ed70cd908502df9291a6968d51d5ee63abf1395b215b56f4",
+      "git_blob_sha1": "e982b6ea5cb6509872c78b4499adc1ad5630041c"
     },
     {
       "path": "tools/template.tex",
-      "bytes": 1743,
-      "sha256": "25d57eeb981215aae9593c3d851c31e384145bdcf83766a48157acce5332c940",
-      "git_blob_sha1": "4d1fcebc74c5d3d5359efc23440e4de80d2c8715"
+      "bytes": 1723,
+      "sha256": "1bef54657ff34e5cbf8d98eb431b2973fd70ad3bf4e74b34b2b557b4a360bb5e",
+      "git_blob_sha1": "1930b6a017e833e79c6a90e07a90e0c050dbc4c1"
     },
     {
       "path": "verification/audit_publication_identities.py",
@@ -85,9 +88,9 @@
     },
     {
       "path": "verification/qa/pdf_review.json",
-      "bytes": 1578,
-      "sha256": "d3c4a5befd64e89088b9bdb3f68acfe0dd2d61803ef7cde482aa75fe98f8166f",
-      "git_blob_sha1": "c1b6a2bd3a220c81659aa664d60076b114fec48f"
+      "bytes": 2220,
+      "sha256": "232a4478dec7ca01716c8509d7a4d58d25ac54977d2a9c13c0765bf81e36cc3e",
+      "git_blob_sha1": "77b25cb105d88ff0d3bb62cb0d66a9a0344d7c44"
     },
     {
       "path": "verification/qa/publication_identity_checks.json",

@@ -3,11 +3,9 @@ message: "Please cite this research draft and the original sources used by the r
 type: software
 title: "Wormald tournament conjectures: Hessians and random blow-ups"
 authors:
-  - family-names: "刘"
-    given-names: "星辰"
-  - family-names: "叶"
-    given-names: "祥宇"
-version: "0.1.0"
+  - family-names: "Liu"
+    given-names: "Xingchen"
+version: "0.1.1"
 date-released: "2026-10-19"
 url: "https://github.com/LStar404/wormald-tournament-conjectures"
 abstract: "AI-assisted proof drafts and exact finite checks addressing Wormald's Conjectures 1, 2, and 6. Independent mathematical review pending."

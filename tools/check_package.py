@@ -18,9 +18,9 @@ for source in (ROOT/"README.md",ROOT/"AUDIT.md",*(ROOT/"docs").glob("*.md")):
     assert text.count("$$")%2==0,source
     prose=re.sub(r"\$\$.*?\$\$|\$[^$\n]+\$","",text,flags=re.S)
     for target in re.findall(r"\[[^\]\n]*\]\(([^)]+)\)",prose):
-        if "://" in target or target.startswith("#"):continue
+        if "://" in target or target.startswith(("#","mailto:")):continue
         path=unquote(target.split("#",1)[0])
-        assert (source.parent/path).is_file(),(source,target)
+        assert (source.parent/path).exists(),(source,target)
         links+=1
 for p in (ROOT/"verification/qa").glob("*checks.json"):
     assert json.loads(p.read_text(encoding="utf-8"))["result"]=="passed",p
