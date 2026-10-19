@@ -1,0 +1,15 @@
+{
+  "result": "passed",
+  "mathematical_spans_each": 726,
+  "headings_each": 40,
+  "translated_mathematical_labels": {
+    "全部二维块": "all two-dimensional blocks",
+    "\\rm 奇": "\\rm odd",
+    "等号当且仅当 ": "with equality if and only if "
+  },
+  "sha256": {
+    "zh": "cfc4092e5903dc457f532a7f407c799e98c67a609e33ffd47c9b8c58bd1a65d6",
+    "en": "b6ff07dda77319081375626430036030ee311d0844a5e4281d10f7e3e4c4c34b"
+  },
+  "scope": "Formula sequence and structural alignment; not independent mathematical or linguistic certification."
+}

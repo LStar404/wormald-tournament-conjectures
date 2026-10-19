@@ -1,5 +1,5 @@
 {
-  "version": "0.1.1",
+  "version": "0.2.0",
   "date": "2026-10-19",
   "authors": [
     "Xingchen Liu"
@@ -16,15 +16,15 @@
     },
     {
       "path": "AUDIT.md",
-      "bytes": 3920,
-      "sha256": "0c1d5105198f0f1c561e288b55755f0b2c5b9e71cc6faa4060c67cf918f85076",
-      "git_blob_sha1": "a1f168d501d065844564ad7cb6c4f849944dcdd3"
+      "bytes": 5025,
+      "sha256": "cbbc36328001be17d0cadcc2f02629b3c56de4a8a219f5b616e5903932fa4d36",
+      "git_blob_sha1": "efc9431578c6742609d540739ffa9ed59a588686"
     },
     {
       "path": "CITATION.cff",
-      "bytes": 521,
-      "sha256": "95a4d7a1ecc4eecb3b96f4d4eb322ba87e66a8fbaaa9a86912d10190269fdad7",
-      "git_blob_sha1": "de1af53b4e0a301b3b8e67301f09ee845ae46b78"
+      "bytes": 533,
+      "sha256": "ecdde72ed530ae55282bf21e9ded9df77b6343876ee1e310878db855383aab3d",
+      "git_blob_sha1": "a52a737add4da6814480d516fb24b541dba98846"
     },
     {
       "path": "docs/elementary-guide.zh.md",
@@ -33,10 +33,16 @@
       "git_blob_sha1": "9c1bbf9e6aa9e057b39da5690b579668e2c701ac"
     },
     {
+      "path": "docs/paper.en.md",
+      "bytes": 62004,
+      "sha256": "3d1c5b3c63ac77052bf06749a5c126885f7a4a5a58b33e84383accf428276553",
+      "git_blob_sha1": "c5f598ebda7b75368d88538779260b5db2c0e915"
+    },
+    {
       "path": "docs/paper.zh.md",
-      "bytes": 34886,
-      "sha256": "c319218fe059b7964d7dddca8514a4a52fc73140560545604354f3767cebd7ee",
-      "git_blob_sha1": "d3f8fcc268fdf31583abbcaa027230c26d31ac13"
+      "bytes": 52883,
+      "sha256": "5b1daf9e8b71131338bd64f1b0b26953a753674f12d6d94c0856af2607b3fe9e",
+      "git_blob_sha1": "3fad4ba2569e877d252ab27ba434f51572e462d4"
     },
     {
       "path": "output/pdf/wormald-conjectures-guide.zh.pdf",
@@ -45,34 +51,46 @@
       "git_blob_sha1": "13d98a08ec21cce4a0ef36d40af772e580f75744"
     },
     {
+      "path": "output/pdf/wormald-conjectures-proof.en.pdf",
+      "bytes": 250580,
+      "sha256": "4fd66c5066b75a234821b46ff963a783dc2f83314e65d708691d1a3c6ef5201b",
+      "git_blob_sha1": "c5cf3121a71e8d8b3c373d4a24d6a5f45881f5ea"
+    },
+    {
       "path": "output/pdf/wormald-conjectures-proof.zh.pdf",
-      "bytes": 252144,
-      "sha256": "a2bb668c36457e5ee8178c67982b6c0cf6f00f63aa19b31a3dd9ac4cd7fdcf75",
-      "git_blob_sha1": "fb5faf7246591167b0fec2790526adb8ecb140e7"
+      "bytes": 290430,
+      "sha256": "c54e933442c72e8a350b1d45172b07cacdfb0eac2090d1f81ba26b0185fb1942",
+      "git_blob_sha1": "4e2bd93ac1450976289f8af2459fd0964120873a"
     },
     {
       "path": "README.md",
-      "bytes": 12736,
-      "sha256": "5c5f95b0581b822110f1859c998de38d79320104dd1a4326b2bb22acb9ebb961",
-      "git_blob_sha1": "5594493b59fe4f12accef28d89a9aa5d84c1e946"
+      "bytes": 14031,
+      "sha256": "91f0aa49dbeba37d72ef1db8801cafd26935cdf7c0fd82a74ae47a9a23cf16bf",
+      "git_blob_sha1": "9679dbf70cb2b1d53c5ed1fa3fbff59bb9f0ae55"
     },
     {
       "path": "tools/build_pdf.py",
-      "bytes": 3885,
-      "sha256": "25c666b65e2fdeddc21eef2a0eb53c372c6a2d9123a9a1b6bdd37c56b25a0a58",
-      "git_blob_sha1": "fa2c8ce33ff4b3160ebe10bc8d2b28758c972014"
+      "bytes": 4950,
+      "sha256": "2af1747e644e06e4a730d6ad29a40403841478f6f2ffd5081a4911e8faa15235",
+      "git_blob_sha1": "793cf9cf1b527ffb3e1cc10be242c4850df86ae5"
     },
     {
       "path": "tools/check_package.py",
-      "bytes": 1709,
-      "sha256": "4184ba6ebb51da99ed70cd908502df9291a6968d51d5ee63abf1395b215b56f4",
-      "git_blob_sha1": "e982b6ea5cb6509872c78b4499adc1ad5630041c"
+      "bytes": 1735,
+      "sha256": "0ff29c1abc5e2e622bca946571f5b8bed7785b16601a183d8ea1ebd61b7e2926",
+      "git_blob_sha1": "7b002e66ae6764088ebfd4c570243906d5694583"
+    },
+    {
+      "path": "tools/check_translation.py",
+      "bytes": 1561,
+      "sha256": "2c68b5c2a0eed53ea3c8d4e344e68a03b5305e8552ec04039ca287ad149ee850",
+      "git_blob_sha1": "8ac69d5740d065d7108b844f035abd3c0c61ff70"
     },
     {
       "path": "tools/template.tex",
-      "bytes": 1723,
-      "sha256": "1bef54657ff34e5cbf8d98eb431b2973fd70ad3bf4e74b34b2b557b4a360bb5e",
-      "git_blob_sha1": "1930b6a017e833e79c6a90e07a90e0c050dbc4c1"
+      "bytes": 1654,
+      "sha256": "de3abd89070f9a124454274522a250acbae533ddb560c20d8c919c5d2ba4fb87",
+      "git_blob_sha1": "4b31478c4df4d013c41290b190dbf6a339dc0e74"
     },
     {
       "path": "verification/audit_publication_identities.py",
@@ -88,15 +106,21 @@
     },
     {
       "path": "verification/qa/pdf_review.json",
-      "bytes": 2220,
-      "sha256": "232a4478dec7ca01716c8509d7a4d58d25ac54977d2a9c13c0765bf81e36cc3e",
-      "git_blob_sha1": "77b25cb105d88ff0d3bb62cb0d66a9a0344d7c44"
+      "bytes": 3220,
+      "sha256": "7cc3c709dfdf5b090b2b59ce5327b1d3e00941197591273355ddfa393a8bb330",
+      "git_blob_sha1": "98fa1d025f6aa8a5c0273ef9249a08ad9536c49d"
     },
     {
       "path": "verification/qa/publication_identity_checks.json",
       "bytes": 334,
       "sha256": "6e6c45a944baffbf7a7e646cc3c829574bf613ab1681e2580e5e82de57308754",
       "git_blob_sha1": "19c5249cc13a2120a489c9262e3d95c27aa0136c"
+    },
+    {
+      "path": "verification/qa/translation_alignment.json",
+      "bytes": 569,
+      "sha256": "1fce5bbf64729d3ab9ed3d40ac1132d22f4e2fc2687e72d7481c034324314488",
+      "git_blob_sha1": "3de774466adc3be2baec577cc2077c2c21dc3d51"
     },
     {
       "path": "verification/qa/wormald_fixed_base_extremum_checks.json",

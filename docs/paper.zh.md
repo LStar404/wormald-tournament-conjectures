@@ -2,7 +2,7 @@
 
 刘星辰
 
-2026年10月19日。公开研究稿，版本0.1.1。
+2026年10月19日。公开研究稿，版本0.2.0。
 
 # 摘要
 
@@ -77,263 +77,590 @@ $$
 
 右边正且有理。这给出了所读版本Conjecture 6的一般证明稿，而非只核对若干基图。该有限矩阵证明不使用此前研究中的永久式渐近展开、局部平衡、全局极值先验。
 
-## 2. 固定谱隙与唯一的常数零方向
+## 2. 谱隙、常数方向与限制行列式
 
-反对称奇异值成对且$\|S\|_F^2=d(d-1)$，所以
-
-$$
-\|C\|_{\rm op}^2\le\frac{d-1}{2d}<\frac12.
-$$
-
-令$u=1/\sqrt d$、$\Pi=I-uu^T$。因为$C1=0$，
+本文的$\mathbf1$为全一列向量；式子中不加粗的$1$若与矩阵相乘，也表示这个向量。由竞赛图的定义及正则性，
 
 $$
-P_0C=CP_0=0,\qquad
-P:=\frac{2A+I}{d}=P_0+C.
-$$
-
-在常数方向，$P$作用为1；在$u^\perp$上，$P$作用为$C$。因此
-
-$$
-B(z1)=I-P=\Pi-C
-$$
-
-恰有一维零空间，且在$u^\perp$上的限制$I-C$可逆。其限制行列式为
-
-$$
-\det_{u^\perp}(I-C)=\det(I-C)=\det(I+C)=:q>0.
-$$
-
-最后一个等式来自转置；正性来自成对纯虚谱。
-
-## 3. 将奇异行列式化成一个标量隐函数
-
-换用对数变量
-
-$$
-y_j=ze^{t_j},\qquad
-\mathscr B(t)=I-P\operatorname{diag}(e^{t_j}).
-$$
-
-在分解$\mathbb C u\oplus u^\perp$下，定义
-
-$$
-D(t)=\Pi\mathscr B(t)\Pi\big|_{u^\perp}.
-$$
-
-$D(0)=I-C$在$u^\perp$可逆，因此小邻域内$D(t)^{-1}$解析。Schur补精确给
-
-$$
-\det\mathscr B(t)=\det D(t)\,\psi(t),
+A+A^T=J-I,\qquad
+A\mathbf1=\frac{d-1}{2}\mathbf1,
 $$
 
 $$
-\psi(t)=u^T\mathscr B(t)u
--u^T\mathscr B(t)\Pi D(t)^{-1}\Pi\mathscr B(t)u.
-$$
-
-原点的两个交叉块都为零：
-
-$$
-u^T\mathscr B(0)\Pi=0,\qquad
-\Pi\mathscr B(0)u=0,\qquad \psi(0)=0.
-$$
-
-所以求$\psi$的前两次导数时，二次乘积仅保留两个交叉块各被求导一次的项，不会出现未列出的逆矩阵导数项。
-
-## 4. 一次导数与隐函数存在性
-
-记$D_j=e_je_j^T$。在$t=0$处，
-
-$$
-\mathscr B_j=-PD_j,\qquad
-\mathscr B_{jk}=-\delta_{jk}PD_j.
-$$
-
-因$u^TP=u^T$，第3节的零交叉块给
-
-$$
-\psi_j(0)=u^T\mathscr B_ju
-=-u^TD_ju=-1/d.
-$$
-
-行列式的一次导数也完全明确：
-
-$$
-\partial_{t_j}\det\mathscr B(0)=q\psi_j(0)=-q/d,
+S^T=2A^T+I-J
+=2(J-I-A)+I-J=-S,
 $$
 
 $$
-K_{y_j}(z1)=z^{-1}(-q/d)=-q/2\ne0.
+S\mathbf1
+=2\frac{d-1}{2}\mathbf1+\mathbf1-d\mathbf1=0.
 $$
 
-这同时证明原文所需非零偏导条件，对任意消去坐标都成立。
-
-还可避免把隐函数存在性作为额外黑盒。因为行列式对第$d$列线性，
+$S$的$d(d-1)$个非对角元均为$\pm1$，因此
 
 $$
-K(y)=K_0(y_1,\ldots,y_{d-1})+y_dK_1(y_1,\ldots,y_{d-1}),
+\|S\|_F^2=\sum_{i\ne j}s_{ij}^2=d(d-1),
+\qquad \|C\|_F^2=\frac{d-1}{d}.
+$$
+
+实反对称矩阵的正交标准形由零块及二维块
+
+$$
+J_\lambda=\begin{pmatrix}0&\lambda\\-\lambda&0\end{pmatrix}
+$$
+
+组成。每个二维块对Frobenius范数平方贡献$2\lambda^2$。于是每个频率都满足
+
+$$
+2\lambda^2\le\sum_{\text{全部二维块}}2\lambda_j^2
+=\|C\|_F^2=\frac{d-1}{d},
 $$
 
 $$
-K_1(z,\ldots,z)=-q/2\ne0,\qquad
-h(y')=-K_0(y')/K_1(y').
+\|C\|_{\rm op}^2=\max_j\lambda_j^2
+\le\frac{d-1}{2d}<\frac12.
 $$
 
-所以$h$是所需邻域内明确的有理函数，且$h(z,\ldots,z)=z$。定义
+令$u=\mathbf1/\sqrt d$、$P_0=uu^T=J/d$、$\Pi=I-P_0$。逐式计算：
 
 $$
-g(t')=\log[h(ze^{t_1},\ldots,ze^{t_{d-1}})/z].
+u^Tu=1,\quad P_0^2=P_0,\quad
+\Pi^2=I-2P_0+P_0^2=\Pi,
 $$
 
-对数取原点值0的分支，则$t_d=g(t')$、$g(0)=0$。后面只对这个明确函数作两次求导。
+$$
+Cu=0,\qquad u^TC=-(Cu)^T=0,
+\qquad CP_0=(Cu)u^T=0,\quad P_0C=u(u^TC)=0.
+$$
 
-## 5. 二次导数逐项计算
-
-令$U=(I-C)^{-1}$，在$u^\perp$上与$D(0)^{-1}$相同。两个交叉导数为
+又有
 
 $$
-u^T\mathscr B_j\Pi=-\frac1{\sqrt d}e_j^T\Pi,\qquad
-\Pi\mathscr B_ku=-\frac1{\sqrt d}Ce_k.
+P:=\frac{2A+I}{d}=P_0+C,\qquad
+Pu=P_0u+Cu=u.
+$$
+
+若$u^Tv=0$，则$P_0v=u(u^Tv)=0$，所以$Pv=Cv$。在关键点，
+
+$$
+B(z\mathbf1)=I-P=\Pi-C,\qquad
+B(z\mathbf1)u=0.
+$$
+
+在$u^\perp$上，该矩阵是$I-C$。若$x\in u^\perp$满足$(I-C)x=0$，则
+
+$$
+0=x^T(I-C)x=\|x\|_2^2-x^TCx=\|x\|_2^2,
+$$
+
+其中$x^TCx=-x^TCx$给出$x^TCx=0$。故$x=0$，限制矩阵可逆。
+
+在二维块上，
+
+$$
+\det(I-J_\lambda)
+=\det\begin{pmatrix}1&-\lambda\\\lambda&1\end{pmatrix}
+=1+\lambda^2>0.
+$$
+
+$I-C$在常数方向上的特征值为1，所以
+
+$$
+q:=\det_{u^\perp}(I-C)
+=\det(I-C)
+=\prod_j(1+\lambda_j^2)>0.
+$$
+
+转置给出
+
+$$
+\det(I+C)=\det((I+C)^T)=\det(I-C)=q.
+$$
+
+## 3. 对数变量、分块矩阵与Schur消元
+
+令$y_j=ze^{t_j}$，则
+
+$$
+\mathscr B(t)=B(ze^{t_1},\ldots,ze^{t_d})
+=I-P\operatorname{diag}(e^{t_1},\ldots,e^{t_d}).
+$$
+
+取$u^\perp$的一组正交单位基作为$V$的列。矩阵$O=(u,V)$满足
+
+$$
+V^TV=I_{d-1},\quad V^Tu=0,\quad VV^T=\Pi,
+\quad O^TO=OO^T=I_d.
+$$
+
+在这个基中写成
+
+$$
+O^T\mathscr B(t)O=
+\begin{pmatrix}a(t)&b(t)\\c(t)&D(t)\end{pmatrix},
+$$
+
+$$
+a=u^T\mathscr Bu,\quad b=u^T\mathscr BV,\quad
+c=V^T\mathscr Bu,\quad D=V^T\mathscr BV.
+$$
+
+因为$\det(O)^2=1$，这次基变换不改变行列式。在$t=0$时，
+
+$$
+a(0)=0,\quad b(0)=0,\quad c(0)=0,
+\qquad D(0)=V^T(I-C)V.
+$$
+
+第2节已经证明$D(0)$可逆，且$\det D(0)=q>0$。行列式连续，所以原点某个邻域内$\det D(t)\ne0$。逆矩阵公式
+
+$$
+D(t)^{-1}=\frac{\operatorname{adj}D(t)}{\det D(t)}
+$$
+
+说明逆的每个元素在这个邻域内解析。
+
+实际实施分块行消元：
+
+$$
+\begin{pmatrix}1&-bD^{-1}\\0&I\end{pmatrix}
+\begin{pmatrix}a&b\\c&D\end{pmatrix}
+=
+\begin{pmatrix}a-bD^{-1}c&0\\c&D\end{pmatrix}.
+$$
+
+左乘矩阵的行列式为1，右端为分块三角矩阵。因此，定义
+
+$$
+\psi(t)=a(t)-b(t)D(t)^{-1}c(t)
+$$
+
+后，得到精确恒等式
+
+$$
+\det\mathscr B(t)=\det D(t)\,\psi(t).
+$$
+
+在上述邻域内，$\det\mathscr B(t)=0$与$\psi(t)=0$等价，因为因子$\det D(t)$不为零。
+
+## 4. 一阶、二阶导数及九个乘积项
+
+记$F_j=e_je_j^T$，$R(t)=D(t)^{-1}$。指数矩阵只在第$j$列依赖$t_j$，故在原点
+
+$$
+\mathscr B_j=-PF_j,\qquad
+\mathscr B_{jk}=-\delta_{jk}PF_j.
+$$
+
+由$u^TP=u^T$及$e_j^Tu=1/\sqrt d$，
+
+$$
+a_j(0)=-u^TPF_ju=-u_j^2=-1/d,
+\qquad a_{jk}(0)=-\delta_{jk}/d.
+$$
+
+先列出乘积的一次导数：
+
+$$
+\partial_j(bRc)=b_jRc+bR_jc+bRc_j.
+$$
+
+再对$t_k$求导，全部九项为
+
+$$
+\begin{aligned}
+\partial_k\partial_j(bRc)
+={}&b_{jk}Rc+b_jR_kc+b_jRc_k\\
+&+b_kR_jc+bR_{jk}c+bR_jc_k\\
+&+b_kRc_j+bR_kc_j+bRc_{jk}.
+\end{aligned}
+$$
+
+在原点$b=c=0$。上式第1、2、4、5、6、8、9项各含因子$b$或$c$，因此它们在原点均等于0。留下的两项是
+
+$$
+\partial_k\partial_j(bRc)(0)=b_j(0)R(0)c_k(0)+b_k(0)R(0)c_j(0).
+$$
+
+现在计算这些因子：
+
+$$
+b_j(0)=-u^TPe_je_j^TV
+=-\frac1{\sqrt d}e_j^TV,
+$$
+
+$$
+c_k(0)=-V^TPe_ke_k^Tu
+=-\frac1{\sqrt d}V^TCe_k,
+$$
+
+其中$V^TP=V^TC$使用了$V^Tu=0$。令$U=(I-C)^{-1}$。由于$C$保持$u^\perp$，
+
+$$
+VR(0)V^TC=UC.
+$$
+
+于是两个二次乘积分别为
+
+$$
+b_jR(0)c_k=\frac1d e_j^TUC e_k=\frac{(UC)_{jk}}d,
+$$
+
+$$
+b_kR(0)c_j=\frac1d e_k^TUC e_j=\frac{(UC)_{kj}}d.
+$$
+
+一次乘积导数在原点为0，因此
+
+$$
+\psi_j(0)=-1/d,\qquad
+\psi_{jk}(0)=-\frac{\delta_{jk}+(UC)_{jk}+(UC)_{kj}}d.
+$$
+
+$C(I-C)=(I-C)C$，左右乘逆矩阵可得$CU=UC$。又
+
+$$
+(UC)^T=C^TU^T=-C(I+C)^{-1}.
+$$
+
+两个逆的差逐步化为
+
+$$
+\begin{aligned}
+(I-C)^{-1}-(I+C)^{-1}
+&=(I-C)^{-1}[(I+C)-(I-C)](I+C)^{-1}\\
+&=2C(I-C)^{-1}(I+C)^{-1}\\
+&=2C(I-C^2)^{-1}.
+\end{aligned}
 $$
 
 所以
 
 $$
-u^T\mathscr B_j\Pi D(0)^{-1}\Pi\mathscr B_ku
-=\frac1d e_j^TUC e_k.
-$$
-
-对$j,k$交换再加一次，得到
-
-$$
-\psi_{jk}(0)
-=-\frac{\delta_{jk}}d-\frac{(UC)_{jk}+(UC)_{kj}}d.
-$$
-
-因为$U$与$C$交换，$C^T=-C$，
-
-$$
 \begin{aligned}
-UC+(UC)^T
-&=C(I-C)^{-1}-C(I+C)^{-1}\\
-&=C[(I-C)^{-1}-(I+C)^{-1}]\\
-&=2C^2(I-C^2)^{-1}.
+I+UC+(UC)^T
+&=I+C[(I-C)^{-1}-(I+C)^{-1}]\\
+&=I+2C^2(I-C^2)^{-1}\\
+&=(I+C^2)(I-C^2)^{-1}=:Q.
 \end{aligned}
 $$
 
-因此令
+我们得到完整导数
 
 $$
-Q=(I+C^2)(I-C^2)^{-1}
-=I+2C^2(I-C^2)^{-1},
+\boxed{\psi_j(0)=-1/d,\qquad
+\nabla^2\psi(0)=-Q/d.}
 $$
 
-便有完整Hessian
+对行列式乘积求导。由于$\psi(0)=0$、$\det D(0)=q$，
 
 $$
-\boxed{\nabla_t^2\psi(0)=-Q/d.}
+\begin{aligned}
+\partial_{t_j}\det\mathscr B(0)
+&=\partial_{t_j}(\det D)(0)\,\psi(0)+\det D(0)\psi_j(0)\\
+&=0+q(-1/d)=-q/d.
+\end{aligned}
 $$
 
-## 6. 从标量曲面到原文的对数角Hessian
-
-对$\psi(t',g(t'))=0$求一次导数：
+在原点$\partial y_j/\partial t_j=z$，因此
 
 $$
-0=\psi_j+\psi_dg_j,\qquad g_j(0)=-1.
+zK_{y_j}(z\mathbf1)=-q/d,\qquad
+K_{y_j}(z\mathbf1)=-\frac{q}{dz}=-q/2\ne0.
 $$
 
-再求一次：
+这给出了每一个消去坐标所需的非零偏导。
+
+## 5. 用明确的有理函数消去最后一个变量
+
+行列式对第$d$列线性，而这一列关于$y_d$仿射，所以
 
 $$
-0=\psi_{jk}+\psi_{jd}g_k+\psi_{dk}g_j+\psi_{dd}g_jg_k+\psi_dg_{jk}.
+K(y)=K_0(y_1,\ldots,y_{d-1})
++y_dK_1(y_1,\ldots,y_{d-1}).
 $$
 
-代入$g_j=g_k=-1$与$\psi_d=-1/d$：
+由第4节的偏导计算，
 
 $$
-g_{jk}(0)=-(e_j-e_d)^TQ(e_k-e_d).
+K_1(z,\ldots,z)=K_{y_d}(z\mathbf1)=-q/2\ne0.
 $$
 
-原文的$\log h$满足
+缩小邻域，使$K_1(y')\ne0$，即可明确写出
 
 $$
-\log h(ze^{i\theta_1},\ldots,ze^{i\theta_{d-1}})
-=\log z+g(i\theta_1,\ldots,i\theta_{d-1}).
+h(y')=-\frac{K_0(y')}{K_1(y')}.
 $$
 
-每求一次$\theta$导数产生$i$，两次产生$i^2=-1$。于是
+因为$K(z\mathbf1)=0$，
 
 $$
-\mathbf H_{jk}=-g_{jk}(0)
-=(e_j-e_d)^TQ(e_k-e_d).
+K_0(z,\ldots,z)+zK_1(z,\ldots,z)=0,
+\qquad h(z,\ldots,z)=z.
 $$
 
-这一步解释了符号为什么为正，不能将$t$变量的Hessian直接当作$\theta$变量的Hessian。
-
-## 7. 正定性、行列式和有理平方
-
-$C$的频率平方为$\lambda^2<1$时，$Q$对应的特征值是
+定义
 
 $$
-\frac{1-\lambda^2}{1+\lambda^2}>0.
+g(t')=\log\!\left[
+\frac{h(ze^{t_1},\ldots,ze^{t_{d-1}})}z\right].
 $$
 
-所以$Q\succ0$，而$E$满列秩，故$\mathbf H=E^TQE\succ0$。又$Qu=u$。在$u^\perp$取任意正交基矩阵$V$，写$E=VL$，则
+原点处对数的自变量为1。选择值为0的解析对数分支后，
 
 $$
-\det(E^TQE)=\det(L)^2\det(V^TQV).
+g(0)=\log1=0,\qquad
+t_d=g(t'),\qquad \psi(t',g(t'))=0.
 $$
 
-一方面，
+下面只对这个有理函数与解析对数的组合求导，不额外假定隐函数存在。
+
+## 6. 完整链式法则与角变量的符号
+
+对$j\le d-1$，求一次导数：
 
 $$
-E^TE=I_{d-1}+J_{d-1},\qquad \det(E^TE)=d,
+0=\psi_j+\psi_dg_j,\qquad
+g_j(0)=-\frac{\psi_j(0)}{\psi_d(0)}
+=-\frac{-1/d}{-1/d}=-1.
 $$
 
-因此$\det(L)^2=d$。另一方面$Q$的常数特征值为1，故$\det(V^TQV)=\det Q$。得到
+对$t_k$再次求导，五项为
 
 $$
-\mathcal H=d\det Q=d\,\frac{\det(I+C^2)}{\det(I-C^2)}.
+0=\psi_{jk}+\psi_{jd}g_k+\psi_{dk}g_j
++\psi_{dd}g_jg_k+\psi_dg_{jk}.
 $$
 
-对称成对谱及矩阵乘法给
+逐项代入第4节的导数与$g_j=g_k=-1$：
+
+$$
+0=-\frac{Q_{jk}}d+\frac{Q_{jd}}d
++\frac{Q_{dk}}d-\frac{Q_{dd}}d-\frac{g_{jk}}d.
+$$
+
+两边乘$d$，再移项：
+
+$$
+\begin{aligned}
+g_{jk}(0)
+&=-Q_{jk}+Q_{jd}+Q_{dk}-Q_{dd}\\
+&=-(e_j-e_d)^TQ(e_k-e_d).
+\end{aligned}
+$$
+
+原文的角函数满足
+
+$$
+\widetilde f(\theta)=\log z+g(i\theta_1,\ldots,i\theta_{d-1}).
+$$
+
+一次角导数为$i g_j(i\theta)$，二次角导数为$i^2g_{jk}(i\theta)$。因此
+
+$$
+\mathbf H_{jk}
+=i^2g_{jk}(0)=-g_{jk}(0)
+=(e_j-e_d)^TQ(e_k-e_d),
+$$
+
+$$
+\boxed{\mathbf H=E^TQE.}
+$$
+
+## 7. 正定性、基变换因子与有理平方
+
+在第2节的每个二维块上，$J_\lambda^2=-\lambda^2I_2$，因此
+
+$$
+(I+J_\lambda^2)(I-J_\lambda^2)^{-1}
+=\frac{1-\lambda^2}{1+\lambda^2}I_2.
+$$
+
+由$\lambda^2<1/2$，这个系数为正。零块上的$Q$为单位矩阵，所以$Q\succ0$。
+对$v\in\mathbb R^{d-1}$，
+
+$$
+Ev=(v_1,\ldots,v_{d-1},-\textstyle\sum_{j=1}^{d-1}v_j)^T.
+$$
+
+若$v\ne0$，前$d-1$个分量不全为0，故$Ev\ne0$，从而
+
+$$
+v^T\mathbf Hv=(Ev)^TQ(Ev)>0.
+$$
+
+接着保留基变换的体积因子。$E$的第$j,k$列内积为
+
+$$
+(e_j-e_d)^T(e_k-e_d)=\delta_{jk}+1.
+$$
+
+故$E^TE=I_{d-1}+J_{d-1}$。在全一方向该矩阵的特征值为$1+(d-1)=d$，
+在与全一向量垂直的方向上特征值为1。因此
+
+$$
+\det(E^TE)=d\cdot1^{d-2}=d.
+$$
+
+写$E=VL$，其中$V$是$u^\perp$的正交基、$L$为可逆方阵：
+
+$$
+E^TQE=L^T(V^TQV)L,\qquad
+E^TE=L^TL.
+$$
+
+取行列式分别得到
+
+$$
+\det(E^TQE)=\det(L)^2\det(V^TQV),\qquad
+\det(L)^2=d.
+$$
+
+由$Cu=0$，
+
+$$
+Qu=(I+C^2)(I-C^2)^{-1}u=u.
+$$
+
+$Q$为对称矩阵，所以$u^TQV=(Qu)^TV=u^TV=0$。故
+
+$$
+(u,V)^TQ(u,V)=
+\begin{pmatrix}1&0\\0&V^TQV\end{pmatrix},
+\qquad \det Q=\det(V^TQV).
+$$
+
+把两个行列式因子乘回：
+
+$$
+\mathcal H=d\det Q
+=d\,\frac{\det(I+C^2)}{\det(I-C^2)}>0.
+$$
+
+矩阵乘法及转置给出
+
+$$
+(I+iC)(I-iC)=I+C^2,\qquad
+\det(I-iC)=\det((I-iC)^T)=\det(I+iC),
+$$
+
+$$
+(I+C)(I-C)=I-C^2,\qquad \det(I-C)=\det(I+C).
+$$
+
+因此
 
 $$
 \det(I+C^2)=\det(I+iC)^2,\qquad
 \det(I-C^2)=\det(I+C)^2.
 $$
 
-两个右侧根均取正值，所以
+根的符号也逐块确定：
 
 $$
-\frac d{\mathcal H}
-=\left[\frac{\det(I+C)}{\det(I+iC)}\right]^2.
+\det(I+J_\lambda)=1+\lambda^2>0,\qquad
+\det(I+iJ_\lambda)=1-\lambda^2>0.
 $$
 
-$C$有理，$\det(I+C)$有理；$\det(I+iC)$的奇次主子式为零，偶次项为实有理。因此括号中的数为正有理数。
-
-## 8. 与Wormald随机块模型的常数连接
-
-以下渐近结论使用Wormald原文Theorem 1、4、5，不是重新证明其全部随机计数论证。固定基图$T^*$阶数$d$，每个顶点替换成$m$阶块，总顶点数是$N=dm$。
-
-内部为独立均匀随机竞赛图的模型记$\mathcal T(T^*,m)$；内部条件为正则图的模型记$\mathcal R(T^*,m)$。由第7节消去Theorem 4中的Hessian非退化条件，并代入其常数，得到
+所以
 
 $$
-\frac{\mathbb EC_{\mathcal T}}{(N-1)!/2^N}
-\longrightarrow\rho_d(S),\qquad
-\frac{\mathbb EH_{\mathcal T}}{N!/2^{N-1}}
-\longrightarrow\rho_d(S),
+\sqrt{\frac d{\mathcal H}}
+=\frac{\det(I+C)}{\det(I+iC)}>0.
 $$
 
+最后证明有理性。行列式按单位列与$C$的列多线性展开：
+
 $$
-\frac{\mathbb EC_{\mathcal R}}{(N-1)!/2^N}
-\longrightarrow e^{1/d}\rho_d(S),\qquad
-\frac{\mathbb EH_{\mathcal R}}{N!/2^{N-1}}
-\longrightarrow e^{1/d}\rho_d(S).
+\det(I+tC)=\sum_{U\subseteq[d]}t^{|U|}\det C[U].
 $$
 
-这里$m\to\infty$且$d$固定；$\mathcal R$沿合法的奇$m$。这些是随机模型的期望常数，不是某个固定图的Hamilton计数恒等式。
+对奇数阶$r=|U|$，
+
+$$
+\det C[U]=\det(C[U]^T)=\det(-C[U])
+=(-1)^r\det C[U]=-\det C[U],
+$$
+
+所以该主子式为0。$C$有理，故
+
+$$
+\det(I+iC)
+=\sum_{k=0}^{\lfloor d/2\rfloor}\sum_{\substack{U\subseteq[d]\\|U|=2k}}
+(-1)^k\det C[U]\in\mathbb Q.
+$$
+
+$\det(I+C)$也为有理数。已经证明分子、分母均正，所以所得比值为正有理数。
+
+## 8. 外部计数定理的输入与四个极限
+
+本节明确引用Wormald的Theorem 1、4、5，不将其随机计数证明当作本稿已经重证的内容。
+固定基图阶数$d$，内部块阶数$m$，最终阶数$N=dm$。定义
+
+$$
+\nu_N=\frac{(N-1)!}{2^N},\qquad
+\mu_N=\frac{N!}{2^{N-1}}.
+$$
+
+Wormald的Theorem 4在$\mathcal H\ne0$时给出
+
+$$
+\frac{\mathbb EC_{\mathcal T}}{\nu_N}
+\longrightarrow\sqrt{d/\mathcal H}.
+$$
+
+第7节给出$\mathcal H>0$及其根式的正分支，因此这次代入为
+
+$$
+\lim_{m\to\infty}\frac{\mathbb EC_{\mathcal T}}{\nu_N}
+=\sqrt{\frac d{d\det(I+C^2)/\det(I-C^2)}}
+=\rho_d(S).
+$$
+
+Theorem 5把Theorem 4的圈计数换成路径计数，故
+
+$$
+\lim_{m\to\infty}\frac{\mathbb EH_{\mathcal T}}{\mu_N}
+=\sqrt{d/\mathcal H}=\rho_d(S).
+$$
+
+Theorem 1给出正则内部块与独立随机内部块的期望之比：
+
+$$
+\frac{\mathbb EC_{\mathcal R}}{\mathbb EC_{\mathcal T}}
+\longrightarrow e^{1/d}.
+$$
+
+对足够大的$m$，分母为正，因为其归一化极限$\rho_d(S)>0$。相乘得到
+
+$$
+\lim_{\substack{m\to\infty\\m\ {\rm 奇}}}
+\frac{\mathbb EC_{\mathcal R}}{\nu_N}
+=\lim_{\substack{m\to\infty\\m\ {\rm 奇}}}
+\left(\frac{\mathbb EC_{\mathcal R}}{\mathbb EC_{\mathcal T}}
+\frac{\mathbb EC_{\mathcal T}}{\nu_N}\right)
+=e^{1/d}\rho_d(S).
+$$
+
+Theorem 5还把Theorem 1的计数换成路径，给出
+
+$$
+\frac{\mathbb EH_{\mathcal R}}{\mathbb EH_{\mathcal T}}
+\longrightarrow e^{1/d}.
+$$
+
+于是第四个极限为
+
+$$
+\lim_{\substack{m\to\infty\\m\ {\rm 奇}}}
+\frac{\mathbb EH_{\mathcal R}}{\mu_N}
+=\lim_{\substack{m\to\infty\\m\ {\rm 奇}}}
+\left(\frac{\mathbb EH_{\mathcal R}}{\mathbb EH_{\mathcal T}}
+\frac{\mathbb EH_{\mathcal T}}{\mu_N}\right)
+=e^{1/d}\rho_d(S).
+$$
+
+四次取极限都固定$d$。后两个只沿合法的奇$m$，不涉及$d$与$m$同时增长。
 
 ## 9. 圆环基图给出完整闭式
 
@@ -358,112 +685,299 @@ $$
 \mathfrak r_d=e^{1/d}\rho_d(\mathrm{Car}_d).
 $$
 
-## 10. 严格单调逼近共同常数
+## 10. 闭式的实函数形式与严格单调性
 
 令$x=1/d$，在$0<x\le1/3$上定义
 
 $$
 \alpha(x)=\frac{\arctan x}{x},\qquad
-\beta(x)=\frac{\operatorname{artanh}x}{x}.
+\beta(x)=\frac{\operatorname{artanh}x}{x},\qquad
+\operatorname{artanh}x=\frac12\log\frac{1+x}{1-x}.
 $$
 
-闭式化为
+先把分子与分母分别写成实函数。实对数的和与差给出
 
 $$
-\mathfrak r(x)=
-\exp(p(x))\frac{\cosh\beta(x)}{\cos\alpha(x)},\qquad
+\log(1\pm x)=\frac12\log(1-x^2)
+\ \pm\operatorname{artanh}x.
+$$
+
+指数化并相加：
+
+$$
+(1+x)^{1/x}+(1-x)^{1/x}
+=2(1-x^2)^{1/(2x)}\cosh\beta(x).
+$$
+
+在原点附近的复对数分支上，
+
+$$
+\log(1\pm ix)=\frac12\log(1+x^2)\pm i\arctan x,
+$$
+
+$$
+(1+ix)^{1/x}+(1-ix)^{1/x}
+=2(1+x^2)^{1/(2x)}\cos\alpha(x).
+$$
+
+因此
+
+$$
+\mathfrak r(x)
+=e^{p(x)}\frac{\cosh\beta(x)}{\cos\alpha(x)},\qquad
 p(x)=x+\frac{\log(1-x^2)-\log(1+x^2)}{2x}.
 $$
 
-逐项展开对数的奇幂：
+当$x=1/d$时，$1/x=d$是整数，上述复幂就是原来的多项式幂。
+又$0<\alpha(x)\le1<\pi/2$，所以分母的余弦严格为正。
+
+把两个对数的级数相减：
 
 $$
-p(x)=-\sum_{j\ge1}\frac{x^{4j+1}}{2j+1},\qquad p'(x)<0.
+\begin{aligned}
+\log(1-x^2)-\log(1+x^2)
+&=-2\sum_{j=0}^\infty\frac{x^{4j+2}}{2j+1},\\
+p(x)&=x-\sum_{j=0}^\infty\frac{x^{4j+1}}{2j+1}
+=-\sum_{j=1}^\infty\frac{x^{4j+1}}{2j+1},\\
+p'(x)&=-\sum_{j=1}^\infty
+\frac{4j+1}{2j+1}x^{4j}<0.
+\end{aligned}
 $$
 
-置$v=1-\alpha$。积分式给
+对反正切与反双曲正切的积分作变量代换，得到
 
 $$
-\beta'(x)=\int_0^1\frac{2xt^2}{(1-x^2t^2)^2}\,dt,\quad
+\alpha(x)=\int_0^1\frac{dt}{1+x^2t^2},\qquad
+\beta(x)=\int_0^1\frac{dt}{1-x^2t^2}.
+$$
+
+令$v=1-\alpha$，在积分内求导：
+
+$$
+\beta'(x)=\int_0^1\frac{2xt^2}{(1-x^2t^2)^2}\,dt,
+\qquad
 v'(x)=\int_0^1\frac{2xt^2}{(1+x^2t^2)^2}\,dt>0.
 $$
 
-对每个$t$比较被积函数：
+对每个$t\in[0,1]$，
 
 $$
-\beta'(x)\le
-\left(\frac{1+x^2}{1-x^2}\right)^2v'(x)\le\frac{25}{16}v'(x).
+\frac{2xt^2}{(1-x^2t^2)^2}
+\le\left(\frac{1+x^2}{1-x^2}\right)^2
+\frac{2xt^2}{(1+x^2t^2)^2},
 $$
 
-又$\beta(x)\le\beta(1/3)=\frac32\log2$，故
-
 $$
-\tanh\beta(x)\le\tanh(\tfrac32\log2)=\frac79.
-$$
-
-由$\alpha(x)\ge1-x^2/3\ge26/27$及$\tan y\ge y+y^3/3$，
-
-$$
-\tan\alpha(x)\ge\frac{26}{27}+\frac13\left(\frac{26}{27}\right)^3
->\frac79\frac{25}{16}.
+\left(\frac{1+x^2}{1-x^2}\right)^2
+\le\left(\frac{1+1/9}{1-1/9}\right)^2
+=\left(\frac54\right)^2=\frac{25}{16}.
 $$
 
-最后一个差精确为$42833/944784>0$。所以
+故$\beta'(x)\le(25/16)v'(x)$。因为$\beta'(x)>0$，
+
+$$
+\beta(x)\le\beta(1/3)
+=3\cdot\frac12\log\frac{1+1/3}{1-1/3}
+=\frac32\log2,
+$$
+
+$$
+\tanh\beta(x)
+\le\frac{e^{3\log2}-1}{e^{3\log2}+1}
+=\frac{8-1}{8+1}=\frac79.
+$$
+
+用$(1+z)^{-1}\ge1-z$并积分，
+
+$$
+\alpha(x)\ge\int_0^1(1-x^2t^2)\,dt
+=1-\frac{x^2}{3}\ge\frac{26}{27}.
+$$
+
+附录A.7以微积分证明$\tan y\ge y+y^3/3$。代入上界区间，
+
+$$
+\tan\alpha(x)
+\ge\frac{26}{27}+\frac13\left(\frac{26}{27}\right)^3.
+$$
+
+需要的严格余量逐项通分为
+
+$$
+\frac{26}{27}+\frac{26^3}{3\cdot27^3}
+-\frac79\frac{25}{16}
+=\frac{1191008-1148175}{944784}
+=\frac{42833}{944784}>0.
+$$
+
+最后对$\log\mathfrak r$求导并代入以上每一个界：
 
 $$
 \begin{aligned}
 \frac d{dx}\log\mathfrak r(x)
-&=p'(x)+\tanh\beta\,\beta'(x)-\tan\alpha\,v'(x)\\
-&\le p'(x)-\frac{42833}{944784}v'(x)<0.
+&=p'(x)+\tanh\beta(x)\,\beta'(x)
+-\tan\alpha(x)\,v'(x)\\
+&\le p'(x)
++\left(\frac79\frac{25}{16}
+-\frac{26}{27}-\frac{26^3}{3\cdot27^3}\right)v'(x)\\
+&=p'(x)-\frac{42833}{944784}v'(x)<0.
 \end{aligned}
 $$
 
-因此$\mathfrak r_d$随奇数$d\ge3$严格增加，且
+$d_1<d_2$给$1/d_1>1/d_2$，所以
+$\mathfrak r_{d_1}<\mathfrak r_{d_2}$。在$x\downarrow0$时，
 
 $$
-\boxed{\mathfrak r_d\uparrow L=\cosh1/\cos1.}
-$$
-
-这证明所读版本Conjecture 2的极限存在，并给出极限值与严格单调性；不依赖对有限数值表的外推。
-
-## 11. 显式误差与原文奇次系数现象
-
-令$b=\tanh1$、$h=\tan1$。有
-
-$$
-\beta=1+x^2/3+x^4/5+O(x^6),\qquad
-\alpha=1-x^2/3+x^4/5+O(x^6),
+\alpha(x)\to1,\qquad \beta(x)\to1,\qquad p(x)\to0,
 $$
 
 $$
-\log(\mathfrak r(x)/L)
-=a_2x^2+\ell_4x^4-\frac13x^5+O(x^6),
+\lim_{d\to\infty,\ d\ {\rm 奇}}\mathfrak r_d
+=e^0\frac{\cosh1}{\cos1}
+=L.
+$$
+
+## 11. Taylor系数及余项的逐项恢复
+
+对$|x|<1$，积分几何级数：
+
+$$
+\frac{\arctan x}{x}
+=1-\frac{x^2}{3}+\frac{x^4}{5}+O(x^6),
+\qquad
+\frac{\operatorname{artanh}x}{x}
+=1+\frac{x^2}{3}+\frac{x^4}{5}+O(x^6).
+$$
+
+例如第二个式子的余项满足
+
+$$
+\left|\sum_{k=3}^\infty\frac{x^{2k}}{2k+1}\right|
+\le\frac{|x|^6}{7}\sum_{j=0}^\infty|x|^{2j}
+=\frac{|x|^6}{7(1-x^2)}.
+$$
+
+第一个交错级数的绝对余项也被这同一个正级数控制。
+第10节的$p$级数给出
+
+$$
+p(x)=-x^5/3+R_p(x),\qquad
+|R_p(x)|\le\frac{|x|^9}{5(1-|x|^4)}.
+$$
+
+令$b=\tanh1$、$h=\tan1$、$\delta_\beta=\beta-1$、
+$\delta_\alpha=\alpha-1$。所用的一、二阶导数为
+
+$$
+(\log\cosh y)'=\tanh y,\quad
+(\log\cosh y)''=1-\tanh^2y,
 $$
 
 $$
-a_2=(b-h)/3,\qquad
-\ell_4=(b+h)/5+(2+h^2-b^2)/18.
+(-\log\cos y)'=\tan y,\quad
+(-\log\cos y)''=1+\tan^2y.
 $$
 
-指数恢复时，四次项还包括$a_2^2/2$。令$a_4=\ell_4+a_2^2/2$，则
+再求一次导数，
 
 $$
-\boxed{
-\mathfrak r_d
+(\log\cosh y)'''=-2\tanh y\,\operatorname{sech}^2y,\qquad
+(-\log\cos y)'''=2\tan y\,\sec^2y.
+$$
+
+前者的绝对值不超过2。后者只需在$\alpha$和1之间估计；由于$0\le\alpha\le1$，其绝对值不超过$2\tan1\,\sec^21$。Taylor积分余项满足
+
+$$
+|R_f|\le\frac{2}{6}|\delta_\beta|^3,\qquad
+|R_g|\le\frac{2\tan1\,\sec^21}{6}|\delta_\alpha|^3.
+$$
+
+这里系数$1/6$来自$\frac12\int_0^{|\delta|}(|\delta|-t)^2dt=|\delta|^3/6$。展开为
+
+$$
+\log\cosh(1+\delta_\beta)-\log\cosh1
+=b\delta_\beta+\frac{1-b^2}{2}\delta_\beta^2
++O(\delta_\beta^3),
+$$
+
+$$
+-\log\cos(1+\delta_\alpha)+\log\cos1
+=h\delta_\alpha+\frac{1+h^2}{2}\delta_\alpha^2
++O(\delta_\alpha^3).
+$$
+
+因为
+
+$$
+\delta_\beta=x^2/3+x^4/5+O(x^6),\quad
+\delta_\alpha=-x^2/3+x^4/5+O(x^6),
+$$
+
+$$
+\delta_\beta^2=x^4/9+O(x^6),\quad
+\delta_\alpha^2=x^4/9+O(x^6),\quad
+\delta_\beta^3=O(x^6),\quad\delta_\alpha^3=O(x^6),
+$$
+
+代回得到
+
+$$
+\log\cosh\beta-\log\cosh1
+=\frac b3x^2+
+\left(\frac b5+\frac{1-b^2}{18}\right)x^4+O(x^6),
+$$
+
+$$
+-\log\cos\alpha+\log\cos1
+=-\frac h3x^2+
+\left(\frac h5+\frac{1+h^2}{18}\right)x^4+O(x^6).
+$$
+
+再加上$p(x)$，并记$L=\cosh1/\cos1$：
+
+$$
+\log\frac{\mathfrak r(x)}L
+=a_2x^2+\ell_4x^4-\frac{x^5}{3}+O(x^6),
+$$
+
+$$
+a_2=\frac{b-h}{3},\qquad
+\ell_4=\frac{b+h}{5}+\frac{2+h^2-b^2}{18}.
+$$
+
+令上式右边为$z(x)$。由于$z=O(x^2)$，
+
+$$
+e^z=1+z+\frac{z^2}{2}+O(z^3),\qquad
+\frac{z^2}{2}=\frac{a_2^2}{2}x^4+O(x^6),\quad z^3=O(x^6).
+$$
+
+所以
+
+$$
+\mathfrak r(x)
+=L\left[1+a_2x^2+
+\left(\ell_4+\frac{a_2^2}{2}\right)x^4
+-\frac{x^5}{3}+O(x^6)\right].
+$$
+
+定义$a_4=\ell_4+a_2^2/2$，再代入$x=1/d$：
+
+$$
+\boxed{\mathfrak r_d
 =L\left[1+\frac{a_2}{d^2}+\frac{a_4}{d^4}
 -\frac1{3d^5}+O(d^{-6})\right].}
 $$
 
-特别地，$d^{-1},d^{-3}$系数精确为零，$d^{-5}$系数为$-L/3$。数值上，
+这里一次、三次项的系数为0；五次项的系数为$-L/3$。用于核对的数值是
 
 $$
-La_2\approx-0.757603347512237,\qquad La_4\approx2.035222101370122.
+La_2\approx-0.757603347512237,\qquad
+La_4\approx2.035222101370122.
 $$
 
-
-更完整地，$\cosh\beta/\cos\alpha$是$x$的偶解析函数，所有奇次来自$\exp[-\sum_{j\ge1}x^{4j+1}/(2j+1)]$。这说明奇次消失的具体来源，不是数值拟合。
-
-这里$d$是先固定再取块极限的基图阶数，$N=dm$才是最终图阶数。上述$d^{-2}$不能改写成全体竞赛图极值的$O(N^{-2})$余项，也没有交换两个极限。
+这个展开的变量是基图阶数$d$。固定$d$取过块极限以后才令$d$增长，
+所以它不是最终阶数$N=dm$的统一$O(N^{-2})$极值误差。
 
 ## 12. 独立核查与结论边界
 
@@ -513,9 +1027,9 @@ $$
 
 因此正则基图间的比较变成一个有限矩阵问题。非正则基图不能直接套这条公式；第7—10节另证其指数损失。
 
-## 3. 正确使用Fang–Huang的全部乘积比较
+## 3. 乘积比较、积分与全部等号条件
 
-以下$K_d$专指Fang–Huang的对称比较矩阵，不能与删集包含核混用。准确元素为
+本节引用[Fang–Huang的Corollary 3.4](https://arxiv.org/html/2608.06238v1#S3)。这条外部定理不是本文重新证明的结论。其比较矩阵为
 
 $$
 (K_d)_{ij}=\begin{cases}
@@ -525,300 +1039,543 @@ $$
 \end{cases}
 $$
 
-外部输入为
+向量$x^*$表示将$x$的各坐标绝对值按降序排列。对于同阶竞赛符号矩阵的任意乘积，所引定理给出
 
 $$
-(S_1\cdots S_p x)^*\prec_w K_d^p x^*,
+(S_1\cdots S_p x)^*\prec_w K_d^p x^*.
 $$
 
-右端为非负降序向量；等号时全部后缀比较也为向量等号。另用其定理1.4在四次迹的等号分类。没有把其$4k$迹定理直接换成$4k+2$。
-
-对非负降序$u\prec_w v$，
+右端是非负降序向量。弱主序$u\prec_w v$的含义是
 
 $$
-\sum_i(u_i-t)_+
-=\max_r\left(\sum_{i\le r}u_i-rt\right)
-\le\max_r\left(\sum_{i\le r}v_i-rt\right).
+\sum_{i=1}^r u_i\le\sum_{i=1}^r v_i
+\quad(1\le r\le d).
 $$
 
-积分得
+所引定理还给出：若最外层比较是向量等号，则对每个后缀乘积的比较都是向量等号。下面证明本文需要的平方和及其等号转换。
+
+记$(a-t)_+=\max(a-t,0)$。对于降序非负向量及$t\ge0$，
+
+$$
+\sum_{i=1}^d(u_i-t)_+
+=\max_{0\le r\le d}\left(\sum_{i=1}^r u_i-rt\right)
+\le\max_{0\le r\le d}\left(\sum_{i=1}^r v_i-rt\right)
+=\sum_{i=1}^d(v_i-t)_+.
+$$
+
+第一个等号中，取$r$等于严格大于$t$的坐标个数；加入更小坐标只会减少和，去掉更大坐标也只会减少和。对任意$a\ge0$，
+
+$$
+2\int_0^\infty(a-t)_+\,dt
+=2\int_0^a(a-t)\,dt
+=2[at-t^2/2]_0^a=a^2.
+$$
+
+逐坐标积分得到
 
 $$
 \|u\|_2^2
-=2\int_0^\infty\sum_i(u_i-t)_+\,dt\le\|v\|_2^2.
+=2\int_0^\infty\sum_i(u_i-t)_+\,dt
+\le2\int_0^\infty\sum_i(v_i-t)_+\,dt
+=\|v\|_2^2.
 $$
 
-若平方和相等，连续非负的被积差处处为零；其折点、斜率确定全部坐标，故$u=v$。
-
-对标准基$e_j$，
+若平方和相等，令$g(t)=\sum_i(v_i-t)_+-\sum_i(u_i-t)_+$。它连续、非负且积分为0。如果$g(t_0)>0$，连续性给一个正长度区间，使其上$g(t)>g(t_0)/2$，积分便大于0。因此$g(t)=0$对每个$t\ge0$成立。分段线性函数的右导数给
 
 $$
-\|S^pe_j\|_2^2\le\|K_d^pe_1\|_2^2.
+\#\{i:u_i>t\}=\#\{i:v_i>t\}=:N(t).
 $$
 
-## 4. 比较矩阵右端与传递矩阵精确相同
-
-令$T_d$上三角为1、下三角为$-1$。设$R_0$为反序矩阵，$D_0=\operatorname{diag}(1,-1,\ldots)$。逐元素先算
+对第$j$个坐标，
 
 $$
-(D_0K_dR_0)_{ij}=(-1)^{i-1}(K_d)_{i,d+1-j}
-=\begin{cases}(-1)^{i-1},&i<j,\\0,&i=j,\\(-1)^j,&i>j.\end{cases}
+u_j=\int_0^\infty
+\mathbf1_{\{\#\{i:u_i>t\}\ge j\}}\,dt
+=\int_0^\infty\mathbf1_{\{N(t)\ge j\}}\,dt=v_j.
 $$
 
-该矩阵反对称。在“奇数指标升序、偶数指标降序”的顺序中，较早点到较晚点的元素均为1：两个奇指标使用上三角的$(-1)^{i-1}$；两个偶指标使用下三角的$(-1)^j$；奇点到偶点则按$i<j$或$i>j$分别使用同样的两个式子。令$\Lambda$为此同一行列置换，得到
+因而平方和取等强制$u=v$。取$x=e_j$，由于$e_j^*=e_1$，得到
 
 $$
-\Lambda^TD_0K_dR_0\Lambda=T_d.
+\|S^pe_j\|_2^2\le\|K_d^pe_1\|_2^2,
 $$
 
-置$U=D_0\Lambda$。利用$K_d^T=K_d$，
+并且取等时$(S^pe_j)^*=K_d^pe_1$。
+
+## 4. 比较矩阵与传递矩阵的每个矩相同
+
+令$T_d$的上三角元为1、下三角元为$-1$。令$R_0$为反序置换矩阵，$D_0=\operatorname{diag}(1,-1,\ldots)$。从$K_d$的定义逐项代入，
 
 $$
-T_dT_d^T=U^TK_d^2U,\qquad Ue_1=e_1.
+(D_0K_dR_0)_{ij}
+=(-1)^{i-1}(K_d)_{i,d+1-j}
+=\begin{cases}
+(-1)^{i-1},&i<j,\\
+0,&i=j,\\
+(-1)^j,&i>j.
+\end{cases}
 $$
 
-所以
+按“奇指标升序、偶指标降序”同时排列行列。两个奇指标中，较早者$i<j$，上式为$(-1)^{i-1}=1$；两个偶指标中，较早者$i>j$，上式为$(-1)^j=1$。奇指标排在每个偶指标之前：若原指标$i<j$，上式为$(-1)^{i-1}=1$；若$i>j$，上式为$(-1)^j=1$。所以该顺序下所有上三角元都为1。令$\Lambda$实现这个排列，则
 
 $$
-(-1)^p(T_d^{2p})_{11}=(K_d^{2p})_{11}
+T_d=\Lambda^TD_0K_dR_0\Lambda.
+$$
+
+置$U=D_0\Lambda$。由于$R_0R_0^T=I$、$\Lambda\Lambda^T=I$、$K_d^T=K_d$，矩阵乘积给
+
+$$
+\begin{aligned}
+T_dT_d^T
+&=\Lambda^TD_0K_dR_0\Lambda
+\Lambda^TR_0^TK_dD_0\Lambda\\
+&=\Lambda^TD_0K_d^2D_0\Lambda=U^TK_d^2U.
+\end{aligned}
+$$
+
+第一项指标是1，故$Ue_1=e_1$。又$T_d^T=-T_d$，所以
+
+$$
+T_d^2=-U^TK_d^2U,\qquad
+T_d^{2p}=(-1)^pU^TK_d^{2p}U
+$$
+
+（相乘时每两个邻接的$UU^T$都等于$I$）。于是
+
+$$
+(-1)^p(T_d^{2p})_{11}
+=e_1^TK_d^{2p}e_1
+=(K_d^pe_1)^T(K_d^pe_1)
 =\|K_d^pe_1\|_2^2.
 $$
 
-带负绕回循环移位$Ce_j=e_{j+1}$、$Ce_d=-e_1$与$T_d$交换，故$T_d^{2p}$全部对角元相同。因此
+附录A.2逐元素证明带负绕回移位$Z$满足$Z^TT_dZ=T_d$。插入$ZZ^T=I$得到$Z^TT_d^{2p}Z=T_d^{2p}$。取第$j<d$个对角元给$(T_d^{2p})_{j+1,j+1}=(T_d^{2p})_{jj}$；取第$d$个对角元，两个绕回负号相乘为1，给$(T_d^{2p})_{11}=(T_d^{2p})_{dd}$。因此
 
 $$
-d\|K_d^pe_1\|_2^2
-=(-1)^p\operatorname{tr}T_d^{2p}=\|T_d^p\|_F^2.
+\begin{aligned}
+\|T_d^p\|_F^2
+&=\operatorname{tr}((T_d^p)^TT_d^p)
+=(-1)^p\operatorname{tr}T_d^{2p}\\
+&=d(-1)^p(T_d^{2p})_{11}
+=d\|K_d^pe_1\|_2^2.
+\end{aligned}
 $$
 
-对第3节的列比较求和，得到每个整数$p\ge1$的有限不等式
+现在对上一节的$d$个列不等式求和：
 
 $$
-\boxed{\|S^p\|_F^2\le\|T_d^p\|_F^2.}
+\|S^p\|_F^2
+=\sum_{j=1}^d\|S^pe_j\|_2^2
+\le d\|K_d^pe_1\|_2^2
+=\|T_d^p\|_F^2\qquad(p\ge1).
 $$
 
-带负移位的逐元素验证另见附录A.2；上述矩阵关系明确了奇次幂Frobenius比较的来源。
+这里包括全部奇$p$，没有将一个仅关于$4k$次迹的结论直接替换成$4k+2$次迹结论。
 
-## 5. 谱比值上界及等号
+## 5. 谱比值的上界与等号的完整推演
 
-若$S$的频率为$\pm i\lambda_j$，置$x_j=\lambda_j^2/d^2<1/2$。积分几何级数给
-
-$$
-\log\frac{1+x}{1-x}=2\sum_{r\ge0}\frac{x^{2r+1}}{2r+1}.
-$$
-
-于是
+任意竞赛符号矩阵的非零特征值成对为$\pm i\lambda_j$，其中$\lambda_j>0$。由第一部分的Frobenius估计，每个$x_j=\lambda_j^2/d^2<1/2$。每个二维块对两个行列式的贡献分别为$1+x_j$和$1-x_j$，因此
 
 $$
+\det(I+S/d)=\prod_j(1+x_j),\qquad
+\det(I+iS/d)=\prod_j(1-x_j)>0.
+$$
+
+在$0\le x<1$上，将几何级数积分，
+
+$$
+\begin{aligned}
+\log\frac{1+x}{1-x}
+&=\int_0^x\left(\frac1{1+t}+\frac1{1-t}\right)\,dt\\
+&=2\int_0^x\frac{dt}{1-t^2}
+=2\sum_{r=0}^\infty\int_0^x t^{2r}\,dt
+=2\sum_{r=0}^\infty\frac{x^{2r+1}}{2r+1}.
+\end{aligned}
+$$
+
+积分交换可由$[0,x]$上几何级数的一致收敛保证。反对称标准形还给$\|S^p\|_F^2=2\sum_j\lambda_j^{2p}$。逐项代入，
+
+$$
+\begin{aligned}
 \log\rho_d(S)
-=\sum_{r\ge0}\frac{\|S^{2r+1}\|_F^2}{(2r+1)d^{4r+2}}
-\le\log\rho_d(T_d).
+&=2\sum_j\sum_{r=0}^\infty
+\frac{\lambda_j^{4r+2}}{(2r+1)d^{4r+2}}\\
+&=\sum_{r=0}^\infty
+\frac{\|S^{2r+1}\|_F^2}{(2r+1)d^{4r+2}}
+\le\sum_{r=0}^\infty
+\frac{\|T_d^{2r+1}\|_F^2}{(2r+1)d^{4r+2}}
+=\log\rho_d(T_d).
+\end{aligned}
 $$
 
-级数绝对收敛，每个矩亏损非负。若取等号，则$p=3$的Frobenius比较取等号，每列亦取等号：
+定义$r_d=\rho_d(T_d)$。每个亏损非负；若总和为0，则$r=1$这一项也为0，即$\|S^3\|_F^2=\|T_d^3\|_F^2$。该亏损是$d$个非负列亏损的和，所以每一列取等。上一节的平方和等号结论及Fang–Huang的后缀等号依次给
 
 $$
-(S^3e_j)^*=K_d^3e_1.
-$$
-
-Fang–Huang的后缀等号给
-
-$$
+(S^3e_j)^*=K_d^3e_1,\qquad
 (S^2e_j)^*=K_d^2e_1.
 $$
 
-求平方和并按列求和，得$\operatorname{tr}S^4=\operatorname{tr}T_d^4$。由其四次等号分类（亦见附录A.3的独立计算），
+对后一式求平方和并按$j$求和，
 
 $$
-S=Q^TT_dQ
+\operatorname{tr}S^4=\|S^2\|_F^2
+=d\|K_d^2e_1\|_2^2
+=\|T_d^2\|_F^2=\operatorname{tr}T_d^4.
 $$
 
-其中$Q$为带符号置换。反之该关系显然保持谱比值。因此
+附录A.3独立证明这一等号强制$S=Q^TT_dQ$，其中$Q$为带符号置换矩阵。反向也要检查：$Q^TQ=I$，故
 
 $$
-\boxed{\rho_d(S)\le r_d:=\rho_d(T_d),}
+I+tS=Q^T(I+tT_d)Q,\qquad
+\det(I+tS)=(\det Q)^2\det(I+tT_d)=\det(I+tT_d).
 $$
 
-全部等号恰为带符号置换传递矩阵。
+分别取$t=1/d$和$t=i/d$，得到$\rho_d(S)=r_d$。因此
 
-如果$S$还正则，普通重编号后可写$S=D_eT_dD_e$，$e_i=\pm1$。正则性给$T_de=0$；相邻行相减给
+$$
+\rho_d(S)\le r_d,
+\quad\text{等号当且仅当 }S=Q^TT_dQ.
+$$
+
+若$S$正则，在普通重编号后写成$S=D_eT_dD_e$，其中$e_i=\pm1$。由$S\mathbf1=0$及$D_e^2=I$，
+
+$$
+D_eT_de=0,\qquad T_de=0.
+$$
+
+第$i$行与第$i+1$行的差只有第$i,i+1$列各为1，因此
 
 $$
 0=(T_de)_i-(T_de)_{i+1}=e_i+e_{i+1}.
 $$
 
-故$e$必须交替。该奇阶切换图普通同构于$\mathrm{Car}_d$，例如用$\phi(i)=((d+1)/2)i\bmod d$直接检查边方向。因此正则基图中的等号恰为圆环普通同构类。
+递推给$e_i=(-1)^{i-1}e_1$。整体符号$e_1$在$D_eT_dD_e$中出现两次而抵消；附录A.2给出该交替切换与$\mathrm{Car}_d$的逐边普通同构。因此正则基图的等号恰为圆环普通同构类。
 
-## 6. 正则非参考基图还有明确的常数间隙
+## 6. 六次矩给出的明确严格间隙
 
-若正则$S$不普通同构于圆环，第5节的$p=3$亏损必为正。对任意竞赛符号矩阵，模2有$S\equiv J+I$，且
-
-$$
-(J+I)^3\equiv I+(1+d+d^2)J\equiv I+J\pmod2.
-$$
-
-故$S^3$的非对角元均为奇数，对角为0。奇数平方模8为1，而反对称位置成对，所以
+若正则$S$不普通同构于圆环，上一节的等号推演给
 
 $$
-\|S^3\|_F^2
-=2\sum_{i<j}(S^3_{ij})^2\equiv d(d-1)\pmod{16}.
+\Delta_3:=\|T_d^3\|_F^2-\|S^3\|_F^2>0.
 $$
 
-正亏损因而至少16。保留对数级数的$p=3$项：
+在模2意义下$S\equiv J+I$，并且$J^2=dJ$、$J^3=d^2J$，所以
 
 $$
-\log(r_d/\rho_d(S))\ge16/(3d^6),
+S^3\equiv(J+I)^3
+=I+3J+3dJ+d^2J
+\equiv I+(1+d+d^2)J\equiv I+J\pmod2.
 $$
 
-$$
-\boxed{r_d-\rho_d(S)\ge r_d(1-e^{-16/(3d^6)})>0.}
-$$
-
-该间隙只针对固定基图的极限常数，不给有限块大小$m$的显式收敛阈值。
-
-## 7. 非正则基图必须单独处理
-
-令基图出度为$d_i$。定义
+最后一步使用$d(d+1)$为偶数。又$(S^3)^T=-S^3$，故其对角为0、非对角为奇数。若$z=2k+1$，
 
 $$
-a_i=\frac{2d_i+1}{d}>0,\qquad
-\kappa=\left(\prod_{i=1}^d a_i\right)^{1/d}.
+z^2=4k(k+1)+1\equiv1\pmod8.
 $$
 
-因为$\sum_i d_i=d(d-1)/2$，
+将反对称位置成对求和，
 
 $$
-\frac1d\sum_i a_i=1.
+\|S^3\|_F^2=2\sum_{i<j}(S^3_{ij})^2
+\equiv2\binom d2=d(d-1)\pmod{16}.
 $$
 
-算术—几何平均给$\kappa\le1$，且取等号当且仅当全部$d_i=(d-1)/2$。所以非正则基图满足$\kappa<1$。
-
-还可保留比分的明确损失。令$s_i=2d_i-(d-1)$，则$a_i=1+s_i/d\in(0,2)$。对$0<a<2$，Taylor积分式给
+此式也适用于$T_d$。因此$\Delta_3$是正的16的整数倍，$\Delta_3\ge16$。在对数级数中只保留$r=1$项，
 
 $$
-\log a=(a-1)+(a-1)^2\int_0^1(1-t)
-\frac{-1}{[1+t(a-1)]^2}\,dt
-\le(a-1)-\frac18(a-1)^2.
+\log\frac{r_d}{\rho_d(S)}
+\ge\frac{\Delta_3}{3d^6}\ge\frac{16}{3d^6}.
 $$
 
-所以
+两边取指数，再移项，
 
 $$
-\boxed{\log\kappa\le-\frac{\|s\|^2}{8d^3}.}
+\rho_d(S)\le r_de^{-16/(3d^6)},\qquad
+r_d-\rho_d(S)\ge r_d(1-e^{-16/(3d^6)})>0.
 $$
 
-奇$d$的比分为偶数，非正则时因$\sum_i s_i=0$有$\|s\|^2\ge8$，故$\kappa^N\le e^{-N/d^3}$。这使第9—10节的指数衰减率有一个统一、明确的下界。
+这是固定基图的极限常数间隙，不是有限块阶数的有效阈值。
 
-对于$\mathcal T$，令$W$为邻接矩阵的逐元期望：块间为0或1，块内不同顶点为$1/2$，对角为0。每个Hamilton圈使用不同无序顶点对，相关内部随机边独立，故
+## 7. 非正则比分与指数损失
+
+令$d_i$为基图出度，$b_i=d_i+1/2$，并定义
+
+$$
+a_i=\frac{2b_i}{d},\qquad
+\kappa=\left(\prod_{i=1}^d a_i\right)^{1/d},\qquad
+s_i=2d_i-(d-1).
+$$
+
+每条边恰贡献一个出度，因此
+
+$$
+\sum_i d_i=\binom d2,\qquad
+\sum_i a_i=\frac{2\binom d2+d}{d}=d,\qquad
+a_i=1+\frac{s_i}{d}\in(0,2),\qquad \sum_i s_i=0.
+$$
+
+函数$f(a)=a-1-\log a$满足$f'(a)=(a-1)/a$，所以在$a=1$达到唯一最小值$f(1)=0$。于是
+
+$$
+\log\kappa=\frac1d\sum_i\log a_i
+\le\frac1d\sum_i(a_i-1)=0.
+$$
+
+取等要求全部$a_i=1$，即全部$d_i=(d-1)/2$。非正则时$\kappa<1$。为了计算损失，使用带积分余项的二阶展开：
+
+$$
+\log a=(a-1)-(a-1)^2\int_0^1
+\frac{1-t}{[1+t(a-1)]^2}\,dt.
+$$
+
+由于$0<1+t(a-1)<2$，
+
+$$
+\int_0^1\frac{1-t}{[1+t(a-1)]^2}\,dt
+\ge\frac14\int_0^1(1-t)\,dt=\frac18.
+$$
+
+代入$a_i$并求和，
+
+$$
+\begin{aligned}
+\log\kappa
+&\le\frac1d\sum_i\left(\frac{s_i}{d}-\frac{s_i^2}{8d^2}\right)
+=-\frac{\|s\|^2}{8d^3}.
+\end{aligned}
+$$
+
+奇$d$时每个$s_i$为偶数。非正则意味着至少一个$s_i\ne0$；零和条件还要求存在相反符号的非零项，各自绝对值至少2。因此$\|s\|^2\ge2^2+2^2=8$，并有
+
+$$
+\kappa^N\le\exp[-N\|s\|^2/(8d^3)]\le e^{-N/d^3}.
+$$
+
+在$\mathcal T$模型中，令$W$为邻接矩阵的逐元期望。对一个固定有向Hamilton圈，其$N$条边使用不同无序顶点对，内部随机边相互独立；故该圈出现概率等于对应$W$元素的乘积。对所有按循环起点识别的圈求和，
 
 $$
 \mathbb EC_{\mathcal T}=C(W)\le\operatorname{per}W.
 $$
 
-不需要错误地声称$\mathbb E\operatorname{per}A=\operatorname{per}W$；后者的二圈项不符合竞赛图互斥方向。
+永久式包含所有置换；一个Hamilton圈对应其中一个单圈置换，其权重非负，因此末尾不等式成立。这里没有将一般置换的随机边乘积当作独立：置换可能含二圈，而竞赛图不可能同时包含相反的两条边。
 
-## 8. 加权矩阵的整数行和舍入与Brégman界
+## 8. 加权行的补齐、整数化及Brégman界
 
-第$i$类顶点在$W$中的行和为
-
-$$
-r_i=md_i+(m-1)/2=m(d_i+\tfrac12)-\tfrac12.
-$$
-
-先把行和补到$R_i=\lceil r_i\rceil$，每元仍保持在$[0,1]$。固定其余行，永久式是该行元素的线性函数；在$[0,1]^N$且整数行和$R_i$的多面体上，线性最大值可在一个0、1行达到。逐行替换得到0、1矩阵$V$，满足
+第$i$类的每一行在$W$中的和为
 
 $$
-\operatorname{per}W\le\operatorname{per}V,\qquad
-\text{第$i$类每行有$R_i$个1}.
+r_i=md_i+\frac{m-1}{2}=mb_i-\frac12,\qquad
+R_i=\lceil r_i\rceil.
 $$
 
-使用[Brégman不等式（Alon论文第2节Lemma 2.1所列版本）](https://www.tau.ac.il/~nogaa/PDFS/hamilton.pdf)，
+先讨论任意$L$元行$w$，目标整数行和为$r\le R\le L$。需要补入$s_0=R-r$，可用容量为$\sum_j(1-w_j)=L-r\ge s_0$。从$j=1$开始依次取
+
+$$
+\delta_j=\min(1-w_j,s_{j-1}),\qquad
+s_j=s_{j-1}-\delta_j,\qquad w'_j=w_j+\delta_j.
+$$
+
+递推得到$s_L=\max(0,s_0-\sum_j(1-w_j))=0$，所以$0\le w'_j\le1$且$\sum_jw'_j=R$。永久式各系数非负，这种逐元增加不使其减少。
+
+固定其他行，将永久式写作$\sum_jw_jc_j$，其中$c_j$是删去当前行和第$j$列后的永久式，故$c_j\ge0$。若两个元素$w_a,w_b$严格介于0与1，重标这两个坐标使$c_a\ge c_b$，取
+
+$$
+\eta=\min(1-w_a,w_b)>0,\qquad
+w_a'=w_a+\eta,\qquad w_b'=w_b-\eta.
+$$
+
+行和保持不变，且
+
+$$
+\sum_jw_j'c_j-\sum_jw_jc_j=\eta(c_a-c_b)\ge0.
+$$
+
+至少一个坐标变成0或1，非整数坐标数减少。至多$L-1$次后至多剩一个非整数坐标；若其余坐标均为整数且总和$R$为整数，最后一个坐标也是整数。对各行执行此过程，得到0、1矩阵$V$，每个第$i$类行有$R_i$个1，而且$\operatorname{per}W\le\operatorname{per}V$。
+
+现在引用[Brégman不等式（Alon论文Lemma 2.1）](https://www.tau.ac.il/~nogaa/PDFS/hamilton.pdf)：0、1矩阵的行和为$q_1,\ldots,q_L>0$时，
+
+$$
+\operatorname{per}V\le\prod_{\ell=1}^L(q_\ell!)^{1/q_\ell}.
+$$
+
+本题每类恰有$m$行，因此
 
 $$
 \operatorname{per}W\le\prod_{i=1}^d(R_i!)^{m/R_i}.
 $$
 
-这是对加权矩阵的行舍入后应用原0、1定理，不是未经说明引用一个加权版本。
+使用的是原0、1定理；加权情形的适用性已由上面的具体行操作证明。
 
-## 9. 计算指数损失，不丢掉归一化尺度
+## 9. 带明确常数的归一化计算
 
-固定$d$、$m\to\infty$。有
-
-$$
-R_i=m(d_i+\tfrac12)+O(1),\qquad R_i\ge m/4
-$$
-
-最终一致成立。Stirling带余项给
+以下$m\ge2$，$N=dm$。写$R_i=mb_i+\varepsilon_i$，则$|\varepsilon_i|\le1/2$，并有
 
 $$
-\frac{\log(R_i!)}{R_i}
-=\log R_i-1+O\left(\frac{\log m}{m}\right).
+R_i\ge m/2-1/2\ge m/4,\qquad R_i\le N.
+$$
+
+使用整数$R\ge1$的带余项Stirling界
+
+$$
+\log(R!)=R\log R-R+\frac12\log(2\pi R)
++\frac{\theta_R}{12R},\qquad 0<\theta_R<1.
+$$
+
+因此
+
+$$
+\begin{aligned}
+m\sum_{i=1}^d\frac{\log(R_i!)}{R_i}
+&\le m\sum_i\log R_i-N
++m\sum_i\frac{\log(2\pi R_i)}{2R_i}
++m\sum_i\frac1{12R_i^2}\\
+&\le m\sum_i\log R_i-N
++2d\log(2\pi N)+\frac{4d}{3m}.
+\end{aligned}
+$$
+
+最后两项分别使用$m/(2R_i)\le2$和$m/(12R_i^2)\le4/(3m)$。Stirling下界也给
+
+$$
+\log(N!/2^N)\ge N\log(N/2)-N.
+$$
+
+相减后，
+
+$$
+\log\frac{\operatorname{per}W}{N!/2^N}
+\le m\sum_i\log\frac{2R_i}{N}
++2d\log(2\pi N)+\frac{4d}{3m}.
+$$
+
+令$y_i=\varepsilon_i/(mb_i)$。由于$b_i\ge1/2$，$|y_i|\le1/m\le1/2$，且
+
+$$
+\frac{2R_i}{N}=a_i(1+y_i),\qquad
+|\log(1+y_i)|
+=\left|\int_0^{y_i}\frac{dt}{1+t}\right|
+\le\frac{|y_i|}{1-|y_i|}\le\frac2m.
 $$
 
 所以
 
 $$
-\log\operatorname{per}W
-\le m\sum_i\log R_i-N+O_d(\log N).
+m\sum_i\log\frac{2R_i}{N}
+\le m\sum_i\log a_i+2d=N\log\kappa+2d.
 $$
 
-又
-
-$$
-\log(N!/2^N)=N\log(N/2)-N+O(\log N).
-$$
-
-两式相减，并使用$2R_i/N=a_i+O_d(m^{-1})$：
-
-$$
-\begin{aligned}
-\log\frac{\operatorname{per}W}{N!/2^N}
-&\le m\sum_i\log(2R_i/N)+O_d(\log N)\\
-&=m\sum_i\log a_i+O_d(\log N)\\
-&=N\log\kappa+O_d(\log N).
-\end{aligned}
-$$
-
-因此存在仅依赖$d$的常数$c_d,C_d$，使
+再使用$4d/(3m)\le2d/3$以及$N!/2^N=N\nu_N$，得到明确上界
 
 $$
 \frac{\mathbb EC_{\mathcal T}}{\nu_N}
-\le C_dN^{c_d}\kappa^N\longrightarrow0.
+\le e^{8d/3}(2\pi)^{2d}N^{2d+1}\kappa^N.
 $$
 
-从$N!/2^N$换到$\nu_N$多出的$N$已计入多项式因子。
-
-与第7节合并，右边还可写为
+若内部是正则块，每个样本的实际旧行和就是$mb_i-1/2$，为正整数。直接对该样本邻接矩阵应用Brégman及上面逐项估计，得到
 
 $$
-C_dN^{c_d}\exp[-N\|s\|^2/(8d^3)]
-\le C_dN^{c_d}e^{-N/d^3}.
+\frac{\mathbb EC_{\mathcal R}}{\nu_N}
+\le e^{8d/3}(2\pi)^{2d}N^{2d+1}\kappa^N.
 $$
 
-## 10. 路径与正则内部块的相同结论
-
-对路径，添加一个新顶点，其与旧顶点的方向独立均匀。每条旧Hamilton路径以概率$1/4$闭合成经过新顶点的圈，故
+正则模型仅取合法奇$m$。非正则基图有$\kappa<1$；将右端取对数并除以$N$，
 
 $$
-\mathbb EC_{\rm aug}=\tfrac14\mathbb EH,\qquad
-4\nu_{N+1}=\mu_N.
+\frac{\log(e^{8d/3}(2\pi)^{2d}N^{2d+1}\kappa^N)}{N}
+=\log\kappa+
+\frac{8d/3+2d\log(2\pi)+(2d+1)\log N}{N}
+\longrightarrow\log\kappa<0,
 $$
 
-在$\mathcal T$中，对增广期望矩阵应用第8—9节。旧行和变为$m(d_i+1/2)$，新行和为$N/2$；仅多一行，旧行的$O(1)$改变及新行对数项不改变$N\log\kappa$主项。因此
+故两个归一化圈期望都趋于0。
+
+## 10. 增点后的路径界：逐项保留所有归一化项
+
+固定旧竞赛图$G$，加入新顶点$v$，与旧顶点的边独立公平定向。每条路径$x_1\to\cdots\to x_N$对应唯一候选圈$v\to x_1\to\cdots\to x_N\to v$，两条新增边的联合概率为$(1/2)^2=1/4$。删除$v$是逆操作。因此
+
+$$
+\mathbb E[C_{\rm aug}\mid G]=H(G)/4,\qquad
+4\nu_{N+1}=\frac{4N!}{2^{N+1}}=\frac{N!}{2^{N-1}}=\mu_N,
+$$
+
+$$
+\frac{\mathbb EH}{\mu_N}
+=\frac{\mathbb EC_{\rm aug}}{\nu_{N+1}}.
+$$
+
+对于$\mathcal T$的增广期望矩阵，旧行和为$mb_i$；对于$\mathcal R$的每个实际增广样本，旧行和不超过$mb_i+1/2$。统一选择
+
+$$
+R_i'=\lceil mb_i+1/2\rceil=mb_i+\varepsilon_i',
+\qquad \frac12\le\varepsilon_i'<\frac32.
+$$
+
+新行补到$R_0=N$。因为$b_i\le d-1/2$且$m\ge2$，$mb_i+1/2\le N-1/2$，所以$R_i'\le N$；同时$R_i'\ge m/2$。这些补齐目标都不超过增广矩阵的列数$N+1$，第8节的行操作适用。Brégman给出
+
+$$
+\log\operatorname{per}V_{\rm aug}
+\le m\sum_i\frac{\log(R_i'!)}{R_i'}
++\frac{\log(N!)}N.
+$$
+
+沿用$R_i'\ge m/4$、$R_i'\le N+1$计算旧行余项，并单列新行，
+
+$$
+\begin{aligned}
+\log\operatorname{per}V_{\rm aug}
+&\le m\sum_i\log R_i'-N+\log N-1\\
+&\quad+2d\log(2\pi(N+1))+\frac{4d}{3m}
++\frac{\log(2\pi N)}{2N}+\frac1{12N^2}\\
+&\le m\sum_i\log R_i'-N+\log N-1\\
+&\quad+(2d+1)\log(2\pi(N+1))+\frac{4d}{3m}+\frac1{12}.
+\end{aligned}
+$$
+
+减去$\log((N+1)!/2^{N+1})\ge(N+1)\log((N+1)/2)-(N+1)$。主项逐项重组为
+
+$$
+\begin{aligned}
+&m\sum_i\log R_i'+\log N-(N+1)\log((N+1)/2)\\
+&=m\sum_i\log(2R_i'/N)
++N\log(N/(N+1))+\log(2N/(N+1)).
+\end{aligned}
+$$
+
+第二项不大于0，第三项不大于$\log2$。而$\log(1+y)\le y$对于$y\ge0$由积分$\int_0^y(1+t)^{-1}dt\le y$得出，故
+
+$$
+\begin{aligned}
+m\sum_i\log(2R_i'/N)
+&=N\log\kappa+
+m\sum_i\log(1+\varepsilon_i'/(mb_i))\\
+&\le N\log\kappa+\sum_i\frac{\varepsilon_i'}{b_i}
+\le N\log\kappa+3d.
+\end{aligned}
+$$
+
+于是，使用$4d/(3m)\le2d/3$，
+
+$$
+\begin{aligned}
+\log\frac{\operatorname{per}V_{\rm aug}}{(N+1)!/2^{N+1}}
+&\le N\log\kappa+\frac{11d}{3}+\frac1{12}+\log2\\
+&\quad +(2d+1)\log(2\pi(N+1)).
+\end{aligned}
+$$
+
+取指数，再将$(N+1)!/2^{N+1}=(N+1)\nu_{N+1}$代入，两个模型分别满足
 
 $$
 \frac{\mathbb EH_{\mathcal T}}{\mu_N}
-\le C'_d(N+1)^{c'_d}\kappa^N\longrightarrow0.
+\le 2e^{11d/3+1/12}(2\pi)^{2d+1}(N+1)^{2d+2}\kappa^N,
 $$
 
-在$\mathcal R$中，每个实际样本的旧行和都准确为$md_i+(m-1)/2$。所以圈的Brégman界可以直接逐样本使用。增广后旧行最多增加1，新行最多为$N$；这一个额外行与旧行$O(1)$变化同样只改变多项式因子。故
-
 $$
-\frac{\mathbb EC_{\mathcal R}}{\nu_N}\longrightarrow0,\qquad
-\frac{\mathbb EH_{\mathcal R}}{\mu_N}\longrightarrow0
+\frac{\mathbb EH_{\mathcal R}}{\mu_N}
+\le 2e^{11d/3+1/12}(2\pi)^{2d+1}(N+1)^{2d+2}\kappa^N.
 $$
 
-且均有多项式乘$\kappa^N$的指数上界。内部若使用原文的三角分解正则模型，在其定义成立的阶数上，逐样本行和相同，结论亦成立。
+第二个界逐样本约束增广圈数，然后取期望；没有假定正则块内部的边独立。固定非正则基图时，右端对数除以$N$趋于$\log\kappa<0$，所以两者趋于0。若采用三角分解正则内部模型，在定义成立的阶数上每个旧顶点内部出度仍是$(m-1)/2$，旧行和仍是$mb_i-1/2$，增点后上界仍是$mb_i+1/2$；上述两个行和界逐样本成立，因此也得到所列$\mathcal R$上界。
 
 ## 11. 从极限常数推出充分大块阶数的精确期望极值
 
@@ -867,7 +1624,15 @@ $$
 F_n(t)=(1+t)^{n-1}\left(1-t\sum_{k=1}^{n-1}r^k\right).
 $$
 
-利用$1-r=2t/(1+t)$，括号化为
+有限几何和先乘$1-r$，相邻项抵消：
+
+$$
+(1-r)\sum_{k=1}^{n-1}r^k
+=(r+r^2+\cdots+r^{n-1})-(r^2+\cdots+r^n)
+=r-r^n.
+$$
+
+因此$\sum_{k=1}^{n-1}r^k=r(1-r^{n-1})/(1-r)$。再利用$1-r=2t/(1+t)$，括号化为
 
 $$
 \begin{aligned}
@@ -944,11 +1709,9 @@ $$
 
 取对角元便得到相邻对角相等，绕回时的两个负号抵消。
 
-## A.3 四次矩等号分类的独立四顶点证明
+## A.3 四阶行列式及四次矩等号的完整展开
 
-这里给出与所引Fang–Huang四次等号结论一致的有限计算，方便独立检查第二部分的等号链。
-
-四阶反对称矩阵写为
+令
 
 $$
 M=\begin{pmatrix}
@@ -959,158 +1722,149 @@ M=\begin{pmatrix}
 \end{pmatrix}.
 $$
 
-按行展开并合并同类项，
+记$M_{1j}$为删去第1行、第$j$列后的三阶行列式（不含代数余子式符号）。沿第一行展开，分别计算：
+
+$$
+\begin{aligned}
+M_{12}
+&=\det\begin{pmatrix}-a&d&e\\-b&0&f\\-c&-f&0\end{pmatrix}\\
+&=(-a)(0-f(-f))-d((-b)0-f(-c))+e((-b)(-f)-0(-c))\\
+&=-af^2-cdf+bef,\\
+M_{13}
+&=\det\begin{pmatrix}-a&0&e\\-b&-d&f\\-c&-e&0\end{pmatrix}\\
+&=(-a)((-d)0-f(-e))-0+e((-b)(-e)-(-d)(-c))\\
+&=-aef+be^2-cde,\\
+M_{14}
+&=\det\begin{pmatrix}-a&0&d\\-b&-d&0\\-c&-e&-f\end{pmatrix}\\
+&=(-a)((-d)(-f)-0(-e))-0+d((-b)(-e)-(-d)(-c))\\
+&=-adf+bde-cd^2.
+\end{aligned}
+$$
+
+将每个三阶行列式按其第一行再展开，三项分别来自第一行的三个元素；上式中第一行的0贡献为0。再乘四阶展开的系数：
 
 $$
 \begin{aligned}
 \det M
-&=a^2f^2+b^2e^2+c^2d^2
--2abef+2acdf-2bcde\\
+&=-aM_{12}+bM_{13}-cM_{14}\\
+&=(a^2f^2+acdf-abef)
++(-abef+b^2e^2-bcde)
++(acdf-bcde+c^2d^2)\\
+&=a^2f^2+b^2e^2+c^2d^2-2abef+2acdf-2bcde\\
 &=(af-be+cd)^2.
 \end{aligned}
 $$
 
-若六个变量均为$\pm1$，括号是三个$\pm1$的和，故行列式为1或9。设$D_4(S)$是四顶点主子式等于9的个数。行列式系数展开给
+六个变量均为$\pm1$时，$af-be+cd$是三个$\pm1$之和，其值为$\pm1$或$\pm3$，故行列式为1或9。设$D_4(S)$为四顶点主子式等于9的个数。由行列式的列多线性展开，在每列选择单位列或$tS$的列，得到
+
+$$
+\det(I+tS)=\sum_{U\subseteq[d]}t^{|U|}\det S[U].
+$$
+
+奇阶反对称矩阵$B$满足$\det B=\det B^T=\det(-B)=-\det B$，所以其行列式为0。二阶主子式均为1，四阶中有$D_4$个9，其余为1。因此
 
 $$
 \det(I+tS)=1+e_2t^2+e_4t^4+O(t^6),
 $$
 
 $$
-e_2=\binom d2,\qquad e_4=\binom d4+8D_4(S).
+e_2=\binom d2,\qquad
+e_4=(\binom d4-D_4)+9D_4=\binom d4+8D_4.
 $$
 
-对特征值逐个使用$\log(1+t\lambda)$的幂级数：
+每个特征值的对数级数给
 
 $$
 \log\det(I+tS)
+=\sum_{k\ge1}\frac{(-1)^{k+1}t^k}{k}\operatorname{tr}S^k
 =-\frac{t^2}{2}\operatorname{tr}S^2
 -\frac{t^4}{4}\operatorname{tr}S^4+O(t^6).
 $$
 
-另一方面，
+奇次迹为0，因为$\operatorname{tr}S^{2j+1}=\operatorname{tr}(S^{2j+1})^T=-\operatorname{tr}S^{2j+1}$。另一方面，将$z=e_2t^2+e_4t^4+O(t^6)$代入$\log(1+z)=z-z^2/2+O(z^3)$，其中$z^2=e_2^2t^4+O(t^6)$、$z^3=O(t^6)$，得到
 
 $$
-\log(1+e_2t^2+e_4t^4+O(t^6))
-=e_2t^2+(e_4-e_2^2/2)t^4+O(t^6).
+\log\det(I+tS)=e_2t^2+(e_4-e_2^2/2)t^4+O(t^6).
 $$
 
-比较四次系数：
+四次系数相等，逐步移项：
 
 $$
-\operatorname{tr}S^4=2\binom d2^2-4\binom d4-32D_4(S).
+-\operatorname{tr}S^4/4=e_4-e_2^2/2,\qquad
+\operatorname{tr}S^4=2e_2^2-4e_4
+=2\binom d2^2-4\binom d4-32D_4(S).
 $$
 
-传递矩阵每个四顶点主子式都是1，因此
+传递矩阵任取四个升序顶点都有$a=b=c=d=e=f=1$，其行列式为$(1-1+1)^2=1$，所以$D_4(T_d)=0$。相减给
 
 $$
 \operatorname{tr}T_d^4-\operatorname{tr}S^4=32D_4(S).
 $$
 
-若取等号，$D_4(S)=0$。作对角符号切换使第一行非对角元全为1。任取另外三个顶点$i<j<k$，四顶点行列式为
+若四次矩取等，则$D_4(S)=0$。取对角符号$e_1=1,e_j=s_{1j}$（$j>1$），切换后$s'_{1j}=e_1s_{1j}e_j=s_{1j}^2=1$。任意主子式在切换下乘以$(\det D_e[U])^2=1$，故$D_4$不变。任取$i<j<k$且都不为1，
 
 $$
-\det S[\{1,i,j,k\}]=(s_{jk}-s_{ik}+s_{ij})^2.
+\det S'[\{1,i,j,k\}]
+=(s'_{jk}-s'_{ik}+s'_{ij})^2.
 $$
 
-如果$i,j,k$形成有向三圈，则$s_{ij}=s_{jk}=-s_{ik}$，右端为9，矛盾。因此剩余顶点无有向三圈。若$i\to j$且$j\to k$，必有$i\to k$，否则就是三圈；这证明其方向关系传递，故可按全序重编号。第一顶点指向所有其余顶点，整个切换图是传递图。
+若这三点形成有向三圈，则$s'_{ij}=s'_{jk}=-s'_{ik}$，括号为$3s'_{ij}$，平方为9，矛盾。因此剩余顶点无有向三圈。如果$i\to j$、$j\to k$而$i\not\to k$，则$k\to i$，会形成三圈；所以方向关系是严格全序，可按该全序排列。第一顶点指向所有剩余点，整个切换图于是为传递图。反过来带符号置换相似保持迹，故四次矩取等。$d=3$时切换后剩下两点，按其唯一边方向排列即可。
 
-由此，四次矩取等当且仅当$S$与$T_d$带符号置换相似。$d=3$时其余两点自动传递，同一论证仍成立。
+## A.4 逐行整数化的可复现步骤
 
-## A.4 逐行整数化为什么合法
-
-第二部分第8节先补齐行和，再逐行使永久式不减。补齐是可行的：若一行当前和为$r$，目标为$R=\lceil r\rceil\le L$，则该行剩余容量为
+第二部分第8节已列出逐坐标补齐量$\delta_j$、剩余量$s_j$、两坐标移动量$\eta$及永久式改变量。这里记录终止性所需的两个整数。
 
 $$
-\sum_{j=1}^L(1-w_j)=L-r\ge R-r.
+q(w)=\#\{j:0<w_j<1\},\qquad
+q(W)=\sum_{\ell=1}^L q(W_{\ell,\cdot}).
 $$
 
-保持其他行不动，永久式对当前行是
+每次两坐标移动不改变整数行和，使至少一个非整数坐标变成整数，且不改变其他整数坐标，所以$q(w)$至少减少1。最初$q(w)\le L$，不可能无限下降。若停止时$q(w)=1$，唯一非整数坐标为
 
 $$
-\operatorname{per}W=\sum_{j=1}^L w_jc_j,\qquad c_j\ge0.
+w_a=R-\sum_{j\ne a}w_j\in\mathbb Z,
 $$
 
-若一行有至少两个严格介于0和1的元素$w_a,w_b$，在保持$w_a+w_b$不变时，向系数较大的坐标移动质量，直到至少一元变为0或1；线性目标不减，非整数元素数下降。重复后至多剩一个非整数元素；但总和$R$为整数，最后一个也必须为整数。所以每一行都能替换成0、1行，且永久式不减。按行完成此过程即可使用Brégman界。
+与其非整数性矛盾。因此停止时$q(w)=0$。逐行处理不会修改其他行；每行最多$L-1$次两坐标移动后已经整数化，总移动次数至多$L(L-1)$。每次永久式改变量均为第8节算出的$\eta(c_a-c_b)\ge0$。
 
-## A.5 路径增点后全部对数项的计算
+## A.5 增点界中主项重组的逐项核对
 
-先固定一个$N$顶点竞赛图，并加一个新顶点$v$，与旧顶点的边独立公平定向。每条旧Hamilton路径$x_1\to\cdots\to x_N$对应唯一的候选圈
-
-$$
-v\to x_1\to\cdots\to x_N\to v.
-$$
-
-需要的两条新边相互独立，概率为$1/4$。删除$v$又把每个增广Hamilton圈唯一还原成旧路径，因此
+第二部分第10节已经给出带明确常数的路径上界。本节把其中唯一一次对数重组分别拆开，避免隐藏一个额外的$N$因子。由于$md=N$，
 
 $$
-\mathbb E[C_{\rm aug}\mid G]=H(G)/4.
+m\sum_i\log R_i'
+=m\sum_i\log(2R_i'/N)+N\log(N/2).
 $$
 
-再对$G$平均，并用
-
-$$
-4\nu_{N+1}=\frac{4N!}{2^{N+1}}
-=\frac{N!}{2^{N-1}}=\mu_N,
-$$
-
-便有完全相同的归一化期望：
-
-$$
-\frac{\mathbb EH(G)}{\mu_N}
-=\frac{\mathbb EC_{\rm aug}}{\nu_{N+1}}.
-$$
-
-写$b_i=d_i+1/2$，$a_i=2b_i/d$。旧行整数上界统一写作$R_i'=mb_i+O(1)$。独立内部模型的新行整数上界为$R_0=\lceil N/2\rceil$；正则内部块的逐样本证明可把新行补至$R_0=N$。两种情况下$R_0$都与$N$同阶。
-
-Brégman与Stirling给
+于是
 
 $$
 \begin{aligned}
-\log\operatorname{per}V_{\rm aug}
-&\le m\sum_{i=1}^d\frac{\log(R_i'!)}{R_i'}
-+\frac{\log(R_0!)}{R_0}\\
-&=m\sum_{i=1}^d\log R_i'-N+\log R_0-1
-+O_d(\log N).
+&N\log(N/2)+\log N-(N+1)\log((N+1)/2)\\
+&=N\log N-N\log2+\log N
+-(N+1)\log(N+1)+(N+1)\log2\\
+&=N[\log N-\log(N+1)]
++[\log N+\log2-\log(N+1)]\\
+&=N\log(N/(N+1))+\log(2N/(N+1)).
 \end{aligned}
 $$
 
-减去$\log((N+1)!/2^{N+1})$，得到
+在此后的指数界里，分母先是$(N+1)!/2^{N+1}$。改成圈期望的分母时，
 
 $$
-\begin{aligned}
-\log\frac{\operatorname{per}V_{\rm aug}}
-{(N+1)!/2^{N+1}}
-&\le m\sum_i\log\frac{2R_i'}N
-+N\log\frac N{N+1}\\
-&\quad+\log\frac{2R_0}{N+1}+O_d(\log N).
-\end{aligned}
+\frac{(N+1)!/2^{N+1}}{\nu_{N+1}}
+=\frac{(N+1)!}{N!}=N+1.
 $$
 
-逐项估计：
-
-$$
-\frac{2R_i'}N=a_i+O_d(m^{-1}),
-$$
-
-$$
-m\sum_i\log\frac{2R_i'}N
-=m\sum_i\log a_i+O_d(1)=N\log\kappa+O_d(1),
-$$
-
-$$
-N\log\frac N{N+1}=-1+O(N^{-1}),\qquad
-\log\frac{2R_0}{N+1}=O(1).
-$$
-
-因此主项仍为$N\log\kappa$。从$(N+1)!/2^{N+1}$换成$\nu_{N+1}$只多一个$N+1$因子，计入多项式即可：
+因此多项式次数从$2d+1$变成$2d+2$。增点恒等式又给
 
 $$
 \frac{\mathbb EH}{\mu_N}
-\le C_d(N+1)^{c_d}\kappa^N.
+=\frac{4\mathbb EC_{\rm aug}}{4\nu_{N+1}}
+=\frac{\mathbb EC_{\rm aug}}{\nu_{N+1}}.
 $$
 
-这补全了“只改变多项式因子”的每个归一化步骤。
+这两个因子一个来自阶数变更，一个来自增点概率，均已显式保留。
 
 ## A.6 有限多个基图如何给同一个阈值
 

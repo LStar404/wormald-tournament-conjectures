@@ -13,13 +13,17 @@ and exact computational checks addressing Conjectures **1, 2 and 6** in
 N. C. Wormald's [*Tournaments with many Hamilton cycles*](https://arxiv.org/html/2610.16245v1).
 The conjectures are Wormald's. This research draft is authored by **Xingchen Liu**.
 
-**Read the paper:** [Chinese proof PDF](output/pdf/wormald-conjectures-proof.zh.pdf)
-(22 pages) · [Chinese elementary guide PDF](output/pdf/wormald-conjectures-guide.zh.pdf)
+**Read the paper:** [English paper PDF](output/pdf/wormald-conjectures-proof.en.pdf)
+(33 pages) · [Chinese paper PDF](output/pdf/wormald-conjectures-proof.zh.pdf)
+(32 pages) · [Chinese elementary guide PDF](output/pdf/wormald-conjectures-guide.zh.pdf)
 (20 pages)  
-**Editable sources:** [Proof manuscript](docs/paper.zh.md) ·
+**Editable sources:** [English paper](docs/paper.en.md) · [Chinese paper](docs/paper.zh.md) ·
 [Elementary guide](docs/elementary-guide.zh.md)  
-Current repository revision: **0.1.1**, 19 October 2026.
-The manuscripts are currently in Chinese; this README is bilingual.
+Current repository revision: **0.2.0**, 19 October 2026.
+The complete paper is available in Chinese and English. The elementary guide is Chinese only.
+Version 0.2.0 expands the product rules, chain rules, matrix calculations, equality cases,
+Taylor remainders and permanent estimates. All 726 mathematical spans match across the two papers;
+308 prose blocks were translated without omitting a section or calculation.
 
 ### Main results
 
@@ -79,7 +83,7 @@ Hamilton extremum in Conjecture 3 or interchange the two limits.
 ### Guide for reviewers
 
 Start with the conjecture correspondence and reading roadmap in
-[the manuscript](docs/paper.zh.md). Part I, Sections 1–7, derives the finite
+[the English manuscript](docs/paper.en.md). Part I, Sections 1–7, derives the finite
 Hessian identity by linear algebra and differentiation. Part I, Section 8,
 uses Wormald's Theorems 1, 4 and 5 to identify the model constants.
 Part II uses Fang–Huang's Corollary 3.4 for the moment comparison, and treats
@@ -104,6 +108,7 @@ From the repository root:
     python verification/verify_wormald_hessian_spectral_bridge.py
     python verification/verify_wormald_fixed_base_extremum.py
     python verification/audit_publication_identities.py
+    python tools/check_translation.py
     python tools/check_package.py
 
 The mathematical checks cover 11,724 exact Hessian entries, 345
@@ -115,7 +120,8 @@ the written proofs and the explicitly cited external theorems.
 
 The PDFs are generated from Markdown through Pandoc and Tectonic or XeLaTeX.
 Build instructions are in [the PDF builder](tools/build_pdf.py).
-All 42 pages were rendered and visually inspected; [the layout record](verification/qa/pdf_review.json)
+The revised papers' 65 pages were rendered and visually inspected; the previously reviewed
+20-page Chinese guide is retained. [the layout record](verification/qa/pdf_review.json)
 records that review separately from mathematical verification.
 
 ### Repository contents
@@ -135,7 +141,7 @@ records that review separately from mathematical verification.
 For this research draft, cite:
 
 > Liu, Xingchen. *Wormald tournament conjectures: Hessians and random blow-ups*.
-> Research draft, version 0.1.1, 2026.
+> Research draft, version 0.2.0, 2026.
 > https://github.com/LStar404/wormald-tournament-conjectures.
 
 Machine-readable citation metadata is in [CITATION.cff](CITATION.cff).
@@ -162,12 +168,15 @@ is related work; its authorship and formal-verification records belong to that p
 [*Tournaments with many Hamilton cycles*](https://arxiv.org/html/2610.16245v1)
 中猜想 **1、2、6**。原猜想归属于Wormald，**本研究稿由刘星辰独立署名**。
 
-**阅读论文：**[完整证明PDF](output/pdf/wormald-conjectures-proof.zh.pdf)（22页）·
+**阅读论文：**[中文论文PDF](output/pdf/wormald-conjectures-proof.zh.pdf)（32页）·
+[英文论文PDF](output/pdf/wormald-conjectures-proof.en.pdf)（33页）·
 [大一基础讲解PDF](output/pdf/wormald-conjectures-guide.zh.pdf)（20页）  
-**可编辑稿：**[论文Markdown](docs/paper.zh.md) ·
+**可编辑稿：**[中文论文Markdown](docs/paper.zh.md) · [英文论文Markdown](docs/paper.en.md) ·
 [基础讲解Markdown](docs/elementary-guide.zh.md)  
-当前仓库修订版本：**0.1.1**，2026年10月19日。
-现有论文和讲解为中文，README提供完整中英双语内容。
+当前仓库修订版本：**0.2.0**，2026年10月19日。
+论文提供完整中文和英文版本，教学讲解仅提供中文。
+0.2.0逐项展开乘积求导、链式法则、矩阵运算、等号条件、Taylor余项及永久式估计，
+正文不以“显然”“同理”替代计算；英文完整对应308个文字段落和726处数学表达式。
 
 ### 主要结果
 
@@ -244,6 +253,7 @@ $$
     python verification/verify_wormald_hessian_spectral_bridge.py
     python verification/verify_wormald_fixed_base_extremum.py
     python verification/audit_publication_identities.py
+    python tools/check_translation.py
     python tools/check_package.py
 
 数学核查覆盖11,724个精确Hessian元素、345个不同消去坐标的Hessian行列式、
@@ -253,7 +263,7 @@ $$
 
 PDF由Markdown主稿经Pandoc和Tectonic或XeLaTeX生成，
 可复现方法见[PDF构建程序](tools/build_pdf.py)。
-共42页已全部渲染并逐页检查；[版面记录](verification/qa/pdf_review.json)
+新版两种语言论文共65页已全部渲染并逐页检查，另保留此前已审查的20页中文基础讲解；[版面记录](verification/qa/pdf_review.json)
 将排版审查与数学核验分别记录。
 
 ### 仓库结构
@@ -273,7 +283,7 @@ PDF由Markdown主稿经Pandoc和Tectonic或XeLaTeX生成，
 引用本研究稿时，请使用：
 
 > Liu, Xingchen. *Wormald tournament conjectures: Hessians and random blow-ups*.
-> Research draft, version 0.1.1, 2026.
+> Research draft, version 0.2.0, 2026.
 > https://github.com/LStar404/wormald-tournament-conjectures.
 
 机器可读引用信息见[CITATION.cff](CITATION.cff)。

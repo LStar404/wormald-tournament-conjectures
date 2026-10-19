@@ -41,14 +41,14 @@
   },
   "proof": {
     "pdf": "output/pdf/wormald-conjectures-proof.zh.pdf",
-    "pages": 22,
-    "bytes": 252144,
-    "sha256": "a2bb668c36457e5ee8178c67982b6c0cf6f00f63aa19b31a3dd9ac4cd7fdcf75",
+    "pages": 32,
+    "bytes": 290430,
+    "sha256": "c54e933442c72e8a350b1d45172b07cacdfb0eac2090d1f81ba26b0185fb1942",
     "critical_layout_warnings": [],
     "automated_word_bounds_checked": false,
     "replacement_character_pages": [],
-    "link_annotations": 46,
-    "rendered_pages": 22,
+    "link_annotations": 47,
+    "rendered_pages": 32,
     "visual_review": "passed",
     "visually_reviewed_pages": [
       1,
@@ -72,23 +72,82 @@
       19,
       20,
       21,
-      22
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32
     ],
-    "author": "刘星辰",
-    "changed_rendered_pages": [
-      1,
-      4
-    ],
-    "visual_review_method": "All pages rerendered. Unchanged page images match the previously inspected version; changed pages were visually rechecked."
+    "visual_review_method": "All pages rendered at 90 dpi and visually inspected in four-page contact sheets.",
+    "author": "刘星辰"
   },
   "scope": "PDF layout and author-metadata review; not mathematical certification. Word bounding boxes were not measured.",
   "editorial_revision": {
-    "version": "0.1.1",
+    "version": "0.2.0",
     "sole_author": "Xingchen Liu",
-    "bilingual_readme_sections_per_language": 5,
-    "unchanged_manuscript_math_blocks": {
-      "paper.zh.md": 472,
-      "elementary-guide.zh.md": 410
-    }
+    "paper_languages": [
+      "zh",
+      "en"
+    ],
+    "elementary_guide_languages": [
+      "zh"
+    ],
+    "paper_mathematical_spans_each": 726,
+    "paper_translated_prose_blocks": 308
+  },
+  "proof-en": {
+    "pdf": "output/pdf/wormald-conjectures-proof.en.pdf",
+    "pages": 33,
+    "bytes": 250580,
+    "sha256": "4fd66c5066b75a234821b46ff963a783dc2f83314e65d708691d1a3c6ef5201b",
+    "critical_layout_warnings": [],
+    "automated_word_bounds_checked": false,
+    "replacement_character_pages": [],
+    "link_annotations": 48,
+    "rendered_pages": 33,
+    "visual_review": "passed",
+    "visually_reviewed_pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33
+    ],
+    "visual_review_method": "All pages rendered at 90 dpi and visually inspected in four-page contact sheets.",
+    "author": "Xingchen Liu"
   }
 }

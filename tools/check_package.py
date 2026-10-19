@@ -25,9 +25,9 @@ for source in (ROOT/"README.md",ROOT/"AUDIT.md",*(ROOT/"docs").glob("*.md")):
 for p in (ROOT/"verification/qa").glob("*checks.json"):
     assert json.loads(p.read_text(encoding="utf-8"))["result"]=="passed",p
 review=json.loads((ROOT/"verification/qa/pdf_review.json").read_text(encoding="utf-8"))
-for key in ("proof","guide"):
+for key in ("proof","proof-en","guide"):
     assert review[key]["visual_review"]=="passed"
     assert review[key]["visually_reviewed_pages"]==list(range(1,review[key]["pages"]+1))
 print(json.dumps({"result":"passed","files":len(manifest["files"]),"local_links":links,
-                  "pdf_pages":[review["proof"]["pages"],review["guide"]["pages"]]}))
+                  "pdf_pages":{key:review[key]["pages"] for key in ("proof","proof-en","guide")}}))
 
