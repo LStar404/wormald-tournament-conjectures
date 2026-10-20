@@ -1,8 +1,8 @@
 {
   "result": "passed",
-  "mathematical_spans_each": 973,
-  "prose_blocks_each": 349,
-  "headings_each": 41,
+  "mathematical_spans_each": 964,
+  "prose_blocks_each": 343,
+  "headings_each": 39,
   "translated_mathematical_labels": {
     "全部二维块": "all two-dimensional blocks",
     "\\rm 奇": "\\rm odd",
@@ -12,8 +12,8 @@
     "\\text{路径}": "\\text{paths}"
   },
   "sha256": {
-    "zh": "12dd1126171278a732de4ee74352eaec874ab95b079bbbe423622cec52d7908a",
-    "en": "ef7d23329c749e7cde0d2deaacdcc78a0c98719359a462adca5b19d65a112004"
+    "zh": "5c94528d31ab9e285bc2e8cf7459dbf17846a5c49b148f7f671b2a8e1bdef64b",
+    "en": "59d4c2f27d6126e8e03093f91d4933f7a53283dbf612a31f533d403f9cd1d764"
   },
   "scope": "Formula sequence and structural alignment; not independent mathematical or linguistic certification."
 }

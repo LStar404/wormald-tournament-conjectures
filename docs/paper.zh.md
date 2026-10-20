@@ -2,19 +2,19 @@
 
 刘星辰
 
-2026年10月19日。公开研究稿，版本0.2.3。
+2026年10月20日。公开研究稿，版本0.2.4。
 
 # 摘要
 
 本文研究Wormald随机吹胀模型中的三个具体问题。我们把原文定义的对数角Hessian写成有限矩阵的压缩，证明其正定，并把模型渐近常数精确化为行列式比值。对圆环基图，这个比值有闭式；乘回正则内部块因子后，所得常数严格递增至$\cosh(1)/\cos(1)$，且可以计算其倒幂展开。结合明确引用的Fang–Huang矩比较和Wormald模型计数定理，再单独估计非正则基图，可推出固定奇基图阶数、块充分大时的唯一期望最大者。
 
-本文提供针对[Wormald公开版本](https://arxiv.org/html/2610.16245v1)猜想1、2、6的证明稿。推导与程序由AI辅助完成，已经过本次逐式自检及精确有限计算，尚待作者和同行独立数学审阅，未获形式化认证。不据此主张历史优先权。模型结论不等于全体竞赛图的Hamilton精确极值定理。
+本文给出[Wormald公开版本](https://arxiv.org/html/2610.16245v1)猜想1、2、6的证明稿。推导和核查程序由AI辅助完成，尚待独立数学审阅。
 
 # 原猜想、记号和本稿结论的对应
 
-原猜想归属于N. C. Wormald。本文核对的固定版本是arXiv:2610.16245v1，上传于2026年10月12日；作者说明该文来自早期研究，并非2026年才提出这些问题。下面是统一本文记号后的转述。
+本文采用N. C. Wormald的arXiv:2610.16245v1版本，以下用本文记号重述其中三个猜想。
 
-固定奇数$d\ge3$，基图$T^*$有$d$个顶点；每个顶点替换成$m$个顶点，总阶数$N=dm$。块间方向由$T^*$决定。$\mathcal T(T^*,m)$的内部块独立均匀随机；$\mathcal R(T^*,m)$进一步要求每个内部块正则，因而$m$必须为奇数。用$C(G)$和$H(G)$分别表示Hamilton圈和路径数。
+固定奇数$d\ge3$，基图$T^*$有$d$个顶点；每个顶点替换成$m$个顶点，总阶数$N=dm$。块间方向由$T^*$决定。$\mathcal T(T^*,m)$的内部块独立均匀随机；$\mathcal R(T^*,m)$进一步要求每个内部块正则，因而$m$必须为奇数。用$C(G)$和$H(G)$分别表示哈密顿圈和路径数。
 
 - 猜想1：固定$d$，当$m$充分大时，圆环基图在所有$d$阶基图中最大化$\mathbb E C(\mathcal T(T^*,m))$。本稿第二部分证明这一陈述，并得到唯一性、路径类比及正则内部块类比。
 - 猜想2：圆环基图的正则内部块极限常数，在奇$d\to\infty$时收敛。第一部分给出极限值、严格单调性和误差展开。
@@ -28,16 +28,15 @@
 
 第二部分第3节使用Fang–Huang的Corollary 3.4；四次矩等号分类也可由附录A.3的四顶点计算直接核对。第二部分第8节使用Brégman的0、1永久式界。非正则基图单独处理，因此没有将正则Hessian公式用于不满足假设的图。
 
-第三部分补齐本次发表前复核时展开的计算，包括行列式多项式、圆环同构、四次矩等号、路径增点的全部归一化项，以及有限阈值的选取。配套基础讲解另成一册。
+附录给出行列式多项式、圆环同构、四次矩等号、整数化终止性、路径归一化及有限阈值的辅助计算。中文基础讲解另成一册。
 
 本文所有$m\to\infty$均先固定$d$。随后讨论$d\to\infty$的模型常数时，没有交换极限，也没有获得最终阶数$N$的统一二阶误差。
-
 
 # 术语与记号约定
 
 竞赛图是在每一对不同顶点之间恰选一个方向的完全图定向。邻接矩阵的第$i,j$元为1当且仅当$i\to j$，对角为0。正则竞赛图的每个顶点出度、入度均为$(d-1)/2$。
 
-Hamilton路径按顶点的有向排列计数；Hamilton圈按循环起点识别，即旋转起点不产生新圈，也不把反向排列另作同一个有向圈。普通同构指保持边方向的顶点双射；本文的唯一性始终在这种同构意义下理解。
+哈密顿路按顶点的有向排列计数；哈密顿圈按循环起点识别，即旋转起点不产生新圈，也不把反向排列另作同一个有向圈。普通同构指保持边方向的顶点双射；本文的唯一性始终在这种同构意义下理解。
 
 奇阶圆环图记为$\mathrm{Car}_d$，其定义为
 
@@ -60,13 +59,15 @@ $$
 
 图上的$C(G),H(G)$分别是圈数、路径数；单独出现的$C=S/d$是矩阵，粗体$\mathbf H$是Hessian矩阵，花体$\mathcal H$是它的行列式。不同节中的局部符号按该节重新给出的定义解释。
 
-以下补充运算和求导约定，避免把不同用途的下标混在一起。记实向量$v=(v_1,\ldots,v_r)^T$的欧氏范数为$\|v\|_2=(\sum_{j=1}^r v_j^2)^{1/2}$；不带下标的向量范数$\|s\|$也指此范数。记$\operatorname{tr}M=\sum_jM_{jj}$，$\operatorname{diag}(a_1,\ldots,a_r)$的对角元为所列标量、非对角元为0。$M\succ0$表示$M$实对称且对每个非零实向量$v$都有$v^TMv>0$。矩阵元素也可用小写字母表示，例如$s_{ij}=S_{ij}$。
+记实向量$v=(v_1,\ldots,v_r)^T$的欧氏范数为$\|v\|_2=(\sum_{j=1}^r v_j^2)^{1/2}$。
+
+记$\operatorname{tr}M=\sum_jM_{jj}$，$\operatorname{diag}(a_1,\ldots,a_r)$的对角元为所列标量、非对角元为0。$M\succ0$表示$M$实对称且对每个非零实向量$v$都有$v^TMv>0$。矩阵元素也可用小写字母表示，例如$s_{ij}=S_{ij}$。
 
 对标量函数$F(t_1,\ldots,t_d)$，下标$F_j,F_{jk}$分别表示$\partial F/\partial t_j$和$\partial^2F/(\partial t_j\partial t_k)$；对矩阵或行、列向量逐元求导。若原变量是$y$，则写$K_{y_j}$以区分。$\nabla^2F$表示由$F_{jk}$组成的矩阵；一元函数的撇号表示对其自变量求导。$y'=(y_1,\ldots,y_{d-1})$、$t'=(t_1,\ldots,t_{d-1})$；这里的撇号删去最后坐标，不是求导。第$j$类顶点指第$j$个基图顶点所对应的$m$个吹胀顶点。
 
 记$\lfloor a\rfloor$为不超过$a$的最大整数，$\lceil a\rceil$为不小于$a$的最小整数；$\#U=|U|$为有限集合的元素数，$\mathbf1_{\mathcal E}$为条件$\mathcal E$成立时等于1、否则等于0的标量指示函数。它不同于不带条件下标的全一向量$\mathbf1$。约定$0!=1$，$n!=1\cdot2\cdots n$；$\binom nk=n!/(k!(n-k)!)$，$k>n$时为0。
 
-渐近式$R(x)=O(x^k)$在本稿展开中表示：存在常数$M,\eta>0$，当$0<|x|<\eta$时$|R(x)|\le M|x|^k$。$O(d^{-k})$以$d\to\infty$解释；其他参数固定。若出现$O_d$，隐含常数允许依赖固定的$d$。这里用有限和或一致收敛的幂级数运算来控制余项，不把数值拟合当作此定义的证明。
+渐近式$R(x)=O(x^k)$在本稿展开中表示：存在常数$M,\eta>0$，当$0<|x|<\eta$时$|R(x)|\le M|x|^k$。$O(d^{-k})$以$d\to\infty$解释；其他参数固定。若出现$O_d$，隐含常数允许依赖固定的$d$。
 
 对方阵$D$，$\operatorname{adj}D$是余子式矩阵的转置：$(\operatorname{adj}D)_{ij}=(-1)^{i+j}\det D^{(j|i)}$，其中$D^{(j|i)}$删去第$j$行、第$i$列。按行列式展开，$D\operatorname{adj}D=(\det D)I$，所以$\det D\ne0$时可除以它得到文中的逆矩阵公式。
 
@@ -77,7 +78,7 @@ $$
 令$d\ge3$为奇数，$A$为$d$阶正则竞赛图的邻接矩阵，
 
 $$
-S=2A+I-J,\quad S^T=-S,\quad S1=0,\qquad
+S=2A+I-J,\quad S^T=-S,\quad S\mathbf1=0,\qquad
 C=S/d,\quad P_0=J/d.
 $$
 
@@ -88,7 +89,7 @@ B(y)=I-(A+\tfrac12I)\operatorname{diag}(y_1,\ldots,y_d),
 \quad K(y)=\det B(y),\quad z=2/d.
 $$
 
-Wormald在$y=z1$附近由$K(y)=0$解出$y_d=h(y_1,\ldots,y_{d-1})$，并对
+Wormald在$y=z\mathbf1$附近由$K(y)=0$解出$y_d=h(y_1,\ldots,y_{d-1})$，并对
 
 $$
 \widetilde f(\theta)=\log h(ze^{i\theta_1},\ldots,ze^{i\theta_{d-1}})
@@ -112,11 +113,11 @@ $$
 =\frac{\det(I+C)}{\det(I+iC)}=:\rho_d(S).}
 $$
 
-右边正且有理。这给出了所读版本Conjecture 6的一般证明稿，而非只核对若干基图。该有限矩阵证明不使用此前研究中的永久式渐近展开、局部平衡、全局极值先验。
+右边是正有理数，因而上述恒等式证明猜想6。
 
 ## 2. 谱隙、常数方向与限制行列式
 
-本文的$\mathbf1$为全一列向量；式子中不加粗的$1$若与矩阵相乘，也表示这个向量。由竞赛图的定义及正则性，
+全文以$\mathbf1$表示全一列向量。由竞赛图的定义及正则性，
 
 $$
 A+A^T=J-I,\qquad
@@ -1063,14 +1064,6 @@ $$
 这个展开的变量是基图阶数$d$。固定$d$取过块极限以后才令$d$增长，
 所以它不是最终阶数$N=dm$的统一$O(N^{-2})$极值误差。
 
-## 12. 独立核查与结论边界
-
-配套Hessian核查程序实际退出0：73组正则基图，包括三、五阶全部有标号正则图；11,724个Hessian元素、345个不同消去坐标的Hessian行列式用精确分数一致。
-
-独立路径是先展开$\det(I-P\operatorname{diag}(e^t))$的全部主子式，直接取一、二次导数，再按隐函数公式求Hessian；没有用本稿闭式生成待比较的左端。原文圆环表及九阶三角形吹胀表的有理数也恢复一致。单调性的有理余量精确检查；大$d$展开误差仅作高精度诊断。
-
-本稿给出所引用版本猜想6和2的证明稿及显式模型常数，但仍需独立数学审阅，也未穷尽历史文献的新颖性调查。它不证明原文Conjecture 3的全体竞赛图精确圈极值。
-
 # 第二部分：固定基图的唯一期望极值
 
 ## 1. 准确的极值对象
@@ -1318,39 +1311,39 @@ $$
 =\|T_d^2\|_F^2=\operatorname{tr}T_d^4.
 $$
 
-附录A.3独立证明这一等号强制$S=Q^TT_dQ$，其中$Q$为带符号置换矩阵。反向也要检查：$Q^TQ=I$，故
+附录A.3独立证明这一等号强制$S=\Omega^TT_d\Omega$，其中$\Omega$为带符号置换矩阵。反向也要检查：$\Omega^T\Omega=I$，故
 
 $$
-I+tS=Q^T(I+tT_d)Q,\qquad
-\det(I+tS)=(\det Q)^2\det(I+tT_d)=\det(I+tT_d).
+I+tS=\Omega^T(I+tT_d)\Omega,\qquad
+\det(I+tS)=(\det \Omega)^2\det(I+tT_d)=\det(I+tT_d).
 $$
 
 分别取$t=1/d$和$t=i/d$，得到$\rho_d(S)=r_d$。因此
 
 $$
 \rho_d(S)\le r_d,
-\quad\text{等号当且仅当 }S=Q^TT_dQ.
+\quad\text{等号当且仅当 }S=\Omega^TT_d\Omega.
 $$
 
-这里的带符号置换矩阵$Q$每行、每列恰有一个$\pm1$，满足$Q^TQ=I$；它是本节局部记号，与第一部分的对称矩阵$Q$不同。写$Q=D_eP$，其中$P$为普通置换矩阵，$D_e=\operatorname{diag}(e_1,\ldots,e_d)$，本段的$e_i=\pm1$是标量符号，记$e=(e_1,\ldots,e_d)^T$；这些标量不是标准基向量。于是
+这里的带符号置换矩阵$\Omega$每行、每列恰有一个$\pm1$，满足$\Omega^T\Omega=I$。写$\Omega=D_{\varepsilon}P$，其中$P$为普通置换矩阵，$D_{\varepsilon}=\operatorname{diag}(\varepsilon_1,\ldots,\varepsilon_d)$，其中$\varepsilon_i\in\{-1,1\}$，$\varepsilon=(\varepsilon_1,\ldots,\varepsilon_d)^T$。于是
 
 $$
-S=P^TD_eT_dD_eP,\qquad PSP^T=D_eT_dD_e.
+S=P^TD_{\varepsilon}T_dD_{\varepsilon}P,\qquad PSP^T=D_{\varepsilon}T_dD_{\varepsilon}.
 $$
 
-这里只把$P$吸收到普通重编号中，以下仍将重编号后的矩阵记为$S$；对角符号切换本身不是普通同构。若$S$正则，在这个重编号后仍有$S\mathbf1=0$。由$D_e^2=I$，
+这里只把$P$吸收到普通重编号中，以下仍将重编号后的矩阵记为$S$；对角符号切换本身不是普通同构。若$S$正则，在这个重编号后仍有$S\mathbf1=0$。由$D_{\varepsilon}^2=I$，
 
 $$
-D_eT_de=0,\qquad T_de=0.
+D_{\varepsilon}T_d\varepsilon=0,\qquad T_d\varepsilon=0.
 $$
 
 第$i$行与第$i+1$行的差只有第$i,i+1$列各为1，因此
 
 $$
-0=(T_de)_i-(T_de)_{i+1}=e_i+e_{i+1}.
+0=(T_d\varepsilon)_i-(T_d\varepsilon)_{i+1}=\varepsilon_i+\varepsilon_{i+1}.
 $$
 
-递推给$e_i=(-1)^{i-1}e_1$。整体符号$e_1$在$D_eT_dD_e$中出现两次而抵消；附录A.2给出该交替切换与$\mathrm{Car}_d$的逐边普通同构。因此正则基图的等号恰为圆环普通同构类。
+递推给$\varepsilon_i=(-1)^{i-1}\varepsilon_1$。整体符号$\varepsilon_1$在$D_{\varepsilon}T_dD_{\varepsilon}$中出现两次而抵消；附录A.2给出该交替切换与$\mathrm{Car}_d$的逐边普通同构。因此正则基图的等号恰为圆环普通同构类。
 
 ## 6. 六次矩给出的明确严格间隙
 
@@ -1377,7 +1370,7 @@ $$
 将反对称位置成对求和，
 
 $$
-\|S^3\|_F^2=2\sum_{i<j}(S^3_{ij})^2
+\|S^3\|_F^2=2\sum_{i<j}((S^3)_{ij})^2
 \equiv2\binom d2=d(d-1)\pmod{16}.
 $$
 
@@ -1407,7 +1400,7 @@ a_i=\frac{2b_i}{d},\qquad
 s_i=2d_i-(d-1).
 $$
 
-记$s=(s_1,\ldots,s_d)^T$，所以$\|s\|^2=\sum_{i=1}^d s_i^2$。每条边恰贡献一个出度，因此
+记$s=(s_1,\ldots,s_d)^T$，所以$\|s\|_2^2=\sum_{i=1}^d s_i^2$。每条边恰贡献一个出度，因此
 
 $$
 \sum_i d_i=\binom d2,\qquad
@@ -1442,17 +1435,17 @@ $$
 \begin{aligned}
 \log\kappa
 &\le\frac1d\sum_i\left(\frac{s_i}{d}-\frac{s_i^2}{8d^2}\right)
-=-\frac{\|s\|^2}{8d^3}.
+=-\frac{\|s\|_2^2}{8d^3}.
 \end{aligned}
 $$
 
-奇$d$时每个$s_i$为偶数。非正则意味着至少一个$s_i\ne0$；零和条件还要求存在相反符号的非零项，各自绝对值至少2。因此$\|s\|^2\ge2^2+2^2=8$，并有
+奇$d$时每个$s_i$为偶数。非正则意味着至少一个$s_i\ne0$；零和条件还要求存在相反符号的非零项，各自绝对值至少2。因此$\|s\|_2^2\ge2^2+2^2=8$，并有
 
 $$
-\kappa^N\le\exp[-N\|s\|^2/(8d^3)]\le e^{-N/d^3}.
+\kappa^N\le\exp[-N\|s\|_2^2/(8d^3)]\le e^{-N/d^3}.
 $$
 
-在$\mathcal T$模型中，令$W$为邻接矩阵的逐元期望。对任意非负$N$阶矩阵，$\operatorname{Sym}(N)$为全部顶点置换，$\mathcal C_N$为其中恰有一个长度$N$循环的置换，定义加权永久式和加权Hamilton圈数如下：
+在$\mathcal T$模型中，令$W$为邻接矩阵的逐元期望。对任意非负$N$阶矩阵，$\operatorname{Sym}(N)$为全部顶点置换，$\mathcal C_N$为其中恰有一个长度$N$循环的置换，定义加权永久式和加权哈密顿圈数如下：
 
 $$
 \operatorname{per}W=\sum_{\sigma\in\operatorname{Sym}(N)}
@@ -1460,13 +1453,13 @@ $$
 C(W)=\sum_{\sigma\in\mathcal C_N}\prod_{v=1}^N W_{v,\sigma(v)}.
 $$
 
-对有向圈使用单循环置换表示，已经将循环起点识别，因此不再额外除以顶点数。对一个固定有向Hamilton圈，其$N$条边使用不同无序顶点对，内部随机边相互独立；故该圈出现概率等于对应$W$元素的乘积。对所有按循环起点识别的圈求和，
+对有向圈使用单循环置换表示，已经将循环起点识别，因此不再额外除以顶点数。对一个固定有向哈密顿圈，其$N$条边使用不同无序顶点对，内部随机边相互独立；故该圈出现概率等于对应$W$元素的乘积。对所有按循环起点识别的圈求和，
 
 $$
 \mathbb EC_{\mathcal T}=C(W)\le\operatorname{per}W.
 $$
 
-永久式包含所有置换；一个Hamilton圈对应其中一个单圈置换，其权重非负，因此末尾不等式成立。这里没有将一般置换的随机边乘积当作独立：置换可能含二圈，而竞赛图不可能同时包含相反的两条边。
+永久式包含所有置换；一个哈密顿圈对应其中一个单圈置换，其权重非负，因此末尾不等式成立。这里没有将一般置换的随机边乘积当作独立：置换可能含二圈，而竞赛图不可能同时包含相反的两条边。
 
 ## 8. 加权行的补齐、整数化及Brégman界
 
@@ -1508,14 +1501,14 @@ $$
 \sum_jw_j'c_j-\sum_jw_jc_j=\eta(c_a-c_b)\ge0.
 $$
 
-至少一个坐标变成0或1，非整数坐标数减少。至多$L-1$次后至多剩一个非整数坐标；若其余坐标均为整数且总和$R$为整数，最后一个坐标也是整数。对各行执行此过程，得到0、1矩阵$V$，每个第$i$类行有$R_i$个1，而且$\operatorname{per}W\le\operatorname{per}V$。
+至少一个坐标变成0或1，非整数坐标数减少。至多$L-1$次后至多剩一个非整数坐标；若其余坐标均为整数且总和$R$为整数，最后一个坐标也是整数。对各行执行此过程，得到0、1矩阵$W^\sharp$，每个第$i$类行有$R_i$个1，而且$\operatorname{per}W\le\operatorname{per}W^\sharp$。
 
-这里的$V$是用于上界的辅助矩阵；所需条件是各元为0或1及指定行和，允许其对角为1。下面所引定理适用于这种一般0、1矩阵。
+这里的$W^\sharp$是用于上界的辅助矩阵；所需条件是各元为0或1及指定行和，允许其对角为1。下面所引定理适用于这种一般0、1矩阵。
 
 现在引用[Brégman不等式（Alon论文Lemma 2.1）](https://www.tau.ac.il/~nogaa/PDFS/hamilton.pdf)：0、1矩阵的行和为$q_1,\ldots,q_L>0$时，
 
 $$
-\operatorname{per}V\le\prod_{\ell=1}^L(q_\ell!)^{1/q_\ell}.
+\operatorname{per}W^\sharp\le\prod_{\ell=1}^L(q_\ell!)^{1/q_\ell}.
 $$
 
 由于$r_i\ge(m-1)/2>0$，整数上界$R_i$至少为1，满足所引用Brégman界的正行和假设。本题每类恰有$m$行，因此
@@ -1528,7 +1521,7 @@ $$
 
 ## 9. 带明确常数的归一化计算
 
-如果待估计的永久式等于0，被它控制的非负圈计数也等于0，所需上界已经成立，不对0取对数。以下以及第10节的全部永久式对数计算只在相应永久式为正时进行；正的上界最后也覆盖零值情形。以下$m\ge2$，$N=dm$。写$R_i=mb_i+\varepsilon_i$，则$|\varepsilon_i|\le1/2$，并有
+如果待估计的永久式等于0，被它控制的非负圈计数也等于0，所需上界已经成立，不对0取对数。以下以及第10节的全部永久式对数计算只在相应永久式为正时进行；正的上界最后也覆盖零值情形。以下$m\ge2$，$N=dm$。写$R_i=mb_i+\xi_i$，则$|\xi_i|\le1/2$，并有
 
 $$
 R_i\ge m/2-1/2\ge m/4,\qquad R_i\le N.
@@ -1538,7 +1531,7 @@ $$
 
 $$
 0\le R_i-r_i<1,\qquad
-\varepsilon_i=R_i-mb_i=(R_i-r_i)-\frac12
+\xi_i=R_i-mb_i=(R_i-r_i)-\frac12
 \in[-1/2,1/2).
 $$
 
@@ -1576,7 +1569,7 @@ $$
 +2d\log(2\pi N)+\frac{4d}{3m}.
 $$
 
-令$y_i=\varepsilon_i/(mb_i)$。由于$b_i\ge1/2$，$|y_i|\le1/m\le1/2$，且
+令$y_i=\xi_i/(mb_i)$。由于$b_i\ge1/2$，$|y_i|\le1/m\le1/2$，且
 
 $$
 \frac{2R_i}{N}=a_i(1+y_i),\qquad
@@ -1642,17 +1635,17 @@ $$
 =\frac{\mathbb EC_{\rm aug}}{\nu_{N+1}}.
 $$
 
-这里$G_{\rm aug}$为加入$v$后的随机竞赛图，$C_{\rm aug}:=C(G_{\rm aug})$；条件期望先固定$G$，只对新增边平均。对独立内部块模型令$W_{\rm aug}$为增广邻接矩阵的逐元期望；对正则内部块模型，固定一个实际增广样本并记其邻接矩阵为$A_{\rm aug}$。将第8节的行补齐与整数化操作分别作用于这两种输入，所得$(N+1)$阶0、1辅助矩阵统一记为$V_{\rm aug}$。它不是随机竞赛图的邻接矩阵。
+这里$G_{\rm aug}$为加入$v$后的随机竞赛图，$C_{\rm aug}:=C(G_{\rm aug})$；条件期望先固定$G$，只对新增边平均。对独立内部块模型令$W_{\rm aug}$为增广邻接矩阵的逐元期望；对正则内部块模型，固定一个实际增广样本并记其邻接矩阵为$A_{\rm aug}$。将第8节的行补齐与整数化操作分别作用于这两种输入，所得$(N+1)$阶0、1辅助矩阵统一记为$W^\sharp_{\rm aug}$。它不是随机竞赛图的邻接矩阵。
 
 $$
 \mathbb EC_{{\rm aug},\mathcal T}
 =C(W_{\rm aug})\le\operatorname{per}W_{\rm aug}
-\le\operatorname{per}V_{\rm aug},
+\le\operatorname{per}W^\sharp_{\rm aug},
 $$
 
 $$
 C(G_{\rm aug})\le\operatorname{per}A_{\rm aug}
-\le\operatorname{per}V_{\rm aug}
+\le\operatorname{per}W^\sharp_{\rm aug}
 \qquad(\mathcal R\text{ 的每个样本}).
 $$
 
@@ -1661,14 +1654,14 @@ $$
 对于$\mathcal T$的增广期望矩阵，旧行和为$mb_i$；对于$\mathcal R$的每个实际增广样本，旧行和不超过$mb_i+1/2$。统一选择
 
 $$
-R_i'=\lceil mb_i+1/2\rceil=mb_i+\varepsilon_i',
-\qquad \frac12\le\varepsilon_i'<\frac32.
+R_i'=\lceil mb_i+1/2\rceil=mb_i+\xi_i',
+\qquad \frac12\le\xi_i'<\frac32.
 $$
 
 新行补到$R_0=N$。因为$b_i\le d-1/2$且$m\ge2$，$mb_i+1/2\le N-1/2$，所以$R_i'\le N$；同时$R_i'\ge m/2$。这些补齐目标都不超过增广矩阵的列数$N+1$，第8节的行操作适用。Brégman给出
 
 $$
-\log\operatorname{per}V_{\rm aug}
+\log\operatorname{per}W^\sharp_{\rm aug}
 \le m\sum_i\frac{\log(R_i'!)}{R_i'}
 +\frac{\log(N!)}N.
 $$
@@ -1677,7 +1670,7 @@ $$
 
 $$
 \begin{aligned}
-\log\operatorname{per}V_{\rm aug}
+\log\operatorname{per}W^\sharp_{\rm aug}
 &\le m\sum_i\log R_i'-N+\log N-1\\
 &\quad+2d\log(2\pi(N+1))+\frac{4d}{3m}
 +\frac{\log(2\pi N)}{2N}+\frac1{12N^2}\\
@@ -1702,8 +1695,8 @@ $$
 \begin{aligned}
 m\sum_i\log(2R_i'/N)
 &=N\log\kappa+
-m\sum_i\log(1+\varepsilon_i'/(mb_i))\\
-&\le N\log\kappa+\sum_i\frac{\varepsilon_i'}{b_i}
+m\sum_i\log(1+\xi_i'/(mb_i))\\
+&\le N\log\kappa+\sum_i\frac{\xi_i'}{b_i}
 \le N\log\kappa+3d.
 \end{aligned}
 $$
@@ -1712,7 +1705,7 @@ $$
 
 $$
 \begin{aligned}
-\log\frac{\operatorname{per}V_{\rm aug}}{(N+1)!/2^{N+1}}
+\log\frac{\operatorname{per}W^\sharp_{\rm aug}}{(N+1)!/2^{N+1}}
 &\le N\log\kappa+\frac{11d}{3}+\frac1{12}+\log2\\
 &\quad +(2d+1)\log(2\pi(N+1)).
 \end{aligned}
@@ -1746,13 +1739,13 @@ $$
 
 给出两个吹胀模型样本之间的双射。块间方向由基图同构保持；内部块只是重新排列，独立且同分布的选取概率保持不变。每条路径、每个圈都经这个双射唯一对应，故两种计数的期望相等。结合非同构基图的严格不等式，等号类恰为整个圆环普通同构类。
 
-## 12. 完成了什么，尚未完成什么
+## 12. 结论与适用范围
 
 第一部分给出所读Wormald版本猜想6的有限代数证明及猜想2的极限、单调性；本稿在明确引用其原计数定理和Fang–Huang比较后，得到猜想1及路径类比的固定基图期望结论。
 
-这些结果将本文的谱比值与原随机模型常数准确等同，摆脱逐个基图计算Hessian。没有由此证明Wormald猜想3的全体竞赛图圈极值，也没有给出全体竞赛图路径数新的统一误差、有效$M_d$，或对增长基图与块阶数同时极限的结论。一般论证仍待独立数学审阅，历史文献归属尚未穷尽，不主张优先权。
+结论适用于固定基图阶数的模型期望；不包含Wormald猜想3的全体竞赛图极值、有效阈值$M_d$，或基图阶数与块阶数同时增长的情形。
 
-# 第三部分：发表前复核补充计算
+# 附录：辅助计算
 
 ## A.1 传递符号矩阵的行列式多项式
 
@@ -1832,10 +1825,10 @@ $$
 
 ## A.2 交替切换与圆环的普通同构
 
-设$d=2q+1$。对传递矩阵作交替切换，$e_i=(-1)^{i-1}$、$D_e=\operatorname{diag}(e_i)$。当$i<j$、$\Delta=j-i$时，
+设$d=2q+1$。对传递矩阵作交替切换，$\varepsilon_i=(-1)^{i-1}$、$D_{\varepsilon}=\operatorname{diag}(\varepsilon_i)$。当$i<j$、$\Delta=j-i$时，
 
 $$
-(D_eT_dD_e)_{ij}=(-1)^\Delta.
+(D_{\varepsilon}T_dD_{\varepsilon})_{ij}=(-1)^\Delta.
 $$
 
 定义圆环标签映射
@@ -1980,7 +1973,7 @@ $$
 $$
 -\operatorname{tr}S^4/4=e_4-e_2^2/2,\qquad
 \operatorname{tr}S^4=2e_2^2-4e_4
-=2\binom d2^2-4\binom d4-32D_4(S).
+=2\left(\binom d2\right)^2-4\binom d4-32D_4(S).
 $$
 
 传递矩阵任取四个升序顶点都有$a=b=c=g=e=f=1$，其行列式为$(1-1+1)^2=1$，所以$D_4(T_d)=0$。相减给
@@ -1989,7 +1982,7 @@ $$
 \operatorname{tr}T_d^4-\operatorname{tr}S^4=32D_4(S).
 $$
 
-若四次矩取等，则$D_4(S)=0$。取局部标量符号$\epsilon_1=1,\epsilon_j=s_{1j}$（$j>1$），定义$D_\epsilon=\operatorname{diag}(\epsilon_1,\ldots,\epsilon_d)$和$S'=D_\epsilon S D_\epsilon$；以下这一段把这些标量简记为$e_j=\epsilon_j$，把$D_\epsilon$简记为$D_e$。切换后$s'_{1j}=e_1s_{1j}e_j=s_{1j}^2=1$。任意主子式在切换下乘以$(\det D_e[U])^2=1$，故$D_4$不变。任取$i<j<k$且都不为1，
+若四次矩取等，则$D_4(S)=0$。取$\varepsilon_1=1,\varepsilon_j=s_{1j}$（$j>1$），定义$D_{\varepsilon}=\operatorname{diag}(\varepsilon_1,\ldots,\varepsilon_d)$和$S'=D_{\varepsilon} S D_{\varepsilon}$。于是$s'_{1j}=\varepsilon_1s_{1j}\varepsilon_j=s_{1j}^2=1$。各主子式乘以$(\det D_{\varepsilon}[U])^2=1$，故$D_4$不变。任取$i<j<k$且都不为1，
 
 $$
 \det S'[\{1,i,j,k\}]
@@ -2114,15 +2107,8 @@ $$
 
 其中$(1+z)^{-1}-(1-z)=z^2/(1+z)\ge0$。这补全了单调性计算中的两个初等估计。
 
-## A.8 本次复核结论与证明责任
-
-本轮核对了原文三个猜想的量词、模型及Hessian定义；对Schur补的二阶导数、角变量的负号、基变换行列式中的$d$、弱主序的等号传递、非正则分支、路径归一化和两重极限的先后分别复算。未发现推翻上述主公式或固定基图结论的错误。本附录补齐原稿略写的计算，不改变结论范围。
-
-配套程序检查的是精确有限恒等式和有限枚举，并记录高精度渐近诊断。它们不能替代任意阶证明，也不能认证所引用外部定理的全部分析细节。本稿没有声称已经获得同行认可、形式化认证或历史优先权。
-
 ## 参考文献
 
 1. N. C. Wormald. *Tournaments with many Hamilton cycles*. arXiv:2610.16245v1. [固定版本全文](https://arxiv.org/html/2610.16245v1)，[历史说明](https://arxiv.org/abs/2610.16245)。本文使用其模型定义、Theorem 1、4、5，并讨论Conjecture 1、2、6。
 2. Yijia Fang and Hao Huang. *Maximizing directed cycles in tournaments*. arXiv:2608.06238v1. [固定版本第3节](https://arxiv.org/html/2608.06238v1#S3)。本文使用Corollary 3.4；四次矩等号另在附录A.3复算。
 3. Noga Alon. *The maximum number of Hamiltonian paths in tournaments*. Combinatorica 10 (1990), 319-324. [作者提供全文](https://www.tau.ac.il/~nogaa/PDFS/hamilton.pdf)。本文使用第2节所列Brégman永久式界。
-

@@ -10,13 +10,18 @@ assert alignment["result"]=="passed"
 for lang in ("zh","en"):
     normalized=(ROOT/f"docs/paper.{lang}.md").read_text(encoding="utf-8").encode("utf-8")
     assert hashlib.sha256(normalized).hexdigest()==alignment["sha256"][lang],("Stale translation review",lang)
-definition_review=ROOT/"verification/qa/definitions_calculation_review.json"
-if definition_review.exists():
-    current=json.loads(definition_review.read_text(encoding="utf-8"))
-    assert current["version"]==manifest["version"],"Stale definition/calculation review version"
+current_reviews=[]
+for name in ("style_review.json","definitions_calculation_review.json"):
+    review_path=ROOT/"verification/qa"/name
+    if review_path.exists():
+        candidate=json.loads(review_path.read_text(encoding="utf-8"))
+        if candidate["version"]==manifest["version"]:
+            current_reviews.append(candidate)
+assert current_reviews,"No review bound to the current manifest version"
+for current in current_reviews:
     assert current["review_status"]=="completed"
     for name,expected in current["source_bytes_sha256"].items():
-        assert hashlib.sha256((ROOT/"docs"/name).read_bytes()).hexdigest()==expected,("Stale definition/calculation review",name)
+        assert hashlib.sha256((ROOT/"docs"/name).read_bytes()).hexdigest()==expected,("Stale source review",name)
 for row in manifest["files"]:
     path=ROOT/row["path"]
     data=path.read_bytes()

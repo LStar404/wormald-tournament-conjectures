@@ -2,17 +2,17 @@
 
 Xingchen Liu
 
-19 October 2026. Public research manuscript, version 0.2.3.
+20 October 2026. Public research manuscript, version 0.2.4.
 
 # Abstract
 
 We study three specific questions in Wormald's random blow-up models. We express the logarithmic angular Hessian defined in that paper as a compression of a finite matrix, prove its positive definiteness, and identify the model's asymptotic constant with a determinant ratio. For a carousel base tournament, this ratio has a closed form. After multiplication by the factor for regular internal blocks, the resulting constant increases strictly to $\cosh(1)/\cos(1)$ and admits an explicit expansion in inverse powers of the base order. Combining the explicitly cited moment comparison of Fang and Huang with Wormald's model counting theorems, and treating nonregular bases separately, yields the unique maximizer of the expectations when the odd base order is fixed and the blocks are sufficiently large.
 
-This is a proof manuscript addressing Conjectures 1, 2 and 6 in [Wormald's public version](https://arxiv.org/html/2610.16245v1). The derivations and programs were developed with AI assistance and checked equation by equation and by exact finite computations. Independent mathematical review by the author and other researchers remains necessary; no formal certification is claimed. We make no claim of historical priority. Statements about these models do not establish exact Hamiltonian extremal theorems for all tournaments.
+This manuscript addresses Conjectures 1, 2 and 6 in [Wormald's public version](https://arxiv.org/html/2610.16245v1). The derivations and verification programs were developed with AI assistance and await independent mathematical review.
 
 # Correspondence with the original conjectures and notation
 
-The original conjectures are due to N. C. Wormald. We use the fixed version arXiv:2610.16245v1, uploaded on 12 October 2026. Its author explains that the paper comes from earlier research; these questions were not first proposed in 2026. The following restatements use the notation of this manuscript.
+We use N. C. Wormald's version arXiv:2610.16245v1 and restate three of its conjectures in the notation of this manuscript.
 
 Fix an odd integer $d\ge3$. The base tournament $T^*$ has $d$ vertices, each replaced by $m$ vertices, giving total order $N=dm$. Directions between blocks are determined by $T^*$. In $\mathcal T(T^*,m)$ the internal blocks are independent uniform random tournaments. In $\mathcal R(T^*,m)$ each internal block is additionally regular, requiring $m$ to be odd. Let $C(G)$ and $H(G)$ denote the numbers of Hamiltonian cycles and paths, respectively.
 
@@ -28,7 +28,7 @@ Sections 1–7 of Part I use finite dimensional linear algebra and differentiati
 
 Section 3 of Part II uses Fang–Huang's Corollary 3.4. The equality classification for the fourth moment can also be checked directly through the four-vertex calculation in Appendix A.3. Section 8 of Part II uses Brégman's permanent bound for zero–one matrices. Nonregular bases are treated separately, so the regular Hessian formula is never applied outside its hypotheses.
 
-Part III supplies the calculations expanded during the prepublication review: the determinant polynomial, the carousel isomorphism, fourth-moment equality, every normalization term in the added-vertex argument for paths, and the choice of a common finite threshold. A separate elementary guide is provided in Chinese.
+The appendices give the determinant polynomial, carousel isomorphism, fourth-moment equality, termination of row integrality, path normalization and common finite threshold. A separate elementary guide is provided in Chinese.
 
 Every limit $m\to\infty$ in this manuscript fixes $d$ first. The subsequent discussion of model constants as $d\to\infty$ does not interchange limits and does not give a uniform second-order error in the final order $N$.
 
@@ -59,13 +59,15 @@ Write $[d]=\{1,\ldots,d\}$. The principal submatrix $M[U]$ uses the rows and col
 
 On a graph, $C(G),H(G)$ count cycles and paths. In contrast, the standalone $C=S/d$ is a matrix, bold $\mathbf H$ is the Hessian matrix, and $\mathcal H$ is its determinant. Local symbols in different sections are interpreted according to the definitions given in those sections.
 
-We also fix the conventions for operations and differentiation. For a real vector $v=(v_1,\ldots,v_r)^T$, its Euclidean norm is $\|v\|_2=(\sum_{j=1}^r v_j^2)^{1/2}$; an unsubscripted vector norm $\|s\|$ has this meaning too. Write $\operatorname{tr}M=\sum_jM_{jj}$. The matrix $\operatorname{diag}(a_1,\ldots,a_r)$ has the listed scalars on the diagonal and zero elsewhere. The notation $M\succ0$ means that $M$ is real symmetric and, for every nonzero real vector $v$, we have $v^TMv>0$. Lowercase letters may denote entries, for example $s_{ij}=S_{ij}$.
+For a real vector $v=(v_1,\ldots,v_r)^T$, its Euclidean norm is $\|v\|_2=(\sum_{j=1}^r v_j^2)^{1/2}$.
+
+Write $\operatorname{tr}M=\sum_jM_{jj}$. The matrix $\operatorname{diag}(a_1,\ldots,a_r)$ has the listed scalars on the diagonal and zero elsewhere. The notation $M\succ0$ means that $M$ is real symmetric and, for every nonzero real vector $v$, we have $v^TMv>0$. Lowercase letters may denote entries, for example $s_{ij}=S_{ij}$.
 
 For a scalar function $F(t_1,\ldots,t_d)$, subscripts $F_j,F_{jk}$ denote $\partial F/\partial t_j$ and $\partial^2F/(\partial t_j\partial t_k)$; matrix, row and column derivatives are taken entry by entry. When differentiating in the original variables $y$, we write $K_{y_j}$. The matrix $\nabla^2F$ consists of the entries $F_{jk}$. A prime on a function of one variable denotes differentiation in its argument. The notations $y'=(y_1,\ldots,y_{d-1})$ and $t'=(t_1,\ldots,t_{d-1})$ delete the last coordinate; those primes do not denote derivatives. A vertex of type $j$ belongs to the block replacing base vertex $j$, which contains $m$ vertices.
 
 Write $\lfloor a\rfloor$ for the largest integer at most $a$ and $\lceil a\rceil$ for the smallest integer at least $a$. For a finite set, $\#U=|U|$ is its cardinality. The scalar indicator $\mathbf1_{\mathcal E}$ is 1 when condition $\mathcal E$ holds and 0 otherwise; it differs from the all-one vector $\mathbf1$ without a condition subscript. Set $0!=1$ and $n!=1\cdot2\cdots n$; also $\binom nk=n!/(k!(n-k)!)$, with value 0 for $k>n$.
 
-In the expansions here, $R(x)=O(x^k)$ means that constants $M,\eta>0$ exist such that, whenever $0<|x|<\eta$, we have $|R(x)|\le M|x|^k$. The notation $O(d^{-k})$ concerns $d\to\infty$, with other parameters fixed. A subscript in $O_d$ permits dependence on the fixed parameter $d$. Finite sums or uniformly convergent power series control the remainders below; a numerical fit is not a proof of this definition.
+In the expansions here, $R(x)=O(x^k)$ means that constants $M,\eta>0$ exist such that, whenever $0<|x|<\eta$, we have $|R(x)|\le M|x|^k$. The notation $O(d^{-k})$ concerns $d\to\infty$, with other parameters fixed. A subscript in $O_d$ permits dependence on the fixed parameter $d$. 
 
 For a square matrix $D$, the adjugate $\operatorname{adj}D$ is the transpose of the cofactor matrix: $(\operatorname{adj}D)_{ij}=(-1)^{i+j}\det D^{(j|i)}$, where $D^{(j|i)}$ deletes row $j$ and column $i$. Determinant expansion gives $D\operatorname{adj}D=(\det D)I$. When $\det D\ne0$, division by this determinant gives the inverse formula used below.
 
@@ -76,7 +78,7 @@ For a square matrix $D$, the adjugate $\operatorname{adj}D$ is the transpose of 
 Let $d\ge3$ be odd and let $A$ be the adjacency matrix of a regular tournament of order $d$.
 
 $$
-S=2A+I-J,\quad S^T=-S,\quad S1=0,\qquad
+S=2A+I-J,\quad S^T=-S,\quad S\mathbf1=0,\qquad
 C=S/d,\quad P_0=J/d.
 $$
 
@@ -87,7 +89,7 @@ B(y)=I-(A+\tfrac12I)\operatorname{diag}(y_1,\ldots,y_d),
 \quad K(y)=\det B(y),\quad z=2/d.
 $$
 
-Near $y=z1$, Wormald solves $K(y)=0$ for $y_d=h(y_1,\ldots,y_{d-1})$ and takes the Hessian of
+Near $y=z\mathbf1$, Wormald solves $K(y)=0$ for $y_d=h(y_1,\ldots,y_{d-1})$ and takes the Hessian of
 
 $$
 \widetilde f(\theta)=\log h(ze^{i\theta_1},\ldots,ze^{i\theta_{d-1}})
@@ -111,11 +113,11 @@ $$
 =\frac{\det(I+C)}{\det(I+iC)}=:\rho_d(S).}
 $$
 
-The right-hand side is positive and rational. This gives a general proof manuscript for Conjecture 6 in the cited version, rather than a check of selected bases. This finite matrix argument does not use permanent asymptotics, local balancing, or prior global extremal assertions from the earlier research.
+The right-hand side is positive and rational, so these identities prove Conjecture 6.
 
 ## 2. Spectral gap, the constant direction and restricted determinants
 
-Throughout, $\mathbf1$ is the all-one column vector; a nonbold $1$ multiplied by a matrix also means this vector. The tournament definition and regularity give
+Throughout, $\mathbf1$ denotes the all-one column vector. The tournament definition and regularity give
 
 $$
 A+A^T=J-I,\qquad
@@ -1054,14 +1056,6 @@ $$
 
 The variable in this expansion is the base order $d$. We fix $d$ and take the block limit before letting $d$ grow. In total order $N=dm$, this does not provide a uniform $O(N^{-2})$ extremal error.
 
-## 12. Independent checks and the limits of the conclusions
-
-The accompanying Hessian verification program exits successfully. Exact fractions agree for 73 regular bases, including all labeled regular tournaments of orders three and five: 11,724 Hessian entries and 345 Hessian determinants with different eliminated coordinates.
-
-The independent calculation first expands all principal determinants of $\det(I-P\operatorname{diag}(e^t))$, takes first and second derivatives directly, and then applies the implicit differentiation formula. It does not generate the left-hand side being compared from our closed form. The rational numbers in the original carousel table and the order-nine triangle blow-up table are recovered. The rational margin for monotonicity is checked exactly; the large-$d$ expansion remainder is examined only as a high-precision diagnostic.
-
-This manuscript provides proofs for Conjectures 6 and 2 in the cited version and explicit model constants. Independent mathematical review and a fuller historical novelty investigation remain necessary. It does not prove the exact cycle extremum for all tournaments in the original Conjecture 3.
-
 # Part II: The unique maximizer of fixed-base expectations
 
 ## 1. The precise extremal object
@@ -1309,39 +1303,39 @@ $$
 =\|T_d^2\|_F^2=\operatorname{tr}T_d^4.
 $$
 
-Appendix A.3 independently proves that this equality forces $S=Q^TT_dQ$, where $Q$ is a signed permutation matrix. Check the converse as well: $Q^TQ=I$, so
+Appendix A.3 independently proves that this equality forces $S=\Omega^TT_d\Omega$, where $\Omega$ is a signed permutation matrix. Check the converse as well: $\Omega^T\Omega=I$, so
 
 $$
-I+tS=Q^T(I+tT_d)Q,\qquad
-\det(I+tS)=(\det Q)^2\det(I+tT_d)=\det(I+tT_d).
+I+tS=\Omega^T(I+tT_d)\Omega,\qquad
+\det(I+tS)=(\det \Omega)^2\det(I+tT_d)=\det(I+tT_d).
 $$
 
 Take $t=1/d$ and $t=i/d$ separately to obtain $\rho_d(S)=r_d$. Thus
 
 $$
 \rho_d(S)\le r_d,
-\quad\text{with equality if and only if }S=Q^TT_dQ.
+\quad\text{with equality if and only if }S=\Omega^TT_d\Omega.
 $$
 
-The signed permutation matrix $Q$ here has exactly one entry $\pm1$ in each row and column and satisfies $Q^TQ=I$. This is a local symbol, different from the symmetric $Q$ in Part I. Write $Q=D_eP$, where $P$ is an ordinary permutation matrix and $D_e=\operatorname{diag}(e_1,\ldots,e_d)$; in this paragraph $e_i=\pm1$ are scalar signs. Put $e=(e_1,\ldots,e_d)^T$; these scalars are not standard basis vectors. Then
+The signed permutation matrix $\Omega$ here has exactly one entry $\pm1$ in each row and column and satisfies $\Omega^T\Omega=I$. Write $\Omega=D_{\varepsilon}P$, where $P$ is an ordinary permutation matrix and $D_{\varepsilon}=\operatorname{diag}(\varepsilon_1,\ldots,\varepsilon_d)$; $\varepsilon_i\in\{-1,1\}$ and $\varepsilon=(\varepsilon_1,\ldots,\varepsilon_d)^T$. Then
 
 $$
-S=P^TD_eT_dD_eP,\qquad PSP^T=D_eT_dD_e.
+S=P^TD_{\varepsilon}T_dD_{\varepsilon}P,\qquad PSP^T=D_{\varepsilon}T_dD_{\varepsilon}.
 $$
 
-Only $P$ is absorbed into ordinary relabeling; continue to denote the relabeled matrix by $S$. Diagonal sign switching itself is not an ordinary isomorphism. If $S$ is regular, then after this relabeling $S\mathbf1=0$ still holds. Using $D_e^2=I$,
+Only $P$ is absorbed into ordinary relabeling; continue to denote the relabeled matrix by $S$. Diagonal sign switching itself is not an ordinary isomorphism. If $S$ is regular, then after this relabeling $S\mathbf1=0$ still holds. Using $D_{\varepsilon}^2=I$,
 
 $$
-D_eT_de=0,\qquad T_de=0.
+D_{\varepsilon}T_d\varepsilon=0,\qquad T_d\varepsilon=0.
 $$
 
 The difference between rows $i$ and $i+1$ has entry 1 in each of columns $i,i+1$ and zero elsewhere. Therefore
 
 $$
-0=(T_de)_i-(T_de)_{i+1}=e_i+e_{i+1}.
+0=(T_d\varepsilon)_i-(T_d\varepsilon)_{i+1}=\varepsilon_i+\varepsilon_{i+1}.
 $$
 
-Recursion gives $e_i=(-1)^{i-1}e_1$. The overall sign $e_1$ occurs twice in $D_eT_dD_e$ and cancels. Appendix A.2 supplies an ordinary isomorphism, checked on every edge, between this alternating switching and $\mathrm{Car}_d$. Among regular bases, equality therefore holds exactly for the ordinary carousel isomorphism class.
+Recursion gives $\varepsilon_i=(-1)^{i-1}\varepsilon_1$. The overall sign $\varepsilon_1$ occurs twice in $D_{\varepsilon}T_dD_{\varepsilon}$ and cancels. Appendix A.2 supplies an ordinary isomorphism, checked on every edge, between this alternating switching and $\mathrm{Car}_d$. Among regular bases, equality therefore holds exactly for the ordinary carousel isomorphism class.
 
 ## 6. An explicit strict gap from the sixth moment
 
@@ -1368,7 +1362,7 @@ $$
 Pair the skew-symmetric positions in the squared norm:
 
 $$
-\|S^3\|_F^2=2\sum_{i<j}(S^3_{ij})^2
+\|S^3\|_F^2=2\sum_{i<j}((S^3)_{ij})^2
 \equiv2\binom d2=d(d-1)\pmod{16}.
 $$
 
@@ -1398,7 +1392,7 @@ a_i=\frac{2b_i}{d},\qquad
 s_i=2d_i-(d-1).
 $$
 
-Put $s=(s_1,\ldots,s_d)^T$, so that $\|s\|^2=\sum_{i=1}^d s_i^2$. Each edge contributes exactly one outdegree. Therefore
+Put $s=(s_1,\ldots,s_d)^T$, so that $\|s\|_2^2=\sum_{i=1}^d s_i^2$. Each edge contributes exactly one outdegree. Therefore
 
 $$
 \sum_i d_i=\binom d2,\qquad
@@ -1433,14 +1427,14 @@ $$
 \begin{aligned}
 \log\kappa
 &\le\frac1d\sum_i\left(\frac{s_i}{d}-\frac{s_i^2}{8d^2}\right)
-=-\frac{\|s\|^2}{8d^3}.
+=-\frac{\|s\|_2^2}{8d^3}.
 \end{aligned}
 $$
 
-For odd $d$ each $s_i$ is even. Nonregularity implies that some $s_i\ne0$; the zero-sum condition then requires nonzero terms of opposite signs, each with absolute value at least 2. Thus $\|s\|^2\ge2^2+2^2=8$ and
+For odd $d$ each $s_i$ is even. Nonregularity implies that some $s_i\ne0$; the zero-sum condition then requires nonzero terms of opposite signs, each with absolute value at least 2. Thus $\|s\|_2^2\ge2^2+2^2=8$ and
 
 $$
-\kappa^N\le\exp[-N\|s\|^2/(8d^3)]\le e^{-N/d^3}.
+\kappa^N\le\exp[-N\|s\|_2^2/(8d^3)]\le e^{-N/d^3}.
 $$
 
 In model $\mathcal T$, let $W$ be the entrywise expectation of the adjacency matrix. For any nonnegative matrix of order $N$, let $\operatorname{Sym}(N)$ be all vertex permutations and let $\mathcal C_N$ consist of permutations with a single cycle of length $N$. Define the weighted permanent and weighted Hamiltonian cycle count by:
@@ -1499,14 +1493,14 @@ $$
 \sum_jw_j'c_j-\sum_jw_jc_j=\eta(c_a-c_b)\ge0.
 $$
 
-At least one coordinate becomes 0 or 1, reducing the number of nonintegral coordinates. After at most $L-1$ steps there is at most one nonintegral coordinate. Since all other coordinates and the row sum $R$ are integers, the remaining coordinate must also be integral. Perform this operation on every row to obtain a zero–one matrix $V$. Each row of type $i$ has $R_i$ ones, and $\operatorname{per}W\le\operatorname{per}V$.
+At least one coordinate becomes 0 or 1, reducing the number of nonintegral coordinates. After at most $L-1$ steps there is at most one nonintegral coordinate. Since all other coordinates and the row sum $R$ are integers, the remaining coordinate must also be integral. Perform this operation on every row to obtain a zero–one matrix $W^\sharp$. Each row of type $i$ has $R_i$ ones, and $\operatorname{per}W\le\operatorname{per}W^\sharp$.
 
-Here $V$ is an auxiliary matrix for the upper bound. Its required properties are zero–one entries and the specified row sums; diagonal entries may be 1. The theorem below applies to such general zero–one matrices.
+Here $W^\sharp$ is an auxiliary matrix for the upper bound. Its required properties are zero–one entries and the specified row sums; diagonal entries may be 1. The theorem below applies to such general zero–one matrices.
 
 Now invoke [Brégman's inequality, as stated in Lemma 2.1 of Alon's paper](https://www.tau.ac.il/~nogaa/PDFS/hamilton.pdf): for a zero–one matrix with row sums $q_1,\ldots,q_L>0$,
 
 $$
-\operatorname{per}V\le\prod_{\ell=1}^L(q_\ell!)^{1/q_\ell}.
+\operatorname{per}W^\sharp\le\prod_{\ell=1}^L(q_\ell!)^{1/q_\ell}.
 $$
 
 Since $r_i\ge(m-1)/2>0$, the integer upper bound $R_i$ is at least 1. This verifies the positive-row-sum hypothesis of the cited Brégman bound. There are exactly $m$ rows of each type here, giving
@@ -1519,7 +1513,7 @@ This uses the original zero–one theorem; the concrete row operations above pro
 
 ## 9. Normalization with explicit constants
 
-If the permanent being estimated is zero, the nonnegative cycle count it bounds is also zero, and the desired bound already holds; we do not take the logarithm of zero. All logarithmic permanent calculations below and in Section 10 are made only when the corresponding permanent is positive. The resulting positive upper bounds also cover the zero case. Assume $m\ge2$ and $N=dm$. Write $R_i=mb_i+\varepsilon_i$. Then $|\varepsilon_i|\le1/2$ and
+If the permanent being estimated is zero, the nonnegative cycle count it bounds is also zero, and the desired bound already holds; we do not take the logarithm of zero. All logarithmic permanent calculations below and in Section 10 are made only when the corresponding permanent is positive. The resulting positive upper bounds also cover the zero case. Assume $m\ge2$ and $N=dm$. Write $R_i=mb_i+\xi_i$. Then $|\xi_i|\le1/2$ and
 
 $$
 R_i\ge m/2-1/2\ge m/4,\qquad R_i\le N.
@@ -1529,7 +1523,7 @@ The rounding error follows from the target definition:
 
 $$
 0\le R_i-r_i<1,\qquad
-\varepsilon_i=R_i-mb_i=(R_i-r_i)-\frac12
+\xi_i=R_i-mb_i=(R_i-r_i)-\frac12
 \in[-1/2,1/2).
 $$
 
@@ -1567,7 +1561,7 @@ $$
 +2d\log(2\pi N)+\frac{4d}{3m}.
 $$
 
-Set $y_i=\varepsilon_i/(mb_i)$. Because $b_i\ge1/2$, we have $|y_i|\le1/m\le1/2$ and
+Set $y_i=\xi_i/(mb_i)$. Because $b_i\ge1/2$, we have $|y_i|\le1/m\le1/2$ and
 
 $$
 \frac{2R_i}{N}=a_i(1+y_i),\qquad
@@ -1633,17 +1627,17 @@ $$
 =\frac{\mathbb EC_{\rm aug}}{\nu_{N+1}}.
 $$
 
-Here $G_{\rm aug}$ is the random tournament after adding $v$, and $C_{\rm aug}:=C(G_{\rm aug})$. Conditional expectation first fixes $G$ and averages over the added edges. For independent internal blocks let $W_{\rm aug}$ be the entrywise expected augmented adjacency matrix. For regular internal blocks fix an actual augmented sample and denote its adjacency matrix by $A_{\rm aug}$. Apply the row filling and integrality operations of Section 8 to either input. Denote the resulting zero-one auxiliary matrix of order $(N+1)$ by $V_{\rm aug}$; it need not be a tournament adjacency matrix.
+Here $G_{\rm aug}$ is the random tournament after adding $v$, and $C_{\rm aug}:=C(G_{\rm aug})$. Conditional expectation first fixes $G$ and averages over the added edges. For independent internal blocks let $W_{\rm aug}$ be the entrywise expected augmented adjacency matrix. For regular internal blocks fix an actual augmented sample and denote its adjacency matrix by $A_{\rm aug}$. Apply the row filling and integrality operations of Section 8 to either input. Denote the resulting zero-one auxiliary matrix of order $(N+1)$ by $W^\sharp_{\rm aug}$; it need not be a tournament adjacency matrix.
 
 $$
 \mathbb EC_{{\rm aug},\mathcal T}
 =C(W_{\rm aug})\le\operatorname{per}W_{\rm aug}
-\le\operatorname{per}V_{\rm aug},
+\le\operatorname{per}W^\sharp_{\rm aug},
 $$
 
 $$
 C(G_{\rm aug})\le\operatorname{per}A_{\rm aug}
-\le\operatorname{per}V_{\rm aug}
+\le\operatorname{per}W^\sharp_{\rm aug}
 \qquad(\text{each sample of }\mathcal R).
 $$
 
@@ -1652,14 +1646,14 @@ The first equality is used only for independent internal blocks. The second line
 For the augmented expectation matrix of $\mathcal T$, the old row sum is $mb_i$. For each actual augmented sample of $\mathcal R$, the old row sum is at most $mb_i+1/2$. Use the common choice
 
 $$
-R_i'=\lceil mb_i+1/2\rceil=mb_i+\varepsilon_i',
-\qquad \frac12\le\varepsilon_i'<\frac32.
+R_i'=\lceil mb_i+1/2\rceil=mb_i+\xi_i',
+\qquad \frac12\le\xi_i'<\frac32.
 $$
 
 Fill the new row to $R_0=N$. Since $b_i\le d-1/2$ and $m\ge2$, we have $mb_i+1/2\le N-1/2$ and hence $R_i'\le N$. Also $R_i'\ge m/2$. These filling targets do not exceed the augmented matrix's column count $N+1$, so the row operations of Section 8 apply. Brégman gives
 
 $$
-\log\operatorname{per}V_{\rm aug}
+\log\operatorname{per}W^\sharp_{\rm aug}
 \le m\sum_i\frac{\log(R_i'!)}{R_i'}
 +\frac{\log(N!)}N.
 $$
@@ -1668,7 +1662,7 @@ Use $R_i'\ge m/4$ and $R_i'\le N+1$ to estimate the remainders for the old rows,
 
 $$
 \begin{aligned}
-\log\operatorname{per}V_{\rm aug}
+\log\operatorname{per}W^\sharp_{\rm aug}
 &\le m\sum_i\log R_i'-N+\log N-1\\
 &\quad+2d\log(2\pi(N+1))+\frac{4d}{3m}
 +\frac{\log(2\pi N)}{2N}+\frac1{12N^2}\\
@@ -1693,8 +1687,8 @@ $$
 \begin{aligned}
 m\sum_i\log(2R_i'/N)
 &=N\log\kappa+
-m\sum_i\log(1+\varepsilon_i'/(mb_i))\\
-&\le N\log\kappa+\sum_i\frac{\varepsilon_i'}{b_i}
+m\sum_i\log(1+\xi_i'/(mb_i))\\
+&\le N\log\kappa+\sum_i\frac{\xi_i'}{b_i}
 \le N\log\kappa+3d.
 \end{aligned}
 $$
@@ -1703,7 +1697,7 @@ Using $4d/(3m)\le2d/3$ now gives
 
 $$
 \begin{aligned}
-\log\frac{\operatorname{per}V_{\rm aug}}{(N+1)!/2^{N+1}}
+\log\frac{\operatorname{per}W^\sharp_{\rm aug}}{(N+1)!/2^{N+1}}
 &\le N\log\kappa+\frac{11d}{3}+\frac1{12}+\log2\\
 &\quad +(2d+1)\log(2\pi(N+1)).
 \end{aligned}
@@ -1737,13 +1731,13 @@ $$
 
 is a bijection between samples of the two blow-up models. The base isomorphism preserves directions between blocks; internal blocks are merely reordered, preserving their independent identical sampling probabilities. Every path and cycle corresponds uniquely under this bijection, so their expectations agree. Combined with the strict inequality for nonisomorphic bases, this identifies the entire ordinary carousel isomorphism class as the equality class.
 
-## 12. Results obtained and remaining questions
+## 12. Conclusions and scope
 
 Part I gives a finite algebraic proof for Conjecture 6 and the limit and monotonicity in Conjecture 2 of the cited Wormald version. With explicit use of his counting theorems and Fang–Huang's comparison, this manuscript obtains the fixed-base expectation assertion in Conjecture 1 and its path counterpart.
 
-These results identify our spectral ratio exactly with the original random-model constants, removing the need to compute a Hessian separately for each base. They do not prove Wormald's Conjecture 3 for cycle extrema among all tournaments, give a new uniform error for global path extrema or an effective $M_d$, or establish a simultaneous limit with growing base and block orders. The general arguments await independent mathematical review. Historical attribution has not been exhaustively investigated, and no priority claim is made.
+The conclusions concern model expectations with fixed base order. They do not establish Wormald's Conjecture 3 for all tournaments, an effective threshold $M_d$, or a simultaneous limit with growing base and block orders.
 
-# Part III: Supplementary calculations for prepublication review
+# Appendices: Auxiliary calculations
 
 ## A.1 The determinant polynomial of the transitive sign matrix
 
@@ -1823,10 +1817,10 @@ The empty principal determinant is 1 by convention. Thus the proved closed form 
 
 ## A.2 Alternating switching and ordinary carousel isomorphism
 
-Let $d=2q+1$. Switch the transitive matrix by alternating signs $e_i=(-1)^{i-1}$ and $D_e=\operatorname{diag}(e_i)$. For $i<j$ and $\Delta=j-i$,
+Let $d=2q+1$. Switch the transitive matrix by alternating signs $\varepsilon_i=(-1)^{i-1}$ and $D_{\varepsilon}=\operatorname{diag}(\varepsilon_i)$. For $i<j$ and $\Delta=j-i$,
 
 $$
-(D_eT_dD_e)_{ij}=(-1)^\Delta.
+(D_{\varepsilon}T_dD_{\varepsilon})_{ij}=(-1)^\Delta.
 $$
 
 Define the carousel labeling map
@@ -1971,7 +1965,7 @@ Equate the fourth-order coefficients and isolate the trace step by step:
 $$
 -\operatorname{tr}S^4/4=e_4-e_2^2/2,\qquad
 \operatorname{tr}S^4=2e_2^2-4e_4
-=2\binom d2^2-4\binom d4-32D_4(S).
+=2\left(\binom d2\right)^2-4\binom d4-32D_4(S).
 $$
 
 In the transitive matrix, any four vertices in increasing order have $a=b=c=g=e=f=1$, giving determinant $(1-1+1)^2=1$. Thus $D_4(T_d)=0$. Subtracting yields
@@ -1980,7 +1974,7 @@ $$
 \operatorname{tr}T_d^4-\operatorname{tr}S^4=32D_4(S).
 $$
 
-If the fourth moments agree, $D_4(S)=0$. Choose local scalar signs $\epsilon_1=1,\epsilon_j=s_{1j}$ for $j>1$, and define $D_\epsilon=\operatorname{diag}(\epsilon_1,\ldots,\epsilon_d)$ and $S'=D_\epsilon S D_\epsilon$. In this paragraph abbreviate these scalars by $e_j=\epsilon_j$ and $D_\epsilon$ by $D_e$. After switching, $s'_{1j}=e_1s_{1j}e_j=s_{1j}^2=1$. Each principal determinant is multiplied by $(\det D_e[U])^2=1$, so $D_4$ is unchanged. Choose any $i<j<k$ all different from 1:
+If the fourth moments agree, $D_4(S)=0$. Choose $\varepsilon_1=1,\varepsilon_j=s_{1j}$ for $j>1$, and define $D_{\varepsilon}=\operatorname{diag}(\varepsilon_1,\ldots,\varepsilon_d)$ and $S'=D_{\varepsilon} S D_{\varepsilon}$. Then $s'_{1j}=\varepsilon_1s_{1j}\varepsilon_j=s_{1j}^2=1$. Each principal determinant is multiplied by $(\det D_{\varepsilon}[U])^2=1$, so $D_4$ is unchanged. Choose any $i<j<k$ all different from 1:
 
 $$
 \det S'[\{1,i,j,k\}]
@@ -2104,12 +2098,6 @@ $$
 $$
 
 where $(1+z)^{-1}-(1-z)=z^2/(1+z)\ge0$. This supplies the two elementary estimates used in the monotonicity calculation.
-
-## A.8 Review findings and responsibility for the proofs
-
-This review checked the quantifiers, models and Hessian definition in the three original conjectures. It recalculated the Schur complement's second derivatives, the angular minus sign, the factor $d$ in the basis-change determinant, equality transfer in weak majorization, the nonregular branch, path normalization, and the order of the two limits. No error overturning the main formulas or the fixed-base conclusions was found. This appendix expands previously abbreviated calculations without broadening the scope.
-
-The accompanying programs check exact finite identities and finite enumerations, and record high-precision asymptotic diagnostics. They do not replace a proof for arbitrary orders or certify every analytic detail of the external theorems. This manuscript does not claim peer acceptance, formal certification or historical priority.
 
 ## References
 

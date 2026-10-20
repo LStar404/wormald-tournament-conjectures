@@ -14,23 +14,24 @@ N. C. Wormald's [*Tournaments with many Hamilton cycles*](https://arxiv.org/html
 The conjectures are Wormald's. This research draft is authored by **Xingchen Liu**.
 
 **Read the paper:** [English paper PDF](output/pdf/wormald-conjectures-proof.en.pdf)
-(38 pages) · [Chinese paper PDF](output/pdf/wormald-conjectures-proof.zh.pdf)
-(35 pages) · [Chinese elementary guide PDF](output/pdf/wormald-conjectures-guide.zh.pdf)
-(28 pages)  
+(34 pages) · [Chinese paper PDF](output/pdf/wormald-conjectures-proof.zh.pdf)
+(32 pages) · [Chinese elementary guide PDF](output/pdf/wormald-conjectures-guide.zh.pdf)
+(27 pages)  
 **Editable sources:** [English paper](docs/paper.en.md) · [Chinese paper](docs/paper.zh.md) ·
 [Elementary guide](docs/elementary-guide.zh.md)  
-Current repository revision: **0.2.3**, 20 October 2026.
+Current repository revision: **0.2.4**, 20 October 2026.
 The complete paper is available in Chinese and English. The elementary guide is Chinese only.
-Version 0.2.3 expands the product rules, chain rules, matrix calculations, equality cases,
-Taylor remainders and permanent estimates. All 973 mathematical spans match across the two papers;
-349 prose blocks were translated without omitting a section or calculation.
-Version 0.2.3 adds 40 groups of definition and calculation clarifications:
-derivative and vector notation, the sign vector and switched matrix, explicit
-permutation matrices, inverse derivatives, rounding intervals and the augmented
-graph/matrix distinction. The Chinese guide supplies its missing fourth-moment
-appendix, complete row rounding and bounds with explicit constants, Taylor remainder
-estimates, and a calculus-and-linear-algebra derivation of the two-dimensional
-skew-symmetric blocks. See [the detailed review record](AUDIT.md).
+The manuscripts include the product rules, chain rules, matrix calculations, equality cases,
+Taylor remainders and permanent estimates. All 964 mathematical spans match across the two papers;
+343 prose blocks were translated without omitting a section or calculation.
+Version 0.2.4 resolves reused symbols and removes repeated editorial prose.
+The symmetric matrix and signed permutation now have different names; scalar switching
+signs, rounding errors, basis vectors and rounded matrices are distinguished.
+Both papers retain all 255 displayed calculations after notation normalization.
+The PDFs are shorter: Chinese paper 35 → 32 pages, English paper 38 → 34,
+and Chinese guide 28 → 27. Body type remains 11 pt with 22 mm margins.
+The papers use a conventional title block followed by the abstract; the guide retains
+its contents page. See [the review record](AUDIT.md).
 
 ### Main results
 
@@ -95,7 +96,7 @@ Hessian identity by linear algebra and differentiation. Part I, Section 8,
 uses Wormald's Theorems 1, 4 and 5 to identify the model constants.
 Part II uses Fang–Huang's Corollary 3.4 for the moment comparison, and treats
 nonregular bases separately using the Brégman permanent bound.
-Part III expands the determinant calculation, equality classification,
+The appendices expand the determinant calculation, equality classification,
 path augmentation, normalization and finite-threshold argument.
 
 The [companion guide](docs/elementary-guide.zh.md) starts from basic calculus
@@ -128,7 +129,7 @@ the written proofs and the explicitly cited external theorems.
 
 The PDFs are generated from Markdown through Pandoc and Tectonic or XeLaTeX.
 Build instructions are in [the PDF builder](tools/build_pdf.py).
-All 101 final PDF pages were rendered and visually inspected. [the layout record](verification/qa/pdf_review.json)
+All 93 final PDF pages were rendered and visually inspected. [the layout record](verification/qa/pdf_review.json)
 records that review separately from mathematical verification.
 
 ### Repository contents
@@ -148,7 +149,7 @@ records that review separately from mathematical verification.
 For this research draft, cite:
 
 > Liu, Xingchen. *Wormald tournament conjectures: Hessians and random blow-ups*.
-> Research draft, version 0.2.3, 2026.
+> Research draft, version 0.2.4, 2026.
 > https://github.com/LStar404/wormald-tournament-conjectures.
 
 Machine-readable citation metadata is in [CITATION.cff](CITATION.cff).
@@ -175,20 +176,21 @@ is related work; its authorship and formal-verification records belong to that p
 [*Tournaments with many Hamilton cycles*](https://arxiv.org/html/2610.16245v1)
 中猜想 **1、2、6**。原猜想归属于Wormald，**本研究稿由刘星辰独立署名**。
 
-**阅读论文：**[中文论文PDF](output/pdf/wormald-conjectures-proof.zh.pdf)（35页）·
-[英文论文PDF](output/pdf/wormald-conjectures-proof.en.pdf)（38页）·
-[大一基础讲解PDF](output/pdf/wormald-conjectures-guide.zh.pdf)（28页）  
+**阅读论文：**[中文论文PDF](output/pdf/wormald-conjectures-proof.zh.pdf)（32页）·
+[英文论文PDF](output/pdf/wormald-conjectures-proof.en.pdf)（34页）·
+[大一基础讲解PDF](output/pdf/wormald-conjectures-guide.zh.pdf)（27页）  
 **可编辑稿：**[中文论文Markdown](docs/paper.zh.md) · [英文论文Markdown](docs/paper.en.md) ·
 [基础讲解Markdown](docs/elementary-guide.zh.md)  
-当前仓库修订版本：**0.2.3**，2026年10月20日。
+当前仓库修订版本：**0.2.4**，2026年10月20日。
 论文提供完整中文和英文版本，教学讲解仅提供中文。
-0.2.3逐项展开乘积求导、链式法则、矩阵运算、等号条件、Taylor余项及永久式估计，
-正文不以“显然”“同理”替代计算；英文完整对应349个文字段落和973处数学表达式。
-本轮完成40组定义及计算补充：明确偏导和删坐标记号、符号向量、切换矩阵、
-置换矩阵、逆矩阵导数、舍入误差区间及增广图与矩阵的区别。
-中文讲解补上缺失的四次矩附录，完整展开逐行整数化、带明确常数的增点路径估计、
-Taylor余项，并用基本微积分和线性代数推导反对称矩阵的二维分块。
-具体位置和核查边界见[复核记录](AUDIT.md)。
+论文逐项展开乘积求导、链式法则、矩阵运算、等号条件、Taylor余项及永久式估计，
+正文不以“显然”“同理”替代计算；英文完整对应343个文字段落和964处数学表达式。
+本轮统一符号并精简重复说明：对称矩阵与带符号置换、标量符号与标准基、
+舍入误差及整数化矩阵分别使用不同记号。两篇论文各255组独立陈列公式均保留，
+已按改名前后的符号对应逐项核对。
+中文论文由35页减至32页，英文由38页减至34页，中文讲解由28页减至27页；
+正文字号仍为11pt、页边距仍为22mm。采用标题后接摘要的论文版式，
+讲解保留目录，并合并重复计算。详见[复核记录](AUDIT.md)。
 
 ### 主要结果
 
@@ -247,7 +249,7 @@ $$
 第一部分第1–7节使用有限维线性代数和求导计算Hessian；
 第8节引用Wormald的Theorem 1、4、5，将有限恒等式连接到模型常数。
 第二部分使用Fang–Huang推论3.4进行矩比较，并用Brégman永久式界
-单独处理非正则基图。第三部分展开行列式闭式、等号分类、路径增点、
+单独处理非正则基图。附录展开行列式闭式、等号分类、路径增点、
 归一化及共同阈值的计算。
 
 [基础讲解](docs/elementary-guide.zh.md)以基本微积分和线性代数为起点，
@@ -276,7 +278,7 @@ $$
 
 PDF由Markdown主稿经Pandoc和Tectonic或XeLaTeX生成，
 可复现方法见[PDF构建程序](tools/build_pdf.py)。
-中英论文及中文讲解共101页已全部渲染并逐页检查；[版面记录](verification/qa/pdf_review.json)
+中英论文及中文讲解共93页已全部渲染并逐页检查；[版面记录](verification/qa/pdf_review.json)
 将排版审查与数学核验分别记录。
 
 ### 仓库结构
@@ -296,7 +298,7 @@ PDF由Markdown主稿经Pandoc和Tectonic或XeLaTeX生成，
 引用本研究稿时，请使用：
 
 > Liu, Xingchen. *Wormald tournament conjectures: Hessians and random blow-ups*.
-> Research draft, version 0.2.3, 2026.
+> Research draft, version 0.2.4, 2026.
 > https://github.com/LStar404/wormald-tournament-conjectures.
 
 机器可读引用信息见[CITATION.cff](CITATION.cff)。

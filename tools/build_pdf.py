@@ -36,7 +36,14 @@ specs=[
 for key,name,title,short,subtitle in specs:
     if args.only and key!=args.only:continue
     text=(ROOT/"docs"/name).read_text(encoding="utf-8")
-    body=text.split("\n",1)[1]
+    body=text.split("\n",1)[1].lstrip()
+    # Author and date already appear in the title block.
+    paragraphs=body.split("\n\n")
+    if paragraphs[0].strip() in {"Xingchen Liu","刘星辰"}:
+        paragraphs=paragraphs[2:]
+    elif paragraphs[0].startswith("刘星辰。"):
+        paragraphs=paragraphs[1:]
+    body="\n\n".join(paragraphs)
     for char in ("\u2010","\u2011","\u2012","\u2013","\u2014","\u2212"):
         body=body.replace(char,"-")
     md=tmp/(key+".md");md.write_text(body,encoding="utf-8")
@@ -53,13 +60,27 @@ for key,name,title,short,subtitle in specs:
                 "locale":"en" if english else "zh",
                 "contents":"Contents" if english else "目录",
                 "author":"Xingchen Liu" if english else "刘星辰",
-                "runningdate":"Research manuscript - 2026-10-19" if english else "公开研究稿 - 2026-10-19",
-                "date":"19 October 2026 - Version 0.2.3" if english else "2026年10月19日 - 版本0.2.3",
+                "runningdate":"Research manuscript - 2026-10-20" if english else "公开研究稿 - 2026-10-20",
+                "date":"20 October 2026 - Version 0.2.4" if english else "2026年10月20日 - 版本0.2.4",
                 "subject":"Wormald conjectures 1, 2, 6: detailed derivations and review" if english else "Wormald猜想1、2、6：逐式推导与复核"}.items():
         cmd.extend(["-V",k+"="+v])
+    if english:
+        cmd.extend(["-V","italicfont="+os.environ.get("PDF_ITALIC_FONT","Times New Roman Italic")])
+    if key=="guide":
+        cmd.extend(["-V","showtoc=true"])
     subprocess.run(cmd,check=True)
     rendered=tex.read_text(encoding="utf-8")
-    rendered=re.sub(r"(?m)^(\\(?:sub)*section\*?\{)",r"\\Needspace{6\\baselineskip}\n\1",rendered)
+    # Keep a part heading together with the subsection immediately following it.
+    rendered=re.sub(r"(?m)^(\\section\*?\{)",r"\\Needspace{10\\baselineskip}\n\1",rendered)
+    rendered=re.sub(r"(?m)^(\\subsection\*?\{)",r"\\Needspace{6\\baselineskip}\n\1",rendered)
+    # A compact reference list avoids a final page containing only one citation.
+    if english:
+        assert r"\subsection{References}" in rendered
+        rendered=rendered.replace(
+            r"\subsection{References}",
+            r"\begingroup\small\linespread{1}\selectfont"+"\n"+r"\subsection{References}",
+        )
+        rendered=rendered.replace(r"\end{document}",r"\endgroup"+"\n"+r"\end{document}")
     tex.write_text(rendered,encoding="utf-8")
     env=os.environ.copy()
     if args.cache:env["TECTONIC_CACHE_DIR"]=str(Path(args.cache).resolve())

@@ -9,7 +9,11 @@
 \usepackage[unicode,colorlinks=true,linkcolor=blue!45!black,urlcolor=blue!45!black]{hyperref}
 \usepackage{bookmark,fancyhdr}
 \defaultfontfeatures{Ligatures=TeX}
+$if(italicfont)$
+\setmainfont{$mainfont$}[BoldFont={$boldfont$},ItalicFont={$italicfont$}]
+$else$
 \setmainfont{$mainfont$}[BoldFont={$boldfont$},ItalicFont={$mainfont$},ItalicFeatures={FakeSlant=0.15}]
+$endif$
 \setsansfont{$boldfont$}
 \setmonofont{$monofont$}[Scale=0.85]
 \XeTeXlinebreaklocale "$locale$"
@@ -41,13 +45,11 @@
 \date{$date$}
 \begin{document}
 \maketitle
-\thispagestyle{empty}
-\vfill
-\noindent $subtitle$
-\vfill
+\thispagestyle{plain}
+$if(showtoc)$
+{\small\tableofcontents}
 \clearpage
-\tableofcontents
-\clearpage
+$endif$
 $body$
 \end{document}
 

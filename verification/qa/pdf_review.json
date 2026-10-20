@@ -1,14 +1,14 @@
 {
   "guide": {
     "pdf": "output/pdf/wormald-conjectures-guide.zh.pdf",
-    "pages": 28,
-    "bytes": 285720,
-    "sha256": "5a8a53f7e676f00abd13d9d4f1515fe2364ff79379aa138cf3049fb43b511769",
+    "pages": 27,
+    "bytes": 280961,
+    "sha256": "152936a88d02322c606d4aaffdd703e167c4cb0441c7d69bde7bb7932cb7a76c",
     "critical_layout_warnings": [],
     "automated_word_bounds_checked": false,
     "replacement_character_pages": [],
-    "link_annotations": 37,
-    "rendered_pages": 28,
+    "link_annotations": 36,
+    "rendered_pages": 27,
     "visual_review": "passed",
     "author": "刘星辰",
     "visually_reviewed_pages": [
@@ -38,21 +38,20 @@
       24,
       25,
       26,
-      27,
-      28
+      27
     ],
-    "visual_review_method": "All final pages rendered at 90 dpi and visually inspected in four-page contact sheets."
+    "visual_review_method": "Every final page rendered at 90 dpi and visually inspected in four-page contact sheets."
   },
   "proof": {
     "pdf": "output/pdf/wormald-conjectures-proof.zh.pdf",
-    "pages": 35,
-    "bytes": 322005,
-    "sha256": "491aa1c34a27b29cb99c56824f4a2fa76bff779bfa2c5f10510e0a9e45df00e9",
+    "pages": 32,
+    "bytes": 308408,
+    "sha256": "44b48b46c015f4b3554f0f35838a205473a0c9caf5ce474ae0025aa933067688",
     "critical_layout_warnings": [],
     "automated_word_bounds_checked": false,
     "replacement_character_pages": [],
-    "link_annotations": 48,
-    "rendered_pages": 35,
+    "link_annotations": 8,
+    "rendered_pages": 32,
     "visual_review": "passed",
     "author": "刘星辰",
     "visually_reviewed_pages": [
@@ -87,16 +86,13 @@
       29,
       30,
       31,
-      32,
-      33,
-      34,
-      35
+      32
     ],
-    "visual_review_method": "All final pages rendered at 90 dpi and visually inspected in four-page contact sheets."
+    "visual_review_method": "Every final page rendered at 90 dpi and visually inspected in four-page contact sheets."
   },
   "scope": "PDF layout and author-metadata review; not mathematical certification. Word bounding boxes were not measured.",
   "editorial_revision": {
-    "version": "0.2.3",
+    "version": "0.2.4",
     "sole_author": "Xingchen Liu",
     "paper_languages": [
       "zh",
@@ -105,21 +101,38 @@
     "elementary_guide_languages": [
       "zh"
     ],
-    "paper_mathematical_spans_each": 973,
-    "paper_prose_blocks_each": 349,
-    "paper_headings_each": 41,
-    "definition_calculation_revision_groups": 40
+    "paper_mathematical_spans_each": 964,
+    "paper_prose_blocks_each": 343,
+    "paper_headings_each": 39,
+    "style_revision_groups": 25,
+    "previous_pdf_pages": {
+      "proof": 35,
+      "proof-en": 38,
+      "guide": 28
+    },
+    "current_pdf_pages": {
+      "proof": 32,
+      "proof-en": 34,
+      "guide": 27
+    },
+    "body_font_size_pt": 11,
+    "page_margins_mm": 22,
+    "body_font_size_or_margins_reduced": false,
+    "standalone_title_pages_removed": true,
+    "paper_tables_of_contents_removed": true,
+    "guide_table_of_contents": "one page; small type used only for the contents",
+    "english_references": "10 pt, single spacing; body remains 11 pt"
   },
   "proof-en": {
     "pdf": "output/pdf/wormald-conjectures-proof.en.pdf",
-    "pages": 38,
-    "bytes": 279951,
-    "sha256": "f500d5e196696ea9cd581323e4121fd5869adb4bab1380053e516c297bc64ead",
+    "pages": 34,
+    "bytes": 264893,
+    "sha256": "8a051617502738096d1bae6b0ead9e69b3d3a1c6526840beac5e5432f8a96908",
     "critical_layout_warnings": [],
     "automated_word_bounds_checked": false,
     "replacement_character_pages": [],
-    "link_annotations": 49,
-    "rendered_pages": 38,
+    "link_annotations": 9,
+    "rendered_pages": 34,
     "visual_review": "passed",
     "author": "Xingchen Liu",
     "visually_reviewed_pages": [
@@ -156,12 +169,8 @@
       31,
       32,
       33,
-      34,
-      35,
-      36,
-      37,
-      38
+      34
     ],
-    "visual_review_method": "All final pages rendered at 90 dpi and visually inspected in four-page contact sheets."
+    "visual_review_method": "Every final page rendered at 90 dpi and visually inspected in four-page contact sheets."
   }
 }

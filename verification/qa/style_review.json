@@ -1,0 +1,227 @@
+{
+  "version": "0.2.4",
+  "review_status": "completed",
+  "review_type": "Notation, logic consistency, formatting and concise academic prose; AI-assisted self-review",
+  "change_groups": [
+    {
+      "id": "single-draft-status-in-abstract",
+      "targets": [
+        "zh",
+        "en"
+      ]
+    },
+    {
+      "id": "source-attribution-without-review-history",
+      "targets": [
+        "zh",
+        "en"
+      ]
+    },
+    {
+      "id": "appendices-have-mathematical-titles",
+      "targets": [
+        "zh",
+        "en"
+      ]
+    },
+    {
+      "id": "remove-repeated-proof-status-after-main-formula",
+      "targets": [
+        "zh",
+        "en"
+      ]
+    },
+    {
+      "id": "standard-symbols-defined-once",
+      "targets": [
+        "zh",
+        "en"
+      ]
+    },
+    {
+      "id": "remove-unneeded-norm-alias",
+      "targets": [
+        "zh",
+        "en"
+      ]
+    },
+    {
+      "id": "retain-O-definition-without-commentary",
+      "targets": [
+        "zh",
+        "en"
+      ]
+    },
+    {
+      "id": "Omega-for-signed-permutation-epsilon-for-signs",
+      "targets": [
+        "zh",
+        "en"
+      ]
+    },
+    {
+      "id": "uniform-alternating-switching-signs",
+      "targets": [
+        "zh",
+        "en",
+        "guide"
+      ]
+    },
+    {
+      "id": "no-redefinition-of-standard-basis-in-fourth-moment-proof",
+      "targets": [
+        "zh",
+        "en"
+      ]
+    },
+    {
+      "id": "orthonormal-basis-V-distinct-from-rounded-W-sharp",
+      "targets": [
+        "zh",
+        "en",
+        "guide"
+      ]
+    },
+    {
+      "id": "consistent-one-vector-and-power-entry-notation",
+      "targets": [
+        "zh",
+        "en",
+        "guide"
+      ]
+    },
+    {
+      "id": "audit-history-kept-outside-the-proof",
+      "targets": [
+        "zh",
+        "en"
+      ]
+    },
+    {
+      "id": "concise-conclusion-and-scope",
+      "targets": [
+        "zh",
+        "en"
+      ]
+    },
+    {
+      "id": "guide-title-and-introduction",
+      "targets": [
+        "guide"
+      ]
+    },
+    {
+      "id": "guide-ordinary-introduction",
+      "targets": [
+        "guide"
+      ]
+    },
+    {
+      "id": "guide-gradient-defined-at-taylor-formula",
+      "targets": [
+        "guide"
+      ]
+    },
+    {
+      "id": "guide-gradient-next-to-its-use",
+      "targets": [
+        "guide"
+      ]
+    },
+    {
+      "id": "guide-remove-repeated-matrix-warning",
+      "targets": [
+        "guide"
+      ]
+    },
+    {
+      "id": "guide-Gram-calculation-retained-once-in-B3",
+      "targets": [
+        "guide"
+      ]
+    },
+    {
+      "id": "guide-retains-one-copy-of-block-Q-calculation",
+      "targets": [
+        "guide"
+      ]
+    },
+    {
+      "id": "switching-signs-epsilon-distinct-from-rounding-error-xi",
+      "targets": [
+        "zh",
+        "en",
+        "guide"
+      ]
+    },
+    {
+      "id": "unambiguous-binomial-square-and-Chinese-terminology",
+      "targets": [
+        "zh",
+        "en",
+        "guide"
+      ]
+    },
+    {
+      "id": "guide-appendices-follow-A-then-B-with-matching-references",
+      "targets": [
+        "guide"
+      ]
+    },
+    {
+      "id": "break-long-notation-paragraph-at-a-sentence-boundary",
+      "targets": [
+        "zh",
+        "en"
+      ]
+    }
+  ],
+  "source_characters_before": {
+    "elementary-guide.zh.md": 33023,
+    "paper.en.md": 76994,
+    "paper.zh.md": 43548
+  },
+  "source_characters_after": {
+    "elementary-guide.zh.md": 32386,
+    "paper.en.md": 73704,
+    "paper.zh.md": 42929
+  },
+  "notation_preservation": {
+    "result": "passed",
+    "comparisons": {
+      "zh": {
+        "displayed_calculations_preserved": 255
+      },
+      "en": {
+        "displayed_calculations_preserved": 255
+      }
+    },
+    "scope": "Display sequences are identical after scoped renaming and typography normalization. This is not an independent proof certification."
+  },
+  "paper_alignment": {
+    "mathematical_spans_each": 964,
+    "prose_blocks_each": 343,
+    "headings_each": 39
+  },
+  "mathematical_programs_rerun": 4,
+  "previous_pdf_pages": {
+    "proof": 35,
+    "proof-en": 38,
+    "guide": 28
+  },
+  "pdf_pages": {
+    "proof": 32,
+    "proof-en": 34,
+    "guide": 27
+  },
+  "body_font_size_pt": 11,
+  "page_margins_mm": 22,
+  "body_font_size_or_margins_reduced": false,
+  "source_bytes_sha256": {
+    "elementary-guide.zh.md": "41c4c0072ec4b795d5172ddb1722a37035c1cfddcab68c6644f62cc1abd114a4",
+    "paper.en.md": "bc4f811e8b5adce4ad6cbe5abb0046f227755b090a7bb0b9a168212b65d62b58",
+    "paper.zh.md": "19063a5e52738f69891188cb74d0e4d0703facf190eaac2587f525c853584b63"
+  },
+  "main_conclusions_or_coefficients_changed": false,
+  "independent_mathematical_review": "pending"
+}
