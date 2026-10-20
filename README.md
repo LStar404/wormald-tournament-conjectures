@@ -16,22 +16,20 @@ The conjectures are Wormald's. This research draft is authored by **Xingchen Liu
 **Read the paper:** [English paper PDF](output/pdf/wormald-conjectures-proof.en.pdf)
 (34 pages) · [Chinese paper PDF](output/pdf/wormald-conjectures-proof.zh.pdf)
 (32 pages) · [Chinese elementary guide PDF](output/pdf/wormald-conjectures-guide.zh.pdf)
-(27 pages)  
+(26 pages)  
 **Editable sources:** [English paper](docs/paper.en.md) · [Chinese paper](docs/paper.zh.md) ·
 [Elementary guide](docs/elementary-guide.zh.md)  
-Current repository revision: **0.2.4**, 20 October 2026.
+Current repository revision: **0.2.5**, 21 October 2026.
 The complete paper is available in Chinese and English. The elementary guide is Chinese only.
 The manuscripts include the product rules, chain rules, matrix calculations, equality cases,
-Taylor remainders and permanent estimates. All 964 mathematical spans match across the two papers;
+Taylor remainders and permanent estimates. All 961 mathematical spans match across the two papers;
 343 prose blocks were translated without omitting a section or calculation.
-Version 0.2.4 resolves reused symbols and removes repeated editorial prose.
-The symmetric matrix and signed permutation now have different names; scalar switching
-signs, rounding errors, basis vectors and rounded matrices are distinguished.
-Both papers retain all 255 displayed calculations after notation normalization.
-The PDFs are shorter: Chinese paper 35 → 32 pages, English paper 38 → 34,
-and Chinese guide 28 → 27. Body type remains 11 pt with 22 mm margins.
-The papers use a conventional title block followed by the abstract; the guide retains
-its contents page. See [the review record](AUDIT.md).
+Version 0.2.5 makes in-place corrections to coefficient terminology, a nonzero
+variable condition and minor wording. It removes an undefined model aside.
+All displayed calculations are unchanged. The Chinese and English papers remain
+32 and 34 pages; the Chinese guide is 26 pages after its references fit on the
+preceding page. Type size, margins and structure are unchanged.
+See [the review record](AUDIT.md).
 
 ### Main results
 
@@ -129,7 +127,7 @@ the written proofs and the explicitly cited external theorems.
 
 The PDFs are generated from Markdown through Pandoc and Tectonic or XeLaTeX.
 Build instructions are in [the PDF builder](tools/build_pdf.py).
-All 93 final PDF pages were rendered and visually inspected. [the layout record](verification/qa/pdf_review.json)
+All 92 final PDF pages were rendered and visually inspected. [the layout record](verification/qa/pdf_review.json)
 records that review separately from mathematical verification.
 
 ### Repository contents
@@ -149,7 +147,7 @@ records that review separately from mathematical verification.
 For this research draft, cite:
 
 > Liu, Xingchen. *Wormald tournament conjectures: Hessians and random blow-ups*.
-> Research draft, version 0.2.4, 2026.
+> Research draft, version 0.2.5, 2026.
 > https://github.com/LStar404/wormald-tournament-conjectures.
 
 Machine-readable citation metadata is in [CITATION.cff](CITATION.cff).
@@ -178,19 +176,17 @@ is related work; its authorship and formal-verification records belong to that p
 
 **阅读论文：**[中文论文PDF](output/pdf/wormald-conjectures-proof.zh.pdf)（32页）·
 [英文论文PDF](output/pdf/wormald-conjectures-proof.en.pdf)（34页）·
-[大一基础讲解PDF](output/pdf/wormald-conjectures-guide.zh.pdf)（27页）  
+[大一基础讲解PDF](output/pdf/wormald-conjectures-guide.zh.pdf)（26页）  
 **可编辑稿：**[中文论文Markdown](docs/paper.zh.md) · [英文论文Markdown](docs/paper.en.md) ·
 [基础讲解Markdown](docs/elementary-guide.zh.md)  
-当前仓库修订版本：**0.2.4**，2026年10月20日。
+当前仓库修订版本：**0.2.5**，2026年10月21日。
 论文提供完整中文和英文版本，教学讲解仅提供中文。
 论文逐项展开乘积求导、链式法则、矩阵运算、等号条件、Taylor余项及永久式估计，
-正文不以“显然”“同理”替代计算；英文完整对应343个文字段落和964处数学表达式。
-本轮统一符号并精简重复说明：对称矩阵与带符号置换、标量符号与标准基、
-舍入误差及整数化矩阵分别使用不同记号。两篇论文各255组独立陈列公式均保留，
-已按改名前后的符号对应逐项核对。
-中文论文由35页减至32页，英文由38页减至34页，中文讲解由28页减至27页；
-正文字号仍为11pt、页边距仍为22mm。采用标题后接摘要的论文版式，
-讲解保留目录，并合并重复计算。详见[复核记录](AUDIT.md)。
+正文不以“显然”“同理”替代计算；英文完整对应343个文字段落和961处数学表达式。
+本轮仅原地修正系数称谓、变量非零条件和少量笔误，删去一处未定义的模型旁句。
+三份文稿的陈列公式均未改动，没有新增章节或附录。
+中文论文仍为32页、英文仍为34页；中文讲解的末尾文献合回前页，现为26页。
+字号、页边距和结构保持不变。详见[复核记录](AUDIT.md)。
 
 ### 主要结果
 
@@ -278,7 +274,7 @@ $$
 
 PDF由Markdown主稿经Pandoc和Tectonic或XeLaTeX生成，
 可复现方法见[PDF构建程序](tools/build_pdf.py)。
-中英论文及中文讲解共93页已全部渲染并逐页检查；[版面记录](verification/qa/pdf_review.json)
+中英论文及中文讲解共92页已全部渲染并逐页检查；[版面记录](verification/qa/pdf_review.json)
 将排版审查与数学核验分别记录。
 
 ### 仓库结构
@@ -298,7 +294,7 @@ PDF由Markdown主稿经Pandoc和Tectonic或XeLaTeX生成，
 引用本研究稿时，请使用：
 
 > Liu, Xingchen. *Wormald tournament conjectures: Hessians and random blow-ups*.
-> Research draft, version 0.2.4, 2026.
+> Research draft, version 0.2.5, 2026.
 > https://github.com/LStar404/wormald-tournament-conjectures.
 
 机器可读引用信息见[CITATION.cff](CITATION.cff)。
