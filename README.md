@@ -170,35 +170,22 @@ is related work; its authorship and formal-verification records belong to that p
 刘星辰 · 个人研究者  
 联系邮箱：[lxc-em5158@outlook.com](mailto:lxc-em5158@outlook.com)
 
-本仓库收录研究论文、基础讲解和精确计算核查程序，讨论N. C. Wormald的
-[*Tournaments with many Hamilton cycles*](https://arxiv.org/html/2610.16245v1)
-中猜想 **1、2、6**。原猜想归属于Wormald，**本研究稿由刘星辰独立署名**。
+本仓库收录研究论文、基础讲解和精确计算核查程序，讨论N. C. Wormald的[*Tournaments with many Hamilton cycles*](https://arxiv.org/html/2610.16245v1)中猜想 **1、2、6**。原猜想归属于Wormald，**本研究稿由刘星辰独立署名**。
 
-**阅读论文：**[中文论文PDF](output/pdf/wormald-conjectures-proof.zh.pdf)（32页）·
-[英文论文PDF](output/pdf/wormald-conjectures-proof.en.pdf)（34页）·
-[大一基础讲解PDF](output/pdf/wormald-conjectures-guide.zh.pdf)（26页）  
-**可编辑稿：**[中文论文Markdown](docs/paper.zh.md) · [英文论文Markdown](docs/paper.en.md) ·
-[基础讲解Markdown](docs/elementary-guide.zh.md)  
-当前仓库修订版本：**0.2.6**，2026年10月21日。
-论文提供完整中文和英文版本，教学讲解仅提供中文。
-论文逐项展开乘积求导、链式法则、矩阵运算、等号条件、Taylor余项及永久式估计，
-正文不以“显然”“同理”替代计算；英文完整对应343个文字段落和963处数学表达式。
-本轮原地补明平方和比较的弱主序前提，将讲解中的边概率乘积限定于独立内部块模型，
-明确角函数和Taylor余项记号，并修正英文句法及两处引导语分页。
-中文论文32页、英文34页、中文讲解26页均不变，未增加或删除章节、附录及计算。
-详见[复核记录](AUDIT.md)。
+**阅读论文：**[中文论文PDF](output/pdf/wormald-conjectures-proof.zh.pdf)（32页）·[英文论文PDF](output/pdf/wormald-conjectures-proof.en.pdf)（34页）·[大一基础讲解PDF](output/pdf/wormald-conjectures-guide.zh.pdf)（26页）  
+**可编辑稿：**[中文论文Markdown](docs/paper.zh.md) · [英文论文Markdown](docs/paper.en.md) · [基础讲解Markdown](docs/elementary-guide.zh.md)  
+当前仓库修订版本：**0.2.6**，2026年10月21日。论文提供完整中文和英文版本，教学讲解仅提供中文。论文逐项展开乘积求导、链式法则、矩阵运算、等号条件、Taylor余项及永久式估计，正文不以“显然”“同理”替代计算；英文完整对应343个文字段落和963处数学表达式。本轮原地补明平方和比较的弱主序前提，将讲解中的边概率乘积限定于独立内部块模型，明确角函数和Taylor余项记号，并修正英文句法及两处引导语分页。中文论文32页、英文34页、中文讲解26页均不变，未增加或删除章节、附录及计算。详见[复核记录](AUDIT.md)。
 
 ### 主要结果
 
-设$d\ge3$为奇数，$A$为$d$阶正则竞赛图的邻接矩阵，令
+设 $d\ge3$ 为奇数， $A$ 为 $d$ 阶正则竞赛图的邻接矩阵，令
 
 $$
 S=2A+I-J,\qquad C=S/d,\qquad
 E=(e_1-e_d,\ldots,e_{d-1}-e_d).
 $$
 
-论文从Wormald的原始定义出发，推导其对数角Hessian矩阵$\mathbf H$及
-行列式$\mathcal H=\det\mathbf H$：
+论文从Wormald的原始定义出发，推导其对数角Hessian矩阵 $\mathbf H$ 及行列式 $\mathcal H=\det\mathbf H$：
 
 $$
 \mathbf H=E^T(I+C^2)(I-C^2)^{-1}E,
@@ -221,13 +208,9 @@ $$
 \ \uparrow\ \frac{\cosh1}{\cos1}
 $$
 
-其中$d$沿奇数$d\ge3$增长。论文证明其严格单调性，
-并计算了直到$d^{-5}$项的显式展开。
+其中 $d$ 沿奇数 $d\ge3$ 增长。论文证明其严格单调性，并计算了直到 $d^{-5}$ 项的显式展开。
 
-结合文中注明来源的计数与矩阵比较定理，可得到固定基图的极值结论：
-对每个固定奇数$d$，存在$M_d$，使得所有$m\ge M_d$时，
-圆环基图在普通同构意义下唯一最大化Hamilton圈及路径的期望。
-结论适用于独立随机内部块和均匀正则内部块；后一模型只沿奇数$m$考虑。
+结合文中注明来源的计数与矩阵比较定理，可得到固定基图的极值结论：对每个固定奇数 $d$，存在 $M_d$，使得所有 $m\ge M_d$ 时，圆环基图在普通同构意义下唯一最大化Hamilton圈及路径的期望。结论适用于独立随机内部块和均匀正则内部块；后一模型只沿奇数 $m$ 考虑。
 
 | Wormald猜想编号 | 本稿给出的结果 |
 | --- | --- |
@@ -235,30 +218,19 @@ $$
 | 2 | 圆环模型常数的闭式、严格单调性、精确极限及显式展开 |
 | 6 | Hessian正定性，以及相应平方根的正有理数公式 |
 
-这里$d$是基图阶数，$m$是块阶数，$N=dm$才是最终竞赛图阶数。
-取内部块极限时始终固定$d$。这些结论针对随机模型的期望，
-未由此证明猜想3的全体竞赛图精确Hamilton极值，也没有交换两重极限。
+这里 $d$ 是基图阶数， $m$ 是块阶数， $N=dm$ 才是最终竞赛图阶数。取内部块极限时始终固定 $d$。这些结论针对随机模型的期望，未由此证明猜想3的全体竞赛图精确Hamilton极值，也没有交换两重极限。
 
 ### 专家阅读入口
 
-建议从[论文](docs/paper.zh.md)开头的原猜想对应和阅读路线开始。
-第一部分第1–7节使用有限维线性代数和求导计算Hessian；
-第8节引用Wormald的Theorem 1、4、5，将有限恒等式连接到模型常数。
-第二部分使用Fang–Huang推论3.4进行矩比较，并用Brégman永久式界
-单独处理非正则基图。附录展开行列式闭式、等号分类、路径增点、
-归一化及共同阈值的计算。
+建议从[论文](docs/paper.zh.md)开头的原猜想对应和阅读路线开始。第一部分第1–7节使用有限维线性代数和求导计算Hessian；第8节引用Wormald的Theorem 1、4、5，将有限恒等式连接到模型常数。第二部分使用Fang–Huang推论3.4进行矩比较，并用Brégman永久式界单独处理非正则基图。附录展开行列式闭式、等号分类、路径增点、归一化及共同阈值的计算。
 
-[基础讲解](docs/elementary-guide.zh.md)以基本微积分和线性代数为起点，
-保留完整乘积求导，并提供三顶点例子的逐项手算。
+[基础讲解](docs/elementary-guide.zh.md)以基本微积分和线性代数为起点，保留完整乘积求导，并提供三顶点例子的逐项手算。
 
-论文目前为AI辅助完成的预印本，等待外部专家独立审阅。
-[复核记录](AUDIT.md)区分精确有限核查与高精度数值诊断。
-本仓库尚无这些结果的Lean形式化证明，也不主张历史优先权。
+论文目前为AI辅助完成的预印本，等待外部专家独立审阅。[复核记录](AUDIT.md)区分精确有限核查与高精度数值诊断。本仓库尚无这些结果的Lean形式化证明，也不主张历史优先权。
 
 ### 复现核验
 
-使用Python 3.10或更新版本。数学核查仅依赖Python标准库。
-从仓库根目录运行：
+使用Python 3.10或更新版本。数学核查仅依赖Python标准库。从仓库根目录运行：
 
     python verification/verify_wormald_hessian_spectral_bridge.py
     python verification/verify_wormald_fixed_base_extremum.py
@@ -267,15 +239,9 @@ $$
     python tools/check_translation.py
     python tools/check_package.py
 
-数学核查覆盖11,724个精确Hessian元素、345个不同消去坐标的Hessian行列式、
-三、五、七阶全部2,666个有标号正则竞赛图，以及有限随机吹胀期望和
-加权永久式界。[保存的记录](verification/qa/)列出各项范围。
-有限检查用于发现错误；一般结论依靠逐式证明及文中明确引用的外部定理。
+数学核查覆盖11,724个精确Hessian元素、345个不同消去坐标的Hessian行列式、三、五、七阶全部2,666个有标号正则竞赛图，以及有限随机吹胀期望和加权永久式界。[保存的记录](verification/qa/)列出各项范围。有限检查用于发现错误；一般结论依靠逐式证明及文中明确引用的外部定理。
 
-PDF由Markdown主稿经Pandoc和Tectonic或XeLaTeX生成，
-可复现方法见[PDF构建程序](tools/build_pdf.py)。
-中英论文及中文讲解共92页已全部渲染并逐页检查；[版面记录](verification/qa/pdf_review.json)
-将排版审查与数学核验分别记录。
+PDF由Markdown主稿经Pandoc和Tectonic或XeLaTeX生成，可复现方法见[PDF构建程序](tools/build_pdf.py)。中英论文及中文讲解共92页已全部渲染并逐页检查；[版面记录](verification/qa/pdf_review.json)将排版审查与数学核验分别记录。
 
 ### 仓库结构
 
@@ -297,17 +263,9 @@ PDF由Markdown主稿经Pandoc和Tectonic或XeLaTeX生成，
 > Research draft, version 0.2.6, 2026.
 > https://github.com/LStar404/wormald-tournament-conjectures.
 
-机器可读引用信息见[CITATION.cff](CITATION.cff)。
-[此前的哈密顿路仓库](https://github.com/LStar404/tournament-hamiltonian-paths)
-属于相关工作；其作者信息与形式化核验记录适用于原项目。
+机器可读引用信息见[CITATION.cff](CITATION.cff)。[此前的哈密顿路仓库](https://github.com/LStar404/tournament-hamiltonian-paths)属于相关工作；其作者信息与形式化核验记录适用于原项目。
 
-1. N. C. Wormald，
-   [*Tournaments with many Hamilton cycles*，arXiv:2610.16245v1](https://arxiv.org/html/2610.16245v1)：
-   本稿讨论的模型、计数定理及原猜想来源。
-2. Yijia Fang、Hao Huang，
-   [*Maximizing directed cycles in tournaments*，推论3.4](https://arxiv.org/html/2608.06238v1#S3)：
-   矩比较所用的弱主序输入。
-3. Noga Alon，
-   [*The maximum number of Hamiltonian paths in tournaments*](https://www.tau.ac.il/~nogaa/PDFS/hamilton.pdf)，
-   Combinatorica 10 (1990)，319–324：文中列出的Brégman界。
+1. N. C. Wormald，[*Tournaments with many Hamilton cycles*，arXiv:2610.16245v1](https://arxiv.org/html/2610.16245v1)：本稿讨论的模型、计数定理及原猜想来源。
+2. Yijia Fang、Hao Huang，[*Maximizing directed cycles in tournaments*，推论3.4](https://arxiv.org/html/2608.06238v1#S3)：矩比较所用的弱主序输入。
+3. Noga Alon，[*The maximum number of Hamiltonian paths in tournaments*](https://www.tau.ac.il/~nogaa/PDFS/hamilton.pdf)，Combinatorica 10 (1990)，319–324：文中列出的Brégman界。
 

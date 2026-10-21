@@ -64,9 +64,9 @@
     },
     {
       "path": "README.md",
-      "bytes": 14829,
-      "sha256": "7ad155cb1029f54277debffef32c5e585f740386cc14ba15d46b55f732b4e0d0",
-      "git_blob_sha1": "93a728e26f146d8dbd4db8d6b7c17036961df07d"
+      "bytes": 14756,
+      "sha256": "a3ee37fdef619ead9bac57a364ccacd69b3849a57b1e6445460cde26aaace31f",
+      "git_blob_sha1": "b3feeb7b445dfc3f616152e3d9e71e5c5161eca1"
     },
     {
       "path": "tools/build_pdf.py",
