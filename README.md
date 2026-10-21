@@ -33,7 +33,7 @@ Taylor remainder symbols, and corrects minor sentence and page breaks.
 The three PDFs remain 32, 34 and 26 pages. No section, appendix or calculation
 has been added or removed. See [the review record](AUDIT.md).
 
-### Proof exposition and Lean verification — Xiangyu Ye (叶祥宇)
+### Proof exposition and Lean verification — Xiangyu Ye
 
 **Xiangyu Ye (叶祥宇) completed this extension:** reorganizing and simplifying the
 proofs, documenting the correspondence with the original questions, and completing
