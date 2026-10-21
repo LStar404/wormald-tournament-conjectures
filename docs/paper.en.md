@@ -2,7 +2,7 @@
 
 Xingchen Liu
 
-21 October 2026. Public research manuscript, version 0.2.5.
+21 October 2026. Public research manuscript, version 0.2.6.
 
 # Abstract
 
@@ -963,11 +963,11 @@ $$
 (-\log\cos y)'''=2\tan y\,\sec^2y.
 $$
 
-The absolute value of the first expression is at most 2. The second needs to be bounded only between $\alpha$ and 1. Since $0\le\alpha\le1$, its absolute value is at most $2\tan1\,\sec^21$. Taylor's integral remainders satisfy
+The absolute value of the first expression is at most 2. The second needs to be bounded only between $\alpha$ and 1. Since $0\le\alpha\le1$, its absolute value is at most $2\tan1\,\sec^21$. Write $R_\beta,R_\alpha$ for the two Taylor integral remainders. Then
 
 $$
-|R_f|\le\frac{2}{6}|\delta_\beta|^3,\qquad
-|R_g|\le\frac{2\tan1\,\sec^21}{6}|\delta_\alpha|^3.
+|R_\beta|\le\frac{2}{6}|\delta_\beta|^3,\qquad
+|R_\alpha|\le\frac{2\tan1\,\sec^21}{6}|\delta_\alpha|^3.
 $$
 
 Here the factor $1/6$ comes from $\frac12\int_0^{|\delta|}(|\delta|-t)^2dt=|\delta|^3/6$. The expansions are
@@ -1123,7 +1123,7 @@ $$
 
 The cited theorem also states that vector equality in the outermost comparison implies vector equality for every suffix product. We now prove the squared-norm comparison and the equality conversion needed here.
 
-Write $(a-t)_+=\max(a-t,0)$. For nonnegative decreasing vectors and $t\ge0$,
+Write $(a-t)_+=\max(a-t,0)$. For nonnegative decreasing vectors satisfying $u\prec_w v$ and $t\ge0$,
 
 $$
 \sum_{i=1}^d(u_i-t)_+
@@ -1166,7 +1166,7 @@ $$
 Equality of squared norms therefore forces $u=v$. Taking $x=e_j$ and using $e_j^*=e_1$ yields
 
 $$
-\|S^pe_j\|_2^2\le\|K_d^pe_1\|_2^2,
+\|S^pe_j\|_2^2\le\|K_d^pe_1\|_2^2.
 $$
 
 Equality also forces $(S^pe_j)^*=K_d^pe_1$.
@@ -2009,7 +2009,7 @@ m\sum_i\log R_i'
 =m\sum_i\log(2R_i'/N)+N\log(N/2).
 $$
 
-we obtain
+We obtain
 
 $$
 \begin{aligned}
@@ -2029,7 +2029,7 @@ $$
 =\frac{(N+1)!}{N!}=N+1.
 $$
 
-the polynomial degree changes from $2d+1$ to $2d+2$. The added-vertex identity also gives
+The polynomial degree changes from $2d+1$ to $2d+2$. The added-vertex identity also gives
 
 $$
 \frac{\mathbb EH}{\mu_N}
@@ -2081,7 +2081,7 @@ Finally take the maximum of the four thresholds for two models and two counts. T
 Part I uses $\tan y\ge y+y^3/3$ for $0\le y<\pi/2$. Set $f(y)=\tan y-y$. Then
 
 $$
-f'(y)=\tan^2y\ge0,\qquad f(0)=0,
+f'(y)=\tan^2y\ge0,\qquad f(0)=0.
 $$
 
 Thus $\tan y\ge y$. Next set $g(y)=\tan y-y-y^3/3$. We have

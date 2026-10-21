@@ -61,7 +61,7 @@ for key,name,title,short,subtitle in specs:
                 "contents":"Contents" if english else "目录",
                 "author":"Xingchen Liu" if english else "刘星辰",
                 "runningdate":"Research manuscript - 2026-10-21" if english else "公开研究稿 - 2026-10-21",
-                "date":"21 October 2026 - Version 0.2.5" if english else "2026年10月21日 - 版本0.2.5",
+                "date":"21 October 2026 - Version 0.2.6" if english else "2026年10月21日 - 版本0.2.6",
                 "subject":"Wormald conjectures 1, 2, 6: detailed derivations and review" if english else "Wormald猜想1、2、6：逐式推导与复核"}.items():
         cmd.extend(["-V",k+"="+v])
     if english:
@@ -75,6 +75,12 @@ for key,name,title,short,subtitle in specs:
     rendered=re.sub(r"(?m)^(\\subsection\*?\{)",r"\\Needspace{6\\baselineskip}\n\1",rendered)
     # A compact reference list avoids a final page containing only one citation.
     if english:
+        # Keep short equation introductions with the following display.
+        for introduction in ("Since", "It follows that"):
+            rendered=rendered.replace(
+                "\n"+introduction+"\n",
+                "\n"+r"\Needspace{5\baselineskip}"+"\n"+introduction+"\n",
+            )
         assert r"\subsection{References}" in rendered
         rendered=rendered.replace(
             r"\subsection{References}",

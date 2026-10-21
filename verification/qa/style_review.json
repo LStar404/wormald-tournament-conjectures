@@ -1,159 +1,148 @@
 {
-  "version": "0.2.5",
+  "version": "0.2.6",
   "review_status": "completed",
-  "review_type": "Minimal in-place notation, domain, terminology and typesetting corrections; AI-assisted review",
+  "review_type": "Explicit local hypotheses, independent-model scope and notation; AI-assisted review",
   "changes": [
     {
       "file": "paper.zh.md",
-      "before": "行列式多项式$F_k(t)=\\det(I+tT_k)$的最高次系数为$\\det T_k$",
-      "after": "行列式多项式$F_k(t)=\\det(I+tT_k)$中$t^k$的系数为$\\det T_k$"
+      "before": "对于降序非负向量及$t\\ge0$，",
+      "after": "对于满足$u\\prec_w v$的降序非负向量及$t\\ge0$，"
+    },
+    {
+      "file": "paper.en.md",
+      "before": "For nonnegative decreasing vectors and $t\\ge0$,",
+      "after": "For nonnegative decreasing vectors satisfying $u\\prec_w v$ and $t\\ge0$,"
     },
     {
       "file": "paper.zh.md",
-      "before": "三角不等式的微积分证明",
-      "after": "三角函数不等式的微积分证明"
+      "before": "Taylor积分余项满足",
+      "after": "分别记两式的Taylor积分余项为$R_\\beta,R_\\alpha$，则"
+    },
+    {
+      "file": "paper.en.md",
+      "before": "Taylor's integral remainders satisfy",
+      "after": "Write $R_\\beta,R_\\alpha$ for the two Taylor integral remainders. Then"
     },
     {
       "file": "paper.zh.md",
-      "before": "对$|x|<1$，",
-      "after": "对$0<|x|<1$，"
+      "before": "|R_f|",
+      "after": "|R_\\beta|"
     },
     {
       "file": "paper.zh.md",
-      "before": "若采用三角分解正则内部模型，在定义成立的阶数上每个旧顶点内部出度仍是$(m-1)/2$，旧行和仍是$mb_i-1/2$，增点后上界仍是$mb_i+1/2$；上述两个行和界逐样本成立，因此也得到所列$\\mathcal R$上界。",
-      "after": ""
+      "before": "|R_g|",
+      "after": "|R_\\alpha|"
+    },
+    {
+      "file": "paper.zh.md",
+      "before": "\\|S^pe_j\\|_2^2\\le\\|K_d^pe_1\\|_2^2,",
+      "after": "\\|S^pe_j\\|_2^2\\le\\|K_d^pe_1\\|_2^2."
+    },
+    {
+      "file": "paper.zh.md",
+      "before": "f'(y)=\\tan^2y\\ge0,\\qquad f(0)=0,",
+      "after": "f'(y)=\\tan^2y\\ge0,\\qquad f(0)=0."
+    },
+    {
+      "file": "paper.zh.md",
+      "before": "0.2.5",
+      "after": "0.2.6"
+    },
+    {
+      "file": "paper.en.md",
+      "before": "|R_f|",
+      "after": "|R_\\beta|"
+    },
+    {
+      "file": "paper.en.md",
+      "before": "|R_g|",
+      "after": "|R_\\alpha|"
+    },
+    {
+      "file": "paper.en.md",
+      "before": "\\|S^pe_j\\|_2^2\\le\\|K_d^pe_1\\|_2^2,",
+      "after": "\\|S^pe_j\\|_2^2\\le\\|K_d^pe_1\\|_2^2."
+    },
+    {
+      "file": "paper.en.md",
+      "before": "f'(y)=\\tan^2y\\ge0,\\qquad f(0)=0,",
+      "after": "f'(y)=\\tan^2y\\ge0,\\qquad f(0)=0."
+    },
+    {
+      "file": "paper.en.md",
+      "before": "0.2.5",
+      "after": "0.2.6"
+    },
+    {
+      "file": "paper.en.md",
+      "before": "\nwe obtain\n",
+      "after": "\nWe obtain\n"
+    },
+    {
+      "file": "paper.en.md",
+      "before": "\nthe polynomial degree changes",
+      "after": "\nThe polynomial degree changes"
     },
     {
       "file": "elementary-guide.zh.md",
-      "before": "行列式多项式$F_k(t)=\\det(I+tT_k)$的最高次系数为$\\det T_k$",
-      "after": "行列式多项式$F_k(t)=\\det(I+tT_k)$中$t^k$的系数为$\\det T_k$"
+      "before": "原文使用角变量$t_j=i\\theta_j$。两次求导多出$i^2=-1$，所以原Hessian变成正号：",
+      "after": "原文的角函数为$\\widetilde f(\\theta)=\\log z+g(i\\theta_1,\\ldots,i\\theta_{d-1})$。两次求导带来$i^2=-1$，故其原点Hessian为："
     },
     {
       "file": "elementary-guide.zh.md",
-      "before": "三角不等式的微积分证明",
-      "after": "三角函数不等式的微积分证明"
-    },
-    {
-      "file": "elementary-guide.zh.md",
-      "before": "对$|x|<1$，",
-      "after": "对$0<|x|<1$，"
-    },
-    {
-      "file": "elementary-guide.zh.md",
-      "before": "若采用三角分解正则内部模型，在定义成立的阶数上每个旧顶点内部出度仍是$(m-1)/2$，旧行和仍是$mb_i-1/2$，增点后上界仍是$mb_i+1/2$；上述两个行和界逐样本成立，因此也得到所列$\\mathcal R$上界。",
-      "after": ""
-    },
-    {
-      "file": "paper.zh.md",
-      "before": "再由最高次系数说明",
-      "after": "再由相应幂次的系数说明"
-    },
-    {
-      "file": "paper.zh.md",
-      "before": "这一步合法地利用$d$固定，不声称该阈值对增长$d$统一。",
-      "after": "此处固定$d$，不要求阈值对增长的$d$统一。"
-    },
-    {
-      "file": "paper.en.md",
-      "before": "then uses its highest-degree coefficient",
-      "after": "then extracts the appropriate coefficient"
-    },
-    {
-      "file": "paper.en.md",
-      "before": "The highest-degree coefficient of $F_k(t)=\\det(I+tT_k)$ is $\\det T_k$",
-      "after": "In $F_k(t)=\\det(I+tT_k)$, the coefficient of $t^k$ is $\\det T_k$"
-    },
-    {
-      "file": "paper.en.md",
-      "before": "For $|x|<1$,",
-      "after": "For $0<|x|<1$,"
-    },
-    {
-      "file": "paper.en.md",
-      "before": "For an odd-order matrix $r=|U|$,",
-      "after": "For odd $r=|U|$,"
-    },
-    {
-      "file": "paper.en.md",
-      "before": "Here $x^TCx=-x^TCx$ implies",
-      "after": "where $x^TCx=-x^TCx$ implies"
-    },
-    {
-      "file": "paper.en.md",
-      "before": "Here $V^TP=V^TC$ follows",
-      "after": "where $V^TP=V^TC$ follows"
-    },
-    {
-      "file": "paper.en.md",
-      "before": "Thus this principal determinant is zero.",
-      "after": "so this principal determinant is zero."
-    },
-    {
-      "file": "paper.en.md",
-      "before": "Evaluate the Hessian at $\\theta=0$. Denote",
-      "after": "at $\\theta=0$. Denote"
-    },
-    {
-      "file": "paper.en.md",
-      "before": " If regular internal blocks are generated by the triangle-decomposition model, at every admissible order the internal outdegree of each old vertex is still $(m-1)/2$, the old row sum is still $mb_i-1/2$, and its augmented upper bound is still $mb_i+1/2$. These row bounds hold sample by sample, giving the displayed $\\mathcal R$ bound in that model as well.",
-      "after": ""
-    },
-    {
-      "file": "elementary-guide.zh.md",
-      "before": "W_{\\ell1},\\ldots,W_{\\ell L}",
-      "after": "W_{\\ell1},\\ldots,W_{\\ell N}"
-    },
-    {
-      "file": "paper.zh.md",
-      "before": "2026年10月20日",
-      "after": "2026年10月21日"
-    },
-    {
-      "file": "paper.zh.md",
-      "before": "0.2.4",
-      "after": "0.2.5"
-    },
-    {
-      "file": "paper.en.md",
-      "before": "20 October 2026",
-      "after": "21 October 2026"
-    },
-    {
-      "file": "paper.en.md",
-      "before": "0.2.4",
-      "after": "0.2.5"
-    },
-    {
-      "file": "elementary-guide.zh.md",
-      "before": "2026年10月20日",
-      "after": "2026年10月21日"
+      "before": "这一步用于$N\\ge3$的圈。块模型中，块间指定边的概率是0或1，块内独立边是$1/2$。哈密顿圈不会同时使用同一个无序点对的两个方向，因此单条圈的概率确实是各条所需边概率的乘积。",
+      "after": "这一步用于$N\\ge3$的圈。在独立内部块模型$\\mathcal T$中，块间边概率为0或1，块内边概率为$1/2$。一条圈使用不同的无序点对，所需随机边彼此独立，故其概率为各边概率的乘积。"
     }
   ],
-  "source_characters_before": {
-    "elementary-guide.zh.md": 32386,
-    "paper.en.md": 73704,
-    "paper.zh.md": 42929
+  "counterexamples_checked": {
+    "regular_triangle_joint_probability": "1/2",
+    "product_of_edge_marginals": "1/4",
+    "without_weak_majorization_u": [
+      2,
+      0
+    ],
+    "without_weak_majorization_v": [
+      1,
+      0
+    ]
   },
-  "source_characters_after": {
-    "elementary-guide.zh.md": 32280,
-    "paper.en.md": 73308,
-    "paper.zh.md": 42819
-  },
-  "displayed_calculations_unchanged": true,
-  "displayed_calculations_each": {
-    "elementary-guide.zh.md": 203,
-    "paper.en.md": 255,
-    "paper.zh.md": 255
+  "displayed_calculations": {
+    "elementary-guide.zh.md": {
+      "count": 203,
+      "changed_blocks": [],
+      "normalized_equal": true,
+      "allowed_changes": "Remainder renaming and sentence punctuation only"
+    },
+    "paper.en.md": {
+      "count": 255,
+      "changed_blocks": [
+        123,
+        148,
+        253
+      ],
+      "normalized_equal": true,
+      "allowed_changes": "Remainder renaming and sentence punctuation only"
+    },
+    "paper.zh.md": {
+      "count": 255,
+      "changed_blocks": [
+        123,
+        148,
+        253
+      ],
+      "normalized_equal": true,
+      "allowed_changes": "Remainder renaming and sentence punctuation only"
+    }
   },
   "paper_alignment": {
-    "mathematical_spans_each": 961,
+    "mathematical_spans_each": 963,
     "prose_blocks_each": 343,
     "headings_each": 39
   },
   "previous_pdf_pages": {
     "proof": 32,
     "proof-en": 34,
-    "guide": 27
+    "guide": 26
   },
   "pdf_pages": {
     "proof": 32,
@@ -165,11 +154,11 @@
   "new_sections_or_appendices": false,
   "main_conclusions_or_coefficients_changed": false,
   "mathematical_programs_rerun": 0,
-  "mathematical_records": "Prior exact-check results retained; displayed equations unchanged",
+  "mathematical_records": "Prior exact-check results retained; arithmetic and identities unchanged",
   "source_bytes_sha256": {
-    "elementary-guide.zh.md": "4315fbaa74cbaea7149737728811875b72baeb3379d8781e51ce7107bb86a097",
-    "paper.en.md": "34100edc9d74139b2dafb4eda7d3acc06c1387757a31e36e85a74dd9995b1f3d",
-    "paper.zh.md": "21ea820b03bbbe4c568b263bec549f3092cb628449fb4526d4ce12ec5a923771"
+    "elementary-guide.zh.md": "5bcc64f27665005e0f831841282385bebab52ef95cdcce0f9134d3a22cd6068d",
+    "paper.en.md": "8867fcbf0f1c03efc95c33ed13306d0dbb6669aa20096cd13723c9f847c8e42d",
+    "paper.zh.md": "04974aa6ce4e56aea2e1f2ce1c46a2f10683936cda17995d7ab660f91b543f88"
   },
   "independent_mathematical_review": "pending"
 }

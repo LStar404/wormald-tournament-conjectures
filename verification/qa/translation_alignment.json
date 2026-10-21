@@ -1,6 +1,6 @@
 {
   "result": "passed",
-  "mathematical_spans_each": 961,
+  "mathematical_spans_each": 963,
   "prose_blocks_each": 343,
   "headings_each": 39,
   "translated_mathematical_labels": {
@@ -12,8 +12,8 @@
     "\\text{路径}": "\\text{paths}"
   },
   "sha256": {
-    "zh": "012462a33ba531cac1efd63bab18addc84dd26aae3d0c864e72629483f1fd31e",
-    "en": "6ab3558825d196d36da6a14ebe2d38cbb48324f5a5fd53e32f2fd020590ec9f5"
+    "zh": "9131fbec74a941d0d6e21742ce7efb157b7ef75ba2e82342f238f21649fbdee8",
+    "en": "7865da5d81b02dd7ff68158b2661c08e9b9424f7893bede1d4b1d6eb10999e0c"
   },
   "scope": "Formula sequence and structural alignment; not independent mathematical or linguistic certification."
 }

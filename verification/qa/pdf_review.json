@@ -2,8 +2,8 @@
   "guide": {
     "pdf": "output/pdf/wormald-conjectures-guide.zh.pdf",
     "pages": 26,
-    "bytes": 280130,
-    "sha256": "7c365f32dbf336c38c089b233b05d3249ee85cf51cf9f5c01c76f1d66e694ede",
+    "bytes": 280475,
+    "sha256": "23474137522069474a523811a01aa39e4ae92cab449f7e0cb9083f056cc2bf37",
     "critical_layout_warnings": [],
     "automated_word_bounds_checked": false,
     "replacement_character_pages": [],
@@ -39,13 +39,13 @@
       25,
       26
     ],
-    "visual_review_method": "Every final page rendered at 90 dpi and visually inspected in four-page contact sheets; final changed Chinese pages rechecked."
+    "visual_review_method": "All final pages inspected in rendered four-page contact sheets; rebuilt English pages reviewed again."
   },
   "proof": {
     "pdf": "output/pdf/wormald-conjectures-proof.zh.pdf",
     "pages": 32,
-    "bytes": 307165,
-    "sha256": "e8042f5f76fe225ffeda4894b16952349424b6c4a6143ce39809a272b45cb11b",
+    "bytes": 306927,
+    "sha256": "4634242759b5043b827e9b2f8189f8fb5637f381ecc38838f59b3c291a2ce3b8",
     "critical_layout_warnings": [],
     "automated_word_bounds_checked": false,
     "replacement_character_pages": [],
@@ -87,40 +87,64 @@
       31,
       32
     ],
-    "visual_review_method": "Every final page rendered at 90 dpi and visually inspected in four-page contact sheets; final changed Chinese pages rechecked."
+    "visual_review_method": "All final pages inspected in rendered four-page contact sheets; rebuilt English pages reviewed again."
   },
   "scope": "PDF layout and author-metadata review; not mathematical certification. Word bounding boxes were not measured.",
   "editorial_revision": {
-    "version": "0.2.5",
+    "version": "0.2.6",
     "sole_author": "Xingchen Liu",
     "previous_pdf_pages": {
       "proof": 32,
       "proof-en": 34,
-      "guide": 27
+      "guide": 26
     },
     "current_pdf_pages": {
       "proof": 32,
       "proof-en": 34,
       "guide": 26
     },
-    "paper_mathematical_spans_each": 961,
+    "paper_mathematical_spans_each": 963,
     "paper_prose_blocks_each": 343,
     "paper_headings_each": 39,
     "body_font_size_pt": 11,
     "page_margins_mm": 22,
     "body_font_size_or_margins_reduced": false,
     "new_sections_or_appendices": false,
-    "displayed_calculations_unchanged": {
-      "elementary-guide.zh.md": 203,
-      "paper.en.md": 255,
-      "paper.zh.md": 255
-    }
+    "displayed_calculations": {
+      "elementary-guide.zh.md": {
+        "count": 203,
+        "changed_blocks": [],
+        "normalized_equal": true,
+        "allowed_changes": "Remainder renaming and sentence punctuation only"
+      },
+      "paper.en.md": {
+        "count": 255,
+        "changed_blocks": [
+          123,
+          148,
+          253
+        ],
+        "normalized_equal": true,
+        "allowed_changes": "Remainder renaming and sentence punctuation only"
+      },
+      "paper.zh.md": {
+        "count": 255,
+        "changed_blocks": [
+          123,
+          148,
+          253
+        ],
+        "normalized_equal": true,
+        "allowed_changes": "Remainder renaming and sentence punctuation only"
+      }
+    },
+    "english_equation_introductions": "Short standalone Since/It follows that kept with the next display"
   },
   "proof-en": {
     "pdf": "output/pdf/wormald-conjectures-proof.en.pdf",
     "pages": 34,
-    "bytes": 264476,
-    "sha256": "daff1f1613f72711b676f27380d1b53b570786761d393402d5761e5dbb0b2c83",
+    "bytes": 264261,
+    "sha256": "0671192dc50a5b6135244d8f5948f5d26267631f974c316c9f66957636db28f5",
     "critical_layout_warnings": [],
     "automated_word_bounds_checked": false,
     "replacement_character_pages": [],
@@ -164,6 +188,6 @@
       33,
       34
     ],
-    "visual_review_method": "Every final page rendered at 90 dpi and visually inspected in four-page contact sheets; final changed Chinese pages rechecked."
+    "visual_review_method": "All final pages inspected in rendered four-page contact sheets; rebuilt English pages reviewed again."
   }
 }
