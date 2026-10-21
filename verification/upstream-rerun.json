@@ -1,0 +1,44 @@
+{
+  "result": "passed",
+  "checked_at_utc": "2026-10-21T10:56:09.191738+00:00",
+  "historical_qa_preserved": true,
+  "scope": "Finite exact computations, translation alignment and historical publication bytes; not general theorem certification.",
+  "runs": [
+    {
+      "script": "verification/verify_wormald_hessian_spectral_bridge.py",
+      "exit_code": 0,
+      "stdout": "{\"result\": \"passed\", \"exact_regular_cases\": 73, \"exhaustive_regular_orders\": [3, 5], \"exact_hessian_entries\": 11724, \"exact_elimination_coordinate_determinants\": 345, \"source_rational_table_checks\": [{\"name\": \"carousel_7\", \"d\": 7, \"rho\": \"3032/1231\", \"hessian_determinant\": \"10607527/9193024\"}, {\"name\": \"carousel_9\", \"d\": 9, \"rho\": \"437584/171769\", \"hessian_determinant\": \"265541304249/191479757056\"}, {\"name\": \"carousel_11\", \"d\": 11, \"rho\": \"108859552/41833969\", \"hessian_determinant\": \"19250890585222571/11850402061640704\"}, {\"name\": \"carousel_13\", \"d\": 13, \"rho\": \"41637757888/15769379963\", \"hessian_determinant\": \"3232753477427056457797/1733702881939706220544\"}, {\"name\": \"C3_of_C3\", \"d\": 9, \"rho\": \"5488/2197\", \"hessian_determinant\": \"43441281/30118144\"}], \"monotonicity_rational_margin\": \"42833/944784\", \"explicit_expansion_coefficients\": {\"L\": \"2.855957892565113711142604381537575751420981680139369304619124163553937586785621079365\", \"normalized_d2\": \"-0.2652711895663791141291721749511888608914940583745278289290453685256360508583629353654\", \"normalized_d4\": \"0.7126232871529357804341678971631236750790591773534391889388189030169415076416182257162\", \"normalized_d5\": \"-1/3\", \"d2_coefficient\": \"-0.7576033475122368752562477964249320742333630724823622683535931976537287041605219915317\", \"d4_coefficient\": \"2.035222101370122343549778358915619941149897850852238629948545697702649124547404868957\"}, \"scope\": \"Exact rational determinant/implicit-derivative identities and exact monotonicity margin. Decimal asymptotic remainders are diagnostics; general theorems require the written proof.\"}",
+      "stderr": ""
+    },
+    {
+      "script": "verification/verify_wormald_fixed_base_extremum.py",
+      "exit_code": 0,
+      "stdout": "{\"result\": \"passed\", \"exhaustive_regular_spectral_checks\": [{\"d\": 3, \"regular_cases\": 2, \"equalities\": 2, \"strict_cases\": 0, \"min_positive_sixth_gap\": null}, {\"d\": 5, \"regular_cases\": 24, \"equalities\": 24, \"strict_cases\": 0, \"min_positive_sixth_gap\": null}, {\"d\": 7, \"regular_cases\": 2640, \"equalities\": 720, \"strict_cases\": 1920, \"min_positive_sixth_gap\": 8064}], \"exact_nonregular_kappa_checks\": 1006, \"exact_random_blowup_realizations\": 576, \"exact_expected_path_cycle_identities\": 9, \"exact_weighted_bregman_bounds\": 9, \"exact_regular_block_degree_cases\": 64, \"scope\": \"Finite exact spectral, arithmetic, expected-value and degree checks. No finite sample certifies asymptotic convergence, a uniform block-size threshold or novelty.\"}",
+      "stderr": ""
+    },
+    {
+      "script": "verification/audit_publication_identities.py",
+      "exit_code": 0,
+      "stdout": "{\"result\": \"passed\", \"rational_determinant_cases\": 120, \"comparison_matrix_and_signed_shift_orders\": 24, \"explicit_carousel_isomorphism_orders\": 12, \"four_vertex_determinant_cases\": 64, \"trace4_and_equality_cases\": 1259, \"scope\": \"Exact finite identities only; not an asymptotic or peer-review certification.\"}",
+      "stderr": ""
+    },
+    {
+      "script": "verification/audit_expansion_and_rounding.py",
+      "exit_code": 0,
+      "stdout": "{\"result\": \"passed\", \"formal_order\": 9, \"exact_symbolic_coefficients\": {\"0\": {\"(0, 0)\": \"1\"}, \"1\": {}, \"2\": {\"(1, 0)\": \"1/3\", \"(0, 1)\": \"-1/3\"}, \"3\": {}, \"4\": {\"(1, 0)\": \"1/5\", \"(0, 1)\": \"1/5\", \"(0, 2)\": \"1/9\", \"(0, 0)\": \"1/9\", \"(1, 1)\": \"-1/9\"}, \"5\": {\"(0, 0)\": \"-1/3\"}, \"7\": {\"(1, 0)\": \"-1/9\", \"(0, 1)\": \"1/9\"}, \"9\": {\"(1, 0)\": \"-1/15\", \"(0, 1)\": \"-1/15\", \"(0, 2)\": \"-1/27\", \"(0, 0)\": \"-32/135\", \"(1, 1)\": \"1/27\"}}, \"weighted_row_cases\": 160, \"exact_mass_transfers\": 536, \"zero_permanent_inputs\": 14, \"augmented_zero_witness\": true, \"all_tournament_odd_moment_cases\": 1178, \"exact_odd_moment_inequalities\": 4712, \"sixth_to_fourth_equality_checks\": 1178, \"scope\": \"Exact finite formal-series coefficients and finite row-operation checks; no asymptotic convergence certification.\"}",
+      "stderr": ""
+    },
+    {
+      "script": "tools/check_translation.py",
+      "exit_code": 0,
+      "stdout": "{\"result\": \"passed\", \"mathematical_spans_each\": 963, \"prose_blocks_each\": 343, \"headings_each\": 39, \"translated_mathematical_labels\": {\"\\u5168\\u90e8\\u4e8c\\u7ef4\\u5757\": \"all two-dimensional blocks\", \"\\\\rm \\u5947\": \"\\\\rm odd\", \"\\u7b49\\u53f7\\u5f53\\u4e14\\u4ec5\\u5f53 \": \"with equality if and only if \", \"\\\\mathcal R\\\\text{ \\u7684\\u6bcf\\u4e2a\\u6837\\u672c}\": \"\\\\text{each sample of }\\\\mathcal R\", \"\\\\text{\\u5708}\": \"\\\\text{cycles}\", \"\\\\text{\\u8def\\u5f84}\": \"\\\\text{paths}\"}, \"sha256\": {\"zh\": \"9131fbec74a941d0d6e21742ce7efb157b7ef75ba2e82342f238f21649fbdee8\", \"en\": \"7865da5d81b02dd7ff68158b2661c08e9b9424f7893bede1d4b1d6eb10999e0c\"}, \"scope\": \"Formula sequence and structural alignment; not independent mathematical or linguistic certification.\"}",
+      "stderr": ""
+    },
+    {
+      "script": "tools/check_package.py",
+      "exit_code": 0,
+      "stdout": "{\"result\": \"passed\", \"files\": 28, \"local_links\": 44, \"pdf_pages\": {\"proof\": 32, \"proof-en\": 34, \"guide\": 26}}",
+      "stderr": ""
+    }
+  ]
+}

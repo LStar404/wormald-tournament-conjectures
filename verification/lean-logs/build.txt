@@ -1,0 +1,12 @@
+ℹ [3109/3154] Replayed Wormald.RationalSquare
+info: Wormald/RationalSquare.lean:91:0: 'Wormald.det_one_add_square_rational' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Wormald/RationalSquare.lean:92:0: 'Wormald.det_quotient_rational_square' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3505/3736] Replayed Wormald.CarouselLimit
+info: Wormald/CarouselLimit.lean:77:0: 'Wormald.tendsto_carouselClosedConstant' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Wormald/CarouselLimit.lean:78:0: 'Wormald.tendsto_carouselClosedConstant_odd' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3517/3736] Replayed Wormald.AnalyticJetBridge
+info: Wormald/AnalyticJetBridge.lean:295:0: 'Wormald.analyticJetBridge_of_critical' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3526/3736] Replayed Wormald.ConjectureSixProof
+info: Wormald/ConjectureSixProof.lean:68:0: 'Wormald.conjectureSix' depends on axioms: [propext, Classical.choice, Quot.sound]
+✔ [4050/4051] Built Wormald (9.9s)
+Build completed successfully (4051 jobs).

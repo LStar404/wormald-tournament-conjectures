@@ -9,9 +9,11 @@ Xingchen Liu · Independent Researcher
 Contact: [lxc-em5158@outlook.com](mailto:lxc-em5158@outlook.com)
 
 This repository contains a research manuscript, an elementary companion guide,
-and exact computational checks addressing Conjectures **1, 2 and 6** in
+exact computational checks, and Lean proofs addressing Conjectures **1, 2 and 6** in
 N. C. Wormald's [*Tournaments with many Hamilton cycles*](https://arxiv.org/html/2610.16245v1).
-The conjectures are Wormald's. This research draft is authored by **Xingchen Liu**.
+The conjectures are Wormald's. The original research draft is authored by **Xingchen Liu**.
+**Xiangyu Ye (叶祥宇)** completed the subsequent proof exposition, simplification,
+and Lean formalization described below.
 
 **Read the paper:** [English paper PDF](output/pdf/wormald-conjectures-proof.en.pdf)
 (34 pages) · [Chinese paper PDF](output/pdf/wormald-conjectures-proof.zh.pdf)
@@ -19,7 +21,7 @@ The conjectures are Wormald's. This research draft is authored by **Xingchen Liu
 (26 pages)  
 **Editable sources:** [English paper](docs/paper.en.md) · [Chinese paper](docs/paper.zh.md) ·
 [Elementary guide](docs/elementary-guide.zh.md)  
-Current repository revision: **0.2.6**, 21 October 2026.
+Original manuscript revision: **0.2.6**, 21 October 2026; the Lean extension is documented below.
 The complete paper is available in Chinese and English. The elementary guide is Chinese only.
 The manuscripts include the product rules, chain rules, matrix calculations, equality cases,
 Taylor remainders and permanent estimates. All 963 mathematical spans match across the two papers;
@@ -30,6 +32,43 @@ independent internal blocks. It defines the guide's angular function and the
 Taylor remainder symbols, and corrects minor sentence and page breaks.
 The three PDFs remain 32, 34 and 26 pages. No section, appendix or calculation
 has been added or removed. See [the review record](AUDIT.md).
+
+### Proof exposition and Lean verification — Xiangyu Ye (叶祥宇)
+
+**Xiangyu Ye (叶祥宇) completed this extension:** reorganizing and simplifying the
+proofs, documenting the correspondence with the original questions, and completing
+end-to-end Lean proofs of Conjectures **1, 2 and 6** with reproducible verification
+and axiom-dependency records.
+
+Start with the [concise proof guide (Chinese)](docs/concise-complete-proof.zh.md),
+then the [proof map](docs/proof-map.zh.md) and [formalization overview](FORMALIZATION.md).
+The [Lean guide](lean/README.zh.md) gives the exact scope and build instructions.
+
+| Conjecture | Lean coverage | Final theorem |
+| --- | --- | --- |
+| 1 | Actual independent-block Hamilton-cycle expectations; eventual maximum over all bases of fixed odd order, with uniqueness up to ordinary isomorphism | [`conjectureOne_proof`](lean/Wormald/ConjectureOneProof.lean) |
+| 2 | Actual uniform regular-block expectations; first the odd block-order limit, then the odd base-order limit, with value $\cosh(1)/\cos(1)$ | [`conjectureTwo_proof`](lean/Wormald/ConjectureTwoProof.lean) |
+| 6 | The original analytic Hessian, its positive definiteness and determinant formula, and the positive rational square root | [`conjectureSix`](lean/Wormald/ConjectureSixProof.lean) |
+
+The [full verification record](verification/lean-verification.json) covers **211 modules
+and 1,286 exported theorems**. The proofs use only the standard axioms `propext`,
+`Classical.choice` and `Quot.sound`, with no `sorry`, `admit`, `native_decide` or
+custom proof axioms. Separate records verify the complete dependencies of
+[Conjecture 1](verification/conjecture-one-verification.json),
+[Conjecture 2](verification/conjecture-two-verification.json) and
+[Conjecture 6](verification/conjecture-six-verification.json).
+
+This formalization covers the original numbered statements. Path analogues,
+strict monotonicity and higher-order expansions remain manuscript results outside
+this Lean verification scope. This extension makes no claim of historical priority.
+
+To reproduce the Lean checks, install the pinned toolchain and dependencies as
+described in the [Lean guide](lean/README.zh.md), then run from the repository root:
+
+    python tools/check_lean.py
+    python tools/check_conjecture_one.py
+    python tools/check_conjecture_two.py
+    python tools/check_conjecture_six.py
 
 ### Main results
 
@@ -103,8 +142,9 @@ three-vertex example.
 
 The manuscript is an AI-assisted preprint awaiting independent expert review.
 The [review record](AUDIT.md) distinguishes exact finite checks from
-high-precision diagnostics. This repository contains no Lean formalization
-of these results and makes no claim of historical priority.
+high-precision diagnostics for the original manuscript. The Lean extension
+has its own [verification records](verification/lean-verification.json) and
+[coverage statement](lean/README.zh.md); the repository makes no claim of historical priority.
 
 ### Reproduce the checks
 
@@ -134,13 +174,15 @@ records that review separately from mathematical verification.
 
 | Location | Contents |
 | --- | --- |
-| [docs/](docs/) | Proof manuscript and elementary guide in Markdown |
+| [docs/](docs/) | Manuscript, elementary guide, concise proofs and correspondence reviews |
+| [lean/](lean/) | Lean sources, pinned dependencies and build instructions |
+| [FORMALIZATION.md](FORMALIZATION.md) | Scope and reading roadmap for the Lean extension |
 | [output/pdf/](output/pdf/) | Reading PDFs |
 | [verification/](verification/) | Exact-arithmetic checks and helper routines |
 | [verification/qa/](verification/qa/) | Mathematical check records and PDF layout record |
 | [tools/](tools/) | PDF build and package-verification tools |
 | [AUDIT.md](AUDIT.md) | Review scope, dependencies and revision record |
-| [MANIFEST.json](MANIFEST.json) | File hashes for the current publication package |
+| [MANIFEST.json](MANIFEST.json) | Original publication file hashes, with the current README hash |
 
 ### Citation and sources
 
@@ -170,11 +212,34 @@ is related work; its authorship and formal-verification records belong to that p
 刘星辰 · 个人研究者  
 联系邮箱：[lxc-em5158@outlook.com](mailto:lxc-em5158@outlook.com)
 
-本仓库收录研究论文、基础讲解和精确计算核查程序，讨论N. C. Wormald的[*Tournaments with many Hamilton cycles*](https://arxiv.org/html/2610.16245v1)中猜想 **1、2、6**。原猜想归属于Wormald，**本研究稿由刘星辰独立署名**。
+本仓库收录研究论文、基础讲解、精确计算核查程序及 Lean 形式化证明，讨论N. C. Wormald的[*Tournaments with many Hamilton cycles*](https://arxiv.org/html/2610.16245v1)中猜想 **1、2、6**。原猜想归属于Wormald，**原研究稿由刘星辰独立署名**。**叶祥宇完成了后续论文梳理、证明简化与 Lean 形式化验证工作**，具体贡献见下文。
 
 **阅读论文：**[中文论文PDF](output/pdf/wormald-conjectures-proof.zh.pdf)（32页）·[英文论文PDF](output/pdf/wormald-conjectures-proof.en.pdf)（34页）·[大一基础讲解PDF](output/pdf/wormald-conjectures-guide.zh.pdf)（26页）  
 **可编辑稿：**[中文论文Markdown](docs/paper.zh.md) · [英文论文Markdown](docs/paper.en.md) · [基础讲解Markdown](docs/elementary-guide.zh.md)  
-当前仓库修订版本：**0.2.6**，2026年10月21日。论文提供完整中文和英文版本，教学讲解仅提供中文。论文逐项展开乘积求导、链式法则、矩阵运算、等号条件、Taylor余项及永久式估计，正文不以“显然”“同理”替代计算；英文完整对应343个文字段落和963处数学表达式。本轮原地补明平方和比较的弱主序前提，将讲解中的边概率乘积限定于独立内部块模型，明确角函数和Taylor余项记号，并修正英文句法及两处引导语分页。中文论文32页、英文34页、中文讲解26页均不变，未增加或删除章节、附录及计算。详见[复核记录](AUDIT.md)。
+原论文修订版本：**0.2.6**，2026年10月21日；新增 Lean 工作见下文。论文提供完整中文和英文版本，教学讲解仅提供中文。论文逐项展开乘积求导、链式法则、矩阵运算、等号条件、Taylor余项及永久式估计，正文不以“显然”“同理”替代计算；英文完整对应343个文字段落和963处数学表达式。本轮原地补明平方和比较的弱主序前提，将讲解中的边概率乘积限定于独立内部块模型，明确角函数和Taylor余项记号，并修正英文句法及两处引导语分页。中文论文32页、英文34页、中文讲解26页均不变，未增加或删除章节、附录及计算。详见[复核记录](AUDIT.md)。
+
+### 叶祥宇完成的论文梳理与 Lean 形式化验证
+
+**本轮工作由叶祥宇（Xiangyu Ye）完成**，包括梳理论文证明结构、简化关键步骤、撰写易读的证明导读与原问题对应说明，以及完成原编号猜想 **1、2、6** 的端到端 Lean 形式化证明、可复现构建和公理依赖核查。
+
+建议先读[一篇完整的简明证明导读](docs/concise-complete-proof.zh.md)，再查看[证明路线与论文对应](docs/proof-map.zh.md)、[形式化总览](FORMALIZATION.md)和[Lean 覆盖范围及构建说明](lean/README.zh.md)。
+
+| 猜想 | 已完成的 Lean 覆盖范围 | 最终定理 |
+| --- | --- | --- |
+| 1 | 真实独立内部块的 Hamilton 圈期望；固定奇阶、块充分大时对所有基图的最终极值，以及普通同构意义下的唯一性 | [`conjectureOne_proof`](lean/Wormald/ConjectureOneProof.lean) |
+| 2 | 真实均匀正则内部块的期望；先取奇块阶内层极限，再取奇基图阶外层极限，精确值为 $\cosh(1)/\cos(1)$ | [`conjectureTwo_proof`](lean/Wormald/ConjectureTwoProof.lean) |
+| 6 | 原始解析 Hessian 的正定性、完整行列式公式及相应平方根为正有理数 | [`conjectureSix`](lean/Wormald/ConjectureSixProof.lean) |
+
+[全入口验收记录](verification/lean-verification.json)覆盖 **211 个模块、1,286 条导出定理**。证明仅使用 `propext`、`Classical.choice`、`Quot.sound` 三项标准公理，没有 `sorry`、`admit`、`native_decide` 或自定义证明公理。另有[猜想 1](verification/conjecture-one-verification.json)、[猜想 2](verification/conjecture-two-verification.json)、[猜想 6](verification/conjecture-six-verification.json)的完整依赖闭包独立验收记录。
+
+上述形式化对应原编号命题；路径类比、严格单调性及高阶展开属于论文中的加强结论，不列入本轮已形式化范围。本轮工作不主张历史优先权。
+
+按 [Lean 说明](lean/README.zh.md)安装固定工具链及依赖后，从仓库根目录运行：
+
+    python tools/check_lean.py
+    python tools/check_conjecture_one.py
+    python tools/check_conjecture_two.py
+    python tools/check_conjecture_six.py
 
 ### 主要结果
 
@@ -226,7 +291,7 @@ $$
 
 [基础讲解](docs/elementary-guide.zh.md)以基本微积分和线性代数为起点，保留完整乘积求导，并提供三顶点例子的逐项手算。
 
-论文目前为AI辅助完成的预印本，等待外部专家独立审阅。[复核记录](AUDIT.md)区分精确有限核查与高精度数值诊断。本仓库尚无这些结果的Lean形式化证明，也不主张历史优先权。
+论文目前为AI辅助完成的预印本，等待外部专家独立审阅。[复核记录](AUDIT.md)区分精确有限核查与高精度数值诊断。新增 Lean 证明另见[验收记录](verification/lean-verification.json)及[覆盖范围](lean/README.zh.md)。本仓库不主张历史优先权。
 
 ### 复现核验
 
@@ -247,13 +312,15 @@ PDF由Markdown主稿经Pandoc和Tectonic或XeLaTeX生成，可复现方法见[PD
 
 | 位置 | 内容 |
 | --- | --- |
-| [docs/](docs/) | Markdown论文与基础讲解 |
+| [docs/](docs/) | 论文、基础讲解、简明证明和对应复核 |
+| [lean/](lean/) | Lean 证明源码、固定依赖与构建说明 |
+| [FORMALIZATION.md](FORMALIZATION.md) | 新增形式化范围与阅读路线 |
 | [output/pdf/](output/pdf/) | PDF阅读稿 |
 | [verification/](verification/) | 精确算术核查与辅助程序 |
 | [verification/qa/](verification/qa/) | 数学核查记录及PDF版面记录 |
 | [tools/](tools/) | PDF构建与公开包校验工具 |
 | [AUDIT.md](AUDIT.md) | 审阅范围、证明依赖和修订记录 |
-| [MANIFEST.json](MANIFEST.json) | 当前公开文件的内容哈希 |
+| [MANIFEST.json](MANIFEST.json) | 原公开包文件哈希，README 条目随本次更新 |
 
 ### 引用与文献
 

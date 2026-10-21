@@ -1,0 +1,53 @@
+{
+  "result": "passed",
+  "checked_at_utc": "2026-10-21T15:39:24.617169+00:00",
+  "lean_version": "Lean (version 4.34.1, x86_64-w64-windows-gnu, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+  "entry_module": "Wormald.ConjectureSixProof",
+  "verified_target": "Wormald.conjectureSix : Wormald.ConjectureSix",
+  "scope": "Original determinant, explicit eliminated h, principal complex log, actual real angular second Frechet derivatives, all regular tournaments; nonzero Hessian determinant and a positive rational spectral square root.",
+  "unproved_analytic_or_counting_hypotheses": false,
+  "source_module_count": 24,
+  "exported_theorem_count": 144,
+  "exported_declaration_count": 184,
+  "axioms_used": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "custom_axioms_or_placeholders": false,
+  "verified_conjectures": [
+    "6"
+  ],
+  "source_sha256": {
+    "lean/Wormald/AlgebraicJets.lean": "56008ba3be43105d4f61093fb3a6c0ab8c054ec7c5a8523b22430f7b237a3cb0",
+    "lean/Wormald/AnalyticImplicit.lean": "6f139c90ae2514ae2419172f27e1c7809453f7fe8a0e4d0e44c4ec26d651b64e",
+    "lean/Wormald/AnalyticJetBridge.lean": "4de2127614a8aa89e7094e9e431522bdf86847a78ee695ac9363bd0a1e4f85de",
+    "lean/Wormald/AnalyticTarget.lean": "7cf70b47902b74174b0d9af269c136be9e52197dcfa2d6ef80546449fc2f7810",
+    "lean/Wormald/AngleCalculus.lean": "d527decc593107688b5e238fda17f85d2772cc00836631728358bb149fb4a752",
+    "lean/Wormald/Compression.lean": "70ae31f112885b667daeec686e2d811f45aaad7a039851ab15f0b94e19e7c8f4",
+    "lean/Wormald/CompressionDeterminant.lean": "c1d6a1cf649af059bf8cefb44c88417354bd2f8e1c45a858726f524465220d0f",
+    "lean/Wormald/ConjectureSixProof.lean": "5189d50d7344a901085bfc32621614bea000af0114b17da2f03dad65554dd4a6",
+    "lean/Wormald/ConjectureSixReduction.lean": "0f5046af5bc5610858bf6c38c2f7fc7dc7223f06878a2cfb53d293a0acd6f71a",
+    "lean/Wormald/CriticalGradient.lean": "c6a4de1cd220eab4650046d2b528757c522cb82ddd5c46a158324e9823abd076",
+    "lean/Wormald/CriticalJets.lean": "48941fd7d8a8205305de4201b1f084d1b0d8ec7fa0f95e8eda67c0772bbb8b94",
+    "lean/Wormald/CriticalPoint.lean": "f8e83291d67bf99f85b4866e2fe878dca95d59b4de756a1977796fff8fa2b31e",
+    "lean/Wormald/CriticalResolvent.lean": "658b522228de628ace95ad7aa77f023b95197fc42416da8438c7c94614b74b2a",
+    "lean/Wormald/Definitions.lean": "7f8f11bbb8984a02c7af769f450c46c1465dc0c25624ec997322508fe17d65d1",
+    "lean/Wormald/Elimination.lean": "0c325803f9dbd0e0bf0a76175283bee5fb60ca961d24d6ad6ce9bcd7258daf26",
+    "lean/Wormald/ImplicitAlgebra.lean": "561cf5bfd5d98cdd6e21955272ae8fdb82acc9300bdf8930dba88ba5061b7af6",
+    "lean/Wormald/JetToCandidate.lean": "4f24cb045d98a6395ff403f839d5009b08ae50359a9c79f13dc305a066dd62c1",
+    "lean/Wormald/MatrixCore.lean": "f0f30629a79c6470f46b6a2e7ac85c93b72c6b0853d4bfc9422b4bf912cb215f",
+    "lean/Wormald/Positivity.lean": "0bfe559ca66e599fe611fa2e38750c4c6654072185ebfefbbc38c5caa8a387d2",
+    "lean/Wormald/RationalSquare.lean": "e8ded69b23efd349513259c9d6268c7d6821ab99955242cff88673f2eb23f81e",
+    "lean/Wormald/RegularCandidate.lean": "2afa23aa098a0905330e67852c031d26510a1a9655e2a0d957d94b8d2b301655",
+    "lean/Wormald/SpectralConstant.lean": "232b17caab201fad6194562d09275629b846a0594d0e18764e4af107de2330e4",
+    "lean/Wormald/TournamentPositivity.lean": "86dddb944a40bda55137f87c2d99ee30c831b6a9517cbf27389bb16277224b4c",
+    "lean/Wormald/TwoColumnDeterminant.lean": "54c27f310945e616487f4cc9ad12df34ef83f9398635dc37c2ecebd98ff46ac9",
+    "lean/ConjectureSixAudit.lean": "211d588a3a29480399ca9f1b71d94af44d250ba1622fabd60f698c125c6f5133",
+    "lean/lean-toolchain": "8152090414016dd5dc871752f8ce4ecdbd604d9845758e9b9047cb80101280b5",
+    "lean/lakefile.toml": "8c764e47f7fb7990deb3fe80c9a5b10ca2dbbca85b6c4b6656a3139b97bc13d1",
+    "lean/lake-manifest.json": "54baf3a81080ce4c9bbd84298dc4761c2486c64927c0cfa8ccda9a552759824e",
+    "tools/check_conjecture_six.py": "902de800b79b86a1b8a9b1585201dd5c56c18f51d9f722c9b1c64a8cff8e5ced",
+    "tools/check_lean.py": "cd098bad0c63c0f1115c4826ba46948650a1d470a97483dabb3b0db27beb9303"
+  }
+}
