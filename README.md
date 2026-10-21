@@ -35,7 +35,7 @@ has been added or removed. See [the review record](AUDIT.md).
 
 ### Proof exposition and Lean verification — Xiangyu Ye
 
-**Xiangyu Ye (叶祥宇) completed this extension:** reorganizing and simplifying the
+**Xiangyu Ye completed this extension:** reorganizing and simplifying the
 proofs, documenting the correspondence with the original questions, and completing
 end-to-end Lean proofs of Conjectures **1, 2 and 6** with reproducible verification
 and axiom-dependency records.
