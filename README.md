@@ -33,7 +33,7 @@ Taylor remainder symbols, and corrects minor sentence and page breaks.
 The three PDFs remain 32, 34 and 26 pages. No section, appendix or calculation
 has been added or removed. See [the review record](AUDIT.md).
 
-### Proof exposition and Lean verification — Xiangyu Ye
+### Proof exposition and Lean verification
 
 **Xiangyu Ye completed this extension:** reorganizing and simplifying the
 proofs, documenting the correspondence with the original questions, and completing
@@ -218,7 +218,7 @@ is related work; its authorship and formal-verification records belong to that p
 **可编辑稿：**[中文论文Markdown](docs/paper.zh.md) · [英文论文Markdown](docs/paper.en.md) · [基础讲解Markdown](docs/elementary-guide.zh.md)  
 原论文修订版本：**0.2.6**，2026年10月21日；新增 Lean 工作见下文。论文提供完整中文和英文版本，教学讲解仅提供中文。论文逐项展开乘积求导、链式法则、矩阵运算、等号条件、Taylor余项及永久式估计，正文不以“显然”“同理”替代计算；英文完整对应343个文字段落和963处数学表达式。本轮原地补明平方和比较的弱主序前提，将讲解中的边概率乘积限定于独立内部块模型，明确角函数和Taylor余项记号，并修正英文句法及两处引导语分页。中文论文32页、英文34页、中文讲解26页均不变，未增加或删除章节、附录及计算。详见[复核记录](AUDIT.md)。
 
-### 叶祥宇完成的论文梳理与 Lean 形式化验证
+### 论文梳理与 Lean 形式化验证
 
 **本轮工作由叶祥宇（Xiangyu Ye）完成**，包括梳理论文证明结构、简化关键步骤、撰写易读的证明导读与原问题对应说明，以及完成原编号猜想 **1、2、6** 的端到端 Lean 形式化证明、可复现构建和公理依赖核查。
 
