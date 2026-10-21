@@ -12,7 +12,7 @@ This repository contains a research manuscript, an elementary companion guide,
 exact computational checks, and Lean proofs addressing Conjectures **1, 2 and 6** in
 N. C. Wormald's [*Tournaments with many Hamilton cycles*](https://arxiv.org/html/2610.16245v1).
 The conjectures are Wormald's. The original research draft is authored by **Xingchen Liu**.
-**Xiangyu Ye (叶祥宇)** completed the subsequent proof exposition, simplification,
+**Xiangyu Ye** completed the subsequent proof exposition, simplification,
 and Lean formalization described below.
 
 **Read the paper:** [English paper PDF](output/pdf/wormald-conjectures-proof.en.pdf)
