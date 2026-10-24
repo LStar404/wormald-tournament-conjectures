@@ -4,9 +4,9 @@
 
 ## English
 
-This repository contains a Chinese/English research manuscript, a Chinese elementary guide, a concise proof guide, exact computational checks, and Lean formalizations concerning Conjectures **1, 2 and 6** in N. C. Wormald's [*Tournaments with many Hamilton cycles*](https://arxiv.org/html/2610.16245v1).
+This repository holds our work on three of the conjectures in N. C. Wormald's [*Tournaments with many Hamilton cycles*](https://arxiv.org/html/2610.16245v1), namely Conjectures 1, 2 and 6. Besides the research paper, which exists in English and in Chinese, there is a Chinese guide written for readers who know only first-year calculus and linear algebra, a three-page map of the complete proof, exact computational checks, and a Lean 4 formalization.
 
-The original research manuscript is by **Xingchen Liu (刘星辰)**, independent researcher. **Xiangyu Ye (叶祥宇)** contributed the subsequent proof exposition, simplification and Lean formalization. The conjectures are Wormald's. Contact: [lxc-em5158@outlook.com](mailto:lxc-em5158@outlook.com).
+The conjectures are Wormald's. The original research manuscript is by **Xingchen Liu** (刘星辰), an independent researcher; **Xiangyu Ye** (叶祥宇) is responsible for the later proof exposition, the simplifications and the Lean formalization. We are happy to be contacted at [lxc-em5158@outlook.com](mailto:lxc-em5158@outlook.com).
 
 ### Read the documents
 
@@ -15,29 +15,29 @@ The original research manuscript is by **Xingchen Liu (刘星辰)**, independent
 | English research paper | [34 pages](output/pdf/wormald-conjectures-proof.en.pdf) | [Markdown](docs/paper.en.md) |
 | Chinese research paper | [32 pages](output/pdf/wormald-conjectures-proof.zh.pdf) | [Markdown](docs/paper.zh.md) |
 | Chinese elementary guide | [27 pages](output/pdf/wormald-conjectures-guide.zh.pdf) | [Markdown](docs/elementary-guide.zh.md) |
-| Concise complete proof guide, Chinese | [3 pages](output/pdf/wormald-conjectures-complete-proof.zh.pdf) | [Markdown](docs/concise-complete-proof.zh.md) |
+| Concise guide to the full proof, Chinese | [3 pages](output/pdf/wormald-conjectures-complete-proof.zh.pdf) | [Markdown](docs/concise-complete-proof.zh.md) |
 
-The manuscript's mathematical revision remains **0.2.6, 21 October 2026**. The **24 October 2026 layout revision** structures definitions, theorems, lemmas, quoted results and proofs; distributes notation explanations through the relevant arguments; and improves headings, spacing and pagination. The computational formulas and derivation steps are retained. The papers keep their previous page counts; the elementary guide gains one page. All four PDFs, totaling **96 pages**, were rendered and visually checked.
+The mathematics has not moved since version **0.2.6** of 21 October 2026. What the 24 October 2026 revision changed is the layout: definitions, theorems, lemmas, quoted results and proofs are now set apart by kind, notation is explained where it is first needed instead of in a block at the front, and headings, spacing and pagination were reworked. The formulas and derivations are still those of 0.2.6. Page counts are unchanged, except that the elementary guide gained one page; the four PDFs come to **96 pages**, and all of them were rendered and checked page by page.
 
-The two papers each retain **963 mathematical expressions**; the elementary guide retains **815**, and the concise guide **68**. [The layout check](tools/check_layout.py) reverses the recorded notation moves and editorial adjustments and checks the recovered original source hashes. [The bilingual check](tools/check_translation.py) preserves the original formula-sequence and prose/display checks after that verified reversal, and also compares the formulas in the published papers. These are document checks, separate from Lean proof checking.
+A small bookkeeping effort keeps the record honest. The two papers each contain 963 mathematical expressions, the elementary guide 815, and the concise guide 68. [check_layout.py](tools/check_layout.py) reverses the recorded notation moves and editorial adjustments and checks that the recovered source hashes match the originals, and [check_translation.py](tools/check_translation.py) then compares the two languages — formula order, prose and display structure — after that same verified reversal, and compares the formulas as published. These are checks on documents. They are not part of the Lean verification.
 
 ### Mathematical scope and Lean coverage
 
-Here $d$ is the base order, $m$ is the block order, and $N=dm$ is the final tournament order. Limits in $m$ fix $d$ first. The later odd-$d$ limit does not interchange these limits.
+Write $d$ for the order of the base graph and $m$ for the order of the blocks, so that the final tournament has order $N=dm$. The limit in $m$ is taken with $d$ held fixed; the later limit in odd $d$ does not commute with it.
 
-| Original conjecture | End-to-end Lean statement | Final proof |
+| Original conjecture | What the end-to-end Lean statement covers | Proof |
 | --- | --- | --- |
-| 1 | Actual independent-block Hamilton-cycle expectations: eventual maximum over bases of fixed odd order, with uniqueness up to ordinary isomorphism | [`conjectureOne_proof`](lean/Wormald/ConjectureOneProof.lean) |
-| 2 | Actual uniform regular-block expectations: first the odd block-order limit, then the odd base-order limit, with outer constant $\cosh(1)/\cos(1)$ | [`conjectureTwo_proof`](lean/Wormald/ConjectureTwoProof.lean) |
-| 6 | The Hessian defined from the actual implicit function and angular derivatives: nonzero determinant and the required positive rational square | [`conjectureSix`](lean/Wormald/ConjectureSixProof.lean) |
+| 1 | Expectations of Hamilton cycles in the actual independent-block model: the eventual maximum over bases of fixed odd order, and uniqueness up to ordinary isomorphism | [`conjectureOne_proof`](lean/Wormald/ConjectureOneProof.lean) |
+| 2 | Expectations in the actual uniform regular-block model: first the limit in odd block order, then the outer limit in odd base order, with outer constant $\cosh(1)/\cos(1)$ | [`conjectureTwo_proof`](lean/Wormald/ConjectureTwoProof.lean) |
+| 6 | The Hessian built from the actual implicit function and the angular derivatives: nonzero determinant, and the required positive rational square | [`conjectureSix`](lean/Wormald/ConjectureSixProof.lean) |
 
-The manuscript also discusses path counterparts, monotonicity and higher-order expansions. Those additions are **outside the current end-to-end Lean coverage**. This repository does not claim proofs of the original global Conjectures 3, 4 or 5. The research manuscript remains available for independent mathematical review.
+The manuscript goes further than the formalization does. It also treats path analogues, monotonicity and higher-order expansions, and none of that is **covered end to end in Lean**. We do not claim a proof of the original global Conjectures 3, 4 or 5 either. The research manuscript itself is offered for independent mathematical review.
 
-For the proof route, start with the [concise guide](docs/concise-complete-proof.zh.md), [proof map](docs/proof-map.zh.md) and [formalization overview](FORMALIZATION.md). The [Lean guide](lean/README.zh.md) states the exact definitions, dependencies and coverage boundaries.
+If you want the proof rather than the whole paper, start from the [concise guide](docs/concise-complete-proof.zh.md), the [proof map](docs/proof-map.zh.md) and the [formalization overview](FORMALIZATION.md). The [Lean guide](lean/README.zh.md) sets out the actual definitions, their dependencies, and exactly where coverage stops.
 
-### Reproduce the checks
+### Reproducing the checks
 
-The project pins **Lean 4.34.1** and the mathlib revision in [the dependency manifest](lean/lake-manifest.json). From the repository root, run:
+The project pins Lean 4.34.1 and the mathlib revision recorded in the [dependency manifest](lean/lake-manifest.json). From the repository root, run:
 
 ```text
 python tools/check_lean.py
@@ -46,11 +46,11 @@ python tools/check_conjecture_two.py
 python tools/check_conjecture_six.py
 ```
 
-**Verification rerun, 24 October 2026:** all four original Lean gates passed. The full entry-point audit covers 211 local modules and 1286 exported theorems. Lean sources, toolchain, dependency lock and the four original gates are unchanged from the layout baseline.
+All four original Lean gates were rerun on 24 October 2026 and all four passed. The full entry-point audit covers 211 local modules and 1286 exported theorems, and the Lean sources, the toolchain, the dependency lock and the four gates are unchanged from the layout baseline.
 
-The original gates build the Lean targets, elaborate the stated conjectures and audit exported declarations and their axiom dependencies. The permitted standard axioms are `propext`, `Classical.choice` and `Quot.sound`; the checks reject `sorry`, `admit`, custom axioms and the other forbidden proof shortcuts listed in the checker. Records: [full entry point](verification/lean-verification.json), [Conjecture 1](verification/conjecture-one-verification.json), [Conjecture 2](verification/conjecture-two-verification.json), [Conjecture 6](verification/conjecture-six-verification.json). Logs are in [verification/lean-logs/](verification/lean-logs/).
+Each gate builds the Lean targets, elaborates the conjectures as stated, and audits the exported declarations together with the axioms they rest on. The permitted axioms are `propext`, `Classical.choice` and `Quot.sound`; `sorry`, `admit`, custom axioms and the other shortcuts listed in the checker are rejected. Records: [full entry point](verification/lean-verification.json), [Conjecture 1](verification/conjecture-one-verification.json), [Conjecture 2](verification/conjecture-two-verification.json), [Conjecture 6](verification/conjecture-six-verification.json). The logs are in [verification/lean-logs/](verification/lean-logs/).
 
-Document and package checks:
+The documents and the public package are checked separately:
 
 ```text
 python tools/check_layout.py
@@ -58,62 +58,62 @@ python tools/check_translation.py
 python tools/check_package.py
 ```
 
-The earlier exact finite checks remain in [verification/](verification/). Their recorded counts and mathematical scope are documented in [AUDIT.md](AUDIT.md). The layout revision does not present those earlier checks as newly rerun mathematical proofs.
+The exact finite checks from earlier versions are still in [verification/](verification/); [AUDIT.md](AUDIT.md) records what they count and how far their scope reaches. The layout revision does not present them as newly rerun mathematical proofs.
 
-To build the PDFs, install Python with `pypdf`, Pandoc, Tectonic or XeLaTeX, and the fonts selected in [the template](tools/template.tex). Windows defaults use SimSun/SimHei for Chinese and Times New Roman/Arial for English.
+To build the PDFs you need Python with `pypdf`, Pandoc, Tectonic or XeLaTeX, and the fonts chosen in [the template](tools/template.tex). The Windows defaults are SimSun/SimHei for Chinese and Times New Roman/Arial for English.
 
 ```text
 python tools/build_pdf.py --pandoc /path/to/pandoc --tectonic /path/to/tectonic
 ```
 
-An existing Tectonic cache can be supplied with `--cache`. The builder uses the [structure filter](tools/structure.lua) to render the semantic Markdown containers. [PDF review records](verification/qa/pdf_review.json) bind the reviewed pages to the published PDF hashes.
+If you already have a Tectonic cache, point `--cache` at it. The builder relies on the [structure filter](tools/structure.lua) to lay out the semantic containers in the Markdown, and [PDF review records](verification/qa/pdf_review.json) tie every reviewed page to the hash of the published PDF.
 
-### Attribution and references
+### Citation and references
 
-Please cite the original manuscript as: **Liu, Xingchen. *Wormald tournament conjectures: Hessians and random blow-ups*. Research manuscript, version 0.2.6, 2026.** Machine-readable metadata is in [CITATION.cff](CITATION.cff). Please also acknowledge Xiangyu Ye's separately described exposition and Lean formalization when using that extension.
+Please cite the original manuscript as: **Liu, Xingchen. *Wormald tournament conjectures: Hessians and random blow-ups*. Research manuscript, version 0.2.6, 2026.** Machine-readable metadata is in [CITATION.cff](CITATION.cff). If you use the later exposition or the Lean formalization, please credit Xiangyu Ye for those parts as well.
 
-- N. C. Wormald, [*Tournaments with many Hamilton cycles*, arXiv:2610.16245v1](https://arxiv.org/html/2610.16245v1): source of the conjectures and random models.
-- Yijia Fang and Hao Huang, [*Maximizing directed cycles in tournaments*, Corollary 3.4](https://arxiv.org/html/2608.06238v1#S3): the comparison result cited by the original manuscript.
-- Noga Alon, [*The maximum number of Hamiltonian paths in tournaments*](https://www.tau.ac.il/~nogaa/PDFS/hamilton.pdf), Combinatorica 10 (1990), 319–324: the permanent bound cited in the manuscript.
+- N. C. Wormald, [*Tournaments with many Hamilton cycles*, arXiv:2610.16245v1](https://arxiv.org/html/2610.16245v1): where the conjectures and the random models come from.
+- Yijia Fang and Hao Huang, [*Maximizing directed cycles in tournaments*, Corollary 3.4](https://arxiv.org/html/2608.06238v1#S3): the comparison result the original manuscript cites.
+- Noga Alon, [*The maximum number of Hamiltonian paths in tournaments*](https://www.tau.ac.il/~nogaa/PDFS/hamilton.pdf), Combinatorica 10 (1990), 319–324: the source of the permanent bound used in the manuscript.
 
-The earlier [Hamiltonian-path repository](https://github.com/LStar404/tournament-hamiltonian-paths) is related work with its own authorship and verification records.
+The earlier [Hamiltonian-path repository](https://github.com/LStar404/tournament-hamiltonian-paths) is related work, with its own authorship and its own verification records.
 
 ## 中文
 
-本仓库包含中英文研究论文、中文基础讲解、中文完整证明导读、精确计算核查程序，以及针对 N. C. Wormald [《Tournaments with many Hamilton cycles》](https://arxiv.org/html/2610.16245v1)中原编号**猜想1、2、6**的 Lean 形式化证明。
+本仓库收录了我们对 N. C. Wormald [《Tournaments with many Hamilton cycles》](https://arxiv.org/html/2610.16245v1)中猜想 1、2、6 的工作：中英文双版研究论文、一份只要求基础微积分和线性代数的中文讲解、一份三页的完整证明导读、精确计算核查程序，以及 Lean 4 形式化。
 
-原研究论文作者为独立研究者**刘星辰（Xingchen Liu）**。**叶祥宇（Xiangyu Ye）**完成了后续的证明梳理、简化与 Lean 形式化扩展。猜想本身属于 Wormald。联系邮箱：[lxc-em5158@outlook.com](mailto:lxc-em5158@outlook.com)。
+猜想由 Wormald 提出。原研究论文的作者是独立研究者**刘星辰**（Xingchen Liu），**叶祥宇**（Xiangyu Ye）负责其后的证明梳理、简化和 Lean 形式化。联系邮箱：[lxc-em5158@outlook.com](mailto:lxc-em5158@outlook.com)。
 
 ### 阅读文件
 
 | 文件 | PDF | 可编辑源稿 |
 | --- | --- | --- |
-| 中文研究论文 | [32页](output/pdf/wormald-conjectures-proof.zh.pdf) | [Markdown](docs/paper.zh.md) |
-| 英文研究论文 | [34页](output/pdf/wormald-conjectures-proof.en.pdf) | [Markdown](docs/paper.en.md) |
-| 中文基础讲解 | [27页](output/pdf/wormald-conjectures-guide.zh.pdf) | [Markdown](docs/elementary-guide.zh.md) |
-| 中文完整证明导读 | [3页](output/pdf/wormald-conjectures-complete-proof.zh.pdf) | [Markdown](docs/concise-complete-proof.zh.md) |
+| 中文研究论文 | [32 页](output/pdf/wormald-conjectures-proof.zh.pdf) | [Markdown](docs/paper.zh.md) |
+| 英文研究论文 | [34 页](output/pdf/wormald-conjectures-proof.en.pdf) | [Markdown](docs/paper.en.md) |
+| 中文基础讲解 | [27 页](output/pdf/wormald-conjectures-guide.zh.pdf) | [Markdown](docs/elementary-guide.zh.md) |
+| 中文完整证明导读 | [3 页](output/pdf/wormald-conjectures-complete-proof.zh.pdf) | [Markdown](docs/concise-complete-proof.zh.md) |
 
-论文的数学内容版本仍为**0.2.6，2026年10月21日**。**2026年10月24日排版修订**将定义、定理、引理、引用定理和证明按类型呈现，将原先集中在开头的符号说明移到相关推导处，并调整标题层次、行距及分页。原有计算公式与推导步骤保留。中英文论文页数不变，基础讲解增加1页。四份 PDF 共**96页**，均已渲染并逐页检查。
+数学内容自 0.2.6 版（2026 年 10 月 21 日）以来没有改动。2026 年 10 月 24 日改的是排版：定义、定理、引理、引述结果和证明按类型分开呈现，符号说明移到首次用到它的地方，标题层次、行距和分页也重新调整过。公式与推导沿用 0.2.6 版。页数基本没变，只有基础讲解多了 1 页；四份 PDF 合计 **96 页**，已全部渲染并逐页看过。
 
-中英文论文各保留**963处数学表达式**，基础讲解保留**815处**，完整证明导读保留**68处**。[排版核对程序](tools/check_layout.py)会撤回已记录的符号迁移和文字调整，验证能否恢复原稿的哈希；[中英文核对程序](tools/check_translation.py)在完成该还原检查后，继续检查原稿的公式顺序与文字、公式段落结构，并比较发表版的全部数学表达式。这些属于文稿核对，与 Lean 的证明核查分别记录。
+中英文论文各含 963 处数学表达式，基础讲解 815 处，完整证明导读 68 处。核对用的是两个脚本：[排版核对程序](tools/check_layout.py)撤回已记录的符号迁移和文字调整，核对还原后的源稿哈希是否与原件一致；[中英文核对程序](tools/check_translation.py)在完成同样的还原之后，逐项比较两版的公式顺序与文字、公式段落结构，并比较发表版里的全部表达式。它们核对的是文稿，与 Lean 的证明核查各记各的账。
 
 ### 数学范围与 Lean 覆盖
 
-$d$ 是基图阶数，$m$ 是块阶数，最终竞赛图阶数为 $N=dm$。取 $m$ 的极限时先固定 $d$；其后讨论奇数 $d$ 的极限，没有交换这两重极限。
+记基图阶数为 $d$，块阶数为 $m$，最终竞赛图阶数为 $N=dm$。取 $m$ 的极限时 $d$ 固定；之后讨论奇数 $d$ 的极限，这两个极限不能交换。
 
 | 原猜想编号 | 端到端 Lean 证明的对象 | 最终证明入口 |
 | --- | --- | --- |
-| 1 | 实际独立内部块模型的 Hamilton 圈期望：固定奇基图阶数、块充分大时的最大者，以及普通同构意义下的唯一性 | [`conjectureOne_proof`](lean/Wormald/ConjectureOneProof.lean) |
-| 2 | 实际均匀正则内部块模型的期望：先取奇块阶数的内层极限，再取奇基图阶数的外层极限，外层常数为 $\cosh(1)/\cos(1)$ | [`conjectureTwo_proof`](lean/Wormald/ConjectureTwoProof.lean) |
-| 6 | 从实际隐函数和角变量导数定义的 Hessian 出发，证明行列式非零及所要求的正有理平方性质 | [`conjectureSix`](lean/Wormald/ConjectureSixProof.lean) |
+| 1 | 实际独立内部块模型下的 Hamilton 圈期望：固定奇基图阶数、块充分大时的最终最大者，以及普通同构意义下的唯一性 | [`conjectureOne_proof`](lean/Wormald/ConjectureOneProof.lean) |
+| 2 | 实际均匀正则内部块模型下的期望：先取奇块阶数的内层极限，再取奇基图阶数的外层极限，外层常数为 $\cosh(1)/\cos(1)$ | [`conjectureTwo_proof`](lean/Wormald/ConjectureTwoProof.lean) |
+| 6 | 从实际隐函数和角变量导数出发定义的 Hessian：行列式非零，且满足所要求的正有理平方性质 | [`conjectureSix`](lean/Wormald/ConjectureSixProof.lean) |
 
-论文还讨论路径类比、严格单调性与高阶展开；这些加强内容**不在当前端到端 Lean 覆盖范围内**。本仓库不宣称证明了原编号猜想3、4、5。研究论文仍开放供外部专家独立审阅。
+论文比形式化走得更远。路径类比、严格单调性和高阶展开这些加强内容**不在当前端到端 Lean 覆盖范围内**；我们也没有宣称证明原编号猜想 3、4、5。论文本身开放给外部专家独立审阅。
 
-建议先读[完整证明导读](docs/concise-complete-proof.zh.md)、[证明路线](docs/proof-map.zh.md)和[形式化说明](FORMALIZATION.md)。[Lean 说明](lean/README.zh.md)列出实际定义、依赖和覆盖边界。[中文基础讲解](docs/elementary-guide.zh.md)从基本微积分和线性代数出发，展开矩阵消元、链式求导、行列式比值、随机期望及极限比较。
+想直接看证明，可以先读[完整证明导读](docs/concise-complete-proof.zh.md)、[证明路线](docs/proof-map.zh.md)和[形式化说明](FORMALIZATION.md)。[Lean 说明](lean/README.zh.md)列出实际定义、依赖关系，以及覆盖到哪里为止。想从最基础的地方开始，[中文基础讲解](docs/elementary-guide.zh.md)从基本微积分和线性代数讲起，依次展开矩阵消元、链式求导、行列式比值、随机期望和极限比较。
 
 ### 重现核查
 
-项目固定使用 **Lean 4.34.1**；mathlib 版本见[依赖锁定文件](lean/lake-manifest.json)。在仓库根目录依次运行：
+项目固定使用 Lean 4.34.1，mathlib 版本见[依赖锁定文件](lean/lake-manifest.json)。在仓库根目录依次运行：
 
 ```text
 python tools/check_lean.py
@@ -122,11 +122,11 @@ python tools/check_conjecture_two.py
 python tools/check_conjecture_six.py
 ```
 
-**2026年10月24日重新核查：**原有四个 Lean 验收程序全部通过。完整入口审计覆盖211个本地模块、1286个导出定理。Lean 源码、工具链、依赖锁定和四个原有检查程序与排版底稿保持一致。
+2026 年 10 月 24 日重新跑了原有四个 Lean 验收程序，全部通过。完整入口审计覆盖 211 个本地模块、1286 个导出定理。Lean 源码、工具链、依赖锁定和四个验收程序都与排版底稿保持一致。
 
-原有核查程序会构建 Lean 目标，检查所列原命题的证明，并审计导出声明的公理依赖。允许的标准公理为 `propext`、`Classical.choice`、`Quot.sound`；程序拒绝 `sorry`、`admit`、自定义公理及检查器列出的其他禁用捷径。验收记录分别为[完整入口](verification/lean-verification.json)、[猜想1](verification/conjecture-one-verification.json)、[猜想2](verification/conjecture-two-verification.json)、[猜想6](verification/conjecture-six-verification.json)，日志在 [verification/lean-logs/](verification/lean-logs/) 中。
+每个验收程序都会构建 Lean 目标、核查所列原命题的证明，并审计导出声明及其依赖的公理。只接受 `propext`、`Classical.choice`、`Quot.sound` 三条标准公理；`sorry`、`admit`、自定义公理，以及检查器里列出的其他禁用捷径，一律拒绝。验收记录见[完整入口](verification/lean-verification.json)、[猜想 1](verification/conjecture-one-verification.json)、[猜想 2](verification/conjecture-two-verification.json)、[猜想 6](verification/conjecture-six-verification.json)，日志在 [verification/lean-logs/](verification/lean-logs/)。
 
-文稿与公开文件检查：
+文稿与公开文件另有检查：
 
 ```text
 python tools/check_layout.py
@@ -134,22 +134,22 @@ python tools/check_translation.py
 python tools/check_package.py
 ```
 
-此前的精确有限核查程序保存在 [verification/](verification/)；[AUDIT.md](AUDIT.md)说明其计数和适用范围。本次排版修订不会将早先记录改称为新完成的数学证明。
+此前的精确有限核查程序仍保存在 [verification/](verification/) 中，[AUDIT.md](AUDIT.md)说明了它们的计数和适用范围。本次排版修订不会把早先的记录说成新完成的数学证明。
 
-构建 PDF 需要 Python 与 `pypdf`、Pandoc、Tectonic 或 XeLaTeX，以及[模板](tools/template.tex)中选用的字体。Windows 默认中文字体为宋体/黑体，英文字体为 Times New Roman/Arial。
+构建 PDF 需要 Python 与 `pypdf`、Pandoc、Tectonic 或 XeLaTeX，以及[模板](tools/template.tex)中选用的字体。Windows 下默认中文用宋体和黑体，英文用 Times New Roman 和 Arial。
 
 ```text
 python tools/build_pdf.py --pandoc /path/to/pandoc --tectonic /path/to/tectonic
 ```
 
-已有 Tectonic 缓存可用 `--cache` 指定。[结构过滤器](tools/structure.lua)负责将 Markdown 中的定义、定理和证明容器排入 PDF。[PDF审阅记录](verification/qa/pdf_review.json)将逐页检查结果与实际文件哈希绑定。
+已经有 Tectonic 缓存的话，用 `--cache` 指过去。[结构过滤器](tools/structure.lua)负责把 Markdown 里的定义、定理、证明容器排进 PDF；[PDF 审阅记录](verification/qa/pdf_review.json)则把逐页检查的结果绑定到发布文件的哈希上。
 
 ### 引用与来源
 
-原研究稿建议引用为：**Liu, Xingchen. *Wormald tournament conjectures: Hessians and random blow-ups*. Research manuscript, version 0.2.6, 2026.** 机器可读信息见 [CITATION.cff](CITATION.cff)。使用后续证明梳理与形式化扩展时，也请按该扩展的实际贡献说明致谢叶祥宇。
+引用原研究稿时请写：**Liu, Xingchen. *Wormald tournament conjectures: Hessians and random blow-ups*. Research manuscript, version 0.2.6, 2026.** 机器可读信息见 [CITATION.cff](CITATION.cff)。如果用到后续的证明梳理或形式化扩展，请按实际贡献一并署名叶祥宇。
 
-- N. C. Wormald，[原论文固定版本](https://arxiv.org/html/2610.16245v1)：原猜想和随机模型的来源。
-- Yijia Fang、Hao Huang，[原论文推论3.4](https://arxiv.org/html/2608.06238v1#S3)：原研究稿引用的矩比较结果。
-- Noga Alon，[Hamilton 路论文](https://www.tau.ac.il/~nogaa/PDFS/hamilton.pdf)，Combinatorica 10 (1990)，319–324：文稿所引永久式界的来源。
+- N. C. Wormald，[《Tournaments with many Hamilton cycles》固定版本](https://arxiv.org/html/2610.16245v1)：原猜想与随机模型的来源。
+- Yijia Fang、Hao Huang，[《Maximizing directed cycles in tournaments》推论 3.4](https://arxiv.org/html/2608.06238v1#S3)：原研究稿引用的矩比较结果。
+- Noga Alon，[《The maximum number of Hamiltonian paths in tournaments》](https://www.tau.ac.il/~nogaa/PDFS/hamilton.pdf)，Combinatorica 10 (1990), 319–324：文稿中永久式界的来源。
 
-[此前的哈密顿路仓库](https://github.com/LStar404/tournament-hamiltonian-paths)属于相关工作，其作者信息与验证记录适用于原项目。
+此前的[哈密顿路仓库](https://github.com/LStar404/tournament-hamiltonian-paths)属于相关工作，其作者信息与验证记录适用于原项目。
