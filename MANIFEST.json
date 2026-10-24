@@ -1,6 +1,6 @@
 {
-  "version": "0.2.6",
-  "date": "2026-10-21",
+  "version": "0.2.6-layout.20261024",
+  "date": "2026-10-24",
   "authors": [
     "Xingchen Liu"
   ],
@@ -9,6 +9,12 @@
   "scope": "Wormald v1 Conjectures 1, 2, 6; fixed-base random blow-up models",
   "files": [
     {
+      "path": ".gitattributes",
+      "bytes": 77,
+      "sha256": "47ecd34254a08a7afe026f5da2ee6ccbce278f8ae3c285cefd013b3bbcf6f5c7",
+      "git_blob_sha1": "8bd71305501768d3ecad7bf40a6ab777c2fea67c"
+    },
+    {
       "path": ".gitignore",
       "bytes": 49,
       "sha256": "fe82d9dc5168cace5dbae514ec64c44b78ceb39715c01e0422a73f123d25d9c4",
@@ -16,9 +22,9 @@
     },
     {
       "path": "AUDIT.md",
-      "bytes": 20694,
-      "sha256": "b22fefe2bf1a9d4a26cd35d82ad917b0d4160ef9ef08f1b5c8e3ccc28c54d61c",
-      "git_blob_sha1": "05d38f8e89e708472d96a0656b1e6e6657d5fbef"
+      "bytes": 22485,
+      "sha256": "742a913e525385effdbe352aefb27bedd83b888655da302c57731568527445af",
+      "git_blob_sha1": "354f57bea3491f04c907170095bfc526b38e8c29"
     },
     {
       "path": "CITATION.cff",
@@ -27,52 +33,1534 @@
       "git_blob_sha1": "5c65555c56053818a475f1302898af4236f214d5"
     },
     {
-      "path": "docs/elementary-guide.zh.md",
-      "bytes": 50358,
-      "sha256": "5bcc64f27665005e0f831841282385bebab52ef95cdcce0f9134d3a22cd6068d",
-      "git_blob_sha1": "bcacbdbb7ec140f34481c7119b01c90c3ec7b79e"
-    },
-    {
-      "path": "docs/paper.en.md",
-      "bytes": 75517,
-      "sha256": "8867fcbf0f1c03efc95c33ed13306d0dbb6669aa20096cd13723c9f847c8e42d",
-      "git_blob_sha1": "c5e0789ba6555265a7d380c93ddc792e396b4bb1"
-    },
-    {
-      "path": "docs/paper.zh.md",
-      "bytes": 64687,
-      "sha256": "04974aa6ce4e56aea2e1f2ce1c46a2f10683936cda17995d7ab660f91b543f88",
-      "git_blob_sha1": "1891e9cddc4587adb92cc7411e61e2a032492ffa"
-    },
-    {
-      "path": "output/pdf/wormald-conjectures-guide.zh.pdf",
-      "bytes": 280475,
-      "sha256": "23474137522069474a523811a01aa39e4ae92cab449f7e0cb9083f056cc2bf37",
-      "git_blob_sha1": "400fa956dc4ae1f4beff3f10e7e26ab900647bd3"
-    },
-    {
-      "path": "output/pdf/wormald-conjectures-proof.en.pdf",
-      "bytes": 264261,
-      "sha256": "0671192dc50a5b6135244d8f5948f5d26267631f974c316c9f66957636db28f5",
-      "git_blob_sha1": "505b62b47be3154a7011b775915f30b6dfe064dc"
-    },
-    {
-      "path": "output/pdf/wormald-conjectures-proof.zh.pdf",
-      "bytes": 306927,
-      "sha256": "4634242759b5043b827e9b2f8189f8fb5637f381ecc38838f59b3c291a2ce3b8",
-      "git_blob_sha1": "f505bd0bd4990951106365d2fd3c519da8ab9bc1"
+      "path": "FORMALIZATION.md",
+      "bytes": 2701,
+      "sha256": "b03cb2953fb0f7a8b701d75c2db0d1dba22db0ba385506e415706182baab96d7",
+      "git_blob_sha1": "843c50b9131b52280b64209934ce77cb10318a0d"
     },
     {
       "path": "README.md",
-      "bytes": 20321,
-      "sha256": "31824f3dfbb5126f796bd27dbcad49d5f5a82693d4454d79bf862a0c601cb4b0",
-      "git_blob_sha1": "3e36abfbf4412920029a90bd08e894035cf79311"
+      "bytes": 14007,
+      "sha256": "4c5cac985fc9914358c3d1728a66c101ceaf23f9df70871c72dbfe680fffcf4b",
+      "git_blob_sha1": "32fdfa533fb61be0399c944d80737156feced57a"
+    },
+    {
+      "path": "docs/all-good-cluster-tail.zh.md",
+      "bytes": 2238,
+      "sha256": "bc65ad3394ab9aab0f600bf518bb47dea1d9a6df69a06ceb20bee8d9f1c5e05b",
+      "git_blob_sha1": "9d76d3e7718dd68a26b12ca146ab1b098e6a59c7"
+    },
+    {
+      "path": "docs/concise-complete-proof.zh.md",
+      "bytes": 8712,
+      "sha256": "dae732e5f0e1de3182cfcf7f2d3dfd6bb366112e7b79519a1d3d547db9c4eb93",
+      "git_blob_sha1": "c05179c714029338ebddb409503d84f4cadb8c56"
+    },
+    {
+      "path": "docs/concise-critical-gap.zh.md",
+      "bytes": 5395,
+      "sha256": "c9c885a9f667abcccf6b7b880438ee093bb2dbc9df9b8c389ca1a6a95c426ec0",
+      "git_blob_sha1": "f79e484cfbe9a59aa1dbb8503b2686a32ba26968"
+    },
+    {
+      "path": "docs/concise-hessian-proof.zh.md",
+      "bytes": 6201,
+      "sha256": "426f0d4ffa80163c732af056d8d0a2df9e5b6180402d40d783e7a80a6ff726f8",
+      "git_blob_sha1": "2a6a1532fb44848aca3488e2477986ccdb8733b0"
+    },
+    {
+      "path": "docs/concise-markov-mixing.zh.md",
+      "bytes": 5605,
+      "sha256": "f7fe63c0be2e4bb31c68c3e61848cb6549ea49ccd19129a172877e5471033bc5",
+      "git_blob_sha1": "65e6895510c5a21e45c5edde17033aa9517f5283"
+    },
+    {
+      "path": "docs/concise-moment-proof.zh.md",
+      "bytes": 5920,
+      "sha256": "d6b7d00479c58d6ac1841302561a98db7e19b2b48c9f2cbf4d1049a0d624146c",
+      "git_blob_sha1": "58bb327c4593e8f4a6a2a778ed2a5e8414eedfe4"
+    },
+    {
+      "path": "docs/concise-partial-permutation-gaussian.zh.md",
+      "bytes": 2297,
+      "sha256": "5834efdf85880eb2b2d977b3137b2644887cfc95ea0a652f9cab753190b73dce",
+      "git_blob_sha1": "f208b4f21849fa0c4cddb2af85c3f40040af04df"
+    },
+    {
+      "path": "docs/elementary-guide.zh.md",
+      "bytes": 51847,
+      "sha256": "c9a06cbfd00df351d14f54d1bc3bcd668afac39ff7713d9fa8ff6173a83c24be",
+      "git_blob_sha1": "271e1d4c7ed31777d87ea33036bcc89ebfbbfdcf"
+    },
+    {
+      "path": "docs/exact-independent-coefficient.zh.md",
+      "bytes": 4321,
+      "sha256": "2e4e700dccde09603943a876a952ffbab4a33c06bd45764902d616bdc8afcdd3",
+      "git_blob_sha1": "2754f1c6beb1e26b4fa649f22f26fb797ce426e1"
+    },
+    {
+      "path": "docs/local-counting-analysis.zh.md",
+      "bytes": 5316,
+      "sha256": "2cb546b4258b137c4e4f24ac92987c74cadb1f8cd370359fb61f9a78148b921a",
+      "git_blob_sha1": "2417bdbc92c15943f5f5cdcd12781f188241e081"
+    },
+    {
+      "path": "docs/nonregular-independent-proof.zh.md",
+      "bytes": 4592,
+      "sha256": "e11fc5d89115da098d2111605ab85e48044d9287d66ab0b41007f2a8f0832686",
+      "git_blob_sha1": "ff3b4fbcc85c4760941604a81938ee33dfa1af09"
+    },
+    {
+      "path": "docs/paper.en.md",
+      "bytes": 77219,
+      "sha256": "d1d3143c7f1492c2e089dae1491587b8e15c4db077cb937debd9ff4c27dc4ffa",
+      "git_blob_sha1": "b1cf30100c7a3dfccdb11fbd25c6bea0d8bb8b83"
+    },
+    {
+      "path": "docs/paper.zh.md",
+      "bytes": 66188,
+      "sha256": "478356c2704648dd48b3477b32e88c7515a3f39d517ff71a9ff10ac20cf4488e",
+      "git_blob_sha1": "27750a7ab1983afe5451e4ee02d528af81fdfa7c"
+    },
+    {
+      "path": "docs/proof-map.zh.md",
+      "bytes": 9728,
+      "sha256": "4eab0c1dc07247d733b9c765585cbedd17cd91eb16585f7398af77970fe3a965",
+      "git_blob_sha1": "c14d25cc1fadc75b7a0722a50417543c4e926ab2"
+    },
+    {
+      "path": "docs/regular-cycle-limit-reduction.zh.md",
+      "bytes": 5360,
+      "sha256": "0b88b24e24e51251049273bd3011e1c10945b09b4dbdd39427bfd890e30d3175",
+      "git_blob_sha1": "6d682ff3c24db9aa3d0cdab67d7cf7ddfbaba3e1"
+    },
+    {
+      "path": "docs/regular-forest-next-step.zh.md",
+      "bytes": 7106,
+      "sha256": "2c5763a8ba2ec1db45ba7b49b37119cb08e33e18ff5d6bc85dfb4f4497bf2e6f",
+      "git_blob_sha1": "8b0ac87f38b749e8776dac39c9c830bad01ff346"
+    },
+    {
+      "path": "docs/regular-local-gaussian.zh.md",
+      "bytes": 4230,
+      "sha256": "41d012b4e871015aff1b04096a67c1d35be6cd24139a1a376250d64b03a49523",
+      "git_blob_sha1": "8d3a9389f49c77fde371efa9640767d63c5b02a8"
+    },
+    {
+      "path": "docs/regular-tail-cluster-proof.zh.md",
+      "bytes": 5431,
+      "sha256": "2cb2737bdd951d9dba58fda6f01b4ed9b6869c828227fa24391ddd9ecdf3611e",
+      "git_blob_sha1": "da4ef3176767a01951130503846300585b7de18a"
+    },
+    {
+      "path": "docs/spectral-extremum.zh.md",
+      "bytes": 3980,
+      "sha256": "cfd0c57d4864f71adcb0e3c71ef6ec735fa9b547e6bbb00aee22c621310076f6",
+      "git_blob_sha1": "95cb79bbd2ab7b642ff0664eb9dbe2e704745105"
+    },
+    {
+      "path": "docs/verification-c2-correspondence.zh.md",
+      "bytes": 6973,
+      "sha256": "2659a057ce3ecc177bbe7886e4026fc32937b94662be88ec151f989196c4a405",
+      "git_blob_sha1": "4ed58a660729ff9815e67ab405e4607a8010b8e6"
+    },
+    {
+      "path": "docs/verification-central-analysis.zh.md",
+      "bytes": 4358,
+      "sha256": "0d1ca4b8d611545c5e846deb2c57f7ea09f41bb19bb527de7568e2208f8e2b6e",
+      "git_blob_sha1": "32f76ba66cb9022f687e03ca918a42723725d2bc"
+    },
+    {
+      "path": "lean/.gitignore",
+      "bytes": 35,
+      "sha256": "550debffb8ee1a6ebf5e6f879993e0a2825030086f5b0c2eba89197150c8a62e",
+      "git_blob_sha1": "07d8f7084d556a12ae6d7910c00eb084fd996e03"
+    },
+    {
+      "path": "lean/AxiomAudit.lean",
+      "bytes": 92951,
+      "sha256": "212b6c1381591c2d79aa71ef8139b4e2b51eb2f8a440b3caf67792b92f1c695c",
+      "git_blob_sha1": "64ad0963a82ecfae84a3db76d92ba30d3fd37760"
+    },
+    {
+      "path": "lean/ConjectureOneAudit.lean",
+      "bytes": 46963,
+      "sha256": "9ce1b03235be376f7bb8c3f1eb346f8e260ff0e11013177a5bce102a31c75251",
+      "git_blob_sha1": "7a6fc0d458766840d586dab53e060942d2bf8d20"
+    },
+    {
+      "path": "lean/ConjectureSixAudit.lean",
+      "bytes": 10012,
+      "sha256": "211d588a3a29480399ca9f1b71d94af44d250ba1622fabd60f698c125c6f5133",
+      "git_blob_sha1": "1f090e405bcc6a19398e29815f971d86ea4d6cc2"
+    },
+    {
+      "path": "lean/ConjectureTwoAudit.lean",
+      "bytes": 82513,
+      "sha256": "c5172d80572c2095d8e54be0524c4e48b978a372ac1f76824159ffbe08ad4587",
+      "git_blob_sha1": "c818cc7b3ea0c754e2b78e5631d56c5153009132"
+    },
+    {
+      "path": "lean/README.zh.md",
+      "bytes": 14704,
+      "sha256": "8e7a276c014c2aafb52ca966dfa00762d120db81644eafffbd64c02912fe209a",
+      "git_blob_sha1": "32552a9eab0d5293e632384f5250b13d77e7432a"
+    },
+    {
+      "path": "lean/Wormald.lean",
+      "bytes": 2577,
+      "sha256": "ee944d25671ddee4554ea1fad6df22dc1462c281ef2f25f32db76d4e89d19e3c",
+      "git_blob_sha1": "d7b03fdbe712696c87269f4c4ec4d078596eff0f"
+    },
+    {
+      "path": "lean/Wormald/ActualRegularCyclesLimit.lean",
+      "bytes": 4263,
+      "sha256": "3e8c365cbb2cf377f5dcb36ffe1eb814d902ab237c6c9e389e7e196642137223",
+      "git_blob_sha1": "0821e3505d2bb8c41204ede324f8e375e088cfd6"
+    },
+    {
+      "path": "lean/Wormald/ActualResidualDecay.lean",
+      "bytes": 2678,
+      "sha256": "b25c78a5b66404b206c2e999bf6d9eec0723ab708e4844e0761875eab07eca88",
+      "git_blob_sha1": "3769d008b4f870de732ef85d9bcad014002cec12"
+    },
+    {
+      "path": "lean/Wormald/AdjacentHoldingConcentration.lean",
+      "bytes": 7089,
+      "sha256": "d5ebb70c423abd31d3843bdc55c5e3ce86eea036413e83590625cc153fae9ce0",
+      "git_blob_sha1": "a5a37496c20f471fd3f1ffa6e84e7052104b8dd7"
+    },
+    {
+      "path": "lean/Wormald/AlgebraicJets.lean",
+      "bytes": 2925,
+      "sha256": "56008ba3be43105d4f61093fb3a6c0ab8c054ec7c5a8523b22430f7b237a3cb0",
+      "git_blob_sha1": "c689044cb14aca84856529be54225b13cafe896a"
+    },
+    {
+      "path": "lean/Wormald/AllGoodClusterTail.lean",
+      "bytes": 8322,
+      "sha256": "66a461cdd4fba7c8deea2434e234dfaa84f60246851bab393426d4972cf56ccc",
+      "git_blob_sha1": "b707ee0c4a6b921fd68d98ced1cb55c87ebeb1dd"
+    },
+    {
+      "path": "lean/Wormald/AllGoodRegionTail.lean",
+      "bytes": 6039,
+      "sha256": "d868e99e668a5fd34e41c767da3361c29a625c9cd9b80ac23cc7572744ea68bd",
+      "git_blob_sha1": "6410d7387bc7cdd8870158491dc000a73313c110"
+    },
+    {
+      "path": "lean/Wormald/AnalyticImplicit.lean",
+      "bytes": 13711,
+      "sha256": "6f139c90ae2514ae2419172f27e1c7809453f7fe8a0e4d0e44c4ec26d651b64e",
+      "git_blob_sha1": "70dee017af506b14a3ca413c4d717e22f2234356"
+    },
+    {
+      "path": "lean/Wormald/AnalyticJetBridge.lean",
+      "bytes": 16093,
+      "sha256": "4de2127614a8aa89e7094e9e431522bdf86847a78ee695ac9363bd0a1e4f85de",
+      "git_blob_sha1": "c91cceb58c71df6abdb5280fc510a8ac6c66a759"
+    },
+    {
+      "path": "lean/Wormald/AnalyticTarget.lean",
+      "bytes": 2844,
+      "sha256": "7cf70b47902b74174b0d9af269c136be9e52197dcfa2d6ef80546449fc2f7810",
+      "git_blob_sha1": "397775bf198b128fb13e2a42d3ebbd698cb97693"
+    },
+    {
+      "path": "lean/Wormald/AnchoredCycleFourier.lean",
+      "bytes": 7562,
+      "sha256": "d91ea1d2d54ade2f216bcc45802b3327ac7a9162589046a9c5e2e0a50469111f",
+      "git_blob_sha1": "cc060ef7be05a9df518d8724abda7128bb166326"
+    },
+    {
+      "path": "lean/Wormald/AnchoredFarField.lean",
+      "bytes": 4527,
+      "sha256": "6599c57381c02d346461f48c76d5d306a5d59a98c254008366d8148aa46ca945",
+      "git_blob_sha1": "e831c827f18197d5434e6e27a0a14452d7015368"
+    },
+    {
+      "path": "lean/Wormald/AnchoredPhaseGeometry.lean",
+      "bytes": 4260,
+      "sha256": "374314e6c962ec47b00ddf4c0d6fe08041a23d80de0ed017497ff46512431f88",
+      "git_blob_sha1": "8fba91de4d5bbfa6d465cb945e374257caa20d80"
+    },
+    {
+      "path": "lean/Wormald/AnchoredPhaseScaling.lean",
+      "bytes": 1854,
+      "sha256": "b2cd8b582c66f973bef7a4c2f22ba8045ed14e9fa815b8ae75411c4324a44387",
+      "git_blob_sha1": "e29f6527be0af704208ba6fe70584aa10e658688"
+    },
+    {
+      "path": "lean/Wormald/AnchoredRealFourier.lean",
+      "bytes": 4336,
+      "sha256": "5c3f31179c6f7369419bd58f6ac7d23ba55dcf66e87c86107aea0e68ccc1e7c9",
+      "git_blob_sha1": "d9c9b0727f01c2ca6ea337fa55825d61ae6307cd"
+    },
+    {
+      "path": "lean/Wormald/AnchoredRegularWindow.lean",
+      "bytes": 8646,
+      "sha256": "847eace110078f3997fe2d20e1981cb8f698d424377a85cd3e247e834ea13957",
+      "git_blob_sha1": "31094b1d3eb7dedafce9c3216e6a012792fa47dc"
+    },
+    {
+      "path": "lean/Wormald/AngleCalculus.lean",
+      "bytes": 5083,
+      "sha256": "d527decc593107688b5e238fda17f85d2772cc00836631728358bb149fb4a752",
+      "git_blob_sha1": "99a81dd5ffe0852e9e947ca4ea6eb3a5ef202d09"
+    },
+    {
+      "path": "lean/Wormald/BalancedTripleConcentration.lean",
+      "bytes": 2721,
+      "sha256": "41554e3e6e071623eebe9c1bba59207e645325bd63601642e2aff6c357f93f86",
+      "git_blob_sha1": "2b8975ca39b0fd45751e421a364fc4967c6c66a4"
+    },
+    {
+      "path": "lean/Wormald/BalancedTripleConditional.lean",
+      "bytes": 5189,
+      "sha256": "052850d5f9bcba454b1adfad65e0fbf5cbc31ca5b91941baba4ef706ee28f401",
+      "git_blob_sha1": "7c3dae79aa08139c64b50936553e080c18d9d1bc"
+    },
+    {
+      "path": "lean/Wormald/BalancedTripleExponential.lean",
+      "bytes": 6133,
+      "sha256": "dbaa1cfc8c648097094f693a043170a21cb8458d4497fbd6e893be75201ab808",
+      "git_blob_sha1": "5a6633c2dcc561542103b036412b559bdc84c516"
+    },
+    {
+      "path": "lean/Wormald/BernoulliFiniteMGF.lean",
+      "bytes": 5334,
+      "sha256": "e656fc84514c14bf65837a47cd0a93a3eba92f3f5a0d8ec8248960fd34841f3d",
+      "git_blob_sha1": "47bfeb779e4cac8cc5414abb1485b4a1a1b0ab20"
+    },
+    {
+      "path": "lean/Wormald/BernoulliPairConcentration.lean",
+      "bytes": 2644,
+      "sha256": "1555791b913d2020f8f9e18e3692bd36feac8fb35a67d374059eb43769719116",
+      "git_blob_sha1": "423db8c26fb8a51bc08d9f9a2bb52e668af2114c"
+    },
+    {
+      "path": "lean/Wormald/BlockPermanent.lean",
+      "bytes": 4487,
+      "sha256": "d20a626b553a4c4205b79396fde6078b0f4bad9634b6adab90690d4aae43be65",
+      "git_blob_sha1": "a91716cedd33b72e39f8ad1e3446953a0e65cd89"
+    },
+    {
+      "path": "lean/Wormald/BoolCubeAverage.lean",
+      "bytes": 6156,
+      "sha256": "9cb60789689b162e58eeaf1892329a6d3198e4d883674e5191cc7b9df5412de7",
+      "git_blob_sha1": "54e69a979d92cc210581fdbebe580c026c5bc902"
+    },
+    {
+      "path": "lean/Wormald/CarouselConstantBridge.lean",
+      "bytes": 1783,
+      "sha256": "5ebde9c9d8b776b1813e61f2bd227849c9fb7cd05883ae0e42c9bc382aadf44d",
+      "git_blob_sha1": "4f16c450a25b2ba8bc6912b97bb2c4bd3eee14c2"
+    },
+    {
+      "path": "lean/Wormald/CarouselDeterminant.lean",
+      "bytes": 5537,
+      "sha256": "61d9fef92db3b1ab1eec5fa093026543bb9bcd0a3f30c750a477f3765e479969",
+      "git_blob_sha1": "75403798aebb3a8cacfb733aa945f8c27a6db92e"
+    },
+    {
+      "path": "lean/Wormald/CarouselLimit.lean",
+      "bytes": 3486,
+      "sha256": "6d72018873178ae95a57ff934dd616a8af32b7ca4f36d28582bb9da5637ff579",
+      "git_blob_sha1": "35ee3d74639c13d89ba2b24ef6790b9d4d1968a9"
+    },
+    {
+      "path": "lean/Wormald/CarouselRegular.lean",
+      "bytes": 3631,
+      "sha256": "d195b1ed36c898faa4f975cecbf3abdb7995eff38bdec95e239c938e39f59f9e",
+      "git_blob_sha1": "612c0b6ecb2a7f9634900bf9cf8ce4ee10b74968"
+    },
+    {
+      "path": "lean/Wormald/CarouselSwitching.lean",
+      "bytes": 8949,
+      "sha256": "c7bc30243c775314a14b2ea7dc9298b68f539143ada4f25bb4e58277944c3c57",
+      "git_blob_sha1": "8e85c24033e197a771b6035f0d3e63175ef1e4fc"
+    },
+    {
+      "path": "lean/Wormald/CenteredSpectralJet.lean",
+      "bytes": 5812,
+      "sha256": "786f9b4c488a1f044016e33d4d6ca7bed821a8788449acf81bf40317f1184c0a",
+      "git_blob_sha1": "21dc0531dc7f6ba9f9542fe4b67cb37a8db2f2f4"
+    },
+    {
+      "path": "lean/Wormald/CentralGaussianRadius.lean",
+      "bytes": 5722,
+      "sha256": "6ed7b48cee45f6212ff6438c3da8d552c48a514d693293d66c6263459839859b",
+      "git_blob_sha1": "2ce94c4f7a410fe11c4bac5d15d90b23916f1507"
+    },
+    {
+      "path": "lean/Wormald/CircleClusterCells.lean",
+      "bytes": 4354,
+      "sha256": "803e793763f81d16a3d41d2f546061c2e201bb0e02176b16be8ec89c0e3c1ceb",
+      "git_blob_sha1": "ed07166f0c25e74fc4d420814fcf81d14af7b238"
+    },
+    {
+      "path": "lean/Wormald/CircleClusterCover.lean",
+      "bytes": 8638,
+      "sha256": "a6c80ad654d01be88d9fe70d88a391f6bdd00113cff249e6f927e72db587e790",
+      "git_blob_sha1": "8f7e8c790cbc9aa669c8291a242d5ebdd9a175bd"
+    },
+    {
+      "path": "lean/Wormald/CircleClusterEdges.lean",
+      "bytes": 6329,
+      "sha256": "9f3e751f70acca3b9e16df872cad6f53faf3e895f86877db107ca46d4d8582f2",
+      "git_blob_sha1": "50c2f4dff5be3410f35c1a24d98bf055f915c738"
+    },
+    {
+      "path": "lean/Wormald/CircleCosineKernel.lean",
+      "bytes": 11211,
+      "sha256": "ed5251e0fb27c3dd74731aa1f5f70126765fe41dee8bb9edebc37e321cd7d413",
+      "git_blob_sha1": "546cf82e44305895b5a8365f5c85e34b6089592a"
+    },
+    {
+      "path": "lean/Wormald/CircleLiftIntegration.lean",
+      "bytes": 5237,
+      "sha256": "266a9017157735f01be8dd2eb83766bfb3867a3069a5b6a96da6c2035da3caed",
+      "git_blob_sha1": "23b82da3565311d5a1738b86f8006d38c93765cc"
+    },
+    {
+      "path": "lean/Wormald/ClusterGeometricDecay.lean",
+      "bytes": 8332,
+      "sha256": "76b243b18407fbc177d792530589b5890be9dfcc7525738cd00637436414ef3a",
+      "git_blob_sha1": "511f96668982fbd9ba1c6a511c71d40d577e3a5c"
+    },
+    {
+      "path": "lean/Wormald/ComparisonCone.lean",
+      "bytes": 2340,
+      "sha256": "49a004a2033ccf4ca2b0ca8893d5258a386ca66ac7cbd251e25abcc87335d670",
+      "git_blob_sha1": "5a58d8be4c2d251f926084dda11304f9b378e198"
+    },
+    {
+      "path": "lean/Wormald/ComparisonEquality.lean",
+      "bytes": 2998,
+      "sha256": "e2dd05161cdf6a3dc2d364cd6a2dc053792f792bf6d9c47c19d69f96a3af2cdc",
+      "git_blob_sha1": "8071073b92a33fe662aa9111e1903349181d668e"
+    },
+    {
+      "path": "lean/Wormald/ComparisonGram.lean",
+      "bytes": 2583,
+      "sha256": "b334177839276f8d28894d8a5b41a6f98e69693cd9abb7a205548b5b99a5806c",
+      "git_blob_sha1": "189dd21c84af700b1bf83a203505cb056a152aa3"
+    },
+    {
+      "path": "lean/Wormald/ComparisonMatrix.lean",
+      "bytes": 3263,
+      "sha256": "39f901d58b932b4bc1acac3df390c9ebe838820185405447ae7fc7cde659d1da",
+      "git_blob_sha1": "12efb0b89c1ba4528c262861c4ac6a7c8b720ce0"
+    },
+    {
+      "path": "lean/Wormald/ComparisonMatrixEntries.lean",
+      "bytes": 1980,
+      "sha256": "c1827d8ffb4cb40da742835b379f363df39753e961c287767165746a3f5e79bf",
+      "git_blob_sha1": "71ff945fdfd81749f2caf7a587e4549dac18b6e3"
+    },
+    {
+      "path": "lean/Wormald/ComparisonPowers.lean",
+      "bytes": 2610,
+      "sha256": "ab70cc3eb6615802a2526af2430aee0eca8744aedccaac03732937ccf5efd731",
+      "git_blob_sha1": "69c151ed2250f83d2e5fbad0ee75dd16430a00d6"
+    },
+    {
+      "path": "lean/Wormald/ComparisonProducts.lean",
+      "bytes": 3258,
+      "sha256": "ccf08e69a99c7f59d682f9172da323b7231c8c7d8164feb90f7485ad7417d4c2",
+      "git_blob_sha1": "d8b060c5266c89d46eb4d5aeea2fc7577f6980cb"
+    },
+    {
+      "path": "lean/Wormald/ComparisonStrictness.lean",
+      "bytes": 5307,
+      "sha256": "1b65760540671881297e49274751f199e1f1d57b02120eff6312bdf8d91040ac",
+      "git_blob_sha1": "9f16f8b1a012435d22123cb7a751862f3b7fbb15"
+    },
+    {
+      "path": "lean/Wormald/ComparisonTransitive.lean",
+      "bytes": 6087,
+      "sha256": "b3fefc029c9987cd064b1cfbb29bdcaf67cea671ead838d02b9b55b7df5792e6",
+      "git_blob_sha1": "d15a173712b6fb0e02dd0c204a1bc067a81868a5"
+    },
+    {
+      "path": "lean/Wormald/ComparisonWeights.lean",
+      "bytes": 3917,
+      "sha256": "9844aa677492d40174ed6ece0afe1f8076ddb5c42f0b5dfd7c12abc97058b16c",
+      "git_blob_sha1": "61de78bb84181a1b7a91d143e4610b32eba61e94"
+    },
+    {
+      "path": "lean/Wormald/CompleteGaussianQuotient.lean",
+      "bytes": 3285,
+      "sha256": "7a4b60f3fffe4a4072211ba533e4ce2df23b73fde321b5879e37a400cb2e243a",
+      "git_blob_sha1": "2490adfa160d0b3da600f2463711e9dff1cc07f8"
+    },
+    {
+      "path": "lean/Wormald/Compression.lean",
+      "bytes": 2272,
+      "sha256": "70ae31f112885b667daeec686e2d811f45aaad7a039851ab15f0b94e19e7c8f4",
+      "git_blob_sha1": "88ebd25d25d8efe467a23897acb7b50cf58ef5bd"
+    },
+    {
+      "path": "lean/Wormald/CompressionDeterminant.lean",
+      "bytes": 6563,
+      "sha256": "c1d6a1cf649af059bf8cefb44c88417354bd2f8e1c45a858726f524465220d0f",
+      "git_blob_sha1": "35ea132f5dc39035572d9e16cc56f1d37692038a"
+    },
+    {
+      "path": "lean/Wormald/ConjectureOneProof.lean",
+      "bytes": 1009,
+      "sha256": "9c7c86be549979faa80ce9a1a554115accb14a1afd1a4839f0567acf847c5008",
+      "git_blob_sha1": "8e26baa5932b89f40dfda53967edfc7e62f6142e"
+    },
+    {
+      "path": "lean/Wormald/ConjectureOneReduction.lean",
+      "bytes": 5753,
+      "sha256": "283103b9bdadbcc68da5086ab74698e118b8c60707145a1cece8dba039a1392f",
+      "git_blob_sha1": "ccbb04b568380284a52fb05199e8b6b9513240ce"
+    },
+    {
+      "path": "lean/Wormald/ConjectureOneSpectralReduction.lean",
+      "bytes": 2537,
+      "sha256": "3794c2bada4234b867db84f60d10dab0c397c23aad83eef960d217683d8c6948",
+      "git_blob_sha1": "05b41712537010a2d50d9880d096dee3cccfa70e"
+    },
+    {
+      "path": "lean/Wormald/ConjectureSixProof.lean",
+      "bytes": 3098,
+      "sha256": "5189d50d7344a901085bfc32621614bea000af0114b17da2f03dad65554dd4a6",
+      "git_blob_sha1": "f42b4b8834f105fee64ab92b85107fdbbe836e11"
+    },
+    {
+      "path": "lean/Wormald/ConjectureSixReduction.lean",
+      "bytes": 4532,
+      "sha256": "0f5046af5bc5610858bf6c38c2f7fc7dc7223f06878a2cfb53d293a0acd6f71a",
+      "git_blob_sha1": "184c028fc45c66f0814d2d0c5127342a17d9142e"
+    },
+    {
+      "path": "lean/Wormald/ConjectureTwoProof.lean",
+      "bytes": 1768,
+      "sha256": "1ac8625578a366c95ca00a7bdbc5c70fe1bf7da758e40db284d0f4d624799bfd",
+      "git_blob_sha1": "75b5939fbc0cb5fd8302a31c0a496e4e7cd54a7a"
+    },
+    {
+      "path": "lean/Wormald/ConjectureTwoReduction.lean",
+      "bytes": 3366,
+      "sha256": "f790893682248562538132510d98e24d6ff72f822ffde6ddec5246967bb2f631",
+      "git_blob_sha1": "f887c643c122fa74a68c19b7b8cd5d051c45c2fb"
+    },
+    {
+      "path": "lean/Wormald/CosineTaylorBounds.lean",
+      "bytes": 10786,
+      "sha256": "572153a07a8326bd2bb12b15e25eb83f814df0d830a57d9886d7ac2901c99d65",
+      "git_blob_sha1": "f3806241714a4a285303cdb393608f27c7cdeb1f"
+    },
+    {
+      "path": "lean/Wormald/CountIsomorphism.lean",
+      "bytes": 6749,
+      "sha256": "c1473c114356257898bdb4adfac921223b5e6d107c0f523f97e574e76df914dc",
+      "git_blob_sha1": "e3a0d984e0ed864658a5e3f5b864e4931f1d4434"
+    },
+    {
+      "path": "lean/Wormald/CovarianceAnchor.lean",
+      "bytes": 10671,
+      "sha256": "4e96b3213eb4c1e32cbbe2613dd2de4dd3ead6f0bdff334941f69d65d0e4ab53",
+      "git_blob_sha1": "2873892e9a0daa6d30cac20d75d47043f768115e"
+    },
+    {
+      "path": "lean/Wormald/CriticalGradient.lean",
+      "bytes": 1623,
+      "sha256": "c6a4de1cd220eab4650046d2b528757c522cb82ddd5c46a158324e9823abd076",
+      "git_blob_sha1": "b19276db827f8271efa47535f940e4caa9722425"
+    },
+    {
+      "path": "lean/Wormald/CriticalJets.lean",
+      "bytes": 7429,
+      "sha256": "48941fd7d8a8205305de4201b1f084d1b0d8ec7fa0f95e8eda67c0772bbb8b94",
+      "git_blob_sha1": "123752154715b615d67be486ccbbcac4b8982538"
+    },
+    {
+      "path": "lean/Wormald/CriticalPoint.lean",
+      "bytes": 16187,
+      "sha256": "f8e83291d67bf99f85b4866e2fe878dca95d59b4de756a1977796fff8fa2b31e",
+      "git_blob_sha1": "405a26a5e3a95527c21ba88e704768e84b2e2eab"
+    },
+    {
+      "path": "lean/Wormald/CriticalResolvent.lean",
+      "bytes": 3758,
+      "sha256": "658b522228de628ace95ad7aa77f023b95197fc42416da8438c7c94614b74b2a",
+      "git_blob_sha1": "e5cdee0e9530409dff33600b20315ba95dcbc442"
+    },
+    {
+      "path": "lean/Wormald/CriticalTransitionCompactGap.lean",
+      "bytes": 4606,
+      "sha256": "cc2020319c8c2b951a660f0776b81cb8e4f0766d32f1b2076884df0fc32c00c9",
+      "git_blob_sha1": "e9d4d1084ee820ef2bcc5620ab1319bda7b078fe"
+    },
+    {
+      "path": "lean/Wormald/CriticalTransitionContraction.lean",
+      "bytes": 4257,
+      "sha256": "68053485e3366a6a4f4ac9f5fc8a258af77a6833624a0b82862a0f091455f1c6",
+      "git_blob_sha1": "c84cf888902fda66c1032ef168c9d82ae3269fa8"
+    },
+    {
+      "path": "lean/Wormald/CriticalTransitionEquality.lean",
+      "bytes": 6092,
+      "sha256": "95dccc1ce0a5d348591bda23236d55faf9ce3a35edf87939a82ff2e2a4f12e7b",
+      "git_blob_sha1": "e75b1e4886dabb4e169bd6c335c78bc97907a402"
+    },
+    {
+      "path": "lean/Wormald/CriticalTransitionPhase.lean",
+      "bytes": 3798,
+      "sha256": "cf913b54279ae700ab212e905eb31a3f1f0f933d4c46507e45a9ca450ea00126",
+      "git_blob_sha1": "288373b5c9fb9015736e9bf80a7be3c42e4d8289"
+    },
+    {
+      "path": "lean/Wormald/CriticalTransitionSpectralGap.lean",
+      "bytes": 3610,
+      "sha256": "e9c0f64eb32665ed230254e5cac08619037d09f40c8210cd0aef346126cd1e3b",
+      "git_blob_sha1": "ab97ab44c259961187c3f51eb1c7fcacbaabf0f9"
+    },
+    {
+      "path": "lean/Wormald/CriticalTransitionTraceDecay.lean",
+      "bytes": 3735,
+      "sha256": "0abe388669ba2f9846e08005648bc298d58061db8cf1dfbee78e1631482e587b",
+      "git_blob_sha1": "50a38fba877b1ac89c63da2698a0125a8a6e1513"
+    },
+    {
+      "path": "lean/Wormald/CriticalTransitionTwoStep.lean",
+      "bytes": 4603,
+      "sha256": "16baf0f6b12b4e2c04bc4db3623b3d9aba70f415a7dcf5a80007e321756d2aa1",
+      "git_blob_sha1": "7d9d163fa7d3db032d747b54199cff9f8212da27"
+    },
+    {
+      "path": "lean/Wormald/CycleLabelingFiber.lean",
+      "bytes": 4293,
+      "sha256": "deaff80feb5b27bbd48844213d469652f6e623e65a13553b59e883770a0112db",
+      "git_blob_sha1": "96d22cf8fb1db85097ed29d0368a5e4e36d8169c"
+    },
+    {
+      "path": "lean/Wormald/CycleWordTransfer.lean",
+      "bytes": 2734,
+      "sha256": "8d9523028652a201eb1396a53b21c93d690e90d0693225b1047bd51be9dd2f5f",
+      "git_blob_sha1": "b7d1712a3e39ab5043aa670be99dae468d427c1d"
+    },
+    {
+      "path": "lean/Wormald/CyclicTripleBasics.lean",
+      "bytes": 5201,
+      "sha256": "d2f0dc91ef8283c542f9777b95be34ed065e14ab46f83ab32bd30fd00ed6afc7",
+      "git_blob_sha1": "54dadade57aace80459e29ec9cac62731e805e2e"
+    },
+    {
+      "path": "lean/Wormald/CyclicTripleConcentration.lean",
+      "bytes": 4953,
+      "sha256": "9fbac3f003461262733572b7eb8e95f15d8a00fa303fcb4a22971c3ce707ffe0",
+      "git_blob_sha1": "e21d47291b7022d6bfa60839af4838e8199846cb"
+    },
+    {
+      "path": "lean/Wormald/Definitions.lean",
+      "bytes": 3970,
+      "sha256": "7f8f11bbb8984a02c7af769f450c46c1465dc0c25624ec997322508fe17d65d1",
+      "git_blob_sha1": "2ea87434ee214fa04e41e75a332ca87901e2b7d5"
+    },
+    {
+      "path": "lean/Wormald/DeletedCosineApproximation.lean",
+      "bytes": 2519,
+      "sha256": "cb4d29e19dbe95eb92e492ef402dfd8aa411361e82ac40475dcdc55847c778c7",
+      "git_blob_sha1": "f9e17bd90e9ecfe3c46e69b8960e5926709fda96"
+    },
+    {
+      "path": "lean/Wormald/DoeblinMixing.lean",
+      "bytes": 8472,
+      "sha256": "27cd96f8c3354a20bd1981836cd0ab40d3587a84165d9320f0cfe5b3718a6e1c",
+      "git_blob_sha1": "fec1bff5268e9232a668a2b3aafdf6c3b4b46f9f"
+    },
+    {
+      "path": "lean/Wormald/Elimination.lean",
+      "bytes": 2234,
+      "sha256": "0c325803f9dbd0e0bf0a76175283bee5fb60ca961d24d6ad6ce9bcd7258daf26",
+      "git_blob_sha1": "adc2b8962d1ee7df1f02c5086f4d9d937141da04"
+    },
+    {
+      "path": "lean/Wormald/Eventual.lean",
+      "bytes": 3958,
+      "sha256": "87c504ad7fb9232e840ca028d5be763ad13008a1bdc9a01b6e4c58c974a7d9c9",
+      "git_blob_sha1": "f80503a6494bbaaee2dedb87c310b534ad791f27"
+    },
+    {
+      "path": "lean/Wormald/ExactCycleCoefficient.lean",
+      "bytes": 1496,
+      "sha256": "287654dbbc245bb6768d8f9ee7dff6dd783740eb83bbab031b1a66be8f504c54",
+      "git_blob_sha1": "454ca2c2e34038d9e2bc693da5b655a8423038ae"
+    },
+    {
+      "path": "lean/Wormald/ExactCycleFourier.lean",
+      "bytes": 2437,
+      "sha256": "084b8fcd1832506b262378a17d268233bddeb922a75465ec58cebb719e9b21c5",
+      "git_blob_sha1": "7a4bc6a6f2ba8469387df8ec9bdc5b2996daa955"
+    },
+    {
+      "path": "lean/Wormald/ExactCycleTransfer.lean",
+      "bytes": 10107,
+      "sha256": "52fbb2e23cc7e87189d2e9b6f654d09ea00b5c48659f12c9ae26183b9df761c7",
+      "git_blob_sha1": "f5072ac2477e60da542327b06b0614d0737b7d44"
+    },
+    {
+      "path": "lean/Wormald/ExponentialJetCalculus.lean",
+      "bytes": 6893,
+      "sha256": "887a5e0c245c493d8149e36dddb0b201f4dad9f23e07bcf1ed75d57f74b2ef61",
+      "git_blob_sha1": "523a28871e989004cafff4aae37ff59467e62342"
+    },
+    {
+      "path": "lean/Wormald/FactorialPrefactor.lean",
+      "bytes": 4712,
+      "sha256": "f36c460b55c4636d21bf545890a48a5c409a0dfb920c4046268b7c14e462d39f",
+      "git_blob_sha1": "0129fe7a410b0acd1c249f907d31c75570e2752a"
+    },
+    {
+      "path": "lean/Wormald/FactorialPrefactorLimit.lean",
+      "bytes": 3009,
+      "sha256": "18dd2dbaa586f0bcc016f1cceef713897fb772cc24d32fd05601a2ca815258b6",
+      "git_blob_sha1": "1a4eadade9c56b6f87e2489450638635853c7204"
+    },
+    {
+      "path": "lean/Wormald/FiniteJetRemainder.lean",
+      "bytes": 1852,
+      "sha256": "380b2224c08796ac24cfb20e7fabdf0a6c53c63aeb49cd3b56c4ce1f19719aba",
+      "git_blob_sha1": "21ba8a5efbd9a7aa76750bfe6c6ff763c892934b"
+    },
+    {
+      "path": "lean/Wormald/FiniteModel.lean",
+      "bytes": 10558,
+      "sha256": "59c5148bd930bfdce35120dd21494554c678c0cd5bfdbd4d5907a1d8229602f7",
+      "git_blob_sha1": "930d3263e78c610073f5b86249d55b5718f84a4d"
+    },
+    {
+      "path": "lean/Wormald/FiniteWeightedAverages.lean",
+      "bytes": 3691,
+      "sha256": "3679bf657d97ddc080d20f896fbd01cbf1a0416518ec578c8eb89150cdf00470",
+      "git_blob_sha1": "24d71be7729c1812fef7d9eea79ec4362718d5ca"
+    },
+    {
+      "path": "lean/Wormald/FiniteWeightedChernoff.lean",
+      "bytes": 2877,
+      "sha256": "b99bdeefb580b957ca5bf200bd54ee824573c82dccf84e2cca9eadb106a08925",
+      "git_blob_sha1": "2f598c8f2ce7d5a9ea88bfefd2ee3cb73f6c6ee2"
+    },
+    {
+      "path": "lean/Wormald/ForestGaussianCorrection.lean",
+      "bytes": 11885,
+      "sha256": "765db54e53084a536138128aaa3cfefff748498bee6571c1962870e15f67dcf7",
+      "git_blob_sha1": "cf1250d95d1a3d2b2b2fd1416b1c8556e55e8649"
+    },
+    {
+      "path": "lean/Wormald/ForestGaussianIntegral.lean",
+      "bytes": 2162,
+      "sha256": "1592a9a11475d744a5ac5b181e57a1155d2557f2c8350f7e575f10aef0ae4332",
+      "git_blob_sha1": "14af1dda9f920d95bb57e6ee14ebdeb6051d42e5"
+    },
+    {
+      "path": "lean/Wormald/ForestGaussianWeight.lean",
+      "bytes": 4482,
+      "sha256": "1ff0f4009c1f8908021baf1cd854050891a92321014df6f19d9b815f30f9ad05",
+      "git_blob_sha1": "e03f7d6af9dd77858e01dc95cf5fa90e308b3269"
+    },
+    {
+      "path": "lean/Wormald/ForestLaplacian.lean",
+      "bytes": 8131,
+      "sha256": "364c4d2d3f86ea5075ed2cca1ca5541c80a41f8afeb18b46997fa7d29bacfc84",
+      "git_blob_sha1": "88d13b2daf3308dc41f06c9e22cbd607fe7f9b64"
+    },
+    {
+      "path": "lean/Wormald/FourthMomentEquality.lean",
+      "bytes": 5817,
+      "sha256": "b3522d27a32216f027784706c0a10474d465eb640031a5f8aa285a14a4232e9e",
+      "git_blob_sha1": "429b7857fd5c7377e737ab65409080338d8d7658"
+    },
+    {
+      "path": "lean/Wormald/FourthMomentIdentity.lean",
+      "bytes": 4910,
+      "sha256": "f17f911a0d7bd2a51b85ca30a6a24176f2083f2320d5271b6ec5acdd7753439c",
+      "git_blob_sha1": "9a8306e63b5a2a2aedde6f5ed3c361c5b246a957"
+    },
+    {
+      "path": "lean/Wormald/GaussianAnchoring.lean",
+      "bytes": 3892,
+      "sha256": "f94552e61d83e19788d340934c8e29ff25d6a462420efa4c7eb9bae6cc5143fc",
+      "git_blob_sha1": "55577aaf1db72fe60e57c023321f39179f7876a2"
+    },
+    {
+      "path": "lean/Wormald/GaussianBoxAnchor.lean",
+      "bytes": 4431,
+      "sha256": "d5db1fe96a81951801b3622223da2c686374a5baf6ba189faad2812e4a7ca8cc",
+      "git_blob_sha1": "207c4c8c82304da4329c8830e58b9c1be707ec54"
+    },
+    {
+      "path": "lean/Wormald/GaussianCentralWindow.lean",
+      "bytes": 3781,
+      "sha256": "f74332f9406ae83380c5b0d5aa194a6a0b55f3fb5ee1be77c939a31aa9ed6ae5",
+      "git_blob_sha1": "e23b51d27eb54824aa475bee6cb5b5e7cff0eabe"
+    },
+    {
+      "path": "lean/Wormald/GaussianGraphCorrection.lean",
+      "bytes": 12583,
+      "sha256": "261e26555841f93bee2557c801561ce402009ac65d09500f5e25a6779ec4a253",
+      "git_blob_sha1": "d1f280c2d2ec7af1bf9d62d54e9b3e8f8c8905b8"
+    },
+    {
+      "path": "lean/Wormald/GaussianGraphFourierIntegral.lean",
+      "bytes": 4561,
+      "sha256": "2e402b451763da593f3ec127812d7ddb6368220c611bd80488efdc1a7fca26cb",
+      "git_blob_sha1": "ebb2fc9d8e618a987ab66746b3f7dbe2f2ea8db9"
+    },
+    {
+      "path": "lean/Wormald/GaussianGraphIntegral.lean",
+      "bytes": 5294,
+      "sha256": "b2df44e5778b63210c5a6ee138d9b5b2786f43db1642b933c6f125fa45cd3531",
+      "git_blob_sha1": "0984b82bfdd6463c45ec72d4941bb6fe1c5ede67"
+    },
+    {
+      "path": "lean/Wormald/GaussianGraphMainTerm.lean",
+      "bytes": 1780,
+      "sha256": "fd262d10ca5bf03032a3584fb560058aa2a5c19f6d77ae0ef4a15b0f7874b097",
+      "git_blob_sha1": "62aaaa920d376191b4591b8393557458836c0885"
+    },
+    {
+      "path": "lean/Wormald/GaussianMatrixFourier.lean",
+      "bytes": 6856,
+      "sha256": "ebc6ff8212948b235fc8b5f031f2b91127e847293d60df9062a17f1c3d60488c",
+      "git_blob_sha1": "25f5ef8c317eb42e1160a7ae1cc9d9d482ac7364"
+    },
+    {
+      "path": "lean/Wormald/GaussianMatrixIntegral.lean",
+      "bytes": 5301,
+      "sha256": "b12e095da57ce86cb61634628928bf680cf125af8054e60df4d70adb2196126c",
+      "git_blob_sha1": "39ca9034daf8c123f2278bb98868b438ef332f40"
+    },
+    {
+      "path": "lean/Wormald/GaussianNormBound.lean",
+      "bytes": 1742,
+      "sha256": "c6a1f51974faa4acf22443129f0af83d2cbb24f552f90a6ed21d1a2ae95dcfaa",
+      "git_blob_sha1": "69c3980c5d51f0955a5a64cf44d5c8af37ceed1e"
+    },
+    {
+      "path": "lean/Wormald/GaussianOutsideAnchor.lean",
+      "bytes": 9135,
+      "sha256": "34329432595f993f094df340acd09e3756b6df4b49ec7f6fdbd01a045830ebb3",
+      "git_blob_sha1": "611371f3d61aeb4e89ddaa1d2f747e2c059df168"
+    },
+    {
+      "path": "lean/Wormald/GaussianProductDensity.lean",
+      "bytes": 3974,
+      "sha256": "ca4462915f20a81a2e086fd91e21bd9f5c5a73c74856208a46c300f88e7ae82a",
+      "git_blob_sha1": "d25b342777eeb151c03edf440172f03810c02a2c"
+    },
+    {
+      "path": "lean/Wormald/GaussianProductTail.lean",
+      "bytes": 4240,
+      "sha256": "5748e97b0ab3e5202377431310affee9b13c5b4d014fcbaafc29c2e28ec63095",
+      "git_blob_sha1": "ecfb61e7a47ea2c366df818504d7feabf1114843"
+    },
+    {
+      "path": "lean/Wormald/GaussianQuarticCancellation.lean",
+      "bytes": 3831,
+      "sha256": "5f6fc0a7ac7731d617bb3285b94d7b768f2c98c8f699ad002fc61f076ca03829",
+      "git_blob_sha1": "709decb725323db627038a615b71f1f497d3cf3e"
+    },
+    {
+      "path": "lean/Wormald/GaussianQuarticConcentration.lean",
+      "bytes": 4630,
+      "sha256": "82ee7bc1d52713e15f13a8c2ef684205fed6bf7a476692c123c98b60a223946b",
+      "git_blob_sha1": "d83c8a51e342ef268b45016b34af289b6bf7f42d"
+    },
+    {
+      "path": "lean/Wormald/GaussianQuarticIdentity.lean",
+      "bytes": 4183,
+      "sha256": "e23001d13a77ba5368eaab75cbead9b235789b024997e600aa9782565111e0e9",
+      "git_blob_sha1": "3b08e107f49e4e40102b0769310a94a7c5087ba7"
+    },
+    {
+      "path": "lean/Wormald/GaussianQuarticMean.lean",
+      "bytes": 3888,
+      "sha256": "be3a8499c1642b95cb772def2ee6063f5c7fe6704777fe070654a4a21aa124db",
+      "git_blob_sha1": "0a0039d4a17c1e9a28e254d4b9c44b8248e93115"
+    },
+    {
+      "path": "lean/Wormald/GaussianQuotientTransport.lean",
+      "bytes": 6953,
+      "sha256": "41dfe368b7daecf2ebb867ebdf653547248e5f3b6f47f3de02aeed3219858d92",
+      "git_blob_sha1": "32fbecb818453fa965e20b6b5dcc87faf8c2ba1f"
+    },
+    {
+      "path": "lean/Wormald/GaussianQuotientVolume.lean",
+      "bytes": 3621,
+      "sha256": "6a28f6e93ca611abf1a62540f5af4e4435d35f89bf1175a27c2a37a9837cf838",
+      "git_blob_sha1": "6f0531ee2f2e75f8fcf604e1605617c6a92b1885"
+    },
+    {
+      "path": "lean/Wormald/GaussianSpectralConstant.lean",
+      "bytes": 3223,
+      "sha256": "339a9d2592e6767d8f70eb826c87939ae69d990faa3ed850ca601a36c8ca1b61",
+      "git_blob_sha1": "6e82d0068e74e08e6e36ffa29fba4b52c6aa12bf"
+    },
+    {
+      "path": "lean/Wormald/GoodClusterCellBound.lean",
+      "bytes": 8047,
+      "sha256": "d753c7eb5ccd8e62b87711e23f45d6a3211a49e1db5471c2e2e0def31dfd7ec5",
+      "git_blob_sha1": "099fb6675b9142d4a707b7eca601e09c0fd7037d"
+    },
+    {
+      "path": "lean/Wormald/GoodClusterCoordinates.lean",
+      "bytes": 3722,
+      "sha256": "e53dc0d3d3e1ce2860f9dc0746ba23698a17dbb4e2481b68c78f42fa59d38a57",
+      "git_blob_sha1": "35d8227531d6ea171d75a0c7326bbfc4323b44e4"
+    },
+    {
+      "path": "lean/Wormald/GoodClusterGaussianVolume.lean",
+      "bytes": 10024,
+      "sha256": "309c1374a12837dbfd10727d9724c987f9352083a2503003cefed824a23920ac",
+      "git_blob_sha1": "daa92a87b96a366c920171d051910ec41d40eb96"
+    },
+    {
+      "path": "lean/Wormald/GoodClusterKernelVolume.lean",
+      "bytes": 5279,
+      "sha256": "49dde9e56409a444be7a6d446f2e6aa98a1beca2dba2ecdcae1113855f8559e5",
+      "git_blob_sha1": "441d58e8925fa96e8e18325191a9df8c34e972a6"
+    },
+    {
+      "path": "lean/Wormald/GoodClusterRestriction.lean",
+      "bytes": 7196,
+      "sha256": "38d3ae9e0c2d872837fa9a8584260388d04c9b811bea4d6153386ed90c6c4b40",
+      "git_blob_sha1": "254fe759f1e549be8f311b0c608d7b523f637de7"
+    },
+    {
+      "path": "lean/Wormald/HoldingFlags.lean",
+      "bytes": 5884,
+      "sha256": "fc30c7c0a0046d94141859a56c90198cda93db2d1c0d082351c39357eccfab32",
+      "git_blob_sha1": "69f3240db05f8b875fc36217de83de8e600a193b"
+    },
+    {
+      "path": "lean/Wormald/ImplicitAlgebra.lean",
+      "bytes": 1554,
+      "sha256": "561cf5bfd5d98cdd6e21955272ae8fdb82acc9300bdf8930dba88ba5061b7af6",
+      "git_blob_sha1": "94359918addd6299b1031efbe2e9259de1f25154"
+    },
+    {
+      "path": "lean/Wormald/ImplicitJet.lean",
+      "bytes": 1044,
+      "sha256": "29e8ee7509f6b94d025c8380136063744e5c0d3e53d6d64657eab6155b6a10b8",
+      "git_blob_sha1": "a89d4cdf843ac595086e428397a1bae04eacf9f0"
+    },
+    {
+      "path": "lean/Wormald/InternalCycleWeights.lean",
+      "bytes": 3924,
+      "sha256": "5befe8c4b95ca2c928c20175bb7b8ec6abafa05d0376a9a602dcb5d09deab1ae",
+      "git_blob_sha1": "0ce71ba8bc7dc873a9d8426cc83c06106fc8185f"
+    },
+    {
+      "path": "lean/Wormald/InternalTripleStatistic.lean",
+      "bytes": 4404,
+      "sha256": "e95f0383d605b92a63fe32486fe309c1231ab489de4a5b6e7e3760e15e131c17",
+      "git_blob_sha1": "8b5ad63b16edf6d9496cc8de9a94d0f68347095b"
+    },
+    {
+      "path": "lean/Wormald/JetToCandidate.lean",
+      "bytes": 6537,
+      "sha256": "4f24cb045d98a6395ff403f839d5009b08ae50359a9c79f13dc305a066dd62c1",
+      "git_blob_sha1": "cd458257c9a37ae79ed61b18abfccf57fcde09d8"
+    },
+    {
+      "path": "lean/Wormald/LocalFourierDecomposition.lean",
+      "bytes": 2745,
+      "sha256": "fac792a2bee6ccb6be163613b6674a421930e3c4cfd413436e37a4ab355f4c4d",
+      "git_blob_sha1": "20b6212210df74c36e24fbf3986d1238dfc897b5"
+    },
+    {
+      "path": "lean/Wormald/LocalFourierIntegral.lean",
+      "bytes": 3386,
+      "sha256": "82f2bb88a7c63756747ba09db2c4e3efcb504bb957022b736d41e32914bee690",
+      "git_blob_sha1": "f0f66ee7b32efdf940689e1c030e93e59c65e504"
+    },
+    {
+      "path": "lean/Wormald/LocalGaussianIntegralError.lean",
+      "bytes": 4161,
+      "sha256": "ba5033291e8089df4fe4f4f5be35bf7988704f1e5ca90c387fe5e3bc3a27fbd6",
+      "git_blob_sha1": "d5f3af9dcf9b204ca63093634888b9b2cb0b05e2"
+    },
+    {
+      "path": "lean/Wormald/LocalSpectralBranch.lean",
+      "bytes": 10643,
+      "sha256": "a05d4913dc688356b8410193f0d2a5575d3745668d8731083c56c664eb183ecf",
+      "git_blob_sha1": "b7bf18d821c1e6cbbceb8f30238dfb120e3c8685"
+    },
+    {
+      "path": "lean/Wormald/LocalSpectralProjector.lean",
+      "bytes": 11465,
+      "sha256": "190534901597125ef703fa7b6b8388b14e25d929da118b55d8e24ebd5e0e2149",
+      "git_blob_sha1": "d7edd74a62aaa96342a680448387216d69ce1bf9"
+    },
+    {
+      "path": "lean/Wormald/MarkovCriticalBridge.lean",
+      "bytes": 1930,
+      "sha256": "9ec432a917878b401bec9a965d8d1715dd74aee87917331e69d4b805b0a0cdc6",
+      "git_blob_sha1": "d9db698c88a076b547092926bddde67d72da2b19"
+    },
+    {
+      "path": "lean/Wormald/MarkovCycleTransfer.lean",
+      "bytes": 4913,
+      "sha256": "d14c08713db797d472f60d0c587f0454b97d2e0665b16cc4f4e8adca87aac1c4",
+      "git_blob_sha1": "9a7054271ce1ab33f14851085bcf170107539616"
+    },
+    {
+      "path": "lean/Wormald/MatrixCore.lean",
+      "bytes": 4019,
+      "sha256": "f0f30629a79c6470f46b6a2e7ac85c93b72c6b0853d4bfc9422b4bf912cb215f",
+      "git_blob_sha1": "bbd5fa1078c929d74459b176c32ed7a5fd44df36"
+    },
+    {
+      "path": "lean/Wormald/MatrixLaplaceIntegral.lean",
+      "bytes": 4085,
+      "sha256": "eac878f625d771ce0715488f3fdc044d751f3429a922412dafa182a4ef442ff8",
+      "git_blob_sha1": "9d6e1801583b4de415322ef9c01e27e482f61811"
+    },
+    {
+      "path": "lean/Wormald/MatrixMomentSeries.lean",
+      "bytes": 5301,
+      "sha256": "4498dfb729d22ef8db7af623fbf726288afceba4d27b1cda18bd57967c668ad8",
+      "git_blob_sha1": "a17c18680d054a9f2701eafc6b59e446f1f48ee5"
+    },
+    {
+      "path": "lean/Wormald/MatrixQuadraticJets.lean",
+      "bytes": 6359,
+      "sha256": "07b8ec07351e92b2ccb64e3c33aef1ccbc8f9fc7ebf22d1f427ce0eb7af231eb",
+      "git_blob_sha1": "bfc7d74ffad398369f769c5730ff1e18857d3c1c"
+    },
+    {
+      "path": "lean/Wormald/MeanPermanent.lean",
+      "bytes": 12306,
+      "sha256": "4a8b6742fb5e1e87c62e4018cf8ea8f34555fe6bf8d5bdfd6e4b375f8f663bc7",
+      "git_blob_sha1": "3095f4759b82c731af3d5cf3843dd95c4bcafd4b"
+    },
+    {
+      "path": "lean/Wormald/MeanPermanentDegree.lean",
+      "bytes": 2171,
+      "sha256": "2dafea7bec31c8129d69a615e2bd678462564890125e0fef44d0e2d953a8b37d",
+      "git_blob_sha1": "7728320b34b5f1613cd0c69d2b9a176b88c85d2f"
+    },
+    {
+      "path": "lean/Wormald/MeasurableGaussianBoxAnchor.lean",
+      "bytes": 3879,
+      "sha256": "3307df0c1298b40b8965ff7d61ae0f49fe414815c4bd31f212fbfbd91472c797",
+      "git_blob_sha1": "ce2de57ff620e23238a1217fb0efe008335b0ce4"
+    },
+    {
+      "path": "lean/Wormald/MergeWeights.lean",
+      "bytes": 1987,
+      "sha256": "a1251a87f25b07419c2369367fca97eed9eba757f6db5cd050ff741c6d7ddd67",
+      "git_blob_sha1": "a735d1f717bd30fce58f6fbd8c92680083beab4e"
+    },
+    {
+      "path": "lean/Wormald/MomentBound.lean",
+      "bytes": 3787,
+      "sha256": "04089888e6ca6dc94103e3eb83292ee46a89921a4a7da0b142a05ba87e5e80a1",
+      "git_blob_sha1": "6445e87184833c2cf40ced807245a9daf220b29c"
+    },
+    {
+      "path": "lean/Wormald/MomentComparison.lean",
+      "bytes": 4847,
+      "sha256": "cffd8a56b8ae08873df685ae9a1783902931911f31c75569ab1e4acda54252ea",
+      "git_blob_sha1": "4d4f3305c7926c0ed88520740bdc55b83239267d"
+    },
+    {
+      "path": "lean/Wormald/MomentEquality.lean",
+      "bytes": 4830,
+      "sha256": "12bfb0d7eb35e4e8cf7d775d51e14f41d38efda3afc3345c69c86744fe8f6e6d",
+      "git_blob_sha1": "237e50c624dd148c7f129d4fadc04a3b362975ca"
+    },
+    {
+      "path": "lean/Wormald/MomentSeries.lean",
+      "bytes": 2682,
+      "sha256": "9b6073930142af176e225e41004d3a424c8950d7af8402c25c8bacae898c368e",
+      "git_blob_sha1": "260256add16b3c256ec848ed145e529795d99087"
+    },
+    {
+      "path": "lean/Wormald/NonregularCycles.lean",
+      "bytes": 2901,
+      "sha256": "a522f54d06d8f1aef807452f69373456c10228de49e9dd977c8b4c8e281db864",
+      "git_blob_sha1": "57d43f173aa6d6ef4bd918f734b7adeb282d10ec"
+    },
+    {
+      "path": "lean/Wormald/NonregularDegree.lean",
+      "bytes": 5542,
+      "sha256": "ebc4e899e50d81470b1634eab252c8da81842ab32f3b8ed3deb02881f2751bf4",
+      "git_blob_sha1": "632d1bd1b3bfb264e93b6b8ec92fff1286eb14bf"
+    },
+    {
+      "path": "lean/Wormald/NormalizedMoments.lean",
+      "bytes": 3598,
+      "sha256": "5e959bc5c585e0f33c6b257624fbef96f42be226fe3e6e53f21b364a6f5bad20",
+      "git_blob_sha1": "45fe5c05e28bd41b77f0dd00ec3915b609763719"
+    },
+    {
+      "path": "lean/Wormald/OneStepComparison.lean",
+      "bytes": 6647,
+      "sha256": "335778d29cd305e472a6e317f380bf1ae39d534e912ff8ccddb86f4315e5e249",
+      "git_blob_sha1": "bdc62276f4b6c5c7d6cc3c599d6eeb0fae3383a5"
+    },
+    {
+      "path": "lean/Wormald/OutlierClusterRegion.lean",
+      "bytes": 5307,
+      "sha256": "fd38d0b93d90bc33d27ce31dfe0539ad3f26c70098f3aecfdcc70d52fdaeb5f7",
+      "git_blob_sha1": "fa0cdbf4fc9fa35956c70942361fa7c6e187defd"
+    },
+    {
+      "path": "lean/Wormald/OutlierClusterTail.lean",
+      "bytes": 8610,
+      "sha256": "72e45e0c9ad13f0fedd8ad109473b799cbd36010713fabf578196dc1b63ddf46",
+      "git_blob_sha1": "5f0a81c97b15fb83fa1f2c7984301728a2cab30e"
+    },
+    {
+      "path": "lean/Wormald/PairDistance.lean",
+      "bytes": 8983,
+      "sha256": "ef46c591f2064e1f377e14445b0ee1283966eee6c2c62e39b95bb198caa9c802",
+      "git_blob_sha1": "c30c72f4f4e7c8e433d01c4da96a105d59986da6"
+    },
+    {
+      "path": "lean/Wormald/PartialPermutationLaplacian.lean",
+      "bytes": 10686,
+      "sha256": "4b663676a3ae1c61cf2bf1a2ced498ccd0c4e52b43d1fb70e7b2108345424215",
+      "git_blob_sha1": "43c5856c9e814c6943068fd4ae2926f8d08f3258"
+    },
+    {
+      "path": "lean/Wormald/PartialPermutationShift.lean",
+      "bytes": 1536,
+      "sha256": "f2f2a7c0d4c3ffdb3c83b161ad49f58215ade3d3cc51245d7f54595f3502921d",
+      "git_blob_sha1": "b82588b72a0e0a7cca6ed17a00674d7699b41860"
+    },
+    {
+      "path": "lean/Wormald/PermanentBound.lean",
+      "bytes": 3701,
+      "sha256": "e200e0f77af63a87c269e63c602e743b80df9fc37aa24957af213190312ed178",
+      "git_blob_sha1": "e1b421bbdc29bc441eee64627115b0ba99d69ab5"
+    },
+    {
+      "path": "lean/Wormald/PhysicalGaussianQuotientVolume.lean",
+      "bytes": 4430,
+      "sha256": "02ca7aa1886c5ad7ae0a805bd0f34a235519b20956527c3203096709367de2cc",
+      "git_blob_sha1": "1258232c580acac6fcde31183acf2eea968ca651"
+    },
+    {
+      "path": "lean/Wormald/PolynomialFourierCoefficient.lean",
+      "bytes": 3903,
+      "sha256": "32c30b190020d240d312afef560847e422587e57489f48e20af4a03428c97bdc",
+      "git_blob_sha1": "6b0671b6ac4b6492163fb606af2d119410aa6c16"
+    },
+    {
+      "path": "lean/Wormald/PositiveTransitionSquare.lean",
+      "bytes": 9526,
+      "sha256": "b9af1ba8a8c316c6cc6dd630c98152d7e5c51572855ccf5ffeacd81ddbf0c8c8",
+      "git_blob_sha1": "2df653eabf262d2fdd33cc89b257fe8559d2e112"
+    },
+    {
+      "path": "lean/Wormald/Positivity.lean",
+      "bytes": 6719,
+      "sha256": "0bfe559ca66e599fe611fa2e38750c4c6654072185ebfefbbc38c5caa8a387d2",
+      "git_blob_sha1": "0e352b80bec8d72c8da834e643251c6b774d6ec6"
+    },
+    {
+      "path": "lean/Wormald/PrefixDominated.lean",
+      "bytes": 5112,
+      "sha256": "73985b462878fa814164df21b2ec11c629a26b7a8b34e4826cf75d4395c18739",
+      "git_blob_sha1": "a74d18eb931015a07f8c19d621c4294a4272d6c4"
+    },
+    {
+      "path": "lean/Wormald/PrescribedEdgeStatistics.lean",
+      "bytes": 5143,
+      "sha256": "565674e3bdb4da77188ccd1bbcea2486f7fde3afa5a93e3b57626f3fedda0cc1",
+      "git_blob_sha1": "100071e8515b5cb3576a24d9424496740446007d"
+    },
+    {
+      "path": "lean/Wormald/QuadraticPeakIntegral.lean",
+      "bytes": 4957,
+      "sha256": "6b4f67e106acfb8a243bc8675ac3f8921fe2da402aab2476774a0211b0e96174",
+      "git_blob_sha1": "146057dfde89fe09fa479e122bd03044d2437293"
+    },
+    {
+      "path": "lean/Wormald/QuadraticRemainderBound.lean",
+      "bytes": 2837,
+      "sha256": "6ee71dfb9d4672d0d17dd0d4aa0d0eee1c67ff96f5d7a22b9eec11f6c533cafc",
+      "git_blob_sha1": "d2f26a3aed42ecb71aaf72601f4ae525f06b7e5b"
+    },
+    {
+      "path": "lean/Wormald/QuadraticScaling.lean",
+      "bytes": 4737,
+      "sha256": "da8f652e4d6a18bed87ecbe1fd3dc76320f7111c45b1eda8c96f5a15dbbd3b42",
+      "git_blob_sha1": "1e78cc7d2aef64d305db9d49223e38b6ebe0d3bc"
+    },
+    {
+      "path": "lean/Wormald/QuarticLawOfLargeNumbers.lean",
+      "bytes": 5038,
+      "sha256": "f82535dc1bbdd218dcd6e7e702bfa8cf7481d9ebe5920ab7fa6fe4f4f6a577b8",
+      "git_blob_sha1": "6777b29a0a6ed3c98bf595584bbbe64bb00f2ea2"
+    },
+    {
+      "path": "lean/Wormald/RankOneSpectralDecomposition.lean",
+      "bytes": 3934,
+      "sha256": "554de0e0000286729bd93a20099af6980fad643bfe371c03064e3127b102c1aa",
+      "git_blob_sha1": "94a95b949d44cf89c437fab4f4c1a1d2913afe7b"
+    },
+    {
+      "path": "lean/Wormald/RationalSquare.lean",
+      "bytes": 4088,
+      "sha256": "e8ded69b23efd349513259c9d6268c7d6821ab99955242cff88673f2eb23f81e",
+      "git_blob_sha1": "2d5c67e494fe1326ed9f6452b7df3ca60fdbbce3"
+    },
+    {
+      "path": "lean/Wormald/RegularCandidate.lean",
+      "bytes": 2644,
+      "sha256": "2afa23aa098a0905330e67852c031d26510a1a9655e2a0d957d94b8d2b301655",
+      "git_blob_sha1": "4ac305092376d51f3b303a901eaea77c8013fedf"
+    },
+    {
+      "path": "lean/Wormald/RegularCentralGaussianTransport.lean",
+      "bytes": 7118,
+      "sha256": "c8d79e68cde7bc823d1182e38111f5cc6c64088e799e0c5fc72509760a087083",
+      "git_blob_sha1": "35c15c6f554c4f22b35fd81af30cdceee91f880c"
+    },
+    {
+      "path": "lean/Wormald/RegularCentralMainTerm.lean",
+      "bytes": 6802,
+      "sha256": "b066ffacef7fce210ae198cb9d458f843d57afdb4fe7cac814dc98f902c9b018",
+      "git_blob_sha1": "fa8b4128191ba793bfb56803096a737b1c7e6ee6"
+    },
+    {
+      "path": "lean/Wormald/RegularCentralWindow.lean",
+      "bytes": 1659,
+      "sha256": "199fdea02be53659f43cf2f72d2d849ff65212d1f65bf1bae9117027591da8af",
+      "git_blob_sha1": "fdcf3d0caa75df4d96e3c3c2182e1a3eb642b52c"
+    },
+    {
+      "path": "lean/Wormald/RegularConditioning.lean",
+      "bytes": 9318,
+      "sha256": "ff1a1f5a1e46de44a4200cfdb0b2caec34db12112c09fafad32e6f99954dba96",
+      "git_blob_sha1": "39f52cedd1a4d96ebae3f7fa9b79d9f3f72270cf"
+    },
+    {
+      "path": "lean/Wormald/RegularCycleLimitReduction.lean",
+      "bytes": 10709,
+      "sha256": "80499b0b150a21fdcd57c553c46266d86f27d238c517a97735cc67f0ff0f69e1",
+      "git_blob_sha1": "688e60a0fc9e4956f116f529f05459ac2682e917"
+    },
+    {
+      "path": "lean/Wormald/RegularCycleTransfer.lean",
+      "bytes": 7757,
+      "sha256": "d68f0486d3031dfe94d5e1523a7dc419f6976184f1ea8b7002eeeaaf4ce002d6",
+      "git_blob_sha1": "c899d913f56dd8ed629f021e284b64f6495243f2"
+    },
+    {
+      "path": "lean/Wormald/RegularDegreePolynomial.lean",
+      "bytes": 11062,
+      "sha256": "4fa3d21a396a1336eb01864e4130136e958ca7d64ba686bf7b1f892975370ba1",
+      "git_blob_sha1": "82f4502a0c6ade03eec4e954d58b8ceb1ade12a1"
+    },
+    {
+      "path": "lean/Wormald/RegularForestCosine.lean",
+      "bytes": 7304,
+      "sha256": "d67e77df78a57006709ffbe6e8ea3199bd0eb9a5ae9eba7cc40be394d53b013a",
+      "git_blob_sha1": "beaae167eb98c1d24d32cf1c61987b3027de09aa"
+    },
+    {
+      "path": "lean/Wormald/RegularForestFourier.lean",
+      "bytes": 5763,
+      "sha256": "dfe91425f0b6cb9c46a0964ca619c40fdca1f1adf86898c5d20d0ec6fa3745ae",
+      "git_blob_sha1": "a12327c62107b7e5d5bcd09a5b86d257537ad0f0"
+    },
+    {
+      "path": "lean/Wormald/RegularFourierAnchoring.lean",
+      "bytes": 8560,
+      "sha256": "bec69d6e7609c18ecb4658832955d5360e312c857a001e18d841210a04ac518d",
+      "git_blob_sha1": "18e6d5b7e30dfd544669a318ecc1de0909d4ef71"
+    },
+    {
+      "path": "lean/Wormald/RegularKernelNormalization.lean",
+      "bytes": 9413,
+      "sha256": "e9314d37f641cd0e6d18e7058831df1b6cea1c9640095ba5016e7468fad32368",
+      "git_blob_sha1": "6157942cb80c0a74dfe31397a6fcc93e74a464de"
+    },
+    {
+      "path": "lean/Wormald/RegularLocalExpansion.lean",
+      "bytes": 2698,
+      "sha256": "6bb9f633ea413a5a9f7059387336fe8e664213ee2c64d01c708ea965356f82ea",
+      "git_blob_sha1": "212b663fadfcd79818e2bfe06af65c8445787e74"
+    },
+    {
+      "path": "lean/Wormald/RegularLocalPhase.lean",
+      "bytes": 3799,
+      "sha256": "5558200826a657e449e7ea2e7a9ec8d460e358756ace54e1fd5fc74743bedcca",
+      "git_blob_sha1": "c86e3701be540bdb1ba33bfef7087462ec9fd872"
+    },
+    {
+      "path": "lean/Wormald/RegularNoncentralTail.lean",
+      "bytes": 7305,
+      "sha256": "3b661034498689d8644fab413a32a9b9bb8f8e104d0a760d63cb8bad3369788e",
+      "git_blob_sha1": "b030cae4ff5466e768f887802b1f0bc839ccc83b"
+    },
+    {
+      "path": "lean/Wormald/RegularScaledExpansion.lean",
+      "bytes": 3797,
+      "sha256": "d4b437c306e134e9c9c52f77b3be3be2880ba50424ed3f661ef3286d7adde9fc",
+      "git_blob_sha1": "5d697568a502c14d4653f4a69589cef067c04562"
+    },
+    {
+      "path": "lean/Wormald/RegularSignClassification.lean",
+      "bytes": 6434,
+      "sha256": "7baf6d93d8bb72d36e6ae88633f35005b0f4dc5daf5c0c1049b50bd69d749da6",
+      "git_blob_sha1": "56f41744a3a6fdba9e332517f0223cace0dfd21e"
+    },
+    {
+      "path": "lean/Wormald/ResidualPowerDecay.lean",
+      "bytes": 9651,
+      "sha256": "7680b735d7f857a1065bb5d708c59e81da310dc780bce3d5ce49b3ad926e8761",
+      "git_blob_sha1": "512384fd66e9cdae384e1789d8fe15ff6dbc7b6e"
+    },
+    {
+      "path": "lean/Wormald/ResolventEigenvectors.lean",
+      "bytes": 3468,
+      "sha256": "e0306e2589f86f2f512b9c3f95ae6adc7c32cba2fd3aa7c9b7f05a5060cfa518",
+      "git_blob_sha1": "3ea43547266da3c7f913da2fdbf4302391321f1f"
+    },
+    {
+      "path": "lean/Wormald/RootedCycleOrder.lean",
+      "bytes": 7254,
+      "sha256": "75110b83e4b369389879b7e8a5f4bed74b4a6f0ffdb5ad93a5bdff66ed712704",
+      "git_blob_sha1": "0664379593e4a5078dc011a35460b975973962a5"
+    },
+    {
+      "path": "lean/Wormald/ScaledSpectralLaplace.lean",
+      "bytes": 4126,
+      "sha256": "cf606599c112b4d88e816ec6c99154e55d09888c96e122b20b5de416a5ac9522",
+      "git_blob_sha1": "cd933d78af404b9be5adbefcd18f6c22ad586f0a"
+    },
+    {
+      "path": "lean/Wormald/SecondOrderRemainder.lean",
+      "bytes": 1573,
+      "sha256": "62918b4e4c08480eaf1fe5fe1be23f3a5ae70854a7e77ca802d73200983c6354",
+      "git_blob_sha1": "851c71901e65b862f99f4fe8dee4c2646949f747"
+    },
+    {
+      "path": "lean/Wormald/SignClassification.lean",
+      "bytes": 6256,
+      "sha256": "d8a69b29853dea0d1d7b3ab81ece140a9e7aa7a3f1069c5e8957a45b4167bbf2",
+      "git_blob_sha1": "ea20c0213f52091291c3f2841206684ab12403f5"
+    },
+    {
+      "path": "lean/Wormald/SkewMomentSeries.lean",
+      "bytes": 4384,
+      "sha256": "ccaf9a47cec53f45349317bb5f40a52ae724633ac26df300503999b8e2a2a317",
+      "git_blob_sha1": "c3531f26614f3d44ca55ec97ff1f2024aa7bd7bf"
+    },
+    {
+      "path": "lean/Wormald/SpectralBranchJets.lean",
+      "bytes": 11720,
+      "sha256": "180b911bc1f5aff67fd1df4ecb84d1d4681fb96785dcc7185cfc096d4af120a1",
+      "git_blob_sha1": "84cb198fada626fced20b574d9b41654ed3a55cf"
+    },
+    {
+      "path": "lean/Wormald/SpectralConstant.lean",
+      "bytes": 13005,
+      "sha256": "232b17caab201fad6194562d09275629b846a0594d0e18764e4af107de2330e4",
+      "git_blob_sha1": "57081534e94ab7f5eb76d7641dab33ed3aea6afd"
+    },
+    {
+      "path": "lean/Wormald/SpectralExtremum.lean",
+      "bytes": 3011,
+      "sha256": "805698d128503304e75d5a23109f13deedeee1537bdc6126ce88f6c5d2200f06",
+      "git_blob_sha1": "9d62350dbcf2c3c6d91ece23efd9fcbde0ffa3fc"
+    },
+    {
+      "path": "lean/Wormald/SpectralPhase.lean",
+      "bytes": 4336,
+      "sha256": "c995f13c5493270ad5a3b12e22acea51331d95222168a37039c17c4e94c85897",
+      "git_blob_sha1": "87137491cc6259994cbd95eb7a335ea3a959c9b8"
+    },
+    {
+      "path": "lean/Wormald/SpectralPhaseCovariance.lean",
+      "bytes": 1477,
+      "sha256": "c2872f793cbaf757323c9e777e1a92265780d6abe9aa448d1d94f273bea6856d",
+      "git_blob_sha1": "ae95d01be33779793c1166e89a0b14a9dee24e8c"
+    },
+    {
+      "path": "lean/Wormald/SpectralPhaseTaylor.lean",
+      "bytes": 3100,
+      "sha256": "ece2280cb0afe0f6bfe975e2ea673dcd23f5966f4e3912ebf02930d9a45c2678",
+      "git_blob_sha1": "3e874fcb95041621052e68ed47523a0c0192b789"
+    },
+    {
+      "path": "lean/Wormald/StandardNormalMoments.lean",
+      "bytes": 2361,
+      "sha256": "51e1e1930e6b64ac494507cb6cad62da139c0d7c659e0df9017d65a478bef3b9",
+      "git_blob_sha1": "9721cae661b59d1cbfa0ba46e6a2a02fd5cb7ad1"
+    },
+    {
+      "path": "lean/Wormald/StrictSpectralGap.lean",
+      "bytes": 1413,
+      "sha256": "23c69b8cee9eed206b31779c5b7ef3396b3df4f981c849dae7b492ffa5639091",
+      "git_blob_sha1": "621052915e6bf1596f44bf91fd43ad1a0ac58a2d"
+    },
+    {
+      "path": "lean/Wormald/SwitchingMoments.lean",
+      "bytes": 4812,
+      "sha256": "8bdb15176b5a22703b76acc83274b5ddcb6e97d57b9c525664ee57c67978f5c6",
+      "git_blob_sha1": "7aeb315ed1230aa12e8aa5aa51eb4465e32e4ed1"
+    },
+    {
+      "path": "lean/Wormald/ThreeVertex.lean",
+      "bytes": 2575,
+      "sha256": "71f0b5ca5b52fd4eb4e5b730aab38fad4abe8773c85ea4766aa87a376f3a6ac1",
+      "git_blob_sha1": "c846e8b55a8cc5d113224d1236e1eac8dc01987e"
+    },
+    {
+      "path": "lean/Wormald/TiltedCycleTransfer.lean",
+      "bytes": 7286,
+      "sha256": "f237d9d376a86c54f0983626b4dc43ceca3d4e9f3084be26ee07c1dbf618782e",
+      "git_blob_sha1": "fd17c90b6e99900a957fd145b7b3123d879a224c"
+    },
+    {
+      "path": "lean/Wormald/TournamentPositivity.lean",
+      "bytes": 3362,
+      "sha256": "86dddb944a40bda55137f87c2d99ee30c831b6a9517cbf27389bb16277224b4c",
+      "git_blob_sha1": "0e8f44e7d3401e48c2bf6f776e807f0f12dcdffe"
+    },
+    {
+      "path": "lean/Wormald/TraceWordExpansion.lean",
+      "bytes": 6174,
+      "sha256": "4f5aedfff6de35e910828bbc58fcf163f1c4048dc25c2a1f57cdcc4c3813abf3",
+      "git_blob_sha1": "59f6b99f4693c979ab6ae429dab48be4b027f94f"
+    },
+    {
+      "path": "lean/Wormald/TransitiveMoments.lean",
+      "bytes": 7285,
+      "sha256": "52f18dc898d2f4438d53bddeeaf1a1ebf5b742379db58b9a2c72841755f2cfc2",
+      "git_blob_sha1": "41e5e1e6b11bc78be427d22123f9a494039a8f98"
+    },
+    {
+      "path": "lean/Wormald/TwoColumnDeterminant.lean",
+      "bytes": 2867,
+      "sha256": "54c27f310945e616487f4cc9ad12df34ef83f9398635dc37c2ecebd98ff46ac9",
+      "git_blob_sha1": "0e77818dbd449cf78ed6cf1a4a9c59aed40cc272"
+    },
+    {
+      "path": "lean/Wormald/UniformRegularFourierReduction.lean",
+      "bytes": 10200,
+      "sha256": "57521df0c3cad0e0ef72befa233733df162fcbfbed7b12f678429a1b0bd3a822",
+      "git_blob_sha1": "c90892925a7ab427ba7e148166d0c098ba1d6bd9"
+    },
+    {
+      "path": "lean/Wormald/UniformRegularTorusProof.lean",
+      "bytes": 5575,
+      "sha256": "33a85f05277a5b807025b081fea57899b8cb4c9fc71e0c1f04e04625591bac82",
+      "git_blob_sha1": "8768c1a9d8686d32cae47f98848a0fa23e61f3e7"
+    },
+    {
+      "path": "lean/Wormald/WeightedL2Cancellation.lean",
+      "bytes": 2594,
+      "sha256": "09f87057149d9282ba60a4de7970fca7343f8be366d57a05d4caab4d12b81df9",
+      "git_blob_sha1": "2c895bfd2291c2ad3a12b4b5848dcf2753fc2e9b"
+    },
+    {
+      "path": "lean/Wormald/WeightedL2Domination.lean",
+      "bytes": 2128,
+      "sha256": "7be7944e6138937702de1911ad0ecbece90c10de0a251eb32ab87bdad7349032",
+      "git_blob_sha1": "957998bdc30a740807b84e2c019f43ad33913898"
+    },
+    {
+      "path": "lean/Wormald/WeightedL2SetBound.lean",
+      "bytes": 1508,
+      "sha256": "5626f098b1be524661834d7850798d8836771fd4cedf775d7e889d5e08cf7a15",
+      "git_blob_sha1": "93501cd02c3ec757e828b39b8f302e1e43e3279a"
+    },
+    {
+      "path": "lean/lake-manifest.json",
+      "bytes": 3669,
+      "sha256": "54baf3a81080ce4c9bbd84298dc4761c2486c64927c0cfa8ccda9a552759824e",
+      "git_blob_sha1": "bae343ef269ebadf9b0857d1f2dafbbc8e950a87"
+    },
+    {
+      "path": "lean/lakefile.toml",
+      "bytes": 283,
+      "sha256": "8c764e47f7fb7990deb3fe80c9a5b10ca2dbbca85b6c4b6656a3139b97bc13d1",
+      "git_blob_sha1": "339782f98421bccd587cd13b4ce6162b3c8d1d6f"
+    },
+    {
+      "path": "lean/lean-toolchain",
+      "bytes": 26,
+      "sha256": "8152090414016dd5dc871752f8ce4ecdbd604d9845758e9b9047cb80101280b5",
+      "git_blob_sha1": "105359a4bc8354139e1177bb9834a15af17c79e6"
+    },
+    {
+      "path": "lean/run-lean.ps1",
+      "bytes": 1280,
+      "sha256": "8d0003334f3b58c9f75a3e79de8264361cb0eb4a8f99948baa2d30515cd9f412",
+      "git_blob_sha1": "c1ca266ced29d2cf3c0dcf27214a06b07b36ab9f"
+    },
+    {
+      "path": "output/pdf/wormald-conjectures-complete-proof.zh.pdf",
+      "bytes": 176185,
+      "sha256": "e67c151616bbb464ec2ec465ccf99bd9248f7fc0bd43c7e3b5a2696414d3e54e",
+      "git_blob_sha1": "e58b12f102798180f242ce1aadb01a3bedfa0f38"
+    },
+    {
+      "path": "output/pdf/wormald-conjectures-guide.zh.pdf",
+      "bytes": 345511,
+      "sha256": "ade8e9188db95661413893353968527670eeb3eec1fba849ca652011b7beec46",
+      "git_blob_sha1": "c39c824c42be9a39b9f5b5347617ce0b3e179c7a"
+    },
+    {
+      "path": "output/pdf/wormald-conjectures-proof.en.pdf",
+      "bytes": 274272,
+      "sha256": "b5c9d20695c53c130952fb574cd45ac92757c9e8083ce65fbb42b56876a629b3",
+      "git_blob_sha1": "f29952f56710e9241d5b0539e9f83cf46028eca0"
+    },
+    {
+      "path": "output/pdf/wormald-conjectures-proof.zh.pdf",
+      "bytes": 369652,
+      "sha256": "524983604201fd1d6f5496e985362e708b4bdfede4976502efd9326a1b6a026e",
+      "git_blob_sha1": "cef9c652644aa23470c6e57da649bb2c3d391f20"
     },
     {
       "path": "tools/build_pdf.py",
-      "bytes": 6325,
-      "sha256": "0bbfb9e3da4de6a48a1e378316a3b39ac68180585a55a56f90a0d33afb41d3de",
-      "git_blob_sha1": "43559fcc454366f0f02f9cfc67255e1bc299a274"
+      "bytes": 7447,
+      "sha256": "e7850794fdf3a446e996cde6bb9b8b070b6b79632665ddb924d64111d1ad8b24",
+      "git_blob_sha1": "53ea3143dd15c3e79358813dea230cd3af7d9c9f"
+    },
+    {
+      "path": "tools/check_conjecture_one.py",
+      "bytes": 4004,
+      "sha256": "2afb54b963bee787e78f49aefb513f91af8c8814664f339dbf217e511eca4df6",
+      "git_blob_sha1": "8dca219e9aab6d8ef99badab5effa5923119336d"
+    },
+    {
+      "path": "tools/check_conjecture_six.py",
+      "bytes": 3643,
+      "sha256": "902de800b79b86a1b8a9b1585201dd5c56c18f51d9f722c9b1c64a8cff8e5ced",
+      "git_blob_sha1": "5faedc6631b00ee5651f48e79621f68ba218adcf"
+    },
+    {
+      "path": "tools/check_conjecture_two.py",
+      "bytes": 4742,
+      "sha256": "9c2826a52a557ff0c7830ef1758d7a2be8cd655c38760da4fbaa00bd26b2183e",
+      "git_blob_sha1": "d85a434f7e0f0a3fdd4f6603e22ddc3b184b41b3"
+    },
+    {
+      "path": "tools/check_layout.py",
+      "bytes": 2553,
+      "sha256": "905175716ce11ac7685445af7b58fe943ce2b7a6a929dde2d901528f41cd3376",
+      "git_blob_sha1": "d5ab79807a38278587744c2ccb73266a9997ce5a"
+    },
+    {
+      "path": "tools/check_lean.py",
+      "bytes": 8919,
+      "sha256": "cd098bad0c63c0f1115c4826ba46948650a1d470a97483dabb3b0db27beb9303",
+      "git_blob_sha1": "5d468ba211bd7221e5c0efacccbb5627e04fe21d"
     },
     {
       "path": "tools/check_package.py",
@@ -82,15 +1570,27 @@
     },
     {
       "path": "tools/check_translation.py",
-      "bytes": 2048,
-      "sha256": "c55a21abdafb2aaf4f03b3dfa5059c02d8be03d6f7bf23effc923674e08ca4ee",
-      "git_blob_sha1": "1d4a8fdcd01b2431024194224464cfbf6f3e2adf"
+      "bytes": 3143,
+      "sha256": "64345fb910c0ef57d47e701ec65b3aba814b48c4572352898bfdfc50cc51f7af",
+      "git_blob_sha1": "2a9df3a7411e5330733af68180f9a98ff7e31f98"
+    },
+    {
+      "path": "tools/check_upstream.py",
+      "bytes": 2435,
+      "sha256": "526e2de16dc3d9d13c18ee0fb6014472285ce7def22110d01e29416f644f68e1",
+      "git_blob_sha1": "c9cc10e59544b25efcbcc2ef79d08319a0049f49"
+    },
+    {
+      "path": "tools/structure.lua",
+      "bytes": 1672,
+      "sha256": "2d2506fdd71df9307c3ae98c8b6e76557201a4b766c7b7985f5771fcc2d44d19",
+      "git_blob_sha1": "6568c44828fe6ba640bf7d0ca47aaa4e03180011"
     },
     {
       "path": "tools/template.tex",
-      "bytes": 1744,
-      "sha256": "3460a17cfda46f20b6ee0aa019513710b0675c157595851711972a2e8636ea86",
-      "git_blob_sha1": "fffc14f7113eb5ff585cbb92a30ecec1aa9762ea"
+      "bytes": 4376,
+      "sha256": "c003dfb91fb9d979f703d8f53c049e39caf8b43d52358a64ce166a20691c53d7",
+      "git_blob_sha1": "4fa9d53147a2ebdb036fc838f8f3c1a80e4cbf2d"
     },
     {
       "path": "verification/audit_expansion_and_rounding.py",
@@ -105,10 +1605,118 @@
       "git_blob_sha1": "1f8bffda4b5fe1d509966f8ae0201046b39f7a09"
     },
     {
+      "path": "verification/conjecture-one-verification.json",
+      "bytes": 14872,
+      "sha256": "8dbced670a12baa9e5a3ea7dfa8d7a31d9c7d9b2db04fe8b775fdef0844c38cd",
+      "git_blob_sha1": "0d9d1fa27ea36065cf9d8182aa069f8b7afe36e4"
+    },
+    {
+      "path": "verification/conjecture-six-verification.json",
+      "bytes": 4155,
+      "sha256": "69452e4c59e9cd1df5717cd592218ca3d830740eecbba1a83f8662a803fd8ede",
+      "git_blob_sha1": "810ea4c9a168e98e98667262b2d6a8132e24c24b"
+    },
+    {
+      "path": "verification/conjecture-two-verification.json",
+      "bytes": 21616,
+      "sha256": "e262ddae2f5196272b00598f3a298085fdefdd8f3a98eb6bdb6ed4d5d87bb5dc",
+      "git_blob_sha1": "8759ab1353636727ce39551bbba732137b0a6310"
+    },
+    {
       "path": "verification/exact_utils.py",
       "bytes": 2555,
       "sha256": "aa5fa110753c094a816bb975a0e62225c4e0df7b8c4db0a943b21cbefb004153",
       "git_blob_sha1": "87e6c1194703e9f7469916c1fac81741defe410d"
+    },
+    {
+      "path": "verification/lean-logs/axioms.txt",
+      "bytes": 167505,
+      "sha256": "a58364ece6369a824d355c6cf6676aa1dec996d7b1c03f056ecc4877c30bb237",
+      "git_blob_sha1": "5b281103daf6e13d4ffc1d35afc03044a415aa03"
+    },
+    {
+      "path": "verification/lean-logs/build.txt",
+      "bytes": 3531,
+      "sha256": "b9cae12f48589d634e18b4bd9917cfa0bd8fe15a80e0b4001ed83f9aca3b6225",
+      "git_blob_sha1": "3e73516d0626915bb992d57271f6f566e7692dab"
+    },
+    {
+      "path": "verification/lean-logs/conjecture-one-axioms.txt",
+      "bytes": 84697,
+      "sha256": "8653efb13b5ca58332ba067f8da5cc7d51a10aafaa0e2343cbaf15dcd03d3ad3",
+      "git_blob_sha1": "4ec040387d1c8b08b1ffc339bc0512e9188e684b"
+    },
+    {
+      "path": "verification/lean-logs/conjecture-one-build.txt",
+      "bytes": 565,
+      "sha256": "f3ff55a489559cee60611a13f396ae504f7ca49db56a7ace95fd1e8fd0b02181",
+      "git_blob_sha1": "26d31338135facd529b013e5bb8f83a5425c9833"
+    },
+    {
+      "path": "verification/lean-logs/conjecture-one-version.txt",
+      "bytes": 105,
+      "sha256": "61f23c143285b0fda0f73bf4bcb4a3f595bdeed52b5565fbed4663d3551fc29a",
+      "git_blob_sha1": "fe80420dc94bb16b778e7563743d3bc10080ee77"
+    },
+    {
+      "path": "verification/lean-logs/conjecture-six-axioms.txt",
+      "bytes": 18648,
+      "sha256": "13739bce131e37b3ac048b6f358725d64b7ded1d03a8ca4fa96b0686f0284d1f",
+      "git_blob_sha1": "20cd989eaa268a485c358e09fd83c0f4c261be91"
+    },
+    {
+      "path": "verification/lean-logs/conjecture-six-build.txt",
+      "bytes": 746,
+      "sha256": "32c4a337c3e78b548221418b1151064e465d46dbd60ffb6ed59e6370b14e12d3",
+      "git_blob_sha1": "98014b0ec699ad6870415756293aa0b94c357947"
+    },
+    {
+      "path": "verification/lean-logs/conjecture-six-version.txt",
+      "bytes": 105,
+      "sha256": "61f23c143285b0fda0f73bf4bcb4a3f595bdeed52b5565fbed4663d3551fc29a",
+      "git_blob_sha1": "fe80420dc94bb16b778e7563743d3bc10080ee77"
+    },
+    {
+      "path": "verification/lean-logs/conjecture-two-axioms.txt",
+      "bytes": 146501,
+      "sha256": "150e861a93f266bbded100254ef3a954e899ce9b3a9e2c4b1afa4503e3d028e2",
+      "git_blob_sha1": "ad5ff4ff86f4471c6e3b5a8a5267db3cdcc2fe51"
+    },
+    {
+      "path": "verification/lean-logs/conjecture-two-build.txt",
+      "bytes": 897,
+      "sha256": "0161b0b6a1586452c24ab152c7796ae00389f3913a030a788ffc6bd22415dc29",
+      "git_blob_sha1": "f44e1bbafeff1088793aa84030b378729d6474ee"
+    },
+    {
+      "path": "verification/lean-logs/conjecture-two-version.txt",
+      "bytes": 105,
+      "sha256": "61f23c143285b0fda0f73bf4bcb4a3f595bdeed52b5565fbed4663d3551fc29a",
+      "git_blob_sha1": "fe80420dc94bb16b778e7563743d3bc10080ee77"
+    },
+    {
+      "path": "verification/lean-logs/version.txt",
+      "bytes": 105,
+      "sha256": "61f23c143285b0fda0f73bf4bcb4a3f595bdeed52b5565fbed4663d3551fc29a",
+      "git_blob_sha1": "fe80420dc94bb16b778e7563743d3bc10080ee77"
+    },
+    {
+      "path": "verification/lean-verification.json",
+      "bytes": 25735,
+      "sha256": "0d037f31c0d48620d6180eb21e215a9a98b7c58fec681f59e324d0492ca46067",
+      "git_blob_sha1": "4ece86c0ea756654b582310d4cb8e9e238309498"
+    },
+    {
+      "path": "verification/publication-20261024.json",
+      "bytes": 3383,
+      "sha256": "1d33ac032c53311a6b22c3db7438d1a8e2d4b4983174d4f929f36d5853d3388e",
+      "git_blob_sha1": "26ec50a185661aa65bd1c463ebd9f1260015e87f"
+    },
+    {
+      "path": "verification/qa/archive/style_review.v0.2.6.json",
+      "bytes": 5254,
+      "sha256": "c9ceae2a405feae24e42137ac029e5d3085f73fe1643b2aaa5d1b14cb9094c92",
+      "git_blob_sha1": "7043c9feb40e0b40d4b6509dd24dc62d621feea0"
     },
     {
       "path": "verification/qa/definitions_calculation_review.json",
@@ -123,10 +1731,16 @@
       "git_blob_sha1": "d412de4603dc716009a5028561d146ed2c895ba7"
     },
     {
+      "path": "verification/qa/layout_relocation.json",
+      "bytes": 58055,
+      "sha256": "70b3f1e12679ffb1f7b3150f5ad8303ce4d5c6ae3308d27dca7904c5848b3296",
+      "git_blob_sha1": "67400159bc1af38ead563bcdb766b6a3bf52cbc8"
+    },
+    {
       "path": "verification/qa/pdf_review.json",
-      "bytes": 4391,
-      "sha256": "bd2f62d891c052f5ab425903f5e3d22d52ce59b062adcce6c45a862688c90bab",
-      "git_blob_sha1": "8d4a292f9aa5807431d4ab0441337b4044008a69"
+      "bytes": 3274,
+      "sha256": "3af83b85c0ea06f65114681288342d92fbbebac6aaa0f59308d8d26e6fdd0829",
+      "git_blob_sha1": "2099729f71f4ea1bc61258059dde640344ab59a6"
     },
     {
       "path": "verification/qa/prose_review.json",
@@ -142,15 +1756,15 @@
     },
     {
       "path": "verification/qa/style_review.json",
-      "bytes": 5254,
-      "sha256": "c9ceae2a405feae24e42137ac029e5d3085f73fe1643b2aaa5d1b14cb9094c92",
-      "git_blob_sha1": "7043c9feb40e0b40d4b6509dd24dc62d621feea0"
+      "bytes": 1040,
+      "sha256": "889b5787af07e9006d0cd7615f2851c35a7b9553a327d54fe5ef4bb8ec608373",
+      "git_blob_sha1": "1fadfd63d5f3c0f954eaab8140c049132125a194"
     },
     {
       "path": "verification/qa/translation_alignment.json",
-      "bytes": 758,
-      "sha256": "1b5bab974b89a302ee557fee8e9a3454dfeb113366dc070fafd6e9a6a8438396",
-      "git_blob_sha1": "76512ed6750e898fe8b36ec6d863a741c286ae3f"
+      "bytes": 930,
+      "sha256": "a5163a177baa8f3a0f4ae7df6745ac2dc6f85c732ca9032e40d5704a2861e78f",
+      "git_blob_sha1": "d3e1c975d3c88c4d95496dababb76bc908389af9"
     },
     {
       "path": "verification/qa/wormald_fixed_base_extremum_checks.json",
@@ -165,6 +1779,12 @@
       "git_blob_sha1": "54396fb1ad164b219eadbcf0669e94e15c4ead04"
     },
     {
+      "path": "verification/upstream-rerun.json",
+      "bytes": 5784,
+      "sha256": "f85f5dc854eba62e68e181e84ad37f8424d73730c38b1ba7b6ec7a92c9884ded",
+      "git_blob_sha1": "fbb53821a18bd233b00bfb22c4d9e7a863dbead1"
+    },
+    {
       "path": "verification/verify_wormald_fixed_base_extremum.py",
       "bytes": 7300,
       "sha256": "b627bcaa6df1a3c37ca05597e567e3472dbd006dfeee3e91c10740d88ffef379",
@@ -176,5 +1796,8 @@
       "sha256": "a7548292422a018a604ceb4b4d3699cd14b5295f967e6dd38b5e21178bdb626a",
       "git_blob_sha1": "42275a1a6ff436bfab46b2b1678e1ae845137a1a"
     }
-  ]
+  ],
+  "original_manuscript_version": "0.2.6",
+  "layout_baseline_commit": "29de4fbb8586d8d7c116b7ed1733510ee0e324a1",
+  "file_inventory_scope": "All tracked project files and the layout additions, excluding this manifest itself; dependency caches are excluded."
 }

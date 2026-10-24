@@ -1,0 +1,864 @@
+{
+  "source_commit": "29de4fbb8586d8d7c116b7ed1733510ee0e324a1",
+  "layout_date": "2026-10-24",
+  "documents": {
+    "paper.zh.md": {
+      "removed_front_heading": "# 术语与记号约定",
+      "derivation_body_unchanged": true,
+      "all_original_math_expressions_preserved": 963,
+      "added_notation_explanations": [],
+      "notation_placements": [
+        {
+          "section": "# 原猜想、记号和本稿结论的对应",
+          "before": "- 猜想1：",
+          "text": "::: {.definition title=\"竞赛图、计数与圆环基图\"}\n\n竞赛图是在每一对不同顶点之间恰选一个方向的完全图定向。邻接矩阵的第$i,j$元为1当且仅当$i\\to j$，对角为0。正则竞赛图的每个顶点出度、入度均为$(d-1)/2$。\n\n哈密顿路按顶点的有向排列计数；哈密顿圈按循环起点识别，即旋转起点不产生新圈，也不把反向排列另作同一个有向圈。普通同构指保持边方向的顶点双射；本文的唯一性始终在这种同构意义下理解。\n\n奇阶圆环图记为$\\mathrm{Car}_d$，其定义为\n\n$$\nV(\\mathrm{Car}_d)=\\mathbb Z/d\\mathbb Z,\\qquad\ni\\to j\\ \\Longleftrightarrow\\\n(j-i)\\bmod d\\in\\{1,\\ldots,(d-1)/2\\}.\n$$\n\n:::"
+        },
+        {
+          "section": "## 1. 对象、主公式与范围",
+          "before": null,
+          "text": "记$I_r$为$r$阶单位矩阵，$J_r$为$r$阶全一矩阵，$\\mathbf1_r$为全一列向量。省略矩阵下标时，阶数由乘法维数确定。转置记为上标$T$。"
+        },
+        {
+          "section": "## 1. 对象、主公式与范围",
+          "before": "::: {.theorem",
+          "text": "$e_j$为第$j$个标准基列向量。"
+        },
+        {
+          "section": "## 4. 一阶、二阶导数及九个乘积项",
+          "before": null,
+          "text": "$\\delta_{jk}$在$j=k$时为1、否则为0。"
+        },
+        {
+          "section": "## 1. 对象、主公式与范围",
+          "before": "Wormald",
+          "text": "虚数单位满足$i^2=-1$；$\\log$在正实数上为自然对数，在复邻域使用文中说明的解析分支。"
+        },
+        {
+          "section": "## 2. 谱隙、常数方向与限制行列式",
+          "before": "$$\n\\|S\\|_F",
+          "text": "记实向量$v=(v_1,\\ldots,v_r)^T$的欧氏范数为$\\|v\\|_2=(\\sum_{j=1}^r v_j^2)^{1/2}$。\n\n对实矩阵$M$，两种范数分别为\n\n$$\n\\|M\\|_F^2=\\sum_{j,k}M_{jk}^2,\\qquad\n\\|M\\|_{\\rm op}=\\sup_{v\\ne0}\\frac{\\|Mv\\|_2}{\\|v\\|_2}.\n$$"
+        },
+        {
+          "section": "## 7. 正定性、基变换因子与有理平方",
+          "before": "最后证明有理性",
+          "text": "记$[d]=\\{1,\\ldots,d\\}$。$M[U]$是行列都取自$U$的主子矩阵，约定$\\det M[\\varnothing]=1$。"
+        },
+        {
+          "section": "## 2. 谱隙、常数方向与限制行列式",
+          "before": "在$u^\\perp$",
+          "text": "$u^\\perp$是与实向量$u$正交的子空间，$\\det_{u^\\perp}$表示限制到该不变子空间后、在正交单位基中计算的行列式。"
+        },
+        {
+          "section": "## 1. 对象、主公式与范围",
+          "before": "::: {.theorem",
+          "text": "图上的$C(G),H(G)$分别是圈数、路径数；单独出现的$C=S/d$是矩阵，粗体$\\mathbf H$是Hessian矩阵，花体$\\mathcal H$是它的行列式。不同节中的局部符号按该节重新给出的定义解释。"
+        },
+        {
+          "section": "## 4. 比较矩阵与传递矩阵的每个矩相同",
+          "before": null,
+          "text": "记$\\operatorname{tr}M=\\sum_jM_{jj}$。"
+        },
+        {
+          "section": "## 1. 对象、主公式与范围",
+          "before": "设\n",
+          "text": "$\\operatorname{diag}(a_1,\\ldots,a_r)$的对角元为所列标量、非对角元为0。"
+        },
+        {
+          "section": "## 7. 正定性、基变换因子与有理平方",
+          "before": null,
+          "text": "$M\\succ0$表示$M$实对称且对每个非零实向量$v$都有$v^TMv>0$。"
+        },
+        {
+          "section": "## 2. 谱隙、常数方向与限制行列式",
+          "before": "$$\n\\|S\\|_F",
+          "text": "矩阵元素也可用小写字母表示，例如$s_{ij}=S_{ij}$。"
+        },
+        {
+          "section": "## 4. 一阶、二阶导数及九个乘积项",
+          "before": null,
+          "text": "$\\nabla^2F$表示由$F_{jk}$组成的矩阵。"
+        },
+        {
+          "section": "## 10. 闭式的实函数形式与严格单调性",
+          "before": null,
+          "text": "一元函数的撇号表示对其自变量求导。"
+        },
+        {
+          "section": "## 4. 一阶、二阶导数及九个乘积项",
+          "before": null,
+          "text": "对标量函数$F(t_1,\\ldots,t_d)$，下标$F_j,F_{jk}$分别表示$\\partial F/\\partial t_j$和$\\partial^2F/(\\partial t_j\\partial t_k)$；对矩阵或行、列向量逐元求导。若原变量是$y$，则写$K_{y_j}$以区分。"
+        },
+        {
+          "section": "## 5. 用明确的有理函数消去最后一个变量",
+          "before": null,
+          "text": "$y'=(y_1,\\ldots,y_{d-1})$、$t'=(t_1,\\ldots,t_{d-1})$；这里的撇号删去最后坐标，不是求导。"
+        },
+        {
+          "section": "## 8. 外部计数定理的输入与四个极限",
+          "before": null,
+          "text": "第$j$类顶点指第$j$个基图顶点所对应的$m$个吹胀顶点。"
+        },
+        {
+          "section": "## 7. 正定性、基变换因子与有理平方",
+          "before": "$$\n\\det(I+tC)",
+          "text": "记$\\lfloor a\\rfloor$为不超过$a$的最大整数。"
+        },
+        {
+          "section": "## 8. 加权行的补齐、整数化及Brégman界",
+          "before": null,
+          "text": "$\\lceil a\\rceil$为不小于$a$的最小整数。"
+        },
+        {
+          "section": "## 3. 乘积比较、积分与全部等号条件",
+          "before": "$$\n\\#",
+          "text": "$\\#U=|U|$为有限集合的元素数，$\\mathbf1_{\\mathcal E}$为条件$\\mathcal E$成立时等于1、否则等于0的标量指示函数。它不同于不带条件下标的全一向量$\\mathbf1$。"
+        },
+        {
+          "section": "## 8. 外部计数定理的输入与四个极限",
+          "before": null,
+          "text": "约定$0!=1$，$n!=1\\cdot2\\cdots n$。"
+        },
+        {
+          "section": "## 6. 六次矩给出的明确严格间隙",
+          "before": null,
+          "text": "$\\binom nk=n!/(k!(n-k)!)$，$k>n$时为0。"
+        },
+        {
+          "section": "## 11. Taylor系数及余项的逐项恢复",
+          "before": null,
+          "text": "渐近式$R(x)=O(x^k)$在本稿展开中表示：存在常数$M,\\eta>0$，当$0<|x|<\\eta$时$|R(x)|\\le M|x|^k$。$O(d^{-k})$以$d\\to\\infty$解释；其他参数固定。若出现$O_d$，隐含常数允许依赖固定的$d$。"
+        },
+        {
+          "section": "## 3. 对数变量、分块矩阵与Schur消元",
+          "before": "$$\nD(t)^{-1}",
+          "text": "对方阵$D$，$\\operatorname{adj}D$是余子式矩阵的转置：$(\\operatorname{adj}D)_{ij}=(-1)^{i+j}\\det D^{(j|i)}$，其中$D^{(j|i)}$删去第$j$行、第$i$列。按行列式展开，$D\\operatorname{adj}D=(\\det D)I$，所以$\\det D\\ne0$时可除以它得到文中的逆矩阵公式。"
+        }
+      ],
+      "editorial_changes": [],
+      "insertion_audit": [
+        {
+          "offset": 625,
+          "content": "::: {.definition title=\"竞赛图、计数与圆环基图\"}\n\n竞赛图是在每一对不同顶点之间恰选一个方向的完全图定向。邻接矩阵的第$i,j$元为1当且仅当$i\\to j$，对角为0。正则竞赛图的每个顶点出度、入度均为$(d-1)/2$。\n\n哈密顿路按顶点的有向排列计数；哈密顿圈按循环起点识别，即旋转起点不产生新圈，也不把反向排列另作同一个有向圈。普通同构指保持边方向的顶点双射；本文的唯一性始终在这种同构意义下理解。\n\n奇阶圆环图记为$\\mathrm{Car}_d$，其定义为\n\n$$\nV(\\mathrm{Car}_d)=\\mathbb Z/d\\mathbb Z,\\qquad\ni\\to j\\ \\Longleftrightarrow\\\n(j-i)\\bmod d\\in\\{1,\\ldots,(d-1)/2\\}.\n$$\n\n:::\n\n"
+        },
+        {
+          "offset": 1706,
+          "content": "记$I_r$为$r$阶单位矩阵，$J_r$为$r$阶全一矩阵，$\\mathbf1_r$为全一列向量。省略矩阵下标时，阶数由乘法维数确定。转置记为上标$T$。\n\n"
+        },
+        {
+          "offset": 2181,
+          "content": "$e_j$为第$j$个标准基列向量。\n\n"
+        },
+        {
+          "offset": 5362,
+          "content": "$\\delta_{jk}$在$j=k$时为1、否则为0。\n\n"
+        },
+        {
+          "offset": 2033,
+          "content": "虚数单位满足$i^2=-1$；$\\log$在正实数上为自然对数，在复邻域使用文中说明的解析分支。\n\n"
+        },
+        {
+          "offset": 2936,
+          "content": "记实向量$v=(v_1,\\ldots,v_r)^T$的欧氏范数为$\\|v\\|_2=(\\sum_{j=1}^r v_j^2)^{1/2}$。\n\n对实矩阵$M$，两种范数分别为\n\n$$\n\\|M\\|_F^2=\\sum_{j,k}M_{jk}^2,\\qquad\n\\|M\\|_{\\rm op}=\\sup_{v\\ne0}\\frac{\\|Mv\\|_2}{\\|v\\|_2}.\n$$\n\n"
+        },
+        {
+          "offset": 10642,
+          "content": "记$[d]=\\{1,\\ldots,d\\}$。$M[U]$是行列都取自$U$的主子矩阵，约定$\\det M[\\varnothing]=1$。\n\n"
+        },
+        {
+          "offset": 3845,
+          "content": "$u^\\perp$是与实向量$u$正交的子空间，$\\det_{u^\\perp}$表示限制到该不变子空间后、在正交单位基中计算的行列式。\n\n"
+        },
+        {
+          "offset": 2251,
+          "content": "图上的$C(G),H(G)$分别是圈数、路径数；单独出现的$C=S/d$是矩阵，粗体$\\mathbf H$是Hessian矩阵，花体$\\mathcal H$是它的行列式。不同节中的局部符号按该节重新给出的定义解释。\n\n"
+        },
+        {
+          "offset": 21397,
+          "content": "记$\\operatorname{tr}M=\\sum_jM_{jj}$。\n\n"
+        },
+        {
+          "offset": 1932,
+          "content": "$\\operatorname{diag}(a_1,\\ldots,a_r)$的对角元为所列标量、非对角元为0。\n\n"
+        },
+        {
+          "offset": 9564,
+          "content": "$M\\succ0$表示$M$实对称且对每个非零实向量$v$都有$v^TMv>0$。\n\n"
+        },
+        {
+          "offset": 3285,
+          "content": "矩阵元素也可用小写字母表示，例如$s_{ij}=S_{ij}$。\n\n"
+        },
+        {
+          "offset": 5864,
+          "content": "$\\nabla^2F$表示由$F_{jk}$组成的矩阵。\n\n"
+        },
+        {
+          "offset": 13538,
+          "content": "一元函数的撇号表示对其自变量求导。\n\n"
+        },
+        {
+          "offset": 5864,
+          "content": "对标量函数$F(t_1,\\ldots,t_d)$，下标$F_j,F_{jk}$分别表示$\\partial F/\\partial t_j$和$\\partial^2F/(\\partial t_j\\partial t_k)$；对矩阵或行、列向量逐元求导。若原变量是$y$，则写$K_{y_j}$以区分。\n\n"
+        },
+        {
+          "offset": 8161,
+          "content": "$y'=(y_1,\\ldots,y_{d-1})$、$t'=(t_1,\\ldots,t_{d-1})$；这里的撇号删去最后坐标，不是求导。\n\n"
+        },
+        {
+          "offset": 11652,
+          "content": "第$j$类顶点指第$j$个基图顶点所对应的$m$个吹胀顶点。\n\n"
+        },
+        {
+          "offset": 11304,
+          "content": "记$\\lfloor a\\rfloor$为不超过$a$的最大整数。\n\n"
+        },
+        {
+          "offset": 28348,
+          "content": "$\\lceil a\\rceil$为不小于$a$的最小整数。\n\n"
+        },
+        {
+          "offset": 21561,
+          "content": "$\\#U=|U|$为有限集合的元素数，$\\mathbf1_{\\mathcal E}$为条件$\\mathcal E$成立时等于1、否则等于0的标量指示函数。它不同于不带条件下标的全一向量$\\mathbf1$。\n\n"
+        },
+        {
+          "offset": 11686,
+          "content": "约定$0!=1$，$n!=1\\cdot2\\cdots n$。\n\n"
+        },
+        {
+          "offset": 26124,
+          "content": "$\\binom nk=n!/(k!(n-k)!)$，$k>n$时为0。\n\n"
+        },
+        {
+          "offset": 16839,
+          "content": "渐近式$R(x)=O(x^k)$在本稿展开中表示：存在常数$M,\\eta>0$，当$0<|x|<\\eta$时$|R(x)|\\le M|x|^k$。$O(d^{-k})$以$d\\to\\infty$解释；其他参数固定。若出现$O_d$，隐含常数允许依赖固定的$d$。\n\n"
+        },
+        {
+          "offset": 5431,
+          "content": "对方阵$D$，$\\operatorname{adj}D$是余子式矩阵的转置：$(\\operatorname{adj}D)_{ij}=(-1)^{i+j}\\det D^{(j|i)}$，其中$D^{(j|i)}$删去第$j$行、第$i$列。按行列式展开，$D\\operatorname{adj}D=(\\det D)I$，所以$\\det D\\ne0$时可除以它得到文中的逆矩阵公式。\n\n"
+        }
+      ],
+      "relocated_body_notation": [],
+      "removed_front_region": {
+        "offset": 1294,
+        "content": "# 术语与记号约定\n\n::: {.definition title=\"竞赛图、计数与圆环基图\"}\n\n竞赛图是在每一对不同顶点之间恰选一个方向的完全图定向。邻接矩阵的第$i,j$元为1当且仅当$i\\to j$，对角为0。正则竞赛图的每个顶点出度、入度均为$(d-1)/2$。\n\n哈密顿路按顶点的有向排列计数；哈密顿圈按循环起点识别，即旋转起点不产生新圈，也不把反向排列另作同一个有向圈。普通同构指保持边方向的顶点双射；本文的唯一性始终在这种同构意义下理解。\n\n奇阶圆环图记为$\\mathrm{Car}_d$，其定义为\n\n$$\nV(\\mathrm{Car}_d)=\\mathbb Z/d\\mathbb Z,\\qquad\ni\\to j\\ \\Longleftrightarrow\\\n(j-i)\\bmod d\\in\\{1,\\ldots,(d-1)/2\\}.\n$$\n\n记$I_r$为$r$阶单位矩阵，$J_r$为$r$阶全一矩阵，$\\mathbf1_r$为全一列向量，$e_j$为第$j$个标准基列向量，$\\delta_{jk}$在$j=k$时为1、否则为0。省略矩阵下标时，阶数由乘法维数确定。转置记为上标$T$，虚数单位满足$i^2=-1$；$\\log$在正实数上为自然对数，在复邻域使用文中说明的解析分支。\n\n对实矩阵$M$，两种范数分别为\n\n:::\n\n$$\n\\|M\\|_F^2=\\sum_{j,k}M_{jk}^2,\\qquad\n\\|M\\|_{\\rm op}=\\sup_{v\\ne0}\\frac{\\|Mv\\|_2}{\\|v\\|_2}.\n$$\n\n记$[d]=\\{1,\\ldots,d\\}$。$M[U]$是行列都取自$U$的主子矩阵，约定$\\det M[\\varnothing]=1$。$u^\\perp$是与实向量$u$正交的子空间，$\\det_{u^\\perp}$表示限制到该不变子空间后、在正交单位基中计算的行列式。\n\n图上的$C(G),H(G)$分别是圈数、路径数；单独出现的$C=S/d$是矩阵，粗体$\\mathbf H$是Hessian矩阵，花体$\\mathcal H$是它的行列式。不同节中的局部符号按该节重新给出的定义解释。\n\n记实向量$v=(v_1,\\ldots,v_r)^T$的欧氏范数为$\\|v\\|_2=(\\sum_{j=1}^r v_j^2)^{1/2}$。\n\n记$\\operatorname{tr}M=\\sum_jM_{jj}$，$\\operatorname{diag}(a_1,\\ldots,a_r)$的对角元为所列标量、非对角元为0。$M\\succ0$表示$M$实对称且对每个非零实向量$v$都有$v^TMv>0$。矩阵元素也可用小写字母表示，例如$s_{ij}=S_{ij}$。\n\n对标量函数$F(t_1,\\ldots,t_d)$，下标$F_j,F_{jk}$分别表示$\\partial F/\\partial t_j$和$\\partial^2F/(\\partial t_j\\partial t_k)$；对矩阵或行、列向量逐元求导。若原变量是$y$，则写$K_{y_j}$以区分。$\\nabla^2F$表示由$F_{jk}$组成的矩阵；一元函数的撇号表示对其自变量求导。$y'=(y_1,\\ldots,y_{d-1})$、$t'=(t_1,\\ldots,t_{d-1})$；这里的撇号删去最后坐标，不是求导。第$j$类顶点指第$j$个基图顶点所对应的$m$个吹胀顶点。\n\n记$\\lfloor a\\rfloor$为不超过$a$的最大整数，$\\lceil a\\rceil$为不小于$a$的最小整数；$\\#U=|U|$为有限集合的元素数，$\\mathbf1_{\\mathcal E}$为条件$\\mathcal E$成立时等于1、否则等于0的标量指示函数。它不同于不带条件下标的全一向量$\\mathbf1$。约定$0!=1$，$n!=1\\cdot2\\cdots n$；$\\binom nk=n!/(k!(n-k)!)$，$k>n$时为0。\n\n渐近式$R(x)=O(x^k)$在本稿展开中表示：存在常数$M,\\eta>0$，当$0<|x|<\\eta$时$|R(x)|\\le M|x|^k$。$O(d^{-k})$以$d\\to\\infty$解释；其他参数固定。若出现$O_d$，隐含常数允许依赖固定的$d$。\n\n对方阵$D$，$\\operatorname{adj}D$是余子式矩阵的转置：$(\\operatorname{adj}D)_{ij}=(-1)^{i+j}\\det D^{(j|i)}$，其中$D^{(j|i)}$删去第$j$行、第$i$列。按行列式展开，$D\\operatorname{adj}D=(\\det D)I$，所以$\\det D\\ne0$时可除以它得到文中的逆矩阵公式。\n\n"
+      },
+      "baseline_normalized_sha256": "9131fbec74a941d0d6e21742ce7efb157b7ef75ba2e82342f238f21649fbdee8",
+      "final_normalized_sha256": "012bcc3a711f9656095ec5df1a1f205493d8d880b50dba1268d73ef16a8df8f8"
+    },
+    "paper.en.md": {
+      "removed_front_heading": "# Terminology and notation",
+      "derivation_body_unchanged": true,
+      "all_original_math_expressions_preserved": 963,
+      "added_notation_explanations": [],
+      "notation_placements": [
+        {
+          "section": "# Correspondence with the original conjectures and notation",
+          "before": "- Conjecture 1:",
+          "text": "::: {.definition title=\"Tournaments, counts and the carousel\"}\n\nA tournament orients every pair of distinct vertices in exactly one direction. Its adjacency entry in position $i,j$ is 1 exactly when $i\\to j$, and the diagonal is zero. In a regular tournament each vertex has outdegree and indegree $(d-1)/2$.\n\nHamiltonian paths are counted as directed vertex orderings. Hamiltonian cycles are identified up to cyclic starting point: rotating the starting point does not produce another cycle, and reversal is not an additional identification of directed orderings. An ordinary isomorphism is a vertex bijection preserving all edge directions. Every uniqueness assertion in this manuscript uses this notion.\n\nFor odd order, the carousel tournament $\\mathrm{Car}_d$ is defined by\n\n$$\nV(\\mathrm{Car}_d)=\\mathbb Z/d\\mathbb Z,\\qquad\ni\\to j\\ \\Longleftrightarrow\\\n(j-i)\\bmod d\\in\\{1,\\ldots,(d-1)/2\\}.\n$$\n\n:::"
+        },
+        {
+          "section": "## 1. Objects, main formulas and scope",
+          "before": null,
+          "text": "Write $I_r$ for the identity matrix of order $r$, $J_r$ for the all-one matrix of order $r$, $\\mathbf1_r$ for the all-one column vector. Matrix subscripts may be omitted when multiplication determines their dimensions. Superscript $T$ denotes transpose, and the imaginary unit satisfies $i^2=-1$."
+        },
+        {
+          "section": "## 1. Objects, main formulas and scope",
+          "before": "::: {.theorem",
+          "text": "Write $e_j$ for the $j$th standard basis column vector."
+        },
+        {
+          "section": "## 4. First and second derivatives: all nine product terms",
+          "before": null,
+          "text": "The symbol $\\delta_{jk}$ is 1 when $j=k$ and 0 otherwise."
+        },
+        {
+          "section": "## 1. Objects, main formulas and scope",
+          "before": "Wormald",
+          "text": "On positive real numbers, $\\log$ is the natural logarithm; in complex neighborhoods we use the analytic branches specified below."
+        },
+        {
+          "section": "## 2. Spectral gap, the constant direction and restricted determinants",
+          "before": "$$\n\\|S\\|_F",
+          "text": "For a real vector $v=(v_1,\\ldots,v_r)^T$, its Euclidean norm is $\\|v\\|_2=(\\sum_{j=1}^r v_j^2)^{1/2}$.\n\nFor a real matrix $M$, the two norms are\n\n$$\n\\|M\\|_F^2=\\sum_{j,k}M_{jk}^2,\\qquad\n\\|M\\|_{\\rm op}=\\sup_{v\\ne0}\\frac{\\|Mv\\|_2}{\\|v\\|_2}.\n$$"
+        },
+        {
+          "section": "## 7. Positive definiteness, the basis-change factor and the rational square",
+          "before": "Finally",
+          "text": "Write $[d]=\\{1,\\ldots,d\\}$. The principal submatrix $M[U]$ uses the rows and columns in $U$, with convention $\\det M[\\varnothing]=1$."
+        },
+        {
+          "section": "## 2. Spectral gap, the constant direction and restricted determinants",
+          "before": "On $u^\\perp$",
+          "text": "The space $u^\\perp$ is orthogonal to the real vector $u$. The notation $\\det_{u^\\perp}$ means the determinant of the restriction to this invariant subspace, computed in an orthonormal basis."
+        },
+        {
+          "section": "## 1. Objects, main formulas and scope",
+          "before": "::: {.theorem",
+          "text": "On a graph, $C(G),H(G)$ count cycles and paths. In contrast, the standalone $C=S/d$ is a matrix, bold $\\mathbf H$ is the Hessian matrix, and $\\mathcal H$ is its determinant. Local symbols in different sections are interpreted according to the definitions given in those sections."
+        },
+        {
+          "section": "## 4. Every moment of the comparison matrix matches the transitive matrix",
+          "before": null,
+          "text": "Write $\\operatorname{tr}M=\\sum_jM_{jj}$."
+        },
+        {
+          "section": "## 1. Objects, main formulas and scope",
+          "before": "Set\n",
+          "text": "The matrix $\\operatorname{diag}(a_1,\\ldots,a_r)$ has the listed scalars on the diagonal and zero elsewhere."
+        },
+        {
+          "section": "## 7. Positive definiteness, the basis-change factor and the rational square",
+          "before": null,
+          "text": "The notation $M\\succ0$ means that $M$ is real symmetric and, for every nonzero real vector $v$, we have $v^TMv>0$."
+        },
+        {
+          "section": "## 2. Spectral gap, the constant direction and restricted determinants",
+          "before": "$$\n\\|S\\|_F",
+          "text": "Lowercase letters may denote entries, for example $s_{ij}=S_{ij}$."
+        },
+        {
+          "section": "## 4. First and second derivatives: all nine product terms",
+          "before": null,
+          "text": "For a scalar function $F(t_1,\\ldots,t_d)$, subscripts $F_j,F_{jk}$ denote $\\partial F/\\partial t_j$ and $\\partial^2F/(\\partial t_j\\partial t_k)$; matrix, row and column derivatives are taken entry by entry. When differentiating in the original variables $y$, we write $K_{y_j}$. The matrix $\\nabla^2F$ consists of the entries $F_{jk}$."
+        },
+        {
+          "section": "## 10. Real-function form and strict monotonicity",
+          "before": null,
+          "text": "A prime on a function of one variable denotes differentiation in its argument."
+        },
+        {
+          "section": "## 5. Eliminating the last variable by an explicit rational function",
+          "before": null,
+          "text": "The notations $y'=(y_1,\\ldots,y_{d-1})$ and $t'=(t_1,\\ldots,t_{d-1})$ delete the last coordinate; those primes do not denote derivatives."
+        },
+        {
+          "section": "## 8. External counting theorems and the four limits",
+          "before": null,
+          "text": "A vertex of type $j$ belongs to the block replacing base vertex $j$, which contains $m$ vertices."
+        },
+        {
+          "section": "## 7. Positive definiteness, the basis-change factor and the rational square",
+          "before": "$$\n\\det(I+tC)",
+          "text": "Write $\\lfloor a\\rfloor$ for the largest integer at most $a$."
+        },
+        {
+          "section": "## 8. Filling weighted rows, making them integral and applying Brégman",
+          "before": null,
+          "text": "Write $\\lceil a\\rceil$ for the smallest integer at least $a$."
+        },
+        {
+          "section": "## 3. Product comparison, integration and all equality conditions",
+          "before": "$$\n\\#",
+          "text": "For a finite set, $\\#U=|U|$ is its cardinality. The scalar indicator $\\mathbf1_{\\mathcal E}$ is 1 when condition $\\mathcal E$ holds and 0 otherwise; it differs from the all-one vector $\\mathbf1$ without a condition subscript."
+        },
+        {
+          "section": "## 8. External counting theorems and the four limits",
+          "before": null,
+          "text": "Set $0!=1$ and $n!=1\\cdot2\\cdots n$."
+        },
+        {
+          "section": "## 6. An explicit strict gap from the sixth moment",
+          "before": null,
+          "text": "$\\binom nk=n!/(k!(n-k)!)$, with value 0 for $k>n$."
+        },
+        {
+          "section": "## 11. Recovering every Taylor coefficient and remainder",
+          "before": null,
+          "text": "In the expansions here, $R(x)=O(x^k)$ means that constants $M,\\eta>0$ exist such that, whenever $0<|x|<\\eta$, we have $|R(x)|\\le M|x|^k$. The notation $O(d^{-k})$ concerns $d\\to\\infty$, with other parameters fixed. A subscript in $O_d$ permits dependence on the fixed parameter $d$."
+        },
+        {
+          "section": "## 3. Logarithmic variables, block matrices and Schur elimination",
+          "before": "$$\nD(t)^{-1}",
+          "text": "For a square matrix $D$, the adjugate $\\operatorname{adj}D$ is the transpose of the cofactor matrix: $(\\operatorname{adj}D)_{ij}=(-1)^{i+j}\\det D^{(j|i)}$, where $D^{(j|i)}$ deletes row $j$ and column $i$. Determinant expansion gives $D\\operatorname{adj}D=(\\det D)I$. When $\\det D\\ne0$, division by this determinant gives the inverse formula used below."
+        }
+      ],
+      "editorial_changes": [
+        {
+          "old": "at $\\theta=0$. Denote its matrix",
+          "new": "Evaluate this Hessian at $\\theta=0$. Denote its matrix",
+          "reason": "Complete the sentence after the theorem heading."
+        }
+      ],
+      "insertion_audit": [
+        {
+          "offset": 1856,
+          "content": "::: {.definition title=\"Tournaments, counts and the carousel\"}\n\nA tournament orients every pair of distinct vertices in exactly one direction. Its adjacency entry in position $i,j$ is 1 exactly when $i\\to j$, and the diagonal is zero. In a regular tournament each vertex has outdegree and indegree $(d-1)/2$.\n\nHamiltonian paths are counted as directed vertex orderings. Hamiltonian cycles are identified up to cyclic starting point: rotating the starting point does not produce another cycle, and reversal is not an additional identification of directed orderings. An ordinary isomorphism is a vertex bijection preserving all edge directions. Every uniqueness assertion in this manuscript uses this notion.\n\nFor odd order, the carousel tournament $\\mathrm{Car}_d$ is defined by\n\n$$\nV(\\mathrm{Car}_d)=\\mathbb Z/d\\mathbb Z,\\qquad\ni\\to j\\ \\Longleftrightarrow\\\n(j-i)\\bmod d\\in\\{1,\\ldots,(d-1)/2\\}.\n$$\n\n:::\n\n"
+        },
+        {
+          "offset": 4881,
+          "content": "Write $I_r$ for the identity matrix of order $r$, $J_r$ for the all-one matrix of order $r$, $\\mathbf1_r$ for the all-one column vector. Matrix subscripts may be omitted when multiplication determines their dimensions. Superscript $T$ denotes transpose, and the imaginary unit satisfies $i^2=-1$.\n\n"
+        },
+        {
+          "offset": 5704,
+          "content": "Write $e_j$ for the $j$th standard basis column vector.\n\n"
+        },
+        {
+          "offset": 10583,
+          "content": "The symbol $\\delta_{jk}$ is 1 when $j=k$ and 0 otherwise.\n\n"
+        },
+        {
+          "offset": 5520,
+          "content": "On positive real numbers, $\\log$ is the natural logarithm; in complex neighborhoods we use the analytic branches specified below.\n\n"
+        },
+        {
+          "offset": 7013,
+          "content": "For a real vector $v=(v_1,\\ldots,v_r)^T$, its Euclidean norm is $\\|v\\|_2=(\\sum_{j=1}^r v_j^2)^{1/2}$.\n\nFor a real matrix $M$, the two norms are\n\n$$\n\\|M\\|_F^2=\\sum_{j,k}M_{jk}^2,\\qquad\n\\|M\\|_{\\rm op}=\\sup_{v\\ne0}\\frac{\\|Mv\\|_2}{\\|v\\|_2}.\n$$\n\n"
+        },
+        {
+          "offset": 18706,
+          "content": "Write $[d]=\\{1,\\ldots,d\\}$. The principal submatrix $M[U]$ uses the rows and columns in $U$, with convention $\\det M[\\varnothing]=1$.\n\n"
+        },
+        {
+          "offset": 8266,
+          "content": "The space $u^\\perp$ is orthogonal to the real vector $u$. The notation $\\det_{u^\\perp}$ means the determinant of the restriction to this invariant subspace, computed in an orthonormal basis.\n\n"
+        },
+        {
+          "offset": 5892,
+          "content": "On a graph, $C(G),H(G)$ count cycles and paths. In contrast, the standalone $C=S/d$ is a matrix, bold $\\mathbf H$ is the Hessian matrix, and $\\mathcal H$ is its determinant. Local symbols in different sections are interpreted according to the definitions given in those sections.\n\n"
+        },
+        {
+          "offset": 35534,
+          "content": "Write $\\operatorname{tr}M=\\sum_jM_{jj}$.\n\n"
+        },
+        {
+          "offset": 5417,
+          "content": "The matrix $\\operatorname{diag}(a_1,\\ldots,a_r)$ has the listed scalars on the diagonal and zero elsewhere.\n\n"
+        },
+        {
+          "offset": 17365,
+          "content": "The notation $M\\succ0$ means that $M$ is real symmetric and, for every nonzero real vector $v$, we have $v^TMv>0$.\n\n"
+        },
+        {
+          "offset": 7644,
+          "content": "Lowercase letters may denote entries, for example $s_{ij}=S_{ij}$.\n\n"
+        },
+        {
+          "offset": 11605,
+          "content": "For a scalar function $F(t_1,\\ldots,t_d)$, subscripts $F_j,F_{jk}$ denote $\\partial F/\\partial t_j$ and $\\partial^2F/(\\partial t_j\\partial t_k)$; matrix, row and column derivatives are taken entry by entry. When differentiating in the original variables $y$, we write $K_{y_j}$. The matrix $\\nabla^2F$ consists of the entries $F_{jk}$.\n\n"
+        },
+        {
+          "offset": 24132,
+          "content": "A prime on a function of one variable denotes differentiation in its argument.\n\n"
+        },
+        {
+          "offset": 15031,
+          "content": "The notations $y'=(y_1,\\ldots,y_{d-1})$ and $t'=(t_1,\\ldots,t_{d-1})$ delete the last coordinate; those primes do not denote derivatives.\n\n"
+        },
+        {
+          "offset": 20758,
+          "content": "A vertex of type $j$ belongs to the block replacing base vertex $j$, which contains $m$ vertices.\n\n"
+        },
+        {
+          "offset": 20205,
+          "content": "Write $\\lfloor a\\rfloor$ for the largest integer at most $a$.\n\n"
+        },
+        {
+          "offset": 47323,
+          "content": "Write $\\lceil a\\rceil$ for the smallest integer at least $a$.\n\n"
+        },
+        {
+          "offset": 36109,
+          "content": "For a finite set, $\\#U=|U|$ is its cardinality. The scalar indicator $\\mathbf1_{\\mathcal E}$ is 1 when condition $\\mathcal E$ holds and 0 otherwise; it differs from the all-one vector $\\mathbf1$ without a condition subscript.\n\n"
+        },
+        {
+          "offset": 20821,
+          "content": "Set $0!=1$ and $n!=1\\cdot2\\cdots n$.\n\n"
+        },
+        {
+          "offset": 43532,
+          "content": "$\\binom nk=n!/(k!(n-k)!)$, with value 0 for $k>n$.\n\n"
+        },
+        {
+          "offset": 28530,
+          "content": "In the expansions here, $R(x)=O(x^k)$ means that constants $M,\\eta>0$ exist such that, whenever $0<|x|<\\eta$, we have $|R(x)|\\le M|x|^k$. The notation $O(d^{-k})$ concerns $d\\to\\infty$, with other parameters fixed. A subscript in $O_d$ permits dependence on the fixed parameter $d$.\n\n"
+        },
+        {
+          "offset": 10911,
+          "content": "For a square matrix $D$, the adjugate $\\operatorname{adj}D$ is the transpose of the cofactor matrix: $(\\operatorname{adj}D)_{ij}=(-1)^{i+j}\\det D^{(j|i)}$, where $D^{(j|i)}$ deletes row $j$ and column $i$. Determinant expansion gives $D\\operatorname{adj}D=(\\det D)I$. When $\\det D\\ne0$, division by this determinant gives the inverse formula used below.\n\n"
+        }
+      ],
+      "relocated_body_notation": [],
+      "removed_front_region": {
+        "offset": 3885,
+        "content": "# Terminology and notation\n\n::: {.definition title=\"Tournaments, counts and the carousel\"}\n\nA tournament orients every pair of distinct vertices in exactly one direction. Its adjacency entry in position $i,j$ is 1 exactly when $i\\to j$, and the diagonal is zero. In a regular tournament each vertex has outdegree and indegree $(d-1)/2$.\n\nHamiltonian paths are counted as directed vertex orderings. Hamiltonian cycles are identified up to cyclic starting point: rotating the starting point does not produce another cycle, and reversal is not an additional identification of directed orderings. An ordinary isomorphism is a vertex bijection preserving all edge directions. Every uniqueness assertion in this manuscript uses this notion.\n\nFor odd order, the carousel tournament $\\mathrm{Car}_d$ is defined by\n\n$$\nV(\\mathrm{Car}_d)=\\mathbb Z/d\\mathbb Z,\\qquad\ni\\to j\\ \\Longleftrightarrow\\\n(j-i)\\bmod d\\in\\{1,\\ldots,(d-1)/2\\}.\n$$\n\nWrite $I_r$ for the identity matrix of order $r$, $J_r$ for the all-one matrix of order $r$, $\\mathbf1_r$ for the all-one column vector, and $e_j$ for the $j$th standard basis column vector. The symbol $\\delta_{jk}$ is 1 when $j=k$ and 0 otherwise. Matrix subscripts may be omitted when multiplication determines their dimensions. Superscript $T$ denotes transpose, and the imaginary unit satisfies $i^2=-1$. On positive real numbers, $\\log$ is the natural logarithm; in complex neighborhoods we use the analytic branches specified below.\n\nFor a real matrix $M$, the two norms are\n\n:::\n\n$$\n\\|M\\|_F^2=\\sum_{j,k}M_{jk}^2,\\qquad\n\\|M\\|_{\\rm op}=\\sup_{v\\ne0}\\frac{\\|Mv\\|_2}{\\|v\\|_2}.\n$$\n\nWrite $[d]=\\{1,\\ldots,d\\}$. The principal submatrix $M[U]$ uses the rows and columns in $U$, with convention $\\det M[\\varnothing]=1$. The space $u^\\perp$ is orthogonal to the real vector $u$. The notation $\\det_{u^\\perp}$ means the determinant of the restriction to this invariant subspace, computed in an orthonormal basis.\n\nOn a graph, $C(G),H(G)$ count cycles and paths. In contrast, the standalone $C=S/d$ is a matrix, bold $\\mathbf H$ is the Hessian matrix, and $\\mathcal H$ is its determinant. Local symbols in different sections are interpreted according to the definitions given in those sections.\n\nFor a real vector $v=(v_1,\\ldots,v_r)^T$, its Euclidean norm is $\\|v\\|_2=(\\sum_{j=1}^r v_j^2)^{1/2}$.\n\nWrite $\\operatorname{tr}M=\\sum_jM_{jj}$. The matrix $\\operatorname{diag}(a_1,\\ldots,a_r)$ has the listed scalars on the diagonal and zero elsewhere. The notation $M\\succ0$ means that $M$ is real symmetric and, for every nonzero real vector $v$, we have $v^TMv>0$. Lowercase letters may denote entries, for example $s_{ij}=S_{ij}$.\n\nFor a scalar function $F(t_1,\\ldots,t_d)$, subscripts $F_j,F_{jk}$ denote $\\partial F/\\partial t_j$ and $\\partial^2F/(\\partial t_j\\partial t_k)$; matrix, row and column derivatives are taken entry by entry. When differentiating in the original variables $y$, we write $K_{y_j}$. The matrix $\\nabla^2F$ consists of the entries $F_{jk}$. A prime on a function of one variable denotes differentiation in its argument. The notations $y'=(y_1,\\ldots,y_{d-1})$ and $t'=(t_1,\\ldots,t_{d-1})$ delete the last coordinate; those primes do not denote derivatives. A vertex of type $j$ belongs to the block replacing base vertex $j$, which contains $m$ vertices.\n\nWrite $\\lfloor a\\rfloor$ for the largest integer at most $a$ and $\\lceil a\\rceil$ for the smallest integer at least $a$. For a finite set, $\\#U=|U|$ is its cardinality. The scalar indicator $\\mathbf1_{\\mathcal E}$ is 1 when condition $\\mathcal E$ holds and 0 otherwise; it differs from the all-one vector $\\mathbf1$ without a condition subscript. Set $0!=1$ and $n!=1\\cdot2\\cdots n$; also $\\binom nk=n!/(k!(n-k)!)$, with value 0 for $k>n$.\n\nIn the expansions here, $R(x)=O(x^k)$ means that constants $M,\\eta>0$ exist such that, whenever $0<|x|<\\eta$, we have $|R(x)|\\le M|x|^k$. The notation $O(d^{-k})$ concerns $d\\to\\infty$, with other parameters fixed. A subscript in $O_d$ permits dependence on the fixed parameter $d$. \n\nFor a square matrix $D$, the adjugate $\\operatorname{adj}D$ is the transpose of the cofactor matrix: $(\\operatorname{adj}D)_{ij}=(-1)^{i+j}\\det D^{(j|i)}$, where $D^{(j|i)}$ deletes row $j$ and column $i$. Determinant expansion gives $D\\operatorname{adj}D=(\\det D)I$. When $\\det D\\ne0$, division by this determinant gives the inverse formula used below.\n\n"
+      },
+      "baseline_normalized_sha256": "7865da5d81b02dd7ff68158b2661c08e9b9424f7893bede1d4b1d6eb10999e0c",
+      "final_normalized_sha256": "b9b8ccd24d9742bee3166944874941a313d56e4471ef78eab25dbad7b84bc926"
+    },
+    "elementary-guide.zh.md": {
+      "removed_front_heading": null,
+      "derivation_body_unchanged": true,
+      "all_original_math_expressions_preserved": 815,
+      "added_notation_explanations": [],
+      "notation_placements": [
+        {
+          "section": "## 1. 必须先分清两个大小",
+          "before": null,
+          "text": "全文以奇数$d\\ge3$为基图阶数，$m$为正整数块阶数。阅读前先约定：竞赛图在任意两个不同顶点之间恰有一条有向边；出度是从该顶点发出的边数，入度是指向它的边数。"
+        },
+        {
+          "section": "## 2. 所研究的常数不是基图本身的路径数",
+          "before": null,
+          "text": "哈密顿路按有向顶点排列计数；哈密顿圈旋转起点仍是同一圈，不把反向排列再识别为同一有向圈。"
+        },
+        {
+          "section": "## 16. 为什么圆环成为固定基图模型的唯一最优者",
+          "before": null,
+          "text": "“普通同构”就是保持所有边方向的顶点重编号。"
+        },
+        {
+          "section": "## 3. 正则基图的矩阵",
+          "before": null,
+          "text": "下文$I_r$是$r$阶单位矩阵，$J_r$是$r$阶全一矩阵，$\\mathbf1_r$是全一列向量；省略下标时看乘法维数。"
+        },
+        {
+          "section": "## 6. 先改成对数变量，计算更容易",
+          "before": null,
+          "text": "$e_j$为只有第$j$个坐标是1的标准基列向量。"
+        },
+        {
+          "section": "## 3. 正则基图的矩阵",
+          "before": null,
+          "text": "上标$T$表示转置。"
+        },
+        {
+          "section": "## 6. 先改成对数变量，计算更容易",
+          "before": null,
+          "text": "虚数单位满足$i^2=-1$。"
+        },
+        {
+          "section": "## 2. 所研究的常数不是基图本身的路径数",
+          "before": null,
+          "text": "$C(G)$表示图的圈数。"
+        },
+        {
+          "section": "## 3. 正则基图的矩阵",
+          "before": "于是",
+          "text": "单独写的$C=S/d$则是矩阵，二者按是否带图参数区分。"
+        },
+        {
+          "section": "## 14. 圆环模型常数的极限与误差",
+          "before": null,
+          "text": "奇阶圆环图$\\mathrm{Car}_d$的顶点是模$d$的余数。其边方向为\n\n$$\ni\\to j\\quad\\Longleftrightarrow\\quad\n(j-i)\\bmod d\\in\\{1,\\ldots,(d-1)/2\\}.\n$$"
+        },
+        {
+          "section": "## 1. 必须先分清两个大小",
+          "before": "块间所有边",
+          "text": "在独立内部块模型$\\mathcal T$中，每一块的每一条边独立公平定向；在正则内部块模型$\\mathcal R$中，每块在全部有标号正则竞赛图中均匀选取，各块之间独立，块内各条边不要求独立，块阶数必须为奇数。"
+        },
+        {
+          "section": "## 2. 所研究的常数不是基图本身的路径数",
+          "before": null,
+          "text": "下文$H(G)$表示图$G$的哈密顿路数；$\\mathbb EX$表示随机量$X$的平均值。"
+        },
+        {
+          "section": "## A.1 期望为什么可以逐条圈相加",
+          "before": null,
+          "text": "$\\mathbb P(\\mathcal E)$表示事件$\\mathcal E$的概率。"
+        },
+        {
+          "section": "## B.5 圈与路径的归一化逐项计算",
+          "before": "固定旧竞赛图",
+          "text": "有限模型中的条件期望$\\mathbb E[X\\mid G]$先固定$G$，只对尚未固定的随机边取平均，再对$G$平均可恢复$\\mathbb EX$。"
+        },
+        {
+          "section": "## 12. 为什么是有理数的平方",
+          "before": "还要解释",
+          "text": "写$[d]=\\{1,\\ldots,d\\}$。"
+        },
+        {
+          "section": "## 5. 为什么会出现一个由行列式决定的函数",
+          "before": "$$\nK(y)=K_0(y')",
+          "text": "$y'=(y_1,\\ldots,y_{d-1})$和$t'=(t_1,\\ldots,t_{d-1})$表示删去最后一个坐标；这里的撇号不是求导。"
+        },
+        {
+          "section": "## 6. 先改成对数变量，计算更容易",
+          "before": null,
+          "text": "函数下标$F_j,F_{jk}$表示对第$j$个变量求一次偏导、对第$j,k$个变量求两次偏导。写出$K_{y_j}$时则明确按$y_j$求导。矩阵的导数逐元计算。"
+        },
+        {
+          "section": "## 5. 为什么会出现一个由行列式决定的函数",
+          "before": null,
+          "text": "$\\operatorname{diag}(a_1,\\ldots,a_r)$是所列元素组成的对角矩阵。"
+        },
+        {
+          "section": "## 7. 把分块消元的矩阵乘法写出来",
+          "before": null,
+          "text": "实向量的长度为$\\|v\\|_2=(\\sum_jv_j^2)^{1/2}$。"
+        },
+        {
+          "section": "## A.2 不靠猜测得到Hessian中的谱隙",
+          "before": "本题$C=S/d$",
+          "text": "$\\|M\\|_F=(\\sum_{j,k}M_{jk}^2)^{1/2}$是矩阵所有元素平方和的平方根。"
+        },
+        {
+          "section": "## B.3 四阶主子式与四次矩等号",
+          "before": "下列展开",
+          "text": "$\\operatorname{tr}M=\\sum_jM_{jj}$是矩阵的迹。"
+        },
+        {
+          "section": "## 7. 把分块消元的矩阵乘法写出来",
+          "before": "$\\Pi v",
+          "text": "$u^\\perp$为满足$u^Tv=0$的向量$v$组成的空间。"
+        },
+        {
+          "section": "## 10. 为什么Hessian一定正定",
+          "before": null,
+          "text": "$M\\succ0$表示$M$实对称且$v^TMv>0$对每个非零实$v$成立。"
+        },
+        {
+          "section": "## A.2 不靠猜测得到Hessian中的谱隙",
+          "before": "本题$C=S/d$",
+          "text": "$s_{ij}$也表示$S$的第$i,j$元。"
+        },
+        {
+          "section": "## B.4 逐行补齐与整数化的全部计算",
+          "before": null,
+          "text": "符号$\\lceil r\\rceil$把实数向上取到最近整数。"
+        },
+        {
+          "section": "## 12. 为什么是有理数的平方",
+          "before": "还要解释",
+          "text": "$\\lfloor r\\rfloor$把它向下取到最近整数。"
+        },
+        {
+          "section": "## B.4 逐行补齐与整数化的全部计算",
+          "before": "$$\nq(w)",
+          "text": "$\\#U=|U|$表示集合元素数。"
+        },
+        {
+          "section": "## 12. 为什么是有理数的平方",
+          "before": "还要解释",
+          "text": "有限求和的空和为0、空乘积为1。"
+        },
+        {
+          "section": "## 2. 所研究的常数不是基图本身的路径数",
+          "before": "随机竞赛图在$N$阶",
+          "text": "$0!=1$；$n!=1\\cdot2\\cdots n$。"
+        },
+        {
+          "section": "## B.3 四阶主子式与四次矩等号",
+          "before": null,
+          "text": "$\\binom nk=n!/(k!(n-k)!)$，$k>n$时为0。"
+        },
+        {
+          "section": "## A.1 期望为什么可以逐条圈相加",
+          "before": "永久式",
+          "text": "置换就是顶点集合到自身的双射，$\\mathfrak S_N$为所有这样的置换。"
+        },
+        {
+          "section": "## A.2 不靠猜测得到Hessian中的谱隙",
+          "before": "本题$C=S/d$",
+          "text": "另有$\\|M\\|_{\\rm op}=\\sup_{v\\ne0}\\|Mv\\|_2/\\|v\\|_2$，表示矩阵把向量长度放大的最大比例。$\\sup$表示上确界，即所有这些比例的最小上界。"
+        },
+        {
+          "section": "## B.4 逐行补齐与整数化的全部计算",
+          "before": "$$\nq(w)",
+          "text": "行记号$W_{\\ell,\\cdot}=(W_{\\ell1},\\ldots,W_{\\ell N})$表示第$\\ell$行。"
+        },
+        {
+          "section": "## 14. 圆环模型常数的极限与误差",
+          "before": "进一步有",
+          "text": "误差记号$R(x)=O(x^k)$的意思是：当$x$足够接近0时，存在一个与$x$无关的常数$M$，使$|R(x)|\\le M|x|^k$。因此若$R_1=O(x^a)$、$R_2=O(x^b)$，则$|R_1R_2|\\le M_1M_2|x|^{a+b}$，即$R_1R_2=O(x^{a+b})$；加法与除以非零$x$也按此不等式计算。$O(d^{-k})$指$d$趋于无穷，$O_d$允许常数依赖固定的$d$。"
+        },
+        {
+          "section": "## A.1 期望为什么可以逐条圈相加",
+          "before": "永久式",
+          "text": "除非模型已作具体指定，$W$表示任意$N$阶非负矩阵，即$W_{ij}\\ge0$。"
+        },
+        {
+          "section": "## 7. 把分块消元的矩阵乘法写出来",
+          "before": "在正交基",
+          "text": "分块式中的$a$为标量、$b$为$1\\times(d-1)$行、$c$为$(d-1)\\times1$列、$D$为$(d-1)$阶矩阵；这些局部块记号随$t$变化。"
+        },
+        {
+          "section": "## 6. 先改成对数变量，计算更容易",
+          "before": null,
+          "text": "对数变量$t_j$允许取原点附近的复数，角变量$\\theta_j$为原点附近的实数。"
+        },
+        {
+          "section": "## 6. 先改成对数变量，计算更容易",
+          "before": "二次导数为",
+          "text": "这里$\\delta_{jk}$在$j=k$时为1，否则为0。"
+        }
+      ],
+      "editorial_changes": [
+        {
+          "old": "阅读前先约定：竞赛图",
+          "new": "这里，竞赛图",
+          "reason": "The definition now belongs to Section 1."
+        }
+      ],
+      "insertion_audit": [
+        {
+          "offset": 145,
+          "content": "全文以奇数$d\\ge3$为基图阶数，$m$为正整数块阶数。阅读前先约定：竞赛图在任意两个不同顶点之间恰有一条有向边；出度是从该顶点发出的边数，入度是指向它的边数。\n\n"
+        },
+        {
+          "offset": 485,
+          "content": "哈密顿路按有向顶点排列计数；哈密顿圈旋转起点仍是同一圈，不把反向排列再识别为同一有向圈。\n\n"
+        },
+        {
+          "offset": 11885,
+          "content": "“普通同构”就是保持所有边方向的顶点重编号。\n\n"
+        },
+        {
+          "offset": 901,
+          "content": "下文$I_r$是$r$阶单位矩阵，$J_r$是$r$阶全一矩阵，$\\mathbf1_r$是全一列向量；省略下标时看乘法维数。\n\n"
+        },
+        {
+          "offset": 2559,
+          "content": "$e_j$为只有第$j$个坐标是1的标准基列向量。\n\n"
+        },
+        {
+          "offset": 901,
+          "content": "上标$T$表示转置。\n\n"
+        },
+        {
+          "offset": 2571,
+          "content": "虚数单位满足$i^2=-1$。\n\n"
+        },
+        {
+          "offset": 485,
+          "content": "$C(G)$表示图的圈数。\n\n"
+        },
+        {
+          "offset": 1158,
+          "content": "单独写的$C=S/d$则是矩阵，二者按是否带图参数区分。\n\n"
+        },
+        {
+          "offset": 10499,
+          "content": "奇阶圆环图$\\mathrm{Car}_d$的顶点是模$d$的余数。其边方向为\n\n$$\ni\\to j\\quad\\Longleftrightarrow\\quad\n(j-i)\\bmod d\\in\\{1,\\ldots,(d-1)/2\\}.\n$$\n\n"
+        },
+        {
+          "offset": 311,
+          "content": "在独立内部块模型$\\mathcal T$中，每一块的每一条边独立公平定向；在正则内部块模型$\\mathcal R$中，每块在全部有标号正则竞赛图中均匀选取，各块之间独立，块内各条边不要求独立，块阶数必须为奇数。\n\n"
+        },
+        {
+          "offset": 592,
+          "content": "下文$H(G)$表示图$G$的哈密顿路数；$\\mathbb EX$表示随机量$X$的平均值。\n\n"
+        },
+        {
+          "offset": 12728,
+          "content": "$\\mathbb P(\\mathcal E)$表示事件$\\mathcal E$的概率。\n\n"
+        },
+        {
+          "offset": 27841,
+          "content": "有限模型中的条件期望$\\mathbb E[X\\mid G]$先固定$G$，只对尚未固定的随机边取平均，再对$G$平均可恢复$\\mathbb EX$。\n\n"
+        },
+        {
+          "offset": 8656,
+          "content": "写$[d]=\\{1,\\ldots,d\\}$。\n\n"
+        },
+        {
+          "offset": 2515,
+          "content": "$y'=(y_1,\\ldots,y_{d-1})$和$t'=(t_1,\\ldots,t_{d-1})$表示删去最后一个坐标；这里的撇号不是求导。\n\n"
+        },
+        {
+          "offset": 2845,
+          "content": "函数下标$F_j,F_{jk}$表示对第$j$个变量求一次偏导、对第$j,k$个变量求两次偏导。写出$K_{y_j}$时则明确按$y_j$求导。矩阵的导数逐元计算。\n\n"
+        },
+        {
+          "offset": 2165,
+          "content": "$\\operatorname{diag}(a_1,\\ldots,a_r)$是所列元素组成的对角矩阵。\n\n"
+        },
+        {
+          "offset": 3270,
+          "content": "实向量的长度为$\\|v\\|_2=(\\sum_jv_j^2)^{1/2}$。\n\n"
+        },
+        {
+          "offset": 15199,
+          "content": "$\\|M\\|_F=(\\sum_{j,k}M_{jk}^2)^{1/2}$是矩阵所有元素平方和的平方根。\n\n"
+        },
+        {
+          "offset": 22487,
+          "content": "$\\operatorname{tr}M=\\sum_jM_{jj}$是矩阵的迹。\n\n"
+        },
+        {
+          "offset": 3443,
+          "content": "$u^\\perp$为满足$u^Tv=0$的向量$v$组成的空间。\n\n"
+        },
+        {
+          "offset": 8041,
+          "content": "$M\\succ0$表示$M$实对称且$v^TMv>0$对每个非零实$v$成立。\n\n"
+        },
+        {
+          "offset": 15327,
+          "content": "$s_{ij}$也表示$S$的第$i,j$元。\n\n"
+        },
+        {
+          "offset": 24156,
+          "content": "符号$\\lceil r\\rceil$把实数向上取到最近整数。\n\n"
+        },
+        {
+          "offset": 9004,
+          "content": "$\\lfloor r\\rfloor$把它向下取到最近整数。\n\n"
+        },
+        {
+          "offset": 25848,
+          "content": "$\\#U=|U|$表示集合元素数。\n\n"
+        },
+        {
+          "offset": 9035,
+          "content": "有限求和的空和为0、空乘积为1。\n\n"
+        },
+        {
+          "offset": 701,
+          "content": "$0!=1$；$n!=1\\cdot2\\cdots n$。\n\n"
+        },
+        {
+          "offset": 21363,
+          "content": "$\\binom nk=n!/(k!(n-k)!)$，$k>n$时为0。\n\n"
+        },
+        {
+          "offset": 13803,
+          "content": "置换就是顶点集合到自身的双射，$\\mathfrak S_N$为所有这样的置换。\n\n"
+        },
+        {
+          "offset": 15472,
+          "content": "另有$\\|M\\|_{\\rm op}=\\sup_{v\\ne0}\\|Mv\\|_2/\\|v\\|_2$，表示矩阵把向量长度放大的最大比例。$\\sup$表示上确界，即所有这些比例的最小上界。\n\n"
+        },
+        {
+          "offset": 26085,
+          "content": "行记号$W_{\\ell,\\cdot}=(W_{\\ell1},\\ldots,W_{\\ell N})$表示第$\\ell$行。\n\n"
+        },
+        {
+          "offset": 11794,
+          "content": "误差记号$R(x)=O(x^k)$的意思是：当$x$足够接近0时，存在一个与$x$无关的常数$M$，使$|R(x)|\\le M|x|^k$。因此若$R_1=O(x^a)$、$R_2=O(x^b)$，则$|R_1R_2|\\le M_1M_2|x|^{a+b}$，即$R_1R_2=O(x^{a+b})$；加法与除以非零$x$也按此不等式计算。$O(d^{-k})$指$d$趋于无穷，$O_d$允许常数依赖固定的$d$。\n\n"
+        },
+        {
+          "offset": 14054,
+          "content": "除非模型已作具体指定，$W$表示任意$N$阶非负矩阵，即$W_{ij}\\ge0$。\n\n"
+        },
+        {
+          "offset": 3617,
+          "content": "分块式中的$a$为标量、$b$为$1\\times(d-1)$行、$c$为$(d-1)\\times1$列、$D$为$(d-1)$阶矩阵；这些局部块记号随$t$变化。\n\n"
+        },
+        {
+          "offset": 2927,
+          "content": "对数变量$t_j$允许取原点附近的复数，角变量$\\theta_j$为原点附近的实数。\n\n"
+        },
+        {
+          "offset": 3267,
+          "content": "这里$\\delta_{jk}$在$j=k$时为1，否则为0。\n\n"
+        }
+      ],
+      "relocated_body_notation": [
+        {
+          "offset": 2590,
+          "content": "这里$\\delta_{jk}$在$j=k$时为1，否则为0。\n\n"
+        }
+      ],
+      "removed_front_region": {
+        "offset": 128,
+        "content": "::: {.definition title=\"竞赛图、圆环与随机块模型\"}\n\n全文以奇数$d\\ge3$为基图阶数，$m$为正整数块阶数。阅读前先约定：竞赛图在任意两个不同顶点之间恰有一条有向边；出度是从该顶点发出的边数，入度是指向它的边数。哈密顿路按有向顶点排列计数；哈密顿圈旋转起点仍是同一圈，不把反向排列再识别为同一有向圈。“普通同构”就是保持所有边方向的顶点重编号。\n\n下文$I_r$是$r$阶单位矩阵，$J_r$是$r$阶全一矩阵，$\\mathbf1_r$是全一列向量；省略下标时看乘法维数。$e_j$为只有第$j$个坐标是1的标准基列向量，上标$T$表示转置，虚数单位满足$i^2=-1$。$C(G)$表示图的圈数，单独写的$C=S/d$则是矩阵，二者按是否带图参数区分。\n\n奇阶圆环图$\\mathrm{Car}_d$的顶点是模$d$的余数。其边方向为\n\n$$\ni\\to j\\quad\\Longleftrightarrow\\quad\n(j-i)\\bmod d\\in\\{1,\\ldots,(d-1)/2\\}.\n$$\n\n在独立内部块模型$\\mathcal T$中，每一块的每一条边独立公平定向；在正则内部块模型$\\mathcal R$中，每块在全部有标号正则竞赛图中均匀选取，各块之间独立，块内各条边不要求独立，块阶数必须为奇数。\n\n:::\n\n下文$H(G)$表示图$G$的哈密顿路数；$\\mathbb EX$表示随机量$X$的平均值，$\\mathbb P(\\mathcal E)$表示事件$\\mathcal E$的概率。有限模型中的条件期望$\\mathbb E[X\\mid G]$先固定$G$，只对尚未固定的随机边取平均，再对$G$平均可恢复$\\mathbb EX$。\n\n::: {.notation title=\"记号与运算约定\"}\n\n写$[d]=\\{1,\\ldots,d\\}$，$y'=(y_1,\\ldots,y_{d-1})$和$t'=(t_1,\\ldots,t_{d-1})$表示删去最后一个坐标；这里的撇号不是求导。函数下标$F_j,F_{jk}$表示对第$j$个变量求一次偏导、对第$j,k$个变量求两次偏导。写出$K_{y_j}$时则明确按$y_j$求导。矩阵的导数逐元计算。$\\operatorname{diag}(a_1,\\ldots,a_r)$是所列元素组成的对角矩阵。\n\n实向量的长度为$\\|v\\|_2=(\\sum_jv_j^2)^{1/2}$；$\\|M\\|_F=(\\sum_{j,k}M_{jk}^2)^{1/2}$是矩阵所有元素平方和的平方根；$\\operatorname{tr}M=\\sum_jM_{jj}$是矩阵的迹。$u^\\perp$为满足$u^Tv=0$的向量$v$组成的空间。$M\\succ0$表示$M$实对称且$v^TMv>0$对每个非零实$v$成立。$s_{ij}$也表示$S$的第$i,j$元。\n\n符号$\\lceil r\\rceil$把实数向上取到最近整数，$\\lfloor r\\rfloor$把它向下取到最近整数；$\\#U=|U|$表示集合元素数。有限求和的空和为0、空乘积为1，$0!=1$；$n!=1\\cdot2\\cdots n$，$\\binom nk=n!/(k!(n-k)!)$，$k>n$时为0。置换就是顶点集合到自身的双射，$\\mathfrak S_N$为所有这样的置换。\n\n另有$\\|M\\|_{\\rm op}=\\sup_{v\\ne0}\\|Mv\\|_2/\\|v\\|_2$，表示矩阵把向量长度放大的最大比例。行记号$W_{\\ell,\\cdot}=(W_{\\ell1},\\ldots,W_{\\ell N})$表示第$\\ell$行；$\\sup$表示上确界，即所有这些比例的最小上界。\n\n误差记号$R(x)=O(x^k)$的意思是：当$x$足够接近0时，存在一个与$x$无关的常数$M$，使$|R(x)|\\le M|x|^k$。因此若$R_1=O(x^a)$、$R_2=O(x^b)$，则$|R_1R_2|\\le M_1M_2|x|^{a+b}$，即$R_1R_2=O(x^{a+b})$；加法与除以非零$x$也按此不等式计算。$O(d^{-k})$指$d$趋于无穷，$O_d$允许常数依赖固定的$d$。\n\n除非模型已作具体指定，$W$表示任意$N$阶非负矩阵，即$W_{ij}\\ge0$。分块式中的$a$为标量、$b$为$1\\times(d-1)$行、$c$为$(d-1)\\times1$列、$D$为$(d-1)$阶矩阵；这些局部块记号随$t$变化。对数变量$t_j$允许取原点附近的复数，角变量$\\theta_j$为原点附近的实数。\n\n:::\n\n"
+      },
+      "baseline_normalized_sha256": "db5d7610f97180ede4d9f5b7623ada2a1bf9fca3a9a3d32925489094fda7e256",
+      "final_normalized_sha256": "f2fb1f099dc1c0aa582c8f87d4ca56b61089746a0ac19029cd33ab71683f4505"
+    },
+    "concise-complete-proof.zh.md": {
+      "baseline_normalized_sha256": "ef48440d86d021747954623891f371f98e4820caa18786edceb8bbeaba5081f4",
+      "final_normalized_sha256": "c5f850dbc87d380302530de970b123cedb7bd4d74d7d22665b67707f3c6921f2"
+    }
+  }
+}

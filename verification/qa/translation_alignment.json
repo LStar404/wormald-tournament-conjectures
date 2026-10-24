@@ -12,8 +12,10 @@
     "\\text{路径}": "\\text{paths}"
   },
   "sha256": {
-    "zh": "9131fbec74a941d0d6e21742ce7efb157b7ef75ba2e82342f238f21649fbdee8",
-    "en": "7865da5d81b02dd7ff68158b2661c08e9b9424f7893bede1d4b1d6eb10999e0c"
+    "zh": "012bcc3a711f9656095ec5df1a1f205493d8d880b50dba1268d73ef16a8df8f8",
+    "en": "b9b8ccd24d9742bee3166944874941a313d56e4471ef78eab25dbad7b84bc926"
   },
-  "scope": "Formula sequence and structural alignment; not independent mathematical or linguistic certification."
+  "notation_relocation_verified": true,
+  "published_headings_each": 38,
+  "scope": "Published formulas conserved; original formula sequence and prose/display structure checked after hash-verified reversal of notation moves. Not independent mathematical or linguistic certification."
 }

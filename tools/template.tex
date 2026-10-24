@@ -1,27 +1,46 @@
 \documentclass[11pt,a4paper]{article}
 \usepackage{fontspec,amsmath,amssymb,mathtools}
+\usepackage[margin=22mm,headheight=22pt,headsep=7mm,footskip=10mm]{geometry}
+\usepackage{graphicx,booktabs,longtable,array,calc,enumitem}
+\usepackage{needspace,xurl,xcolor}
+\usepackage[unicode,colorlinks=true,linkcolor=inkblue,urlcolor=inkblue]{hyperref}
+\usepackage{bookmark,fancyhdr}
+\definecolor{inkblue}{HTML}{243E51}
+\definecolor{muted}{HTML}{64717B}
+\definecolor{hairline}{HTML}{C8CFD4}
+\defaultfontfeatures{Ligatures=TeX}
+$if(english)$
+\setmainfont{Times New Roman}[BoldFont={Times New Roman Bold},ItalicFont={Times New Roman Italic},BoldItalicFont={Times New Roman Bold Italic}]
+\setsansfont{Arial}
+$else$
+\setmainfont{SimSun}[BoldFont={SimHei},ItalicFont={SimSun},ItalicFeatures={FakeSlant=0.12}]
+\setsansfont{Microsoft YaHei}[BoldFont={Microsoft YaHei Bold}]
+$endif$
+\setmonofont{Consolas}[Scale=0.84]
+\XeTeXlinebreaklocale "$locale$"
+\XeTeXlinebreakskip=0pt plus 1pt
 \providecommand{\mathscr}[1]{\mathcal{#1}}
 \DeclareFontFamily{U}{euf}{}
 \DeclareFontShape{U}{euf}{m}{n}{<-> eufm10}{}
-\usepackage[margin=22mm,headheight=15pt]{geometry}
-\usepackage{graphicx,booktabs,longtable,array,calc,enumitem}
-\usepackage{needspace,xurl,xcolor}
-\usepackage[unicode,colorlinks=true,linkcolor=blue!45!black,urlcolor=blue!45!black]{hyperref}
-\usepackage{bookmark,fancyhdr}
-\defaultfontfeatures{Ligatures=TeX}
-$if(italicfont)$
-\setmainfont{$mainfont$}[BoldFont={$boldfont$},ItalicFont={$italicfont$}]
-$else$
-\setmainfont{$mainfont$}[BoldFont={$boldfont$},ItalicFont={$mainfont$},ItalicFeatures={FakeSlant=0.15}]
-$endif$
-\setsansfont{$boldfont$}
-\setmonofont{$monofont$}[Scale=0.85]
-\XeTeXlinebreaklocale "$locale$"
-\XeTeXlinebreakskip=0pt plus 1pt
-\setlength{\emergencystretch}{5em}
+\setlength{\emergencystretch}{4em}
 \setlength{\parindent}{1.5em}
-\setlength{\parskip}{4pt plus 1pt}
+\newlength{\bodypargap}
+\setlength{\bodypargap}{2.5pt}
+$if(compactguide)$
+\setlength{\bodypargap}{2pt}
+$endif$
+\parskip=\the\bodypargap plus 0.5pt\relax
 \linespread{1.10}
+\AtBeginDocument{
+  \setlength{\abovedisplayskip}{8pt plus 2pt minus 2pt}
+  \setlength{\belowdisplayskip}{8pt plus 2pt minus 2pt}
+  \setlength{\abovedisplayshortskip}{4pt plus 2pt}
+  \setlength{\belowdisplayshortskip}{6pt plus 2pt minus 2pt}
+$if(compactguide)$
+  \setlength{\abovedisplayskip}{7.5pt plus 2pt minus 2pt}
+  \setlength{\belowdisplayskip}{7.5pt plus 2pt minus 2pt}
+$endif$
+}
 \allowdisplaybreaks[3]
 \raggedbottom
 \clubpenalty=10000
@@ -32,24 +51,56 @@ $endif$
 \renewcommand{\contentsname}{$contents$}
 \providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \newcommand{\passthrough}[1]{#1}
-\setlist{itemsep=3pt,parsep=0pt}
+\setlist{itemsep=3pt,parsep=0pt,topsep=5pt}
+\makeatletter
+\renewcommand\section{\@startsection{section}{1}{\z@}{-13pt plus -2pt minus -1pt}{6pt plus 1pt}{\normalfont\large\sffamily\bfseries\color{inkblue}}}
+\renewcommand\subsection{\@startsection{subsection}{2}{\z@}{-10pt plus -2pt minus -1pt}{5pt plus 1pt}{\normalfont\normalsize\sffamily\bfseries\color{inkblue}}}
+\makeatother
+\makeatletter
+\def\@begintheorem#1#2{\setlength{\topsep}{4pt}\setlength{\partopsep}{0pt}\parsep=\the\bodypargap plus 0.5pt\relax\trivlist\item[\hskip\labelsep{\sffamily\bfseries\color{inkblue}#1\ #2.}]\normalfont}
+\def\@opargbegintheorem#1#2#3{\setlength{\topsep}{4pt}\setlength{\partopsep}{0pt}\parsep=\the\bodypargap plus 0.5pt\relax\trivlist\item[\hskip\labelsep{\sffamily\bfseries\color{inkblue}#1\ #2\ (#3).}]\normalfont}
+\def\@endtheorem{\endtrivlist}
+\makeatother
+\newtheorem{definition}{$definitionname$}
+\newtheorem{theorem}[definition]{$theoremname$}
+\newtheorem{lemma}[definition]{$lemmaname$}
+\newtheorem{corollary}[definition]{$corollaryname$}
+\newtheorem{externaltheorem}[definition]{$externalname$}
+\newtheorem{example}[definition]{$examplename$}
+\newenvironment{structuredproof}[1]
+  {\par\addvspace{4pt}\noindent{\sffamily\bfseries\color{inkblue}$proofname$.\ {\normalfont\small(#1)}}\par\nobreak\noindent\ignorespaces}
+  {\par\addvspace{3pt}}
+\newenvironment{notationblock}[1]
+  {\par\addvspace{5pt}\noindent{\sffamily\bfseries\color{inkblue}#1}\par\nobreak\noindent\ignorespaces}
+  {\par\addvspace{4pt}}
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{\small $shorttitle$}
-\fancyhead[R]{\small $runningdate$}
-\fancyfoot[C]{\thepage}
+\fancyhead[L]{\fontsize{8.5}{10}\selectfont\color{muted}$shorttitle$}
+\fancyhead[R]{\fontsize{8.5}{10}\selectfont\color{muted}$runningdate$}
+\fancyfoot[C]{\small\color{muted}\thepage}
 \renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{hairline}\leaders\hrule height\headrulewidth\hfill}}
 \hypersetup{pdftitle={$title$},pdfauthor={$author$},pdfsubject={$subject$}}
-\title{\LARGE\bfseries $title$}
-\author{$author$}
-\date{$date$}
 \begin{document}
-\maketitle
 \thispagestyle{plain}
+\begingroup
+\centering
+{\sffamily\bfseries\color{inkblue}\fontsize{18}{25}\selectfont $title$\par}
+$if(author)$
+\vspace{8pt}
+{\normalsize $author$\par}
+$endif$
+$if(date)$
+\vspace{4pt}
+{\small\color{muted} $date$\par}
+$endif$
+\vspace{9pt}
+{\color{hairline}\rule{\textwidth}{0.5pt}\par}
+\endgroup
+\vspace{3pt}
 $if(showtoc)$
 {\small\tableofcontents}
 \clearpage
 $endif$
 $body$
 \end{document}
-

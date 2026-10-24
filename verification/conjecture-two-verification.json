@@ -1,6 +1,6 @@
 {
   "result": "passed",
-  "checked_at_utc": "2026-10-21T15:40:01.035522+00:00",
+  "checked_at_utc": "2026-10-24T06:01:58.083214+00:00",
   "lean_version": "Lean (version 4.34.1, x86_64-w64-windows-gnu, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
   "entry_module": "Wormald.ConjectureTwoProof",
   "verified_target": "Wormald.FiniteModel.conjectureTwo",

@@ -1,58 +1,12 @@
 {
-  "guide": {
-    "pdf": "output/pdf/wormald-conjectures-guide.zh.pdf",
-    "pages": 26,
-    "bytes": 280475,
-    "sha256": "23474137522069474a523811a01aa39e4ae92cab449f7e0cb9083f056cc2bf37",
-    "critical_layout_warnings": [],
-    "automated_word_bounds_checked": false,
-    "replacement_character_pages": [],
-    "link_annotations": 36,
-    "rendered_pages": 26,
-    "visual_review": "passed",
-    "author": "刘星辰",
-    "visually_reviewed_pages": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15,
-      16,
-      17,
-      18,
-      19,
-      20,
-      21,
-      22,
-      23,
-      24,
-      25,
-      26
-    ],
-    "visual_review_method": "All final pages inspected in rendered four-page contact sheets; rebuilt English pages reviewed again."
-  },
   "proof": {
     "pdf": "output/pdf/wormald-conjectures-proof.zh.pdf",
     "pages": 32,
-    "bytes": 306927,
-    "sha256": "4634242759b5043b827e9b2f8189f8fb5637f381ecc38838f59b3c291a2ce3b8",
+    "bytes": 369652,
+    "sha256": "524983604201fd1d6f5496e985362e708b4bdfede4976502efd9326a1b6a026e",
     "critical_layout_warnings": [],
-    "automated_word_bounds_checked": false,
-    "replacement_character_pages": [],
-    "link_annotations": 8,
     "rendered_pages": 32,
     "visual_review": "passed",
-    "author": "刘星辰",
     "visually_reviewed_pages": [
       1,
       2,
@@ -87,71 +41,17 @@
       31,
       32
     ],
-    "visual_review_method": "All final pages inspected in rendered four-page contact sheets; rebuilt English pages reviewed again."
-  },
-  "scope": "PDF layout and author-metadata review; not mathematical certification. Word bounding boxes were not measured.",
-  "editorial_revision": {
-    "version": "0.2.6",
-    "sole_author": "Xingchen Liu",
-    "previous_pdf_pages": {
-      "proof": 32,
-      "proof-en": 34,
-      "guide": 26
-    },
-    "current_pdf_pages": {
-      "proof": 32,
-      "proof-en": 34,
-      "guide": 26
-    },
-    "paper_mathematical_spans_each": 963,
-    "paper_prose_blocks_each": 343,
-    "paper_headings_each": 39,
-    "body_font_size_pt": 11,
-    "page_margins_mm": 22,
-    "body_font_size_or_margins_reduced": false,
-    "new_sections_or_appendices": false,
-    "displayed_calculations": {
-      "elementary-guide.zh.md": {
-        "count": 203,
-        "changed_blocks": [],
-        "normalized_equal": true,
-        "allowed_changes": "Remainder renaming and sentence punctuation only"
-      },
-      "paper.en.md": {
-        "count": 255,
-        "changed_blocks": [
-          123,
-          148,
-          253
-        ],
-        "normalized_equal": true,
-        "allowed_changes": "Remainder renaming and sentence punctuation only"
-      },
-      "paper.zh.md": {
-        "count": 255,
-        "changed_blocks": [
-          123,
-          148,
-          253
-        ],
-        "normalized_equal": true,
-        "allowed_changes": "Remainder renaming and sentence punctuation only"
-      }
-    },
-    "english_equation_introductions": "Short standalone Since/It follows that kept with the next display"
+    "review_date": "2026-10-24",
+    "visual_review_method": "All rendered pages inspected in four-page contact sheets; checked text, equations, headings, theorem/proof boundaries, headers, footers and references."
   },
   "proof-en": {
     "pdf": "output/pdf/wormald-conjectures-proof.en.pdf",
     "pages": 34,
-    "bytes": 264261,
-    "sha256": "0671192dc50a5b6135244d8f5948f5d26267631f974c316c9f66957636db28f5",
+    "bytes": 274272,
+    "sha256": "b5c9d20695c53c130952fb574cd45ac92757c9e8083ce65fbb42b56876a629b3",
     "critical_layout_warnings": [],
-    "automated_word_bounds_checked": false,
-    "replacement_character_pages": [],
-    "link_annotations": 9,
     "rendered_pages": 34,
     "visual_review": "passed",
-    "author": "Xingchen Liu",
     "visually_reviewed_pages": [
       1,
       2,
@@ -188,6 +88,63 @@
       33,
       34
     ],
-    "visual_review_method": "All final pages inspected in rendered four-page contact sheets; rebuilt English pages reviewed again."
+    "review_date": "2026-10-24",
+    "visual_review_method": "All rendered pages inspected in four-page contact sheets; checked text, equations, headings, theorem/proof boundaries, headers, footers and references."
+  },
+  "guide": {
+    "pdf": "output/pdf/wormald-conjectures-guide.zh.pdf",
+    "pages": 27,
+    "bytes": 345511,
+    "sha256": "ade8e9188db95661413893353968527670eeb3eec1fba849ca652011b7beec46",
+    "critical_layout_warnings": [],
+    "rendered_pages": 27,
+    "visual_review": "passed",
+    "visually_reviewed_pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27
+    ],
+    "review_date": "2026-10-24",
+    "visual_review_method": "All rendered pages inspected in four-page contact sheets; checked text, equations, headings, theorem/proof boundaries, headers, footers and references."
+  },
+  "complete-proof": {
+    "pdf": "output/pdf/wormald-conjectures-complete-proof.zh.pdf",
+    "pages": 3,
+    "bytes": 176185,
+    "sha256": "e67c151616bbb464ec2ec465ccf99bd9248f7fc0bd43c7e3b5a2696414d3e54e",
+    "critical_layout_warnings": [],
+    "rendered_pages": 3,
+    "visual_review": "passed",
+    "visually_reviewed_pages": [
+      1,
+      2,
+      3
+    ],
+    "review_date": "2026-10-24",
+    "visual_review_method": "All rendered pages inspected in four-page contact sheets; checked text, equations, headings, theorem/proof boundaries, headers, footers and references."
   }
 }

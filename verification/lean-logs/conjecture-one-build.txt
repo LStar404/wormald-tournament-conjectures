@@ -1,6 +1,6 @@
-ℹ [3642/3762] Replayed Wormald.RationalSquare
+ℹ [3641/3696] Replayed Wormald.RationalSquare
 info: Wormald/RationalSquare.lean:91:0: 'Wormald.det_one_add_square_rational' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: Wormald/RationalSquare.lean:92:0: 'Wormald.det_quotient_rational_square' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [3681/3762] Replayed Wormald.AnalyticJetBridge
+ℹ [3680/3696] Replayed Wormald.AnalyticJetBridge
 info: Wormald/AnalyticJetBridge.lean:295:0: 'Wormald.analyticJetBridge_of_critical' depends on axioms: [propext, Classical.choice, Quot.sound]
 Build completed successfully (3762 jobs).

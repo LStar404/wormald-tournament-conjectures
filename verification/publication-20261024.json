@@ -1,0 +1,100 @@
+{
+  "result": "passed",
+  "date": "2026-10-24",
+  "baseline_commit": "29de4fbb8586d8d7c116b7ed1733510ee0e324a1",
+  "lean_sources_and_configuration_unchanged": true,
+  "original_lean_check_scripts_unchanged": true,
+  "lean_gates": {
+    "lean": {
+      "result": "passed",
+      "checked_at_utc": "2026-10-24T05:59:42.372677+00:00",
+      "record": "verification/lean-verification.json",
+      "record_sha256": "0d037f31c0d48620d6180eb21e215a9a98b7c58fec681f59e324d0492ca46067"
+    },
+    "conjecture-one": {
+      "result": "passed",
+      "checked_at_utc": "2026-10-24T06:01:17.927031+00:00",
+      "record": "verification/conjecture-one-verification.json",
+      "record_sha256": "8dbced670a12baa9e5a3ea7dfa8d7a31d9c7d9b2db04fe8b775fdef0844c38cd"
+    },
+    "conjecture-two": {
+      "result": "passed",
+      "checked_at_utc": "2026-10-24T06:01:58.083214+00:00",
+      "record": "verification/conjecture-two-verification.json",
+      "record_sha256": "e262ddae2f5196272b00598f3a298085fdefdd8f3a98eb6bdb6ed4d5d87bb5dc"
+    },
+    "conjecture-six": {
+      "result": "passed",
+      "checked_at_utc": "2026-10-24T06:02:33.313987+00:00",
+      "record": "verification/conjecture-six-verification.json",
+      "record_sha256": "69452e4c59e9cd1df5717cd592218ca3d830740eecbba1a83f8662a803fd8ede"
+    }
+  },
+  "source_module_count": 211,
+  "exported_theorem_count": 1286,
+  "axioms_used": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "pinned_dependencies": [
+    {
+      "name": "plausible",
+      "revision": "118aa17ee84656b8bd727fef7c458ee8c833385c",
+      "tracked_sources_clean": true
+    },
+    {
+      "name": "LeanSearchClient",
+      "revision": "ddf04cf3949fa556442341e87d47f9f6e6074707",
+      "tracked_sources_clean": true
+    },
+    {
+      "name": "importGraph",
+      "revision": "e928b72544873815af278d38681b31c0293588e3",
+      "tracked_sources_clean": true
+    },
+    {
+      "name": "proofwidgets",
+      "revision": "106ff4fafc74ef4ac99d81dbf3ab399118f497a5",
+      "tracked_sources_clean": true
+    },
+    {
+      "name": "aesop",
+      "revision": "355695d523e41d0554926416cba2a2b3544fbbc9",
+      "tracked_sources_clean": true
+    },
+    {
+      "name": "Qq",
+      "revision": "6a489d9af5d0c47e5b259e2e8bcdfc1811b5a259",
+      "tracked_sources_clean": true
+    },
+    {
+      "name": "batteries",
+      "revision": "f2effa3d803fda822b1f97b806c47cf2adfbcbc2",
+      "tracked_sources_clean": true
+    },
+    {
+      "name": "Cli",
+      "revision": "e92c9f15fdfacc8536f31cfb3b7ad26c3c8cd204",
+      "tracked_sources_clean": true
+    },
+    {
+      "name": "mathlib",
+      "revision": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+      "tracked_sources_clean": true
+    }
+  ],
+  "pdf_pages": {
+    "proof": 32,
+    "proof-en": 34,
+    "guide": 27,
+    "complete-proof": 3
+  },
+  "pdf_sha256": {
+    "proof": "524983604201fd1d6f5496e985362e708b4bdfede4976502efd9326a1b6a026e",
+    "proof-en": "b5c9d20695c53c130952fb574cd45ac92757c9e8083ce65fbb42b56876a629b3",
+    "guide": "ade8e9188db95661413893353968527670eeb3eec1fba849ca652011b7beec46",
+    "complete-proof": "e67c151616bbb464ec2ec465ccf99bd9248f7fc0bd43c7e3b5a2696414d3e54e"
+  },
+  "scope": "Layout/notation publication; original Lean gates rerun without changing the formal development."
+}

@@ -1,4 +1,4 @@
-ℹ [3210/3240] Replayed Wormald.AnalyticJetBridge
+ℹ [3209/3220] Replayed Wormald.AnalyticJetBridge
 info: Wormald/AnalyticJetBridge.lean:295:0: 'Wormald.analyticJetBridge_of_critical' depends on axioms: [propext, Classical.choice, Quot.sound]
 ℹ [3228/3240] Replayed Wormald.RationalSquare
 info: Wormald/RationalSquare.lean:91:0: 'Wormald.det_one_add_square_rational' depends on axioms: [propext, Classical.choice, Quot.sound]

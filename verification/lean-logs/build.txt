@@ -1,12 +1,52 @@
-ℹ [3109/3154] Replayed Wormald.RationalSquare
+ℹ [3108/3115] Replayed Wormald.RationalSquare
 info: Wormald/RationalSquare.lean:91:0: 'Wormald.det_one_add_square_rational' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: Wormald/RationalSquare.lean:92:0: 'Wormald.det_quotient_rational_square' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [3505/3736] Replayed Wormald.CarouselLimit
+ℹ [3516/3540] Replayed Wormald.AnalyticJetBridge
+info: Wormald/AnalyticJetBridge.lean:295:0: 'Wormald.analyticJetBridge_of_critical' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3531/3566] Replayed Wormald.ConjectureSixProof
+info: Wormald/ConjectureSixProof.lean:68:0: 'Wormald.conjectureSix' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3557/3575] Replayed Wormald.CarouselLimit
 info: Wormald/CarouselLimit.lean:77:0: 'Wormald.tendsto_carouselClosedConstant' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: Wormald/CarouselLimit.lean:78:0: 'Wormald.tendsto_carouselClosedConstant_odd' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [3517/3736] Replayed Wormald.AnalyticJetBridge
-info: Wormald/AnalyticJetBridge.lean:295:0: 'Wormald.analyticJetBridge_of_critical' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [3526/3736] Replayed Wormald.ConjectureSixProof
-info: Wormald/ConjectureSixProof.lean:68:0: 'Wormald.conjectureSix' depends on axioms: [propext, Classical.choice, Quot.sound]
-✔ [4050/4051] Built Wormald (9.9s)
+✔ [4010/4051] Built Wormald.FiniteWeightedAverages (246s)
+✔ [4011/4051] Built Wormald.BernoulliPairConcentration (251s)
+✔ [4012/4051] Built Wormald.AdjacentHoldingConcentration (20s)
+✔ [4013/4051] Built Wormald.CyclicTripleBasics (20s)
+✔ [4014/4051] Built Wormald.InternalTripleStatistic (19s)
+✔ [4015/4051] Built Wormald.CyclicTripleConcentration (23s)
+✔ [4016/4051] Built Wormald.PartialPermutationLaplacian (19s)
+✔ [4017/4051] Built Wormald.BalancedTripleConcentration (20s)
+✔ [4018/4051] Built Wormald.PrescribedEdgeStatistics (19s)
+✔ [4019/4051] Built Wormald.PartialPermutationShift (18s)
+✔ [4020/4051] Built Wormald.RegularLocalPhase (20s)
+✔ [4021/4051] Built Wormald.BalancedTripleConditional (22s)
+✔ [4022/4051] Built Wormald.GoodClusterRestriction (19s)
+✔ [4023/4051] Built Wormald.RegularLocalExpansion (20s)
+✔ [4024/4051] Built Wormald.BalancedTripleExponential (20s)
+✔ [4025/4051] Built Wormald.GoodClusterCoordinates (20s)
+✔ [4026/4051] Built Wormald.TiltedCycleTransfer (20s)
+✔ [4027/4051] Built Wormald.RegularScaledExpansion (22s)
+✔ [4028/4051] Built Wormald.CircleLiftIntegration (19s)
+✔ [4029/4051] Built Wormald.InternalCycleWeights (20s)
+✔ [4030/4051] Built Wormald.RegularCentralWindow (18s)
+✔ [4031/4051] Built Wormald.GaussianCentralWindow (21s)
+✔ [4032/4051] Built Wormald.GoodClusterKernelVolume (20s)
+✔ [4033/4051] Built Wormald.RegularCycleLimitReduction (20s)
+✔ [4034/4051] Built Wormald.GaussianOutsideAnchor (21s)
+✔ [4035/4051] Built Wormald.GaussianQuarticMean (19s)
+✔ [4036/4051] Built Wormald.LocalGaussianIntegralError (19s)
+✔ [4037/4051] Built Wormald.RegularCentralGaussianTransport (20s)
+✔ [4038/4051] Built Wormald.GoodClusterCellBound (19s)
+✔ [4039/4051] Built Wormald.UniformRegularFourierReduction (21s)
+✔ [4040/4051] Built Wormald.AllGoodClusterTail (19s)
+✔ [4041/4051] Built Wormald.GaussianGraphMainTerm (20s)
+✔ [4042/4051] Built Wormald.OutlierClusterTail (21s)
+✔ [4043/4051] Built Wormald.AnchoredRegularWindow (26s)
+✔ [4044/4051] Built Wormald.AllGoodRegionTail (23s)
+✔ [4045/4051] Built Wormald.RegularCentralMainTerm (22s)
+✔ [4046/4051] Built Wormald.OutlierClusterRegion (19s)
+✔ [4047/4051] Built Wormald.RegularNoncentralTail (18s)
+✔ [4048/4051] Built Wormald.UniformRegularTorusProof (19s)
+✔ [4049/4051] Built Wormald.ConjectureTwoProof (18s)
+✔ [4050/4051] Built Wormald (18s)
 Build completed successfully (4051 jobs).

@@ -1,5 +1,17 @@
 # 公开前复核记录
 
+## 2026年10月24日：排版与符号位置修订
+
+本次以 GitHub 提交 `29de4fbb8586d8d7c116b7ed1733510ee0e324a1` 为底稿，上传已经逐页检查的中英文论文、中文基础讲解及完整证明导读。页数分别为32、34、27、3；数学内容版本仍为0.2.6，公开文件清单以 `0.2.6-layout.20261024` 标识这次排版修订。
+
+定义、定理、引理、引用定理与证明使用独立结构；原前置符号表拆到相关段落。符号迁移和两处衔接文字调整可由[核对程序](tools/check_layout.py)撤回，并恢复原稿哈希。中英文论文各963处数学表达式、基础讲解815处、完整证明导读68处保留。两种语言中的符号拆句位置略有差别，因此翻译检查先核对可逆迁移，再执行原稿的公式顺序与段落结构检查，同时比较发表稿的全部数学表达式。
+
+[版面记录](verification/qa/pdf_review.json)绑定四份实际 PDF 的哈希和全部96页的检查结果。[本轮样式记录](verification/qa/style_review.json)仅证明排版与文稿保留检查已经完成；旧样式记录保存在[历史副本](verification/qa/archive/style_review.v0.2.6.json)。下文2026年10月21日的数学核查范围和计数作为历史记录保留，不改称本轮重新完成的数学核验。
+
+Lean 源码、工具链、依赖锁定及原有四个 Lean 检查程序保持原样。本轮实际运行的结果由[完整入口记录](verification/lean-verification.json)以及猜想[1](verification/conjecture-one-verification.json)、[2](verification/conjecture-two-verification.json)、[6](verification/conjecture-six-verification.json)的独立核查记录给出。文稿核对与形式化证明验证的范围分别记录。
+
+## 2026年10月21日的复核记录
+
 日期：2026年10月21日。对象：本仓库版本0.2.6。
 
 ## 0.2.6局部前提与模型范围复查

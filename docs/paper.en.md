@@ -16,6 +16,22 @@ We use N. C. Wormald's version arXiv:2610.16245v1 and restate three of its conje
 
 Fix an odd integer $d\ge3$. The base tournament $T^*$ has $d$ vertices, each replaced by $m$ vertices, giving total order $N=dm$. Directions between blocks are determined by $T^*$. In $\mathcal T(T^*,m)$ the internal blocks are independent uniform random tournaments. In $\mathcal R(T^*,m)$ each internal block is additionally regular, requiring $m$ to be odd. Let $C(G)$ and $H(G)$ denote the numbers of Hamiltonian cycles and paths, respectively.
 
+::: {.definition title="Tournaments, counts and the carousel"}
+
+A tournament orients every pair of distinct vertices in exactly one direction. Its adjacency entry in position $i,j$ is 1 exactly when $i\to j$, and the diagonal is zero. In a regular tournament each vertex has outdegree and indegree $(d-1)/2$.
+
+Hamiltonian paths are counted as directed vertex orderings. Hamiltonian cycles are identified up to cyclic starting point: rotating the starting point does not produce another cycle, and reversal is not an additional identification of directed orderings. An ordinary isomorphism is a vertex bijection preserving all edge directions. Every uniqueness assertion in this manuscript uses this notion.
+
+For odd order, the carousel tournament $\mathrm{Car}_d$ is defined by
+
+$$
+V(\mathrm{Car}_d)=\mathbb Z/d\mathbb Z,\qquad
+i\to j\ \Longleftrightarrow\
+(j-i)\bmod d\in\{1,\ldots,(d-1)/2\}.
+$$
+
+:::
+
 - Conjecture 1: for fixed $d$ and sufficiently large $m$, among bases of order $d$ the carousel maximizes $\mathbb E C(\mathcal T(T^*,m))$. Part II proves this assertion and gives uniqueness, a path counterpart, and a counterpart with regular internal blocks.
 - Conjecture 2: the limiting constant for a carousel base with regular internal blocks converges as odd $d\to\infty$. Part I identifies the limit and proves strict monotonicity and an error expansion.
 - Conjecture 6: for each regular base of order at least three, the original Hessian determinant $\mathcal H$ is nonzero and $d/\mathcal H$ is a rational square. Part I gives exact formulas.
@@ -32,48 +48,13 @@ The appendices give the determinant polynomial, carousel isomorphism, fourth-mom
 
 Every limit $m\to\infty$ in this manuscript fixes $d$ first. The subsequent discussion of model constants as $d\to\infty$ does not interchange limits and does not give a uniform second-order error in the final order $N$.
 
-# Terminology and notation
-
-A tournament orients every pair of distinct vertices in exactly one direction. Its adjacency entry in position $i,j$ is 1 exactly when $i\to j$, and the diagonal is zero. In a regular tournament each vertex has outdegree and indegree $(d-1)/2$.
-
-Hamiltonian paths are counted as directed vertex orderings. Hamiltonian cycles are identified up to cyclic starting point: rotating the starting point does not produce another cycle, and reversal is not an additional identification of directed orderings. An ordinary isomorphism is a vertex bijection preserving all edge directions. Every uniqueness assertion in this manuscript uses this notion.
-
-For odd order, the carousel tournament $\mathrm{Car}_d$ is defined by
-
-$$
-V(\mathrm{Car}_d)=\mathbb Z/d\mathbb Z,\qquad
-i\to j\ \Longleftrightarrow\
-(j-i)\bmod d\in\{1,\ldots,(d-1)/2\}.
-$$
-
-Write $I_r$ for the identity matrix of order $r$, $J_r$ for the all-one matrix of order $r$, $\mathbf1_r$ for the all-one column vector, and $e_j$ for the $j$th standard basis column vector. The symbol $\delta_{jk}$ is 1 when $j=k$ and 0 otherwise. Matrix subscripts may be omitted when multiplication determines their dimensions. Superscript $T$ denotes transpose, and the imaginary unit satisfies $i^2=-1$. On positive real numbers, $\log$ is the natural logarithm; in complex neighborhoods we use the analytic branches specified below.
-
-For a real matrix $M$, the two norms are
-
-$$
-\|M\|_F^2=\sum_{j,k}M_{jk}^2,\qquad
-\|M\|_{\rm op}=\sup_{v\ne0}\frac{\|Mv\|_2}{\|v\|_2}.
-$$
-
-Write $[d]=\{1,\ldots,d\}$. The principal submatrix $M[U]$ uses the rows and columns in $U$, with convention $\det M[\varnothing]=1$. The space $u^\perp$ is orthogonal to the real vector $u$. The notation $\det_{u^\perp}$ means the determinant of the restriction to this invariant subspace, computed in an orthonormal basis.
-
-On a graph, $C(G),H(G)$ count cycles and paths. In contrast, the standalone $C=S/d$ is a matrix, bold $\mathbf H$ is the Hessian matrix, and $\mathcal H$ is its determinant. Local symbols in different sections are interpreted according to the definitions given in those sections.
-
-For a real vector $v=(v_1,\ldots,v_r)^T$, its Euclidean norm is $\|v\|_2=(\sum_{j=1}^r v_j^2)^{1/2}$.
-
-Write $\operatorname{tr}M=\sum_jM_{jj}$. The matrix $\operatorname{diag}(a_1,\ldots,a_r)$ has the listed scalars on the diagonal and zero elsewhere. The notation $M\succ0$ means that $M$ is real symmetric and, for every nonzero real vector $v$, we have $v^TMv>0$. Lowercase letters may denote entries, for example $s_{ij}=S_{ij}$.
-
-For a scalar function $F(t_1,\ldots,t_d)$, subscripts $F_j,F_{jk}$ denote $\partial F/\partial t_j$ and $\partial^2F/(\partial t_j\partial t_k)$; matrix, row and column derivatives are taken entry by entry. When differentiating in the original variables $y$, we write $K_{y_j}$. The matrix $\nabla^2F$ consists of the entries $F_{jk}$. A prime on a function of one variable denotes differentiation in its argument. The notations $y'=(y_1,\ldots,y_{d-1})$ and $t'=(t_1,\ldots,t_{d-1})$ delete the last coordinate; those primes do not denote derivatives. A vertex of type $j$ belongs to the block replacing base vertex $j$, which contains $m$ vertices.
-
-Write $\lfloor a\rfloor$ for the largest integer at most $a$ and $\lceil a\rceil$ for the smallest integer at least $a$. For a finite set, $\#U=|U|$ is its cardinality. The scalar indicator $\mathbf1_{\mathcal E}$ is 1 when condition $\mathcal E$ holds and 0 otherwise; it differs from the all-one vector $\mathbf1$ without a condition subscript. Set $0!=1$ and $n!=1\cdot2\cdots n$; also $\binom nk=n!/(k!(n-k)!)$, with value 0 for $k>n$.
-
-In the expansions here, $R(x)=O(x^k)$ means that constants $M,\eta>0$ exist such that, whenever $0<|x|<\eta$, we have $|R(x)|\le M|x|^k$. The notation $O(d^{-k})$ concerns $d\to\infty$, with other parameters fixed. A subscript in $O_d$ permits dependence on the fixed parameter $d$. 
-
-For a square matrix $D$, the adjugate $\operatorname{adj}D$ is the transpose of the cofactor matrix: $(\operatorname{adj}D)_{ij}=(-1)^{i+j}\det D^{(j|i)}$, where $D^{(j|i)}$ deletes row $j$ and column $i$. Determinant expansion gives $D\operatorname{adj}D=(\det D)I$. When $\det D\ne0$, division by this determinant gives the inverse formula used below.
-
 # Part I: The exact Hessian and the model constants
 
 ## 1. Objects, main formulas and scope
+
+Write $I_r$ for the identity matrix of order $r$, $J_r$ for the all-one matrix of order $r$, $\mathbf1_r$ for the all-one column vector. Matrix subscripts may be omitted when multiplication determines their dimensions. Superscript $T$ denotes transpose, and the imaginary unit satisfies $i^2=-1$.
+
+::: {.definition title="Sign matrix and original angular function"}
 
 Let $d\ge3$ be odd and let $A$ be the adjacency matrix of a regular tournament of order $d$.
 
@@ -82,6 +63,8 @@ S=2A+I-J,\quad S^T=-S,\quad S\mathbf1=0,\qquad
 C=S/d,\quad P_0=J/d.
 $$
 
+The matrix $\operatorname{diag}(a_1,\ldots,a_r)$ has the listed scalars on the diagonal and zero elsewhere.
+
 Set
 
 $$
@@ -89,13 +72,23 @@ B(y)=I-(A+\tfrac12I)\operatorname{diag}(y_1,\ldots,y_d),
 \quad K(y)=\det B(y),\quad z=2/d.
 $$
 
+On positive real numbers, $\log$ is the natural logarithm; in complex neighborhoods we use the analytic branches specified below.
+
 Near $y=z\mathbf1$, Wormald solves $K(y)=0$ for $y_d=h(y_1,\ldots,y_{d-1})$ and takes the Hessian of
 
 $$
 \widetilde f(\theta)=\log h(ze^{i\theta_1},\ldots,ze^{i\theta_{d-1}})
 $$
 
-at $\theta=0$. Denote its matrix by $\mathbf H$ and its determinant by $\mathcal H$. Sections 4–6 verify the conditions needed to define $h$ and the logarithm branch, so this definition does not assume an existence statement still to be proved. We prove
+:::
+
+Write $e_j$ for the $j$th standard basis column vector.
+
+On a graph, $C(G),H(G)$ count cycles and paths. In contrast, the standalone $C=S/d$ is a matrix, bold $\mathbf H$ is the Hessian matrix, and $\mathcal H$ is its determinant. Local symbols in different sections are interpreted according to the definitions given in those sections.
+
+::: {.theorem title="The original Hessian and the positive rational square"}
+
+Evaluate this Hessian at $\theta=0$. Denote its matrix by $\mathbf H$ and its determinant by $\mathcal H$. Sections 4–6 verify the conditions needed to define $h$ and the logarithm branch, so this definition does not assume an existence statement still to be proved. We prove
 
 $$
 \boxed{
@@ -115,7 +108,11 @@ $$
 
 The right-hand side is positive and rational, so these identities prove Conjecture 6.
 
+:::
+
 ## 2. Spectral gap, the constant direction and restricted determinants
+
+::: {.proof title="Hessian identity"}
 
 Throughout, $\mathbf1$ denotes the all-one column vector. The tournament definition and regularity give
 
@@ -135,6 +132,17 @@ S\mathbf1
 $$
 
 The matrix $S$ has $d(d-1)$ off-diagonal entries, all equal to $\pm1$. Thus
+
+For a real vector $v=(v_1,\ldots,v_r)^T$, its Euclidean norm is $\|v\|_2=(\sum_{j=1}^r v_j^2)^{1/2}$.
+
+For a real matrix $M$, the two norms are
+
+$$
+\|M\|_F^2=\sum_{j,k}M_{jk}^2,\qquad
+\|M\|_{\rm op}=\sup_{v\ne0}\frac{\|Mv\|_2}{\|v\|_2}.
+$$
+
+Lowercase letters may denote entries, for example $s_{ij}=S_{ij}$.
 
 $$
 \|S\|_F^2=\sum_{i\ne j}s_{ij}^2=d(d-1),
@@ -184,6 +192,8 @@ $$
 B(z\mathbf1)=I-P=\Pi-C,\qquad
 B(z\mathbf1)u=0.
 $$
+
+The space $u^\perp$ is orthogonal to the real vector $u$. The notation $\det_{u^\perp}$ means the determinant of the restriction to this invariant subspace, computed in an orthonormal basis.
 
 On $u^\perp$ this matrix is $I-C$. If $x\in u^\perp$ satisfies $(I-C)x=0$, then
 
@@ -258,6 +268,8 @@ $$
 
 Section 2 proves that $D(0)$ is invertible and that $\det D(0)=q>0$. Continuity of the determinant gives a neighborhood of the origin in which $\det D(t)\ne0$. The inverse formula
 
+For a square matrix $D$, the adjugate $\operatorname{adj}D$ is the transpose of the cofactor matrix: $(\operatorname{adj}D)_{ij}=(-1)^{i+j}\det D^{(j|i)}$, where $D^{(j|i)}$ deletes row $j$ and column $i$. Determinant expansion gives $D\operatorname{adj}D=(\det D)I$. When $\det D\ne0$, division by this determinant gives the inverse formula used below.
+
 $$
 D(t)^{-1}=\frac{\operatorname{adj}D(t)}{\det D(t)}
 $$
@@ -288,6 +300,10 @@ $$
 On this neighborhood, $\det\mathscr B(t)=0$ and $\psi(t)=0$ are equivalent because the factor $\det D(t)$ is nonzero.
 
 ## 4. First and second derivatives: all nine product terms
+
+For a scalar function $F(t_1,\ldots,t_d)$, subscripts $F_j,F_{jk}$ denote $\partial F/\partial t_j$ and $\partial^2F/(\partial t_j\partial t_k)$; matrix, row and column derivatives are taken entry by entry. When differentiating in the original variables $y$, we write $K_{y_j}$. The matrix $\nabla^2F$ consists of the entries $F_{jk}$.
+
+The symbol $\delta_{jk}$ is 1 when $j=k$ and 0 otherwise.
 
 Write $F_j=e_je_j^T$ and $R(t)=D(t)^{-1}$. Only column $j$ of the exponential matrix depends on $t_j$, so at the origin
 
@@ -439,6 +455,8 @@ This supplies the nonzero partial derivative needed for every choice of eliminat
 
 ## 5. Eliminating the last variable by an explicit rational function
 
+The notations $y'=(y_1,\ldots,y_{d-1})$ and $t'=(t_1,\ldots,t_{d-1})$ delete the last coordinate; those primes do not denote derivatives.
+
 The determinant is linear in column $d$, and this column is affine in $y_d$. Hence
 
 $$
@@ -544,6 +562,8 @@ $$
 
 ## 7. Positive definiteness, the basis-change factor and the rational square
 
+The notation $M\succ0$ means that $M$ is real symmetric and, for every nonzero real vector $v$, we have $v^TMv>0$.
+
 On each two-dimensional block from Section 2, $J_\lambda^2=-\lambda^2I_2$. Therefore
 
 $$
@@ -642,7 +662,11 @@ $$
 =\frac{\det(I+C)}{\det(I+iC)}>0.
 $$
 
+Write $[d]=\{1,\ldots,d\}$. The principal submatrix $M[U]$ uses the rows and columns in $U$, with convention $\det M[\varnothing]=1$.
+
 Finally, prove rationality. Expand the determinant multilinearly, choosing either an identity column or a column of $C$:
+
+Write $\lfloor a\rfloor$ for the largest integer at most $a$.
 
 $$
 \det(I+tC)=\sum_{U\subseteq[d]}t^{|U|}\det C[U].
@@ -665,7 +689,15 @@ $$
 
 The number $\det(I+C)$ is rational as well. We have already shown that numerator and denominator are positive, so their ratio is a positive rational number.
 
+:::
+
 ## 8. External counting theorems and the four limits
+
+Set $0!=1$ and $n!=1\cdot2\cdots n$.
+
+A vertex of type $j$ belongs to the block replacing base vertex $j$, which contains $m$ vertices.
+
+::: {.definition title="Normalization of the random models"}
 
 This section explicitly invokes Wormald's Theorems 1, 4 and 5; it does not claim to reprove their random counting arguments. Fix a regular base of order $d$, internal block order $m$ and total order $N=dm$. Subscripts $\mathcal T,\mathcal R$ specify the random model; for example, $\mathbb EC_{\mathcal T}$ is the expected cycle count of a random graph drawn from $\mathcal T(T^*,m)$. The path notation has the corresponding meaning. Blocks are independent and uniform over all admissible labeled internal tournaments. Define
 
@@ -673,6 +705,10 @@ $$
 \nu_N=\frac{(N-1)!}{2^N},\qquad
 \mu_N=\frac{N!}{2^{N-1}}.
 $$
+
+:::
+
+::: {.corollary title="The four expectation limits"}
 
 When $\mathcal H\ne0$, Wormald's Theorem 4 gives
 
@@ -734,7 +770,11 @@ $$
 
 All four limits fix $d$. The last two take only admissible odd $m$ and do not involve simultaneous growth of $d$ and $m$.
 
+:::
+
 ## 9. A complete closed form for the carousel base
+
+::: {.theorem title="Closed forms for the carousel model"}
 
 Let $T_d$ have entries 1 above the diagonal, $-1$ below it and 0 on it. Appendix A.2 gives the signed permutation similarity between a carousel sign matrix and $T_d$. Appendix A.1 proves the determinant closed form and then extracts the appropriate coefficient to show that every even principal determinant is 1 and every odd principal determinant is 0. Hence
 
@@ -757,7 +797,13 @@ $$
 \mathfrak r_d=e^{1/d}r_d,\qquad r_d:=\rho_d(\mathrm{Car}_d).
 $$
 
+:::
+
 ## 10. Real-function form and strict monotonicity
+
+A prime on a function of one variable denotes differentiation in its argument.
+
+::: {.definition title="Real functions and auxiliary variables"}
 
 The functions used here and in the Taylor calculation are defined by the following formulas; $\sec$ is used only where the cosine is nonzero.
 
@@ -776,6 +822,10 @@ $$
 \beta(x)=\frac{\operatorname{artanh}x}{x},\qquad
 \operatorname{artanh}x=\frac12\log\frac{1+x}{1-x}.
 $$
+
+:::
+
+::: {.proof title="Strict monotonicity"}
 
 First express the numerator and denominator as real functions. The sum and difference of the real logarithms give
 
@@ -905,6 +955,10 @@ $$
 \end{aligned}
 $$
 
+:::
+
+::: {.theorem title="Monotonicity and the limit"}
+
 The inequality $d_1<d_2$ implies $1/d_1>1/d_2$, hence $\mathfrak r_{d_1}<\mathfrak r_{d_2}$. Define $L:=\cosh1/\cos1$. As $x\downarrow0$,
 
 $$
@@ -917,7 +971,11 @@ $$
 =L.
 $$
 
+:::
+
 ## 11. Recovering every Taylor coefficient and remainder
+
+In the expansions here, $R(x)=O(x^k)$ means that constants $M,\eta>0$ exist such that, whenever $0<|x|<\eta$, we have $|R(x)|\le M|x|^k$. The notation $O(d^{-k})$ concerns $d\to\infty$, with other parameters fixed. A subscript in $O_d$ permits dependence on the fixed parameter $d$.
 
 For $0<|x|<1$, integrate the geometric series:
 
@@ -1060,6 +1118,8 @@ The variable in this expansion is the base order $d$. We fix $d$ and take the bl
 
 ## 1. The precise extremal object
 
+::: {.definition title="The two fixed-base blow-up models"}
+
 Fix an odd integer $d\ge3$. For any order-$d$ tournament $T^*$, replace each vertex by a random tournament of order $m$. All edges between blocks follow $T^*$. The total order is $N=dm$.
 
 Write $\mathcal T(T^*,m)$ for independent uniform random internal blocks, and $\mathcal R(T^*,m)$ for independent uniform regular internal blocks; the latter requires odd $m$. The expected cycle and path counts are denoted by $\mathbb EC,\mathbb EH$ and normalized by
@@ -1068,9 +1128,15 @@ $$
 \nu_N=(N-1)!/2^N,\qquad \mu_N=N!/2^{N-1}.
 $$
 
+:::
+
+::: {.theorem title="The unique expected extremum"}
+
 We prove that for each fixed $d$ there is $M_d$ such that whenever $m\ge M_d$, both models' cycle and path expectations are maximized exactly by bases ordinarily isomorphic to $\mathrm{Car}_d$. In $\mathcal R$ only admissible $m$ are considered.
 
 This gives a proof manuscript for Conjecture 1 in the cited Wormald version and its path counterpart. The objects compared are expectations of random blow-up models, not individual samples, and no exact Hamiltonian extremum for all tournaments of order $N$ is asserted.
+
+:::
 
 ## 2. The regular-base constants are already spectral ratios
 
@@ -1098,6 +1164,8 @@ Comparing regular bases is thus a finite matrix problem. Distinguish the algebra
 
 ## 3. Product comparison, integration and all equality conditions
 
+::: {.external title="The Fang–Huang product comparison"}
+
 We invoke [Fang–Huang's Corollary 3.4](https://arxiv.org/html/2608.06238v1#S3). This is an external theorem, not a result reproved here. Its comparison matrix is
 
 $$
@@ -1123,6 +1191,10 @@ $$
 
 The cited theorem also states that vector equality in the outermost comparison implies vector equality for every suffix product. We now prove the squared-norm comparison and the equality conversion needed here.
 
+:::
+
+::: {.lemma title="Truncated sums under weak majorization"}
+
 Write $(a-t)_+=\max(a-t,0)$. For nonnegative decreasing vectors satisfying $u\prec_w v$ and $t\ge0$,
 
 $$
@@ -1131,6 +1203,10 @@ $$
 \le\max_{0\le r\le d}\left(\sum_{i=1}^r v_i-rt\right)
 =\sum_{i=1}^d(v_i-t)_+.
 $$
+
+:::
+
+::: {.proof title="Squared norms and equality"}
 
 For the first equality, take $r$ equal to the number of coordinates strictly greater than $t$. Adding smaller coordinates can only decrease the sum, and removing larger coordinates can only decrease it. For any $a\ge0$,
 
@@ -1150,6 +1226,8 @@ $$
 $$
 
 If the squared norms agree, set $g(t)=\sum_i(v_i-t)_+-\sum_i(u_i-t)_+$. This function is continuous and nonnegative, with integral zero. If $g(t_0)>0$, continuity supplies an interval of positive length on which $g(t)>g(t_0)/2$, making the integral positive. Thus $g(t)=0$ for every $t\ge0$. Right derivatives of these piecewise linear functions give
+
+For a finite set, $\#U=|U|$ is its cardinality. The scalar indicator $\mathbf1_{\mathcal E}$ is 1 when condition $\mathcal E$ holds and 0 otherwise; it differs from the all-one vector $\mathbf1$ without a condition subscript.
 
 $$
 \#\{i:u_i>t\}=\#\{i:v_i>t\}=:N(t).
@@ -1171,7 +1249,11 @@ $$
 
 Equality also forces $(S^pe_j)^*=K_d^pe_1$.
 
+:::
+
 ## 4. Every moment of the comparison matrix matches the transitive matrix
+
+Write $\operatorname{tr}M=\sum_jM_{jj}$.
 
 Let $T_d$ have upper-triangular entries 1, lower-triangular entries $-1$ and diagonal entries 0. Let $R_0$ be the reversal permutation matrix and $D_0=\operatorname{diag}(1,-1,\ldots)$. Substituting the definition of $K_d$ entry by entry gives
 
@@ -1310,12 +1392,18 @@ I+tS=\Omega^T(I+tT_d)\Omega,\qquad
 \det(I+tS)=(\det \Omega)^2\det(I+tT_d)=\det(I+tT_d).
 $$
 
+::: {.lemma title="The spectral ratio and equality"}
+
 Take $t=1/d$ and $t=i/d$ separately to obtain $\rho_d(S)=r_d$. Thus
 
 $$
 \rho_d(S)\le r_d,
 \quad\text{with equality if and only if }S=\Omega^TT_d\Omega.
 $$
+
+:::
+
+::: {.proof title="Ordinary isomorphism in the regular case"}
 
 The signed permutation matrix $\Omega$ here has exactly one entry $\pm1$ in each row and column and satisfies $\Omega^T\Omega=I$. Write $\Omega=D_{\varepsilon}P$, where $P$ is an ordinary permutation matrix and $D_{\varepsilon}=\operatorname{diag}(\varepsilon_1,\ldots,\varepsilon_d)$; $\varepsilon_i\in\{-1,1\}$ and $\varepsilon=(\varepsilon_1,\ldots,\varepsilon_d)^T$. Then
 
@@ -1337,13 +1425,23 @@ $$
 
 Recursion gives $\varepsilon_i=(-1)^{i-1}\varepsilon_1$. The overall sign $\varepsilon_1$ occurs twice in $D_{\varepsilon}T_dD_{\varepsilon}$ and cancels. Appendix A.2 supplies an ordinary isomorphism, checked on every edge, between this alternating switching and $\mathrm{Car}_d$. Among regular bases, equality therefore holds exactly for the ordinary carousel isomorphism class.
 
+:::
+
 ## 6. An explicit strict gap from the sixth moment
+
+$\binom nk=n!/(k!(n-k)!)$, with value 0 for $k>n$.
+
+::: {.lemma title="Strict sixth-moment deficit"}
 
 If regular $S$ is not ordinarily isomorphic to the carousel, the preceding equality argument gives
 
 $$
 \Delta_3:=\|T_d^3\|_F^2-\|S^3\|_F^2>0.
 $$
+
+:::
+
+::: {.proof title="An explicit gap"}
 
 Modulo 2, $S\equiv J+I$. Since $J^2=dJ$ and $J^3=d^2J$,
 
@@ -1380,9 +1478,13 @@ $$
 r_d-\rho_d(S)\ge r_d(1-e^{-16/(3d^6)})>0.
 $$
 
+:::
+
 This is a gap between limiting constants for fixed bases, not an effective threshold for finite block order.
 
 ## 7. Nonregular scores and exponential loss
+
+::: {.definition title="Degree parameters for a nonregular base"}
 
 Let $d_i$ be the base outdegrees, put $b_i=d_i+1/2$, and define
 
@@ -1391,6 +1493,8 @@ a_i=\frac{2b_i}{d},\qquad
 \kappa=\left(\prod_{i=1}^d a_i\right)^{1/d},\qquad
 s_i=2d_i-(d-1).
 $$
+
+:::
 
 Put $s=(s_1,\ldots,s_d)^T$, so that $\|s\|_2^2=\sum_{i=1}^d s_i^2$. Each edge contributes exactly one outdegree. Therefore
 
@@ -1455,12 +1559,18 @@ The permanent contains all permutations. Each Hamiltonian cycle corresponds to o
 
 ## 8. Filling weighted rows, making them integral and applying Brégman
 
+Write $\lceil a\rceil$ for the smallest integer at least $a$.
+
+::: {.definition title="Integral targets for row sums"}
+
 We apply this section for $m\ge2$. Model $\mathcal R$ also requires odd $m$, so there $m\ge3$. This covers all sufficiently large block orders. Every row of type $i$ in $W$ has sum
 
 $$
 r_i=md_i+\frac{m-1}{2}=mb_i-\frac12,\qquad
 R_i=\lceil r_i\rceil.
 $$
+
+:::
 
 For a row of length $L$, denoted $w$, assume $0\le w_j\le1$. Its current sum is $r=\sum_{j=1}^Lw_j$, and its target integer sum $R$ satisfies $r\le R\le L$. The amount to add is $s_0=R-r$, and the available capacity is $\sum_j(1-w_j)=L-r\ge s_0$. Starting at $j=1$, choose successively
 
@@ -1615,6 +1725,8 @@ Both normalized cycle expectations therefore tend to zero.
 
 ## 10. The added-vertex path bound with every normalization term retained
 
+::: {.lemma title="Random augmentation and path counts"}
+
 Fix the old tournament $G$. Add a vertex $v$ whose edges to old vertices are independently and fairly oriented. Each path $x_1\to\cdots\to x_N$ corresponds to the unique candidate cycle $v\to x_1\to\cdots\to x_N\to v$. The two required new edges have joint probability $(1/2)^2=1/4$. Deleting $v$ reverses the correspondence. Therefore
 
 $$
@@ -1626,6 +1738,8 @@ $$
 \frac{\mathbb EH}{\mu_N}
 =\frac{\mathbb EC_{\rm aug}}{\nu_{N+1}}.
 $$
+
+:::
 
 Here $G_{\rm aug}$ is the random tournament after adding $v$, and $C_{\rm aug}:=C(G_{\rm aug})$. Conditional expectation first fixes $G$ and averages over the added edges. For independent internal blocks let $W_{\rm aug}$ be the entrywise expected augmented adjacency matrix. For regular internal blocks fix an actual augmented sample and denote its adjacency matrix by $A_{\rm aug}$. Apply the row filling and integrality operations of Section 8 to either input. Denote the resulting zero-one auxiliary matrix of order $(N+1)$ by $W^\sharp_{\rm aug}$; it need not be a tournament adjacency matrix.
 
@@ -1719,6 +1833,8 @@ For the second bound, constrain the augmented cycle count in each sample and the
 
 ## 11. From limiting constants to the exact expected extremum for large blocks
 
+::: {.proof title="A common threshold and uniqueness"}
+
 For fixed $d$, each vertex pair has two possible directions, so there are $2^{\binom d2}$ labeled bases and at most that many ordinary isomorphism classes. Among regular bases, the carousel has limiting constant $r_d$, or $e^{1/d}r_d$, and all other regular bases have the positive gap from Section 6. The normalized expectations for nonregular bases tend to zero.
 
 For each other base choose sufficiently large $m$ so that its actual normalized expectation is strictly smaller than the carousel's. Take the maximum of the finitely many thresholds to obtain $M_d$ from Section 1 and the unique ordinary isomorphism class. This uses fixed $d$ and does not assert uniformity as $d$ grows.
@@ -1730,6 +1846,8 @@ $$
 $$
 
 is a bijection between samples of the two blow-up models. The base isomorphism preserves directions between blocks; internal blocks are merely reordered, preserving their independent identical sampling probabilities. Every path and cycle corresponds uniquely under this bijection, so their expectations agree. Combined with the strict inequality for nonisomorphic bases, this identifies the entire ordinary carousel isomorphism class as the equality class.
+
+:::
 
 ## 12. Conclusions and scope
 
@@ -1985,12 +2103,16 @@ If these three vertices form a directed triangle, $s'_{ij}=s'_{jk}=-s'_{ik}$, ma
 
 ## A.4 Reproducible steps for row integrality
 
+::: {.definition title="A termination count for rounding"}
+
 Section 8 of Part II lists the coordinate filling amounts $\delta_j$, the remaining amounts $s_j$, the two-coordinate movement $\eta$, and the permanent change. Here are two integers that establish termination.
 
 $$
 q(w)=\#\{j:0<w_j<1\},\qquad
 q(W)=\sum_{\ell=1}^L q(W_{\ell,\cdot}).
 $$
+
+:::
 
 Each two-coordinate movement preserves the integer row sum, makes at least one nonintegral coordinate integral, and leaves other integral coordinates unchanged. Thus $q(w)$ decreases by at least 1. Initially $q(w)\le L$, so it cannot decrease indefinitely. If it stopped at $q(w)=1$, the unique nonintegral coordinate would satisfy
 
@@ -2041,6 +2163,8 @@ One factor comes from the change in order and the other from the added-vertex pr
 
 ## A.6 A common threshold for finitely many bases
 
+::: {.definition title="Normalized functions on isomorphism classes"}
+
 Here $T$ denotes an ordinary isomorphism class of base tournaments; choose any representative to form the random blow-up. Part II, Section 11 proved that the expectation is independent of that choice. For a model $\mathcal M\in\{\mathcal T,\mathcal R\}$ and a fixed choice of count, define
 
 $$
@@ -2053,6 +2177,8 @@ f_T(m)=
 $$
 
 Write $\ell_T=\lim_{m\to\infty}f_T(m)$ and $\ell_*=\lim_{m\to\infty}f_*(m)$. In model $\mathcal R$, both limits are restricted to odd $m$.
+
+:::
 
 Fix one model and one count. Let the carousel limit be $\ell_*>0$ and let every other ordinary isomorphism class have limit $\ell_T<\ell_*$. Since $d\ge3$, the transitive base is nonregular whereas the carousel is regular, so the set of noncarousel isomorphism classes is nonempty. Finiteness and isomorphism invariance here are supplied by Part II, Section 11. Each noncarousel limit is strictly smaller, so the finite set of positive differences has a positive minimum:
 
